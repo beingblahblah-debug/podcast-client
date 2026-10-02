@@ -12,8 +12,6 @@ export default function Navbar() {
   const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Jessica,%20I%20would%20like%20to%20connect%20regarding%20a%20podcast%20episode%20/%20guest%20booking.";
 
   const navLinks = [
-    { label: "Shows & Work", href: "/episodes" },
-    { label: "Top 10", href: "/top-10", isHot: true },
     { label: "Services", href: "/services" },
     { label: "Articles & Guides", href: "/blog" },
     { label: "About Jessica", href: "/about" },
@@ -68,9 +66,6 @@ export default function Navbar() {
                 }`}
               >
                 <span>{link.label}</span>
-                {link.isHot && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                )}
               </Link>
             );
           })}
@@ -154,11 +149,6 @@ export default function Navbar() {
                 }`}
               >
                 <span>{link.label}</span>
-                {link.isHot && (
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900">
-                    Hot
-                  </span>
-                )}
               </Link>
             );
           })}
