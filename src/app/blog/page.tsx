@@ -3,78 +3,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, Clock, Calendar, ArrowRight, Sparkles, Tag, Search, ShieldCheck } from "lucide-react";
-
-interface Article {
-  id: string;
-  title: string;
-  category: string;
-  date: string;
-  readTime: string;
-  excerpt: string;
-  image: string;
-  seoFocus: string;
-}
+import { BookOpen, Clock, Calendar, ArrowRight, Search } from "lucide-react";
+import { ARTICLES, Article } from "@/data/articles";
 
 export default function BlogPage() {
-  const articles: Article[] = [
-    {
-      id: "how-to-pitch-top-tier-podcasts-2026",
-      title: "How to Pitch as a Guest on Top-Tier Podcasts in 2026: The Executive Playbook",
-      category: "Guest Pitching",
-      date: "October 1, 2026",
-      readTime: "8 min read",
-      excerpt: "Top interview shows receive 80+ pitches every single week. Here is the exact 4-part framework that gets founders, authors, and venture partners booked on premier shows without high-priced PR agencies.",
-      image: "/images/host.jpg",
-      seoFocus: "Podcast guest booking, executive pitching, founder PR strategies"
-    },
-    {
-      id: "why-ceos-launch-corporate-podcasts",
-      title: "Why Fortune 500 CEOs Are Launching Corporate Podcasts Instead of Press Releases",
-      category: "Executive Media",
-      date: "September 24, 2026",
-      readTime: "7 min read",
-      excerpt: "Traditional press releases have an attention half-life of 45 seconds. Long-form executive podcasts generate 48-minute average hold times, creating irreplaceable customer retention and talent acquisition moats.",
-      image: "/images/studio.jpg",
-      seoFocus: "Corporate podcast production, executive thought leadership, brand storytelling"
-    },
-    {
-      id: "interviewing-for-the-unspoken",
-      title: "How to Interview Titans: What 250 Episodes Taught Me About Silence & Truth",
-      category: "Interview Craft",
-      date: "September 18, 2026",
-      readTime: "9 min read",
-      excerpt: "The most profound revelations never come during the first answer. They come during the 8 seconds of pregnant silence after the PR script runs out of steam. Here is how to create conversational psychological safety.",
-      image: "/images/cover.jpg",
-      seoFocus: "Journalistic interviewing, masterclass hosting, active listening"
-    },
-    {
-      id: "roi-of-podcast-sponsorships-2026",
-      title: "The Mathematical ROI of Host-Read Podcast Sponsorships: How B2B Brands Win",
-      category: "Brand Sponsorship",
-      date: "September 10, 2026",
-      readTime: "6 min read",
-      excerpt: "Automated programmatic ad-rolls suffer from 82% skip rates. Authentic, personalized host-read endorsements convert at 4.2x higher intent. We analyze retention heatmaps and conversion metrics.",
-      image: "/images/studio.jpg",
-      seoFocus: "Podcast advertising ROI, host-read endorsements, B2B media buying"
-    },
-    {
-      id: "dumbo-studio-acoustic-architecture",
-      title: "Inside Studio A: Why Organic Cedar Acoustics Beat Digital De-Noising Plugins Every Time",
-      category: "Acoustics & Gear",
-      date: "August 28, 2026",
-      readTime: "5 min read",
-      excerpt: "Synthetic foam deadens high frequencies while letting muddy bass resonances bounce uncontrollably. Here is how our DUMBO Brooklyn studio was engineered with 0.85 NRC cedar slats for vocal intimacy.",
-      image: "/images/studio.jpg",
-      seoFocus: "Podcast studio design, Shure SM7B acoustics, Brooklyn recording studio"
-    }
-  ];
-
   const [selectedTag, setSelectedTag] = useState("All");
   const [search, setSearch] = useState("");
   const tags = ["All", "Guest Pitching", "Executive Media", "Interview Craft", "Brand Sponsorship", "Acoustics & Gear"];
 
-  const filtered = articles.filter(a => {
+  const filtered = ARTICLES.filter((a) => {
     if (selectedTag !== "All" && a.category !== selectedTag) return false;
     if (search.trim() !== "") {
       const q = search.toLowerCase();
@@ -119,7 +56,7 @@ export default function BlogPage() {
               <button
                 key={tag}
                 onClick={() => setSelectedTag(tag)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                   selectedTag === tag
                     ? "bg-slate-950 text-white shadow-xs"
                     : "bg-slate-100 text-slate-600 hover:text-slate-950 hover:bg-slate-200"
@@ -134,9 +71,10 @@ export default function BlogPage() {
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {filtered.map((article) => (
-            <article
+            <Link
               key={article.id}
-              className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+              href={`/blog/${article.id}`}
+              className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group block cursor-pointer"
             >
               <div>
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
@@ -168,12 +106,12 @@ export default function BlogPage() {
                     {article.title}
                   </h2>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">
                     {article.excerpt}
                   </p>
 
                   <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-500 font-mono">
-                    Keywords: {article.seoFocus}
+                    Topic: {article.seoFocus}
                   </div>
                 </div>
               </div>
@@ -183,12 +121,12 @@ export default function BlogPage() {
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span>By Jessica Chen</span>
                 </span>
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 group-hover:translate-x-1 transition-transform">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 group-hover:translate-x-1 transition-transform">
                   <span>Read Full Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
