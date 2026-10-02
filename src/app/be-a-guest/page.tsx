@@ -47,7 +47,7 @@ export default function BeAGuestPage() {
             <span>Editorial Pitch Desk</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-slate-950 tracking-tight mb-4">
-            Be a Guest on The Elevate Show
+            Be a Guest on The Harshita Dagha Show
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             We review every single guest proposal with care. If you have an unprecedented perspective or transformative life journey, we want to hear from you.
@@ -62,7 +62,7 @@ export default function BeAGuestPage() {
             </div>
             <h3 className="font-serif font-bold text-lg text-slate-900 mb-2">Editorial Review</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Jessica and our research team review your submission within 7 business days for intellectual rigor and unique narrative depth.
+              Harshita and our research team review your submission within 7 business days for intellectual rigor and unique narrative depth.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function BeAGuestPage() {
             </div>
             <h3 className="font-serif font-bold text-lg text-slate-900 mb-2">Recording & Broadcast</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              60-90 minutes of relaxed, broadcast-grade recording in Brooklyn Studio A or 4K remote studio, published to 65,000+ active listeners.
+              60-90 minutes of relaxed, broadcast-grade recording in Mumbai Studio HQ (BKC) or 4K remote studio, published to 65,000+ active listeners.
             </p>
           </div>
         </div>
@@ -98,12 +98,12 @@ export default function BeAGuestPage() {
               Prefer a direct conversation?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-lg leading-relaxed">
-              If your schedule is time-sensitive or you represent a prominent speaker, message Jessica Chen&apos;s executive producer directly on WhatsApp.
+              If your schedule is time-sensitive or you represent a prominent speaker, message Harshita Dagha&apos;s executive producer directly on WhatsApp.
             </p>
           </div>
 
           <a
-            href="https://wa.me/919876543210?text=Hi%20Jessica,%20I%20would%20like%20to%20pitch%20a%20guest%20/%20discuss%20an%20interview%20appearance%20on%20The%20Elevate%20Show."
+            href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20would%20like%20to%20pitch%20a%20guest%20/%20discuss%20an%20interview%20appearance%20on%20The%20Harshita%20Dagha%20Show."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"

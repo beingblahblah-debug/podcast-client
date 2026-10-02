@@ -54,7 +54,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
     {
       name: "Evelyn K.",
       time: "4 days ago",
-      text: "Jessica asks the questions everyone in the audience is thinking but too hesitant to say out loud. Incredible interview!"
+      text: "Harshita asks the questions everyone in the audience is thinking but too hesitant to say out loud. Incredible interview!"
     }
   ]);
 

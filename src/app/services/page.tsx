@@ -21,7 +21,7 @@ import {
 import { PRESS_LOGOS } from "@/data/episodes";
 
 export default function ServicesPage() {
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Jessica,%20I%20am%20interested%20in%20discussing%20podcast%20services%20/%20sponsorship%20/%20host%20booking.";
+  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20discussing%20podcast%20services%20/%20sponsorship%20/%20host%20booking.";
 
   const services = [
     {
@@ -30,7 +30,7 @@ export default function ServicesPage() {
       tagline: "Establish Unshakeable Industry Authority",
       description: "A 60-minute, broadcast-grade long-form interview exploring your career inflection points, proprietary mental frameworks, and company vision. Includes multi-platform syndication across Apple Podcasts, Spotify, and 4K YouTube.",
       deliverables: [
-        "60-90 minute deep-dive interview in Brooklyn Studio A or 4K remote studio",
+        "60-90 minute deep-dive interview in Mumbai Studio HQ (BKC) or 4K remote studio",
         "Permanent distribution to 65,000+ verified active listeners",
         "Five 4K vertical viral video reels for LinkedIn, TikTok & Instagram",
         "Full SEO-optimized show notes & permanent do-follow backlinks",
@@ -43,7 +43,7 @@ export default function ServicesPage() {
       id: "corporate-podcasting",
       title: "Turnkey Corporate & Brand Podcasting",
       tagline: "End-to-End Enterprise Media Production",
-      description: "Jessica Chen and her veteran production desk develop, host, and engineer private or public podcast series for enterprises, tech giants, and visionary foundations seeking narrative leadership.",
+      description: "Harshita Dagha and her veteran production desk develop, host, and engineer private or public podcast series for enterprises, tech giants, and visionary foundations seeking narrative leadership.",
       deliverables: [
         "Full creative concepting, season narrative arcs, and script debriefs",
         "Executive media training and vocal pacing coaching for internal hosts",
@@ -58,7 +58,7 @@ export default function ServicesPage() {
       id: "event-moderation",
       title: "Keynote Interviewer & Summit Stage Host",
       tagline: "High-Energy, Intellectually Rigorous Stage Presence",
-      description: "Bring Jessica's celebrated interview acumen to your global conference, investor summit, or annual general meeting. Known for extracting authentic, headline-generating answers from titans of industry.",
+      description: "Bring Harshita's celebrated interview acumen to your global conference, investor summit, or annual general meeting. Known for extracting authentic, headline-generating answers from titans of industry.",
       deliverables: [
         "Main-stage keynote fireside chat moderation",
         "Pre-summit briefing calls with high-profile VIP speakers",
@@ -72,7 +72,7 @@ export default function ServicesPage() {
       id: "show-sponsorship",
       title: "Brand Sponsorship & Authentic Host-Read Ads",
       tagline: "High-Trust Influence with Affluent Decision Makers",
-      description: "Integrate your product or service into The Elevate Show. Unlike robotic automated ad-rolls, Jessica only accepts 2 curated sponsors per episode and records passionate, personal endorsements.",
+      description: "Integrate your product or service into The Harshita Dagha Show. Unlike robotic automated ad-rolls, Harshita only accepts 2 curated sponsors per episode and records passionate, personal endorsements.",
       deliverables: [
         "60-second host-read mid-roll and 30-second pre-roll endorsements",
         "Permanent audio & video placement (no dynamic ad deletion)",
@@ -98,7 +98,7 @@ export default function ServicesPage() {
             Executive Podcasting, Stage Hosting & Brand Partnerships
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Work with celebrated investigative journalist and podcast host <strong className="text-slate-900">Jessica Chen</strong>. From featured executive guest appearances to full-scale enterprise podcast development, we create category-defining audio and video media.
+            Work with India&apos;s #1 female executive podcast host <strong className="text-slate-900">Harshita Dagha</strong>. From featured executive guest appearances to full-scale enterprise podcast development across Mumbai, Bengaluru, and Delhi NCR, we create category-defining audio and video media.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function ServicesPage() {
               Need a swift response on dates or sponsorship?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Connect directly with Jessica Chen&apos;s executive producer via WhatsApp for quick availability checks, rate cards, and studio booking.
+              Connect directly with Harshita Dagha&apos;s executive producer via WhatsApp for quick availability checks, rate cards, and studio booking.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export default function ServicesPage() {
                     {service.badge}
                   </span>
                   <span className="text-xs text-amber-700 font-semibold font-mono">
-                    Brooklyn Studio & Global Remote
+                    Mumbai HQ, Bengaluru & Global Remote
                   </span>
                 </div>
 
@@ -185,7 +185,7 @@ export default function ServicesPage() {
               {/* Action Buttons */}
               <div className="pt-5 border-t border-slate-100 flex items-center justify-between gap-3">
                 <a
-                  href={`https://wa.me/919876543210?text=Hi%20Jessica,%20I%20am%20interested%20in%20learning%20more%20about%20your%20${encodeURIComponent(service.title)}.`}
+                  href={`https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20learning%20more%20about%20your%20${encodeURIComponent(service.title)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold transition-colors"

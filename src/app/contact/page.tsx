@@ -37,12 +37,12 @@ export default function ContactPage() {
       a: "We record 4 to 6 weeks in advance of distribution. Episodes are released every Tuesday and Thursday at 6:00 AM Eastern Time."
     },
     {
-      q: "How do show sponsorships work on The Elevate Podcast?",
-      a: "We only accept 2 sponsors per episode to preserve listener respect. All sponsor reads are personal, authentic endorsements written and delivered directly by Jessica Chen."
+      q: "How do show sponsorships work on The Harshita Dagha Show?",
+      a: "We only accept 2 vetted sponsors per episode to preserve listener respect. All sponsor reads are personal, authentic endorsements written and delivered directly by Harshita Dagha."
     },
     {
-      q: "Where is Studio A located?",
-      a: "Our private broadcast studio is located in DUMBO, Brooklyn, New York. We provide full car service for visiting guests flying into JFK or LGA."
+      q: "Where is the flagship studio located?",
+      a: "Our private broadcast studio is located in Bandra Kurla Complex (BKC), Mumbai. We provide full studio logistics for visiting founders and CXOs traveling from Bengaluru, Delhi NCR, or abroad."
     },
     {
       q: "Can I syndicate or clip video content for my social channels?",
@@ -64,7 +64,7 @@ export default function ContactPage() {
             Connect With The Show
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            For brand sponsorships, press interviews with Jessica Chen, or studio inquiries, reach out directly to our production office.
+            For brand sponsorships, press interviews with Harshita Dagha, or studio inquiries, reach out directly to our production office.
           </p>
         </div>
 
@@ -134,8 +134,8 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-slate-900 focus:bg-white transition-all cursor-pointer"
                   >
                     <option value="sponsorship">Show Sponsorship & Partnership</option>
-                    <option value="press">Press & Speaking Engagement for Jessica</option>
-                    <option value="studio">Studio A Booking / Rental</option>
+                    <option value="press">Press & Speaking Engagement for Harshita</option>
+                    <option value="studio">Mumbai BKC Studio Booking / Production</option>
                     <option value="other">General Inquiries</option>
                   </select>
                 </div>
@@ -180,10 +180,10 @@ export default function ContactPage() {
                 Chat Directly on WhatsApp
               </h3>
               <p className="text-xs text-emerald-50 mb-4 leading-relaxed">
-                Connect directly with Jessica Chen&apos;s executive producer for instant availability checks, speaking dates, and sponsorships.
+                Connect directly with Harshita Dagha&apos;s executive producer for instant availability checks, speaking dates, and sponsorships.
               </p>
               <a
-                href="https://wa.me/919876543210?text=Hi%20Jessica,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
+                href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-bold transition-all shadow-md"
@@ -221,7 +221,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Email Us</h4>
-                  <p className="text-xs text-slate-600 mt-0.5">producer@elevatepodcast.com</p>
+                  <p className="text-xs text-slate-600 mt-0.5">producer@harshitadagha.in</p>
                 </div>
               </div>
 
@@ -230,9 +230,9 @@ export default function ContactPage() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Studio A Address</h4>
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Studio Headquarters</h4>
                   <p className="text-xs text-slate-600 mt-0.5">
-                    55 Water Street, DUMBO<br />Brooklyn, NY 11201
+                    Bandra Kurla Complex (BKC)<br />Mumbai, Maharashtra 400051
                   </p>
                 </div>
               </div>

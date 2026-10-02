@@ -12,9 +12,11 @@ import {
   ArrowRight, 
   Sliders, 
   Radio, 
-  Heart,
-  Globe2,
-  Users2
+  Heart, 
+  Globe2, 
+  Users2,
+  Building2,
+  MapPin
 } from "lucide-react";
 import { PODCAST_STATS, PRESS_LOGOS } from "@/data/episodes";
 
@@ -22,33 +24,51 @@ export default function AboutPage() {
   const milestones = [
     {
       year: "2021",
-      title: "Episode 001 from a Brooklyn Closet",
-      description: "Jessica recorded her first interview with a second-hand USB microphone and a pair of audio monitors. 400 listeners tuned in on day one."
+      title: "Episode 001 in Mumbai",
+      description: "Harshita recorded her first founder interview in Mumbai with a pair of broadcast dynamic microphones. Over 1,200 startup operators tuned in within 48 hours."
     },
     {
       year: "2023",
-      title: "1,000,000 Downloads & Studio A Opening",
-      description: "The show hit #1 on the Apple Podcasts Society chart. Built custom acoustic recording sanctuary in Brooklyn, New York."
+      title: "1,000,000 Downloads & BKC Studio Opening",
+      description: "The show reached the #1 spot on business and leadership charts in India. Opened flagship acoustic broadcast studio in Bandra Kurla Complex (BKC), Mumbai."
     },
     {
       year: "2024",
-      title: "Webby Award Nomination",
-      description: "Nominated for Best Interview Show alongside NPR and The New York Times. Expanded to long-form 4K video broadcasts."
+      title: "Ranked #1 Female Business Podcaster in India",
+      description: "Recognized across leading national media. Expanded mobile broadcast units to Bengaluru (Koramangala/Indiranagar) and Delhi NCR for on-location founder masterclasses."
     },
     {
       year: "2026",
-      title: "4.8M Downloads Across 150 Countries",
-      description: "Over 250 deep dialogues recorded with Nobel laureates, Fortune 500 CEOs, Olympic gold medalists, and creative luminaries."
+      title: "5.2M+ Downloads Across 150 Countries",
+      description: "Over 180 long-form masterclass dialogues recorded with unicorn founders, top venture capitalists, enterprise CXOs, and global diaspora pioneers."
     }
   ];
 
   const gearList = [
-    { name: "Shure SM7B Dynamic Microphones", desc: "Legendary broadcast vocal clarity and warm low-end proximity effect." },
-    { name: "Cloudlifter CL-1 Mic Activators", desc: "+25dB of ultra-clean, transparent passive gain." },
-    { name: "Rødecaster Pro II Audio Workstation", desc: "Studio-grade Aphex processing and ultra-low noise Revolution preamps." },
-    { name: "Acoustic Slatted Cedar Paneling", desc: "Natural organic room warmth with 0.85 NRC acoustic absorption." },
+    { name: "Shure SM7B Dynamic Broadcast Microphones", desc: "Legendary vocal warmth, radio presence, and ultra-crisp speech capture." },
+    { name: "Cloudlifter CL-1 Mic Activators", desc: "+25dB of ultra-clean, transparent gain for broadcast dynamics." },
+    { name: "Rødecaster Pro II Audio Workstation", desc: "Studio-grade Aphex digital signal processing and ultra-low noise preamps." },
+    { name: "Acoustic Slatted Cedar Paneling", desc: "Natural organic room warmth with 0.85 NRC acoustic reflection dampening." },
     { name: "Sony FX3 Full-Frame Cinema Cameras", desc: "Cinematic 4K 60fps multicam broadcast for YouTube video releases." },
-    { name: "Genelec 8030C Active Studio Monitors", desc: "Dead-accurate neutral acoustic monitoring in mixing and post-production." }
+    { name: "Genelec 8030C Active Studio Monitors", desc: "Dead-accurate neutral acoustic monitoring for post-production mastery." }
+  ];
+
+  const cityPresence = [
+    {
+      name: "Mumbai (Studio HQ)",
+      area: "Bandra Kurla Complex (BKC)",
+      details: "Flagship acoustic recording studio. Hosting finance leaders, consumer brand creators, and unicorn founders."
+    },
+    {
+      name: "Bengaluru (Tech Desk)",
+      area: "Koramangala · Indiranagar",
+      details: "On-site founder dialogues with AI researchers, deep-tech architects, and venture capital managing partners."
+    },
+    {
+      name: "Delhi NCR (Corporate Desk)",
+      area: "Cyber City Gurugram · Central Delhi",
+      details: "Keynote moderations, enterprise CEO profiles, and institutional business summits."
+    }
   ];
 
   return (
@@ -60,23 +80,23 @@ export default function AboutPage() {
           
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-wider mb-4">
-              <Mic className="w-3.5 h-3.5 text-amber-600" />
-              <span>Host & Creator</span>
+              <Award className="w-3.5 h-3.5 text-amber-700" />
+              <span>India&apos;s #1 Female Executive Podcaster</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-950 tracking-tight leading-[1.15] mb-6">
-              Hi, I&apos;m Jessica Chen. I ask the questions people are afraid to voice.
+              Hi, I&apos;m Harshita Dagha. I unpack the truths behind India&apos;s greatest builders.
             </h1>
 
             <div className="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
               <p>
-                Before launching <em>The Elevate Podcast</em>, I spent ten years as an investigative journalist uncovering institutional corruption and profiling cultural pioneers.
+                In an era dominated by 30-second soundbites, clickbait headlines, and scripted PR interviews, genuine business and founder wisdom is vanishingly rare.
               </p>
               <p>
-                What I learned was simple: humanity doesn&apos;t need more soundbites or elevator pitches. What we are hungry for is genuine, vulnerable, three-dimensional truth.
+                I founded <em>The Harshita Dagha Show</em> in Mumbai to give India&apos;s most visionary entrepreneurs, innovators, and investors an unhurried, intellectual sanctuary. Where they can dismantle their armor and candidly dissect near-death startup moments, valuation crises, leadership loneliness, and the reality of scaling companies from zero to thousands of crores.
               </p>
               <p>
-                On this show, my goal is never to grill someone for sensational headlines. My goal is to create an oasis of unhurried curiosity where remarkable thinkers can dismantle their armor and speak from their core.
+                Today, with over 5.2 million global downloads and an audience spanning founders, CXOs, and ambitious professionals in 150+ countries, my mission is simple: to document the playbook of India&apos;s economic renaissance.
               </p>
             </div>
 
@@ -86,8 +106,8 @@ export default function AboutPage() {
                 href="/be-a-guest"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 text-sm font-semibold shadow-md transition-all"
               >
-                <span>Pitch a Story or Guest</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Pitch a Founder or Story</span>
+                <ArrowRight className="w-4 h-4 text-amber-400" />
               </Link>
 
               <a
@@ -105,7 +125,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image
                   src="/images/host.jpg"
-                  alt="Jessica Chen Portrait"
+                  alt="Harshita Dagha Portrait - Top Female Podcaster in India"
                   fill
                   priority
                   className="object-cover"
@@ -115,10 +135,10 @@ export default function AboutPage() {
               {/* Floating quote badge */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-xl border border-slate-200/80 max-w-xs hidden sm:block">
                 <p className="text-xs font-serif italic text-slate-800 leading-relaxed mb-2">
-                  &ldquo;Curiosity is an act of courage. It requires admitting you don&apos;t know what the answer will be.&rdquo;
+                  &ldquo;Curiosity is an act of courage. It requires asking the question everyone in the boardroom is afraid to speak aloud.&rdquo;
                 </p>
                 <span className="text-[11px] font-bold text-amber-700 uppercase tracking-wider block">
-                  — Jessica Chen
+                  — Harshita Dagha
                 </span>
               </div>
             </div>
@@ -135,7 +155,7 @@ export default function AboutPage() {
               Audience Reach & Impact
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white tracking-tight">
-              An International Community of Thought Leaders
+              India&apos;s Most Influential Executive Audio Community
             </h2>
           </div>
 
@@ -153,7 +173,7 @@ export default function AboutPage() {
                 {PODCAST_STATS.totalEpisodes}
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider font-medium">
-                Full-Length Episodes
+                Executive Masterclasses
               </span>
             </div>
             <div>
@@ -169,9 +189,36 @@ export default function AboutPage() {
                 {PODCAST_STATS.averageRating}
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider font-medium">
-                Average Listener Rating
+                Average Rating (Top 1%)
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* Regional Hubs Callout on About Page */}
+        <div className="mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1">
+              Geographic Presence
+            </span>
+            <h2 className="text-3xl font-serif font-bold text-slate-950 tracking-tight">
+              Studio & On-Location Recording Hubs
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {cityPresence.map((city, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-900 mb-2">
+                    <MapPin className="w-4 h-4 text-amber-600" />
+                    <span>{city.name}</span>
+                  </div>
+                  <h3 className="font-serif font-bold text-lg text-slate-950 mb-1">{city.area}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">{city.details}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -183,7 +230,7 @@ export default function AboutPage() {
               <div className="relative aspect-video rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
                 <Image
                   src="/images/studio.jpg"
-                  alt="Studio A Workspace"
+                  alt="Harshita Dagha Broadcast Studio in BKC Mumbai"
                   fill
                   className="object-cover"
                 />
@@ -193,13 +240,13 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold uppercase tracking-wider mb-3">
                 <Sliders className="w-3.5 h-3.5 text-amber-600" />
-                <span>Acoustic Architecture</span>
+                <span>Broadcast Engineering</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-950 tracking-tight mb-4">
-                Studio A · Brooklyn, New York
+                Flagship Studio · BKC, Mumbai
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                Designed specifically for intimate dialogue. Built with acoustic wood slats, isolated floor floating, and custom analog signal chains so listeners hear every breath, pause, and subtle nuance.
+                Designed specifically for executive and founder dialogues. Features acoustically treated cedar wood resonance dampening, isolated analog preamps, and cinematic multicam 4K capture.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -219,9 +266,9 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-serif font-bold text-slate-950 tracking-tight">
-              The Journey So Far
+              The Journey of Harshita Dagha Media
             </h2>
-            <p className="text-slate-500 text-sm mt-1">Five years of continuous conversations.</p>
+            <p className="text-slate-500 text-sm mt-1">From a single Mumbai studio session to India&apos;s leading executive audio network.</p>
           </div>
 
           <div className="space-y-6">

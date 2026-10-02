@@ -35,7 +35,7 @@ export const ARTICLES: Article[] = [
     image: "/images/host.jpg",
     seoFocus: "Podcast guest booking, executive pitching, founder PR strategies",
     author: {
-      name: "Jessica Chen",
+      name: "Harshita Dagha",
       role: "Host & Executive Producer",
       avatar: "/images/host.jpg"
     },
@@ -88,7 +88,7 @@ export const ARTICLES: Article[] = [
     image: "/images/studio.jpg",
     seoFocus: "Corporate podcast production, executive thought leadership, brand storytelling",
     author: {
-      name: "Jessica Chen",
+      name: "Harshita Dagha",
       role: "Host & Executive Producer",
       avatar: "/images/host.jpg"
     },
@@ -129,7 +129,7 @@ export const ARTICLES: Article[] = [
     image: "/images/cover.jpg",
     seoFocus: "Journalistic interviewing, masterclass hosting, active listening",
     author: {
-      name: "Jessica Chen",
+      name: "Harshita Dagha",
       role: "Host & Executive Producer",
       avatar: "/images/host.jpg"
     },
@@ -165,7 +165,7 @@ export const ARTICLES: Article[] = [
     image: "/images/studio.jpg",
     seoFocus: "Podcast advertising ROI, host-read endorsements, B2B media buying",
     author: {
-      name: "Jessica Chen",
+      name: "Harshita Dagha",
       role: "Host & Executive Producer",
       avatar: "/images/host.jpg"
     },
@@ -198,7 +198,7 @@ export const ARTICLES: Article[] = [
     image: "/images/studio.jpg",
     seoFocus: "Podcast studio design, Shure SM7B acoustics, Brooklyn recording studio",
     author: {
-      name: "Jessica Chen",
+      name: "Harshita Dagha",
       role: "Host & Executive Producer",
       avatar: "/images/host.jpg"
     },

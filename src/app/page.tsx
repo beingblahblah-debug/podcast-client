@@ -22,11 +22,13 @@ import Top10Section from "@/components/Top10Section";
 import HostSection from "@/components/HostSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EpisodeCard from "@/components/EpisodeCard";
+import CityHubsSection from "@/components/CityHubsSection";
+import GeoFaqSection from "@/components/GeoFaqSection";
 import { EPISODES, CATEGORIES } from "@/data/episodes";
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Jessica,%20I%20would%20like%20to%20discuss%20a%20podcast%20episode%20/%20guest%20appearance.";
+  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20would%20like%20to%20discuss%20a%20podcast%20episode%20/%20guest%20appearance.";
 
   const filteredEpisodes = EPISODES.filter((ep) => {
     if (selectedCategory === "All") return true;
@@ -65,7 +67,7 @@ export default function HomePage() {
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Services Overview Banner (What Jessica Chen Does) */}
+      {/* 2. Services Overview Banner (What Harshita Dagha Does) */}
       <section className="py-20 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -76,10 +78,10 @@ export default function HomePage() {
                 <span>Capabilities & Offerings</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-950 tracking-tight">
-                How You Can Work With Jessica
+                How You Can Work With Harshita
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-                Whether you are a founder looking to establish category authority or an enterprise launching a brand podcast, we deliver broadcast-grade storytelling.
+                Whether you are a founder looking to establish category authority or an enterprise launching a brand podcast, we deliver broadcast-grade storytelling across Mumbai, Bengaluru, and Delhi NCR.
               </p>
             </div>
 
@@ -124,6 +126,9 @@ export default function HomePage() {
 
       {/* 3. Top 10 Leaderboard Showcase */}
       <Top10Section />
+
+      {/* 3.1 National & Regional City Hubs (Mumbai BKC, Bengaluru, Delhi NCR, Global) */}
+      <CityHubsSection />
 
       {/* 4. Portfolio of Recorded Shows & Masterclasses */}
       <section className="py-20 bg-white">
@@ -184,10 +189,13 @@ export default function HomePage() {
       {/* 5. Host Story & Brooklyn Studio */}
       <HostSection />
 
-      {/* 6. Listener & Client Testimonials */}
+      {/* 6. Listener & Founder Testimonials */}
       <TestimonialsSection />
 
-      {/* 7. High-Converting WhatsApp & Pitch Callout Banner */}
+      {/* 7. GEO & AI Knowledge Engine (Direct Citations for ChatGPT, Gemini, Perplexity & Google) */}
+      <GeoFaqSection />
+
+      {/* 8. High-Converting WhatsApp & Pitch Callout Banner */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-wider mb-4">
@@ -198,7 +206,7 @@ export default function HomePage() {
             Have a story that demands an examined conversation?
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            If you are a founder, author, or thinker with an unprecedented perspective, connect with Jessica Chen&apos;s editorial desk or message us directly on WhatsApp.
+            If you are a founder, author, or thinker with an unprecedented perspective, connect with Harshita Dagha&apos;s editorial desk or message us directly on WhatsApp.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a

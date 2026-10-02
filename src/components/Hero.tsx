@@ -18,7 +18,7 @@ import {
 import { PODCAST_STATS, PRESS_LOGOS } from "@/data/episodes";
 
 export default function Hero() {
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Jessica,%20I%20am%20interested%20in%20connecting%20regarding%20a%20podcast%20episode%20/%20guest%20appearance.";
+  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20connecting%20regarding%20an%20executive%20podcast%20episode%20/%20founder%20appearance.";
 
   return (
     <section className="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-mesh-light border-b border-slate-200/70">
@@ -37,20 +37,20 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span className="text-slate-950 font-bold uppercase tracking-wider text-[11px]">
-                JESSICA CHEN MEDIA
+                HARSHITA DAGHA MEDIA
               </span>
               <span className="text-slate-300">|</span>
-              <span className="text-slate-600 font-medium">Brooklyn Studio A · Available Globally</span>
+              <span className="text-slate-600 font-medium">Mumbai Studio HQ · Bengaluru · Delhi NCR · Global</span>
             </div>
 
             {/* SEO-Rich Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-950 tracking-tight leading-[1.12] mb-6">
-              The Voice Behind <span className="underline decoration-amber-400 decoration-wavy decoration-2">Visionary Leaders</span> & Industry-Defining Conversations.
+              India&apos;s #1 Female <span className="underline decoration-amber-400 decoration-wavy decoration-2">Executive Podcaster</span> & Founder Interviewer.
             </h1>
 
             {/* Comprehensive SEO Content Subheading */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
-              Jessica Chen is an award-winning investigative journalist, executive interviewer, and host of <em>The Elevate Show</em> (4.8M+ global impressions). She partners with venture-backed founders, Fortune 500 executives, and cultural architects to produce category-defining audio, video, and corporate podcasts.
+              <strong>Harshita Dagha</strong> is the celebrated host of <em>The Harshita Dagha Show</em> (5.2M+ global impressions). Operating from her flagship studio in Mumbai (BKC), she conducts unhurried, masterclass dialogues with unicorn founders, venture capitalists, and industry titans across India and worldwide.
             </p>
 
             {/* High-Converting Action Buttons with WhatsApp prominence */}
@@ -111,7 +111,7 @@ export default function Hero() {
                 <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden mb-6 border border-slate-200 shadow-inner group">
                   <Image
                     src="/images/host.jpg"
-                    alt="Jessica Chen - Professional Podcast Host & Executive Interviewer"
+                    alt="Harshita Dagha - India's #1 Female Executive Podcaster & Interviewer"
                     fill
                     priority
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -127,13 +127,13 @@ export default function Hero() {
                   {/* Bottom title inside photo */}
                   <div className="absolute bottom-5 left-5 right-5 text-white">
                     <span className="text-[11px] font-bold text-amber-300 uppercase tracking-widest block mb-1">
-                      Lead Host & Producer
+                      India&apos;s #1 Female Executive Host
                     </span>
                     <h3 className="font-serif font-bold text-2xl text-white leading-tight">
-                      Jessica Chen
+                      Harshita Dagha
                     </h3>
                     <p className="text-xs text-slate-300 mt-1">
-                      250+ Executive Interviews · Brooklyn Studio A & Global Remote
+                      180+ Founder Masterclasses · Mumbai HQ, Bengaluru & Delhi NCR
                     </p>
                   </div>
                 </div>

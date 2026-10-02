@@ -6,7 +6,7 @@ import { MessageCircle } from "lucide-react";
 export default function WhatsAppButton() {
   const phoneNumber = "919876543210"; // Placeholder or user business number
   const defaultMessage = encodeURIComponent(
-    "Hi Jessica, I visited your podcast website and would like to connect regarding a podcast episode / guest appearance / sponsorship inquiry."
+    "Hi Harshita Dagha Media, I visited your website and would like to connect regarding an executive podcast episode / founder appearance / sponsorship inquiry."
   );
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
 

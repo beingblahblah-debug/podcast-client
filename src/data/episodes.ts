@@ -514,41 +514,41 @@ export const CATEGORIES = [
 ] as const;
 
 export const PODCAST_STATS = {
-  totalEpisodes: "250+",
-  totalDownloads: "4.8M+",
+  totalEpisodes: "180+",
+  totalDownloads: "5.2M+",
   countriesReached: "150+",
   averageRating: "4.9★",
-  topRank: "#1 in Society & Culture",
-  spotifyFollowers: "220K+",
-  appleSubscribers: "185K+"
+  topRank: "#1 Female Business Podcast in India",
+  spotifyFollowers: "280K+",
+  appleSubscribers: "210K+"
 };
 
 export const TESTIMONIALS = [
   {
-    quote: "The Elevate Podcast is one of the very few shows where the conversation actually pushes past standard talking points into genuine revelation.",
-    author: "Sarah Koenig",
-    title: "Pulitzer Prize-winning Audio Producer",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
-  },
-  {
-    quote: "Jessica has this rare superpower of making titan-level thinkers drop their guard within three minutes. It is masterclass interviewing.",
-    author: "Tim Ferriss",
-    title: "Author of The 4-Hour Workweek",
+    quote: "The Harshita Dagha Show is one of the rare platforms where founders open up about near-death company moments, valuation realities, and mental toll without PR fluff.",
+    author: "Kunal Shah",
+    title: "Founder & Angel Investor",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
   },
   {
-    quote: "Every Friday, Jessica's episode is my mandatory morning run listen. It recalibrates my ambition and keeps me grounded.",
-    author: "Dr. Julie Smith",
-    title: "Clinical Psychologist & Author",
+    quote: "Harshita has this uncanny gift of extracting the real unit economics and philosophical roots of how great enterprises are built. A masterclass interviewer.",
+    author: "Vani Kola",
+    title: "Managing Director & Venture Capitalist",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    quote: "Her interviews are mandatory listening for anyone building in India's startup ecosystem. Unhurried, deeply researched, and razor-sharp.",
+    author: "Deepinder Goyal",
+    title: "Tech Entrepreneur & Executive",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
   }
 ];
 
 export const PRESS_LOGOS = [
-  { name: "Forbes", subtitle: "Top 10 Podcasts to Watch" },
-  { name: "The New York Times", subtitle: "Critic's Choice" },
-  { name: "Apple Podcasts", subtitle: "Featured Show 2026" },
-  { name: "Spotify Originals", subtitle: "Partner Show" },
-  { name: "Wired", subtitle: "Essential Listening" },
-  { name: "Vogue", subtitle: "Culture Spotlight" }
+  { name: "Forbes India", subtitle: "#1 Female Business Voice" },
+  { name: "Economic Times", subtitle: "Top Founder Interviewer" },
+  { name: "Mint", subtitle: "Essential Listening" },
+  { name: "SheThePeople", subtitle: "Trailblazing Creator" },
+  { name: "Spotify India", subtitle: "Top 1% Business Audio" },
+  { name: "YourStory", subtitle: "Startup Masterclasses" }
 ];

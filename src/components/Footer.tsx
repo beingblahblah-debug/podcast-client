@@ -43,7 +43,7 @@ export default function Footer() {
                 Unedited show notes & backstage debriefs delivered every Sunday.
               </h2>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Join over 65,000 founders, creators, and thinkers who receive Jessica&apos;s personal book recommendations, unreleased audio snippets, and mental frameworks.
+                Join over 65,000 founders, venture capitalists, and thinkers who receive Harshita&apos;s personal startup breakdowns, unreleased audio snippets, and founder mental frameworks.
               </p>
             </div>
 
@@ -93,11 +93,11 @@ export default function Footer() {
                 <Radio className="w-5 h-5" />
               </div>
               <span className="font-serif font-bold text-xl text-white tracking-wide">
-                THE ELEVATE PODCAST
+                HARSHITA DAGHA SHOW
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              An intimate conversation space hosted by Jessica Chen exploring the mechanics of mastery, emotional depth, technology, and visionary leadership.
+              India&apos;s #1 female executive podcast platform hosted by Harshita Dagha. Unpacking startup scale, AI breakthroughs, and visionary leadership across Mumbai, Bengaluru, and global business hubs.
             </p>
             <div className="flex items-center space-x-3">
               <a 
@@ -184,7 +184,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  About Jessica Chen
+                  About Harshita Dagha
                 </Link>
               </li>
               <li>
@@ -252,7 +252,7 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} The Elevate Podcast with Jessica Chen. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} The Harshita Dagha Show. All rights reserved. Mumbai Studio HQ (BKC).</p>
           <div className="flex items-center space-x-6">
             <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>

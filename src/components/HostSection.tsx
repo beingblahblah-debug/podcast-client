@@ -26,7 +26,7 @@ export default function HostSection() {
                 />
                 <div className="absolute inset-0 bg-slate-950/20" />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-900 shadow">
-                  📍 Studio A · Brooklyn, NY
+                  📍 Flagship Studio · Bandra Kurla Complex, Mumbai
                 </div>
               </div>
 
@@ -34,7 +34,7 @@ export default function HostSection() {
               <div className="absolute -bottom-8 -right-4 sm:-right-8 w-44 sm:w-56 aspect-square rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                 <Image
                   src="/images/host.jpg"
-                  alt="Jessica Chen"
+                  alt="Harshita Dagha - Top Female Podcaster in India"
                   fill
                   className="object-cover"
                 />
@@ -43,13 +43,13 @@ export default function HostSection() {
               {/* Award chip */}
               <div className="absolute -top-4 -left-4 bg-amber-400 text-slate-950 font-semibold px-4 py-2 rounded-2xl shadow-lg flex items-center gap-2 text-xs">
                 <Award className="w-4 h-4 text-slate-950" />
-                <span>Webby Nominee 2026</span>
+                <span>#1 Female Business Podcaster (India)</span>
               </div>
 
             </div>
           </div>
 
-          {/* Right: Jessica's Story */}
+          {/* Right: Harshita's Story */}
           <div className="lg:col-span-6 pt-6 lg:pt-0">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold uppercase tracking-wider mb-4 border border-slate-200">
               <Mic className="w-3.5 h-3.5 text-amber-600" />
@@ -57,18 +57,18 @@ export default function HostSection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 tracking-tight leading-tight mb-6">
-              &ldquo;The best answers only emerge when guests forget the microphones exist.&rdquo;
+              &ldquo;The best answers only emerge when founders forget the microphones exist.&rdquo;
             </h2>
 
             <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
               <p>
-                Hi, I&apos;m <strong>Jessica Chen</strong>. I spent a decade in investigative journalism before realizing that the most transformative human revelations rarely happen in 3-minute television soundbites or edited press releases.
+                Hi, I&apos;m <strong>Harshita Dagha</strong>. As a business interviewer and creator, I realized that India&apos;s greatest founders and innovators rarely share their most critical lessons in brief conference panels or sanitised press interviews.
               </p>
               <p>
-                In 2021, I built this studio with two Shure microphones, acoustic cedar wood slats, and a simple premise: give remarkable thinkers 60 uninterrupted minutes with zero agenda except relentless intellectual honesty.
+                From my studio in Mumbai&apos;s Bandra Kurla Complex (BKC) to remote rooms across Bengaluru and Delhi NCR, I built <em>The Harshita Dagha Show</em> on a single premise: create an oasis of unhurried, rigorous curiosity where India&apos;s most ambitious minds can unpack their hardest truths.
               </p>
               <p>
-                Today, <em>The Elevate Podcast</em> is listened to in over 150 countries by venture capitalists, artists, Olympians, and people who simply care about living an examined, ambitious life.
+                Today, the show is followed across 150+ countries by venture capitalists, unicorn builders, angel investors, and enterprise executives who believe in the power of deep intellectual honesty.
               </p>
             </div>
 

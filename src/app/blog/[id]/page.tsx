@@ -173,18 +173,18 @@ export default function ArticleDetailPage({ params }: PageProps) {
         <div className="bg-gradient-to-r from-emerald-950 to-slate-900 text-white rounded-3xl p-8 border border-emerald-500/40 shadow-xl mb-16 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
-              Connect with Jessica Chen
+              Connect with Harshita Dagha
             </span>
             <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-1">
               Have questions about executive podcasting?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-md">
-              Chat directly with Jessica&apos;s production desk on WhatsApp regarding guest bookings, speaking engagements, and brand integrations.
+              Chat directly with Harshita Dagha&apos;s production desk on WhatsApp regarding guest bookings, speaking engagements, and brand integrations.
             </p>
           </div>
 
           <a
-            href="https://wa.me/919876543210?text=Hi%20Jessica,%20I%20read%20your%20article%20on%20podcasting%20and%20would%20like%20to%20connect."
+            href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20read%20your%20article%20on%20podcasting%20and%20would%20like%20to%20connect."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"

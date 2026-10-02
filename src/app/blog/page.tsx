@@ -34,7 +34,7 @@ export default function BlogPage() {
             Podcasting, Executive Media & Narrative Craft
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            In-depth guides, case studies, and editorial essays written by Jessica Chen on executive thought leadership, high-converting guest pitching, and broadcast media production.
+            In-depth guides, case studies, and editorial essays written by Harshita Dagha on executive thought leadership, high-converting guest pitching, and broadcast media production.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function BlogPage() {
               <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0 flex items-center justify-between border-t border-slate-100 pt-4">
                 <span className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span>By Jessica Chen</span>
+                  <span>By Harshita Dagha</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 group-hover:translate-x-1 transition-transform">
                   <span>Read Full Article</span>
