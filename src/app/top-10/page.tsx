@@ -50,7 +50,7 @@ export default function Top10Page() {
             The All-Time Top 10
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            The ten most downloaded, cited, and culturally significant episodes of The Elevate Podcast, chosen by 4.8 million listener streams across 150 nations.
+            The ten most downloaded, cited, and culturally significant masterclasses of The Harshita Dagha Show, chosen by 5.2 million listener streams across 150 nations.
           </p>
         </div>
 

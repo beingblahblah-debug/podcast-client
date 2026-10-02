@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/top-female-podcasters`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
       url: `${baseUrl}/top-10`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

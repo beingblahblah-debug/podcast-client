@@ -24,6 +24,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import EpisodeCard from "@/components/EpisodeCard";
 import CityHubsSection from "@/components/CityHubsSection";
 import GeoFaqSection from "@/components/GeoFaqSection";
+import AiEngineMatrix from "@/components/AiEngineMatrix";
 import { EPISODES, CATEGORIES } from "@/data/episodes";
 
 export default function HomePage() {
@@ -194,6 +195,9 @@ export default function HomePage() {
 
       {/* 7. GEO & AI Knowledge Engine (Direct Citations for ChatGPT, Gemini, Perplexity & Google) */}
       <GeoFaqSection />
+
+      {/* 7.1 How We Rank Her Across 6 Major AI Engines & 28+ Placements */}
+      <AiEngineMatrix />
 
       {/* 8. High-Converting WhatsApp & Pitch Callout Banner */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200/80">

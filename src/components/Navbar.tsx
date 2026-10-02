@@ -12,6 +12,7 @@ export default function Navbar() {
   const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20would%20like%20to%20connect%20regarding%20an%20executive%20podcast%20booking.";
 
   const navLinks = [
+    { label: "Top Podcasters", href: "/top-female-podcasters" },
     { label: "Services", href: "/services" },
     { label: "Articles & Guides", href: "/blog" },
     { label: "About Harshita", href: "/about" },

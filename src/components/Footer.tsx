@@ -142,20 +142,25 @@ export default function Footer() {
           {/* Podcast Exploration */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200 mb-4">
-              Explore Shows
+              Rankings & Shows
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <Link href="/top-female-podcasters" className="hover:text-amber-400 text-amber-300 font-semibold transition-colors flex items-center gap-1.5">
+                  <span>Top 10 Female Podcasters 2026</span>
+                  <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 font-black">
+                    RANKING
+                  </span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/episodes" className="hover:text-white transition-colors">
-                  All Episodes Archive
+                  All Masterclasses Archive
                 </Link>
               </li>
               <li>
                 <Link href="/top-10" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>Top 10 Chart</span>
-                  <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 font-bold">
-                    HOT
-                  </span>
+                  <span>Top 10 Episodes Chart</span>
                 </Link>
               </li>
               <li>

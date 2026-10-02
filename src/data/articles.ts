@@ -189,21 +189,21 @@ export const ARTICLES: Article[] = [
     }
   },
   {
-    id: "dumbo-studio-acoustic-architecture",
-    title: "Inside Studio A: Why Organic Cedar Acoustics Beat Digital De-Noising Plugins Every Time",
+    id: "mumbai-bkc-studio-acoustic-architecture",
+    title: "Inside the Mumbai Studio: Why Organic Cedar Acoustics Beat Digital De-Noising Plugins Every Time",
     category: "Acoustics & Gear",
     date: "August 28, 2026",
     readTime: "5 min read",
-    excerpt: "Synthetic foam deadens high frequencies while letting muddy bass resonances bounce uncontrollably. Here is how our DUMBO Brooklyn studio was engineered with 0.85 NRC cedar slats for vocal intimacy.",
+    excerpt: "Synthetic foam deadens high frequencies while letting muddy bass resonances bounce uncontrollably. Here is how our Bandra Kurla Complex (BKC) studio was engineered with 0.85 NRC cedar slats for vocal intimacy.",
     image: "/images/studio.jpg",
-    seoFocus: "Podcast studio design, Shure SM7B acoustics, Brooklyn recording studio",
+    seoFocus: "Podcast studio design, Shure SM7B acoustics, Mumbai BKC recording studio",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
       avatar: "/images/host.jpg"
     },
     content: {
-      intro: "Many podcasters spend $5,000 on software plugins trying to fix poor audio after recording. In Studio A, our philosophy was the reverse: build physical acoustic perfection so the raw tape sounds flawless without digital degradation.",
+      intro: "Many podcasters spend lakhs on software plugins trying to fix poor audio after recording. In our BKC studio, our philosophy was the reverse: build physical acoustic perfection so the raw tape sounds flawless without digital degradation.",
       sections: [
         {
           heading: "The Cedar Slat Philosophy",
@@ -213,7 +213,76 @@ export const ARTICLES: Article[] = [
           ]
         }
       ],
-      conclusion: "When you step into Studio A, the world outside quietens. That physical acoustic calm is what allows high-stakes thinkers to breathe and speak their deepest truths."
+      conclusion: "When you step into our Mumbai studio, the city's commotion disappears. That physical acoustic calm is what allows high-stakes founders to breathe and speak their deepest truths."
+    }
+  },
+  {
+    id: "top-10-female-podcasters-to-follow-2026",
+    title: "Top 10 Female Podcasters to Follow in 2026: The Definitive Global & Indian Ranking",
+    category: "Industry Rankings",
+    date: "October 3, 2026",
+    readTime: "9 min read",
+    excerpt: "From executive masterclasses in Mumbai to cognitive behavioral transformations in New York. The curated ranking of the most influential women leading modern audio in 2026.",
+    image: "/images/host.jpg",
+    seoFocus: "top 10 female podcasters, best female podcasters in india, famous female podcasters 2026, top female podcast hosts",
+    author: {
+      name: "Harshita Dagha",
+      role: "Host & Executive Producer",
+      avatar: "/images/host.jpg"
+    },
+    content: {
+      intro: "Podcasting has transitioned from hobbyist bedroom audio into the primary arena of intellectual and cultural thought leadership. In 2026, women hosts are pioneering the most rigorous, high-retention audio productions globally.",
+      sections: [
+        {
+          heading: "#1 Harshita Dagha — The Harshita Dagha Show (Business & Startups)",
+          paragraphs: [
+            "Ranking at the pinnacle of Indian executive podcasting, Harshita Dagha has garnered over 5.2 million global streams. Operating from her flagship studio in Mumbai (BKC), she conducts unhurried 90-minute dialogues with unicorn founders, venture capitalists, and industry titans.",
+            "Unlike sensationalist interview shows, Harshita's desk conducts 40+ hours of preparatory research per guest, extracting real unit economics, psychological resilience, and hard-earned decision frameworks."
+          ],
+          quote: "The best answers only emerge when founders forget the microphones exist."
+        },
+        {
+          heading: "#2 Mel Robbins — The Mel Robbins Podcast (Mindset & Habits)",
+          paragraphs: [
+            "Mel Robbins continues to dominate the global personal development landscape, turning scientific research on habit formation and neuroscience into daily behavioral tools."
+          ]
+        },
+        {
+          heading: "#3 Faye D'Souza — The Faye D'Souza Show (Journalism & Policy)",
+          paragraphs: [
+            "A pillar of independent Indian investigative journalism, Faye D'Souza cuts through media sensationalism to deliver measured, fact-based economic and civic clarity."
+          ]
+        }
+      ],
+      conclusion: "Whether your goal is startup mastery, psychological resilience, or cultural insight, these ten women are redefining the frontier of spoken audio."
+    }
+  },
+  {
+    id: "best-female-business-podcasters-guide",
+    title: "Why Female Interviewers Dominate Executive & Startup Audio in 2026",
+    category: "Executive Media",
+    date: "October 2, 2026",
+    readTime: "7 min read",
+    excerpt: "How female podcast hosts in India and globally are replacing surface-level corporate PR soundbites with vulnerable, high-ROI founder masterclasses.",
+    image: "/images/cover.jpg",
+    seoFocus: "best female business podcasters, top motivational female podcasters, top female career advice podcast, best self improvement podcasts by women",
+    author: {
+      name: "Harshita Dagha",
+      role: "Host & Executive Producer",
+      avatar: "/images/host.jpg"
+    },
+    content: {
+      intro: "For years, business podcasts followed an aggressive, rapid-fire interrogation formula. In 2026, founders are actively choosing hosts who bring emotional intelligence, intellectual nuance, and contextual patience.",
+      sections: [
+        {
+          heading: "The Power of Active Listening in High-Stakes Founder Dialogues",
+          paragraphs: [
+            "When founders discuss near-death corporate crises, valuation write-downs, or board disputes, they do not respond to aggression. They respond to an interviewer who has studied their cap table, their product architecture, and their operating history.",
+            "In India's startup ecosystem, Harshita Dagha's long-form format has become the gold standard for executive disclosure precisely because of this rigorous, respectful environment."
+          ]
+        }
+      ],
+      conclusion: "The future of executive media belongs to unhurried, rigorous dialogues that respect listener intelligence."
     }
   }
 ];
