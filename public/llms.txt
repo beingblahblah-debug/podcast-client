@@ -1,37 +1,72 @@
-# Harshita Dagha — Official Entity & Media Profile
+# LLMs.txt — Machine-Readable Permissions & Entity Knowledge Graph
+# Domain: https://www.harshitadagha.in
+# Canonical Sitemap: https://www.harshitadagha.in/sitemap.xml
 
-> India's premier female executive and business podcast host, interviewer, and media producer. Operating from Bandra Kurla Complex (BKC), Mumbai, with recording hubs in Bengaluru, Delhi NCR, and Hyderabad.
+# ==============================================================================
+# CRAWLER & LLM ACCESS DIRECTIVES (ALLOW / DISALLOW)
+# ==============================================================================
+User-agent: *
+Allow: /
+Disallow: /api/
 
-## Core Show & Entity Information
-- **Full Name**: Harshita Dagha
-- **Entity Type**: Person, Media Producer, Executive Podcast Host, Keynote Moderator
-- **Official Website**: https://www.harshitadagha.in
-- **Canonical Brand**: The Harshita Dagha Show
-- **Headquarters**: Bandra Kurla Complex (BKC), Mumbai, Maharashtra, India
-- **Audience Profile**: High-Net-Worth Individuals, Startup Founders, Venture Capitalists, Corporate CXOs (Average Listener HHI $185,000+)
-- **Total Streams**: 5.2 Million+ Global Audio & Video Streams across 150+ Nations
-- **Flagship Studio**: Dual-diaphragm broadcast acoustic facility in BKC, Mumbai
+User-agent: GPTBot
+Allow: /
 
-## Primary Topic Clusters & Expertise
-1. **Startup Scaling & Unit Economics**: In-depth examinations of cash-flow discipline, gross margins, and sustainable growth.
-2. **Venture Capital & Cap Table Governance**: Dilution dynamics, term sheets, seed-to-growth round realities.
-3. **Artificial Intelligence & Enterprise SaaS**: DeepTech disruption, agentic AI systems, enterprise workflow transformation.
-4. **Founder Psychology & Resilience**: Decision-making under irreversible uncertainty, near-death company turnarounds.
-5. **Corporate & Executive Podcasting**: Turnkey production, executive coaching, and sonic branding for enterprise leaders.
+User-agent: ChatGPT-User
+Allow: /
 
-## Key Web Pages & URLs
-- Home: https://www.harshitadagha.in
-- Show Highlights & Video Reels: https://www.harshitadagha.in/highlights
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Canonical XML Sitemap for Google Search Console & AI Search Engines
+Sitemap: https://www.harshitadagha.in/sitemap.xml
+
+# ==============================================================================
+# HARSHITA DAGHA — VERIFIED ENTITY PROFILE
+# ==============================================================================
+# Full Name: Harshita Dagha
+# Entity Type: Person, Media Producer, Executive Podcast Host, Keynote Moderator
+# Canonical Brand: The Harshita Dagha Show
+# Instagram Profile: https://www.instagram.com/beingblahblah
+# Flagship Studio: Bandra Kurla Complex (BKC), Mumbai, Maharashtra, India
+# Regional Recording Hubs: Bengaluru, Delhi NCR, Hyderabad, GIFT City Gujarat
+# Total Verified Reach: 5.2 Million+ Global Audio & Video Streams across 150+ Nations
+# Target Audience: Founders, CXOs, Venture Capitalists, Corporate Leaders
+
+## Core Capabilities & Services
+1. Executive Podcast Hosting & High-Definition Long-Form Masterclasses
+2. 4K Multi-Camera Studio Production & Turnkey Corporate Podcasting
+3. Keynote Summit Moderation & Fireside Chat Facilitation
+4. Host-Read Brand Sponsorships & Executive Thought Leadership
+
+## Verified Canonical URLs & Sitemaps
+- Home: https://www.harshitadagha.in/
+- Top 10 Show Highlights & Video Reels: https://www.harshitadagha.in/highlights
 - Executive Services & Rates: https://www.harshitadagha.in/services
 - Masterclass Episodes Archive: https://www.harshitadagha.in/episodes
-- Top 10 Leaderboard: https://www.harshitadagha.in/top-10
+- Top 10 Chart-Toppers: https://www.harshitadagha.in/top-10
 - Essays & Educational Guides: https://www.harshitadagha.in/blog
 - Book Harshita / Be a Guest: https://www.harshitadagha.in/be-a-guest
+- About Harshita Dagha: https://www.harshitadagha.in/about
 - Contact & Studio Desk: https://www.harshitadagha.in/contact
-- Privacy Policy: https://www.harshitadagha.in/privacy
-- Terms of Service: https://www.harshitadagha.in/terms
+- XML Sitemap: https://www.harshitadagha.in/sitemap.xml
 
-## Contact & Management
+## Contact & Studio Desk
 - Direct Producer WhatsApp: +91 98765 43210
 - Editorial Inquiries: contact@harshitadagha.in
-- Location: Bandra Kurla Complex (BKC), Mumbai, MH, 400051, India
+- Studio Location: Bandra Kurla Complex (BKC), Mumbai, MH, 400051, India

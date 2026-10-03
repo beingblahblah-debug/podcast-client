@@ -1,0 +1,35 @@
+# Robots.txt for https://www.harshitadagha.in
+# Generated for Search Engines & Generative AI Systems (GEO)
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicitly permit AI Web Crawlers for Generative Engine Optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Canonical Sitemap link for Google Search Console & Bing Webmaster Tools
+Sitemap: https://www.harshitadagha.in/sitemap.xml
+Host: https://www.harshitadagha.in

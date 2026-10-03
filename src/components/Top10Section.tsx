@@ -18,10 +18,8 @@ import {
   Mic2
 } from "lucide-react";
 import { EPISODES, Episode } from "@/data/episodes";
-import { useAudio } from "@/context/AudioContext";
 
 export default function Top10Section({ isFullPage = false }: { isFullPage?: boolean }) {
-  const { playEpisode, isPlaying, currentEpisode, togglePlay } = useAudio();
   const [filter, setFilter] = useState<"all" | "trending" | "business">("all");
 
   const top10Episodes = EPISODES.filter((ep) => ep.isTop10).sort((a, b) => (a.rank || 99) - (b.rank || 99));
@@ -108,17 +106,12 @@ export default function Top10Section({ isFullPage = false }: { isFullPage?: bool
         {/* Top 10 List */}
         <div className="space-y-3.5">
           {displayList.map((episode) => {
-            const isThisPlaying = isPlaying && currentEpisode?.id === episode.id;
             const rank = episode.rank || 0;
 
             return (
               <div
                 key={episode.id}
-                className={`group relative rounded-2xl bg-white p-4 sm:p-5 border transition-all duration-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${
-                  isThisPlaying 
-                    ? "border-amber-400 ring-2 ring-amber-400/20 shadow-md bg-amber-50/20" 
-                    : "border-slate-200/80 hover:border-slate-300 hover:shadow-md"
-                }`}
+                className="group relative rounded-2xl bg-white p-4 sm:p-5 border border-slate-200/80 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
               >
                 {/* Left block: Rank & Play & Title */}
                 <div className="flex items-center space-x-4 min-w-0 flex-1">
@@ -128,28 +121,14 @@ export default function Top10Section({ isFullPage = false }: { isFullPage?: bool
                     #{rank < 10 ? `0${rank}` : rank}
                   </div>
 
-                  {/* Play circle */}
-                  <button
-                    onClick={() => {
-                      if (currentEpisode?.id === episode.id) {
-                        togglePlay();
-                      } else {
-                        playEpisode(episode);
-                      }
-                    }}
-                    className={`w-11 h-11 rounded-2xl shrink-0 flex items-center justify-center transition-all ${
-                      isThisPlaying
-                        ? "bg-amber-500 text-slate-950 shadow-md scale-105"
-                        : "bg-slate-900 group-hover:bg-amber-500 text-white group-hover:text-slate-950 shadow-sm"
-                    }`}
-                    title={isThisPlaying ? "Pause episode" : "Play episode"}
+                  {/* Episode Link Icon */}
+                  <Link
+                    href={`/episodes/${episode.id}`}
+                    className="w-11 h-11 rounded-2xl shrink-0 flex items-center justify-center bg-slate-100 group-hover:bg-amber-400 text-slate-700 group-hover:text-slate-950 transition-colors shadow-2xs"
+                    title="Explore show notes"
                   >
-                    {isThisPlaying ? (
-                      <Pause className="w-4 h-4 fill-current" />
-                    ) : (
-                      <Play className="w-4 h-4 fill-current ml-0.5" />
-                    )}
-                  </button>
+                    <Mic2 className="w-4 h-4" />
+                  </Link>
 
                   {/* Episode details */}
                   <div className="min-w-0 flex-1 pr-2">

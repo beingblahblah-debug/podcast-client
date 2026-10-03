@@ -25,7 +25,6 @@ import {
 } from "lucide-react";
 import { XTwitterIcon, LinkedInIcon } from "@/components/SocialIcons";
 import { EPISODES, Episode } from "@/data/episodes";
-import { useAudio } from "@/context/AudioContext";
 import EpisodeCard from "@/components/EpisodeCard";
 
 interface PageProps {
@@ -39,9 +38,6 @@ export default function EpisodeDetailPage({ params }: PageProps) {
   if (!episode) {
     notFound();
   }
-
-  const { playEpisode, isPlaying, currentEpisode, togglePlay, currentTime, duration, seek } = useAudio();
-  const isThisPlaying = isPlaying && currentEpisode?.id === episode.id;
 
   const [activeTab, setActiveTab] = useState<"notes" | "transcript">("notes");
   const [copied, setCopied] = useState(false);
@@ -190,87 +186,94 @@ export default function EpisodeDetailPage({ params }: PageProps) {
           </p>
         </div>
 
-        {/* Big Dedicated Audio Player Banner */}
-        <div className="bg-slate-950 text-white rounded-3xl p-6 sm:p-8 shadow-2xl mb-12 relative overflow-hidden">
+        {/* Executive Masterclass Dialogue Showcase & Official Streaming Links */}
+        <div className="bg-slate-950 text-white rounded-3xl p-6 sm:p-8 shadow-2xl mb-12 relative overflow-hidden border border-slate-800">
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
+          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             
-            {/* Big Play / Pause button */}
-            <button
-              onClick={() => {
-                if (currentEpisode?.id === episode.id) {
-                  togglePlay();
-                } else {
-                  playEpisode(episode);
-                }
-              }}
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-lg shadow-amber-400/20 cursor-pointer"
-              title={isThisPlaying ? "Pause" : "Play"}
-            >
-              {isThisPlaying ? (
-                <Pause className="w-8 h-8 fill-current" />
-              ) : (
-                <Play className="w-8 h-8 fill-current ml-1" />
-              )}
-            </button>
-
-            {/* Middle audio details */}
-            <div className="flex-1 min-w-0 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-                <span className="text-xs text-amber-400 font-mono tracking-widest uppercase">
-                  {isThisPlaying ? "Now Playing In Full Quality" : "Audio Master Available"}
+            {/* Left Column: Masterclass Badge & Title */}
+            <div className="max-w-xl">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="text-xs text-amber-400 font-mono tracking-widest uppercase bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 rounded-full">
+                  Official Masterclass Dialogue
                 </span>
                 <span className="text-slate-600">·</span>
-                <span className="text-xs text-slate-400 font-mono">Stereo 44.1kHz</span>
+                <span className="text-xs text-slate-400 font-mono">Bandra Kurla Complex (BKC) Studio Master</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-serif font-bold truncate text-white">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-1">
                 {episode.title}
               </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                Featuring {episode.guest.name} ({episode.guest.role})
+              <p className="text-xs sm:text-sm text-slate-400">
+                Featuring {episode.guest.name} ({episode.guest.role} at {episode.guest.company}) · Recorded live with host Harshita Dagha
               </p>
             </div>
 
-            {/* Quick action buttons */}
-            <div className="flex items-center gap-2.5 shrink-0">
+            {/* Right Column: Streaming Platform Badges & Share */}
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0 w-full lg:w-auto">
+              {episode.spotifyUrl && (
+                <a
+                  href={episode.spotifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-[#1DB954] hover:bg-[#1aa34a] text-slate-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
+                >
+                  <span>Listen on Spotify</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+
+              {episode.appleUrl && (
+                <a
+                  href={episode.appleUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105 active:scale-95"
+                >
+                  <span>Apple Podcasts</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+
+              {episode.youtubeUrl && (
+                <a
+                  href={episode.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-[#FF0000] hover:bg-[#e00000] text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
+                >
+                  <span>Watch on YouTube</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+
               <button
                 onClick={handleShare}
-                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1.5 transition-colors relative"
+                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1.5 transition-colors relative cursor-pointer"
               >
                 <Share2 className="w-3.5 h-3.5" />
                 <span>Share</span>
                 {copied && (
-                  <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                  <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded shadow whitespace-nowrap">
                     Link Copied!
                   </span>
                 )}
               </button>
-
-              <a
-                href={episode.audioUrl}
-                download
-                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1.5 transition-colors"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>Download MP3</span>
-              </a>
             </div>
 
           </div>
 
-          {/* Chapters Quick Jump Bar */}
-          <div className="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 overflow-x-auto gap-4">
-            <span className="font-semibold text-slate-300 shrink-0">Quick Chapters:</span>
+          {/* Chapters Outline Strip */}
+          <div className="mt-6 pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 overflow-x-auto gap-4">
+            <span className="font-semibold text-slate-300 shrink-0">Key Chapter Outline:</span>
             <div className="flex items-center gap-2">
               {episode.chapters.slice(0, 4).map((ch, idx) => (
-                <button
+                <span
                   key={idx}
-                  onClick={() => playEpisode(episode, ch.seconds)}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-amber-300 text-xs font-mono transition-colors whitespace-nowrap"
+                  className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono whitespace-nowrap"
                 >
-                  {ch.time} {ch.title}
-                </button>
+                  <strong className="text-amber-400 mr-1">{ch.time}</strong> {ch.title}
+                </span>
               ))}
             </div>
           </div>
@@ -383,33 +386,31 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Clickable Timestamp Chapters */}
+              {/* Show Chapters Outline */}
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs">
                 <h3 className="font-serif font-bold text-xl text-slate-950 mb-2">
-                  Interactive Chapters
+                  Conversation Chapters & Topics
                 </h3>
                 <p className="text-xs text-slate-500 mb-6">
-                  Click any timestamp below to jump directly to that section in the player.
+                  Detailed timestamp index covering key discussion milestones in this masterclass dialogue.
                 </p>
 
                 <div className="divide-y divide-slate-100">
                   {episode.chapters.map((ch, idx) => (
                     <div
                       key={idx}
-                      onClick={() => playEpisode(episode, ch.seconds)}
-                      className="py-3.5 flex items-center justify-between group cursor-pointer hover:bg-slate-50 px-3 rounded-xl transition-colors"
+                      className="py-3.5 flex items-center justify-between px-3 rounded-xl hover:bg-slate-50 transition-colors"
                     >
                       <div className="flex items-center space-x-3">
-                        <span className="font-mono text-xs font-bold text-amber-700 bg-amber-50 group-hover:bg-amber-100 px-2 py-1 rounded">
+                        <span className="font-mono text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200/60">
                           {ch.time}
                         </span>
-                        <span className="text-sm font-medium text-slate-800 group-hover:text-slate-950">
+                        <span className="text-sm font-medium text-slate-800">
                           {ch.title}
                         </span>
                       </div>
-                      <span className="text-xs text-slate-400 group-hover:text-slate-900 group-hover:underline flex items-center gap-1">
-                        <span>Jump</span>
-                        <Play className="w-3 h-3 fill-current" />
+                      <span className="text-xs text-slate-400 font-mono">
+                        Part {idx + 1}
                       </span>
                     </div>
                   ))}

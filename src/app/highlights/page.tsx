@@ -203,12 +203,26 @@ export default function HighlightsPage() {
           ))}
         </div>
 
-        {/* Top 10 Reels Grid (Direct Page Navigation - NO POPUPS) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {/* Mobile Swipe Cue Banner */}
+        <div className="flex sm:hidden items-center justify-between bg-white rounded-2xl px-4 py-3 border border-slate-200/80 shadow-2xs mb-6">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse" />
+            <span className="text-xs font-bold text-slate-900">
+              Top 10 Show Highlights
+            </span>
+          </div>
+          <span className="text-xs font-bold text-amber-800 flex items-center gap-1">
+            <span>Swipe Right</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </span>
+        </div>
+
+        {/* Top 10 Reels Container: Mobile Horizontal Snap Slider, Desktop 3-Column Grid */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-6 -mx-4 px-4 scrollbar-none sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:mx-0 sm:px-0 sm:overflow-visible mb-16 sm:mb-20">
           {filteredReels.map((reel, idx) => (
             <div
               key={reel.id}
-              className="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className="w-[84vw] max-w-[340px] sm:w-auto shrink-0 snap-center bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* 9:16 Vertical Thumbnail Card */}

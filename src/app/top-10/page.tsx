@@ -19,13 +19,12 @@ import {
   TrendingUp,
   Bookmark,
   Mic2,
-  Radio
+  Radio,
+  BookOpen
 } from "lucide-react";
 import { EPISODES, Episode } from "@/data/episodes";
-import { useAudio } from "@/context/AudioContext";
 
 export default function Top10Page() {
-  const { playEpisode, isPlaying, currentEpisode, togglePlay } = useAudio();
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const top10 = EPISODES.filter((ep) => ep.isTop10).sort((a, b) => (a.rank || 99) - (b.rank || 99));
@@ -91,20 +90,14 @@ export default function Top10Page() {
               </p>
 
               <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                <button
-                  onClick={() => {
-                    if (currentEpisode?.id === top10[1].id) togglePlay();
-                    else playEpisode(top10[1]);
-                  }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all"
+                <Link
+                  href={`/episodes/${top10[1].id}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all group"
                 >
-                  {isPlaying && currentEpisode?.id === top10[1].id ? (
-                    <Pause className="w-3.5 h-3.5 fill-white" />
-                  ) : (
-                    <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
-                  )}
-                  <span>Listen ({top10[1].duration})</span>
-                </button>
+                  <BookOpen className="w-3.5 h-3.5 text-amber-400" />
+                  <span>View Masterclass</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
                 <span className="text-xs text-slate-400 font-mono">{top10[1].streamCount} plays</span>
               </div>
             </div>
@@ -148,20 +141,14 @@ export default function Top10Page() {
               </p>
 
               <div className="flex items-center justify-between pt-4 border-t border-amber-100">
-                <button
-                  onClick={() => {
-                    if (currentEpisode?.id === top10[0].id) togglePlay();
-                    else playEpisode(top10[0]);
-                  }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md"
+                <Link
+                  href={`/episodes/${top10[0].id}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md group"
                 >
-                  {isPlaying && currentEpisode?.id === top10[0].id ? (
-                    <Pause className="w-4 h-4 fill-white" />
-                  ) : (
-                    <Play className="w-4 h-4 fill-white ml-0.5" />
-                  )}
-                  <span>Play Masterclass</span>
-                </button>
+                  <BookOpen className="w-4 h-4 text-amber-400" />
+                  <span>Explore Masterclass</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
                 <span className="text-xs text-amber-900 font-bold font-mono">
                   {top10[0].streamCount} streams
                 </span>
@@ -201,20 +188,14 @@ export default function Top10Page() {
               </p>
 
               <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                <button
-                  onClick={() => {
-                    if (currentEpisode?.id === top10[2].id) togglePlay();
-                    else playEpisode(top10[2]);
-                  }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all"
+                <Link
+                  href={`/episodes/${top10[2].id}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all group"
                 >
-                  {isPlaying && currentEpisode?.id === top10[2].id ? (
-                    <Pause className="w-3.5 h-3.5 fill-white" />
-                  ) : (
-                    <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
-                  )}
-                  <span>Listen ({top10[2].duration})</span>
-                </button>
+                  <BookOpen className="w-3.5 h-3.5 text-amber-400" />
+                  <span>View Masterclass</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
                 <span className="text-xs text-slate-400 font-mono">{top10[2].streamCount} plays</span>
               </div>
             </div>
@@ -233,17 +214,12 @@ export default function Top10Page() {
 
           <div className="space-y-4">
             {top10.map((episode) => {
-              const isThisPlaying = isPlaying && currentEpisode?.id === episode.id;
               const rank = episode.rank || 0;
 
               return (
                 <div
                   key={episode.id}
-                  className={`p-4 sm:p-5 rounded-2xl border transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${
-                    isThisPlaying
-                      ? "border-amber-400 bg-amber-50/20 shadow-md ring-1 ring-amber-400/40"
-                      : "border-slate-100 hover:border-slate-300 hover:bg-slate-50/50"
-                  }`}
+                  className="p-4 sm:p-5 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-slate-50/50 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
                 >
                   {/* Left: Rank & Info */}
                   <div className="flex items-center space-x-4 min-w-0 flex-1">
@@ -251,23 +227,13 @@ export default function Top10Page() {
                       #{rank < 10 ? `0${rank}` : rank}
                     </span>
 
-                    <button
-                      onClick={() => {
-                        if (currentEpisode?.id === episode.id) togglePlay();
-                        else playEpisode(episode);
-                      }}
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                        isThisPlaying
-                          ? "bg-amber-500 text-slate-950 shadow"
-                          : "bg-slate-900 text-white hover:bg-slate-800"
-                      }`}
+                    <Link
+                      href={`/episodes/${episode.id}`}
+                      className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 flex items-center justify-center shrink-0 transition-colors shadow-xs"
+                      title="View Show Notes"
                     >
-                      {isThisPlaying ? (
-                        <Pause className="w-4 h-4 fill-current" />
-                      ) : (
-                        <Play className="w-4 h-4 fill-current ml-0.5" />
-                      )}
-                    </button>
+                      <Mic2 className="w-4 h-4" />
+                    </Link>
 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2 mb-0.5">

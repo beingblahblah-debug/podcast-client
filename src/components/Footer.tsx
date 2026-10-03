@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Radio, 
   Mail, 
@@ -88,11 +89,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
           {/* Brand Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-amber-400 flex items-center justify-center text-slate-950">
-                <Radio className="w-5 h-5" />
+            <Link href="/" className="flex items-center space-x-3 mb-4 group">
+              <div className="relative w-10 h-10 rounded-xl bg-black border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt="Harshita Dagha Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain p-1"
+                />
               </div>
-              <span className="font-serif font-bold text-xl text-white tracking-wide">
+              <span className="font-serif font-bold text-xl text-white tracking-wide group-hover:text-amber-400 transition-colors">
                 HARSHITA DAGHA SHOW
               </span>
             </Link>

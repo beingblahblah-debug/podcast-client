@@ -25,7 +25,6 @@ import {
 } from "lucide-react";
 import { ARTICLES, Article } from "@/data/articles";
 import { EPISODES, Episode } from "@/data/episodes";
-import { useAudio } from "@/context/AudioContext";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -39,7 +38,6 @@ export default function ArticleDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const { playEpisode, isPlaying, currentEpisode, togglePlay } = useAudio();
   const [copied, setCopied] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -235,85 +233,34 @@ export default function ArticleDetailPage({ params }: PageProps) {
           
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <div className="flex items-center space-x-4">
-              {/* Play / Pause Button */}
-              <button
-                onClick={() => {
-                  const audioEpisode: Episode = {
-                    id: `audio-brief-${article.id}`,
-                    number: 0,
-                    season: 1,
-                    title: `Audio Brief: ${article.title}`,
-                    subtitle: `Executive Voice Brief · The Harshita Dagha Show`,
-                    category: "Leadership",
-                    duration: "4 min",
-                    durationSec: 240,
-                    releaseDate: article.date,
-                    coverImage: article.image,
-                    audioUrl: "/audio/sample-episode.wav",
-                    isTop10: false,
-                    streamCount: "28K",
-                    rating: 5,
-                    summary: article.excerpt,
-                    description: article.content.intro,
-                    takeaways: [],
-                    guest: {
-                      name: "Harshita Dagha",
-                      role: "Host & Narrator",
-                      company: "The Harshita Dagha Show",
-                      avatar: "/images/host.jpg",
-                      bio: "Executive host and interviewer."
-                    },
-                    chapters: [],
-                    transcriptSnippet: article.content.intro,
-                    spotifyUrl: "https://spotify.com",
-                    appleUrl: "https://apple.com",
-                    youtubeUrl: "https://youtube.com"
-                  };
-
-                  if (currentEpisode?.id === `audio-brief-${article.id}`) {
-                    togglePlay();
-                  } else {
-                    playEpisode(audioEpisode);
-                  }
-                }}
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-lg shadow-amber-400/25 cursor-pointer"
-                title={isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? "Pause Voice Brief" : "Listen to Voice Brief"}
-              >
-                {isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? (
-                  <Pause className="w-6 h-6 fill-current" />
-                ) : (
-                  <Play className="w-6 h-6 fill-current ml-0.5" />
-                )}
-              </button>
+              <div className="w-14 h-14 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 shadow-lg shadow-amber-400/20">
+                <BookOpen className="w-6 h-6" />
+              </div>
 
               <div>
                 <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-1">
-                  <Headphones className="w-3 h-3 text-amber-400" />
-                  <span>Voice Brief Mode (Audio Narration)</span>
-                  {isPlaying && currentEpisode?.id === `audio-brief-${article.id}` && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
-                  )}
+                  <span>Executive Editorial Brief</span>
                 </div>
 
                 <h3 className="font-serif font-bold text-base sm:text-lg text-white">
-                  Listen to this Article
+                  Harshita Dagha Studio Intelligence
                 </h3>
                 <p className="text-xs text-slate-400">
-                  Narrated from Harshita Dagha&apos;s Mumbai Studio Desk · 4 min executive audio summary
+                  Published from Bandra Kurla Complex (BKC) Media Desk, Mumbai · Verified Editorial
                 </p>
               </div>
             </div>
 
-            {/* Audio Waveform Graphic */}
-            <div className="flex items-center gap-1 self-stretch md:self-auto justify-end py-1">
-              <div className="flex items-center gap-1 h-8 px-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                <span className={`w-1 rounded-full bg-amber-400 transition-all ${isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? "h-6 animate-pulse" : "h-2"}`} />
-                <span className={`w-1 rounded-full bg-amber-400 transition-all ${isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? "h-4 animate-bounce" : "h-3"}`} />
-                <span className={`w-1 rounded-full bg-amber-400 transition-all ${isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? "h-7 animate-pulse" : "h-4"}`} />
-                <span className={`w-1 rounded-full bg-amber-400 transition-all ${isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? "h-3 animate-bounce" : "h-2"}`} />
-                <span className={`w-1 rounded-full bg-amber-400 transition-all ${isPlaying && currentEpisode?.id === `audio-brief-${article.id}` ? "h-5 animate-pulse" : "h-3"}`} />
-                <span className="text-[11px] font-mono text-amber-300 ml-2">44.1 kHz Studio Audio</span>
-              </div>
+            <div className="flex items-center gap-2 w-full md:w-auto">
+              <a
+                href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20connecting%20regarding%20this%20article."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>Discuss on WhatsApp</span>
+              </a>
             </div>
           </div>
         </div>
@@ -459,13 +406,11 @@ export default function ArticleDetailPage({ params }: PageProps) {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {relatedEpisodes.map((ep) => {
-                const isThisPlaying = isPlaying && currentEpisode?.id === ep.id;
-                return (
-                  <div
-                    key={ep.id}
-                    className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between"
-                  >
+              {relatedEpisodes.map((ep) => (
+                <div
+                  key={ep.id}
+                  className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between"
+                >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-3">
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
@@ -484,39 +429,20 @@ export default function ArticleDetailPage({ params }: PageProps) {
                     </div>
 
                     <div className="flex items-center justify-between pt-3 border-t border-slate-100">
-                      <button
-                        onClick={() => {
-                          if (currentEpisode?.id === ep.id) {
-                            togglePlay();
-                          } else {
-                            playEpisode(ep);
-                          }
-                        }}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950 text-white text-xs font-bold hover:bg-amber-600 transition-colors cursor-pointer"
-                      >
-                        {isThisPlaying ? (
-                          <>
-                            <Pause className="w-3 h-3 fill-current" />
-                            <span>Pause</span>
-                          </>
-                        ) : (
-                          <>
-                            <Play className="w-3 h-3 fill-current" />
-                            <span>Play Episode</span>
-                          </>
-                        )}
-                      </button>
-
                       <Link
                         href={`/episodes/${ep.id}`}
-                        className="text-xs font-bold text-slate-700 hover:text-amber-700"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950 text-white text-xs font-bold hover:bg-amber-600 transition-colors"
                       >
-                        Details →
+                        <span>View Masterclass</span>
+                        <ArrowRight className="w-3 h-3" />
                       </Link>
+
+                      <span className="text-xs text-slate-400 font-mono">
+                        {ep.duration}
+                      </span>
                     </div>
                   </div>
-                );
-              })}
+              ))}
             </div>
           </div>
         )}
@@ -546,17 +472,23 @@ export default function ArticleDetailPage({ params }: PageProps) {
           </a>
         </div>
 
-        {/* Related Articles */}
+        {/* Related Articles with Mobile Horizontal Swipe Carousel */}
         <div className="pt-10 border-t border-slate-200">
-          <h3 className="text-2xl font-serif font-bold text-slate-950 mb-6">
-            Continue Reading More Guides
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-950">
+              Continue Reading More Guides
+            </h3>
+            <span className="text-xs text-amber-800 font-bold inline-flex items-center gap-1 sm:hidden">
+              <span>Swipe right →</span>
+            </span>
+          </div>
+
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-0 sm:px-0 sm:overflow-visible">
             {relatedArticles.map((rel) => (
               <Link
                 key={rel.id}
                 href={`/blog/${rel.id}`}
-                className="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all flex flex-col justify-between"
+                className="w-[80vw] sm:w-auto shrink-0 snap-center group p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">

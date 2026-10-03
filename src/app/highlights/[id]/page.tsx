@@ -432,18 +432,23 @@ export default function ReelDetailPage({ params }: PageProps) {
           ) : <div />}
         </div>
 
-        {/* Explore More Highlights Grid */}
+        {/* Explore More Highlights with Mobile Horizontal Snapping Slider */}
         <div className="pt-8 border-t border-slate-200">
-          <h3 className="font-serif font-bold text-xl text-slate-950 mb-6">
-            More Show Highlights from @beingblahblah
-          </h3>
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="font-serif font-bold text-xl text-slate-950">
+              More Show Highlights from @beingblahblah
+            </h3>
+            <span className="text-xs text-amber-800 font-bold inline-flex items-center gap-1 sm:hidden">
+              <span>Swipe right →</span>
+            </span>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 scrollbar-none sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-0 sm:px-0 sm:overflow-visible">
             {otherReels.map((item) => (
               <Link
                 key={item.id}
                 href={`/highlights/${item.id}`}
-                className="group bg-white rounded-2xl p-4 border border-slate-200/90 hover:border-amber-300 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+                className="w-[78vw] max-w-[290px] sm:w-auto shrink-0 snap-center group bg-white rounded-2xl p-4 border border-slate-200/90 hover:border-amber-300 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="relative aspect-[9/13] rounded-xl overflow-hidden mb-3 bg-slate-950">

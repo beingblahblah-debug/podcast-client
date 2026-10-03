@@ -78,6 +78,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Harshita Dagha", url: "https://www.harshitadagha.in" }],
   creator: "Harshita Dagha",
   publisher: "Harshita Dagha Media Group",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "64x64" },
+      { url: "/images/logo.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/logo.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   alternates: {
     canonical: "https://www.harshitadagha.in",
   },
@@ -179,6 +189,7 @@ const jsonLd = {
       "alternateName": ["The Harshita Dagha Podcast", "Harshita Dagha Show"],
       "description": "India's premier executive podcast featuring unscripted, intellectual, and high-impact conversations with startup founders, CEOs, innovators, and investors.",
       "url": "https://www.harshitadagha.in",
+      "image": "https://www.harshitadagha.in/images/logo.png",
       "author": { "@id": "https://www.harshitadagha.in/#harshitadagha" },
       "inLanguage": ["en-IN", "hi-IN"],
       "genre": ["Business", "Technology", "Entrepreneurship", "Leadership"]
@@ -187,6 +198,8 @@ const jsonLd = {
       "@type": "ProfessionalService",
       "name": "Harshita Dagha Media & Broadcast Studio",
       "url": "https://www.harshitadagha.in",
+      "logo": "https://www.harshitadagha.in/images/logo.png",
+      "image": "https://www.harshitadagha.in/images/studio.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Bandra Kurla Complex (BKC)",

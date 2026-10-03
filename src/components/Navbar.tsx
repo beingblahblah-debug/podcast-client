@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight, ChevronRight } from "lucide-react";
 
@@ -22,18 +23,28 @@ export default function Navbar() {
   return (
     <header className="sticky top-3 sm:top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto transition-all relative">
       {/* Glossy Floating Glass Container - Generous Spacing for Brand, Nav, and CTAs */}
-      <div className="relative rounded-full bg-white/90 backdrop-blur-2xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-5 sm:px-8 py-3 flex items-center justify-between transition-all">
+      <div className="relative rounded-full bg-white/90 backdrop-blur-2xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-5 sm:px-8 py-2.5 sm:py-3 flex items-center justify-between transition-all">
         
         {/* Subtle glossy sheen highlight */}
         <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
 
-        {/* 1. Left Brand Identity - Anchored cleanly on the left */}
+        {/* 1. Left Brand Identity with Official HD Logo */}
         <Link 
           href="/" 
           title="Harshita Dagha - Return to Home" 
           aria-label="Harshita Dagha - Return to Home"
-          className="flex items-center group shrink-0 py-0.5 cursor-pointer mr-6 lg:mr-10"
+          className="flex items-center group shrink-0 py-0.5 cursor-pointer mr-6 lg:mr-10 gap-3"
         >
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-black border border-slate-900 shadow-sm flex items-center justify-center shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Harshita Dagha Official Monogram Logo"
+              width={40}
+              height={40}
+              className="object-contain p-1"
+              priority
+            />
+          </div>
           <div className="flex flex-col text-left">
             <span className="font-serif font-bold text-lg sm:text-xl text-slate-950 leading-none tracking-tight group-hover:text-amber-700 transition-colors">
               Harshita Dagha
