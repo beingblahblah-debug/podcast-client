@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "919876543210"; // Placeholder or user business number
+  const phoneNumber = "919876543210";
   const defaultMessage = encodeURIComponent(
     "Hi Harshita Dagha Media, I visited your website and would like to connect regarding an executive podcast episode / founder appearance / sponsorship inquiry."
   );
@@ -16,9 +15,9 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Connect on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_8px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_12px_30px_rgba(37,211,102,0.55)] hover:scale-105 active:scale-95 transition-all duration-300"
+      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 group flex items-center justify-center p-3 sm:px-4 sm:py-3 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_8px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_12px_30px_rgba(37,211,102,0.55)] hover:scale-105 active:scale-95 transition-all duration-300"
     >
-      <div className="relative">
+      <div className="relative flex items-center justify-center">
         {/* WhatsApp Icon SVG */}
         <svg
           className="w-6 h-6 fill-current"
@@ -31,7 +30,7 @@ export default function WhatsAppButton() {
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
         </span>
       </div>
-      <div className="flex flex-col text-left">
+      <div className="hidden sm:flex flex-col text-left ml-2.5">
         <span className="text-[10px] uppercase font-bold tracking-wider leading-none text-emerald-100">
           Direct Connect
         </span>
