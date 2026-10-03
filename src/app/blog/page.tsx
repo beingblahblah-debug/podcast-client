@@ -303,7 +303,7 @@ export default function BlogPage() {
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20read%20your%20articles%20and%20guides%20and%20would%20like%20to%20discuss%20an%20executive%20podcast%20project."
+              href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20read%20your%20articles%20and%20guides%20and%20would%20like%20to%20discuss%20an%20executive%20podcast%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-lg shadow-emerald-500/25 hover:scale-105 active:scale-95"

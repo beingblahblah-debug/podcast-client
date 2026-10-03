@@ -10,7 +10,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20would%20like%20to%20connect%20regarding%20an%20executive%20podcast%20booking.";
+  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20would%20like%20to%20connect%20regarding%20branding,%20PR,%20or%20podcast%20booking.";
 
   const navLinks = [
     { label: "Reels & Clips", href: "/highlights" },

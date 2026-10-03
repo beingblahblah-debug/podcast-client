@@ -253,7 +253,7 @@ export default function ArticleDetailPage({ params }: PageProps) {
 
             <div className="flex items-center gap-2 w-full md:w-auto">
               <a
-                href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20connecting%20regarding%20this%20article."
+                href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20am%20interested%20in%20connecting%20regarding%20this%20article."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full md:w-auto px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5"
@@ -462,7 +462,7 @@ export default function ArticleDetailPage({ params }: PageProps) {
           </div>
 
           <a
-            href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20read%20your%20article%20on%20podcasting%20and%20would%20like%20to%20connect."
+            href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20read%20your%20article%20on%20podcasting%20and%20would%20like%20to%20connect."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"

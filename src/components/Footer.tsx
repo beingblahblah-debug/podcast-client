@@ -93,19 +93,42 @@ export default function Footer() {
               <div className="relative w-10 h-10 rounded-xl bg-black border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt="Harshita Dagha Logo"
+                  alt="Harshita Dagha Maisheri Logo"
                   width={40}
                   height={40}
                   className="object-contain p-1"
                 />
               </div>
-              <span className="font-serif font-bold text-xl text-white tracking-wide group-hover:text-amber-400 transition-colors">
-                HARSHITA DAGHA SHOW
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-lg sm:text-xl text-white tracking-wide group-hover:text-amber-400 transition-colors">
+                  HARSHITA DAGHA MAISHERI
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">
+                  TEDx Speaker · Founder, Beingblahblah
+                </span>
+              </div>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
-              India&apos;s #1 female executive podcast platform hosted by Harshita Dagha. Unpacking startup scale, AI breakthroughs, and visionary leadership across Mumbai, Bengaluru, and global business hubs.
+            <p className="text-slate-400 text-sm leading-relaxed mb-4 max-w-sm">
+              Indian Podcast Host, Branding Expert, PR Strategist, GEO Expert, and Social Media Strategist with 16+ years of experience. Giving brands celebs, visibility, and stories that people remember.
             </p>
+            
+            {/* Direct Contact Badges in Footer */}
+            <div className="space-y-1.5 mb-6 text-xs text-slate-300">
+              <p className="flex items-center gap-2">
+                <span className="text-emerald-400 font-bold">WhatsApp:</span>
+                <a href="https://wa.me/918779003799" target="_blank" rel="noreferrer" className="text-white hover:text-emerald-400 underline font-mono">
+                  +91 87790 03799
+                </a>
+                <span className="text-slate-500">(~ beingblahblah)</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-amber-400 font-bold">Email:</span>
+                <a href="mailto:beingblahblah@gmail.com" className="text-white hover:text-amber-400 underline">
+                  beingblahblah@gmail.com
+                </a>
+              </p>
+            </div>
+
             <div className="flex items-center space-x-3">
               <a 
                 href="https://twitter.com" 

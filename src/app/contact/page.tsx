@@ -180,15 +180,15 @@ export default function ContactPage() {
                 Chat Directly on WhatsApp
               </h3>
               <p className="text-xs text-emerald-50 mb-4 leading-relaxed">
-                Connect directly with Harshita Dagha&apos;s executive producer for instant availability checks, speaking dates, and sponsorships.
+                Connect directly with Harshita Dagha Maisheri&apos;s executive office for branding, PR, speaking engagements, and podcast inquiries.
               </p>
               <a
-                href="https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
+                href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-bold transition-all shadow-md"
               >
-                <span>Open WhatsApp Chat</span>
+                <span>WhatsApp: +91 87790 03799</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
               </a>
             </div>
@@ -196,21 +196,23 @@ export default function ContactPage() {
             {/* Media Kit Card */}
             <div className="rounded-3xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 p-8 shadow-xl">
               <span className="text-xs font-black uppercase tracking-wider bg-slate-950 text-amber-300 px-3 py-1 rounded-full mb-4 inline-block">
-                Brand Partnerships
+                Brand Partnerships & PR
               </span>
               <h3 className="font-serif font-bold text-2xl mb-3 text-slate-950">
-                2026 Official Media Kit
+                Official Media & Speaker Kit
               </h3>
               <p className="text-xs sm:text-sm text-slate-900/90 leading-relaxed mb-6 font-medium">
-                Detailed breakdowns of audience demographics, CPM rates, audio & video integration formats, and retention heatmaps.
+                Detailed breakdowns of audience demographics, TEDx speaker topics, branding & PR advisory packages, and celebrity podcast formats.
               </p>
-              <button
-                onClick={() => alert("Downloading The Harshita Dagha Show 2026 Media Kit (PDF)...")}
+              <a
+                href="https://wa.me/918779003799?text=Hi%20Harshita,%20please%20share%20your%20Media%20Kit%20and%20rates."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-bold shadow-md transition-colors"
               >
                 <Download className="w-3.5 h-3.5 text-amber-400" />
-                <span>Download Media Kit (PDF)</span>
-              </button>
+                <span>Request Media Kit (PDF)</span>
+              </a>
             </div>
 
             {/* Direct Details */}
@@ -221,7 +223,21 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Email Us</h4>
-                  <p className="text-xs text-slate-600 mt-0.5">producer@harshitadagha.in</p>
+                  <a href="mailto:beingblahblah@gmail.com" className="text-xs text-amber-800 font-semibold hover:underline mt-0.5 block">
+                    beingblahblah@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3.5">
+                <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 shrink-0">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Direct WhatsApp / Phone</h4>
+                  <a href="https://wa.me/918779003799" target="_blank" rel="noreferrer" className="text-xs text-slate-800 font-semibold hover:underline mt-0.5 block">
+                    +91 87790 03799 (~ beingblahblah)
+                  </a>
                 </div>
               </div>
 
@@ -232,7 +248,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Studio Headquarters</h4>
                   <p className="text-xs text-slate-600 mt-0.5">
-                    Bandra Kurla Complex (BKC)<br />Mumbai, Maharashtra 400051
+                    Bandra Kurla Complex (BKC)<br />Mumbai, Maharashtra 400051, India
                   </p>
                 </div>
               </div>

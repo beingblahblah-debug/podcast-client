@@ -23,74 +23,109 @@ import {
 import { PRESS_LOGOS } from "@/data/episodes";
 
 export default function ServicesPage() {
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20discussing%20podcast%20services%20/%20sponsorship%20/%20host%20booking.";
+  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20am%20interested%20in%20discussing%20branding,%20PR,%20GEO,%20or%20podcast%20services.";
 
   const services = [
     {
-      id: "featured-interview",
-      title: "Featured Founder & Executive Guest Profile",
+      id: "brand-strategy",
+      title: "Brand Strategy & Business Storytelling (Beingblahblah)",
+      tagline: "Memorable Narratives That Drive Market Dominance",
+      description: "Led by Harshita Dagha Maisheri, founder of Beingblahblah. With 16+ years of branding and digital marketing expertise, she gives brands celebs, visibility, and stories that people remember.",
+      guideSlug: "/blog/why-ceos-launch-corporate-podcasts",
+      guideTitle: "Explore Brand Storytelling",
+      deliverables: [
+        "Comprehensive brand positioning, core narrative, and messaging matrix",
+        "Multi-channel digital marketing and content strategy roadmap",
+        "Visual & verbal identity alignment for modern digital channels",
+        "Direct consultation with Harshita Dagha Maisheri and Beingblahblah team",
+        "Campaign conceptualization tailored for high-recall brand visibility"
+      ],
+      idealFor: "Founders, consumer brands, high-growth startups, and established enterprises.",
+      badge: "Flagship Offering"
+    },
+    {
+      id: "personal-branding",
+      title: "Personal Branding & LinkedIn Strategy",
       tagline: "Establish Unshakeable Industry Authority",
-      description: "A 60-90 minute, broadcast-grade long-form interview exploring your career inflection points, proprietary mental frameworks, and company vision. Includes multi-platform syndication across Apple Podcasts, Spotify, and 4K YouTube.",
+      description: "Transforming founders, CXOs, entrepreneurs, and public personalities into category-defining digital authorities across LinkedIn, podcasting, and national media.",
+      guideSlug: "/blog/how-to-pitch-top-tier-podcasts-2026",
+      guideTitle: "Read Authority Playbook",
+      deliverables: [
+        "Executive persona definition & strategic positioning blueprint",
+        "High-conversion LinkedIn thought leadership & content calendar",
+        "High-impact media speaking kit and public profile optimization",
+        "Direct ghostwriting and storytelling support for executive insights",
+        "Cross-platform amplification across newsletters and podcasts"
+      ],
+      idealFor: "Venture-backed founders, enterprise leaders, investors, and domain experts.",
+      badge: "High Growth"
+    },
+    {
+      id: "geo-ai-visibility",
+      title: "Generative Engine Optimization (GEO) & AI Search Visibility",
+      tagline: "Future-Proof Your Brand for AI-Powered Discovery",
+      description: "Specialized GEO frameworks ensuring your brand, founder profile, and products are prominently cited and accurately surfaced across Google AI Overviews, ChatGPT, Gemini, and Perplexity.",
+      guideSlug: "/blog/delhi-ncr-corporate-policy-podcast-host",
+      guideTitle: "Explore GEO & AI Search Guide",
+      deliverables: [
+        "Entity audit across knowledge graphs, Wikidata, and verified directories",
+        "AI citation engineering for ChatGPT, Gemini, Perplexity & Google AI Overviews",
+        "High-authority PR digital footprint creation to establish machine trust",
+        "Schema.org semantic JSON-LD architecture & llms.txt integration",
+        "Continuous AI search sentiment and recommendation monitoring"
+      ],
+      idealFor: "Brands and executives looking to dominate AI search and organic discovery.",
+      badge: "AI-Era Frontier"
+    },
+    {
+      id: "digital-pr-celebrity",
+      title: "Digital PR & Celebrity Marketing",
+      tagline: "High-Trust Exposure & Cultural Relevance",
+      description: "Leverage Harshita's 16+ years of PR relationships, celebrity connections, and media associations (including work associated with Times of India, Femina, Forbes India, Mid-day, and India.com).",
+      guideSlug: "/blog/roi-of-podcast-sponsorships-2026",
+      guideTitle: "Read PR & Media Strategy",
+      deliverables: [
+        "Strategic celebrity collaborations, guest tie-ups, and influencer alignments",
+        "Digital PR distribution to top-tier publications and news portals",
+        "Crisis communication and positive brand narrative reinforcement",
+        "Press release drafting, media pitching, and interview syndication",
+        "High-credibility third-party validation assets"
+      ],
+      idealFor: "D2C brands, high-profile executives, celebrity creators, and tech innovators.",
+      badge: "Media & PR"
+    },
+    {
+      id: "featured-interview",
+      title: "Featured Founder & Executive Podcast Interview",
+      tagline: "Deep-Dive 60-90 Minute Masterclass Broadcast",
+      description: "A broadcast-grade long-form conversation exploring your inflection points, proprietary frameworks, and company vision on The Harshita Dagha Show, distributed across Apple, Spotify, and 4K YouTube.",
       guideSlug: "/blog/how-to-pitch-top-tier-podcasts-2026",
       guideTitle: "Read Pitching & Guest Playbook",
       deliverables: [
         "60-90 minute deep-dive interview in Mumbai Studio HQ (BKC) or 4K remote studio",
         "Permanent distribution to 65,000+ verified active listeners",
-        "Five 4K vertical viral video reels for LinkedIn, TikTok & Instagram",
+        "Five 4K vertical viral video reels for LinkedIn, YouTube Shorts & Instagram",
         "Full SEO-optimized show notes & permanent do-follow backlinks",
         "High-resolution studio portrait photography package"
       ],
-      idealFor: "Venture-backed founders, authors, fund managers, and category leaders.",
+      idealFor: "Unicorn founders, venture capitalists, book authors, and category disruptors.",
       badge: "Most Requested"
     },
     {
-      id: "corporate-podcasting",
-      title: "Turnkey Corporate & Brand Podcasting",
-      tagline: "End-to-End Enterprise Media Production",
-      description: "Harshita Dagha and her veteran production desk develop, host, and engineer private or public podcast series for enterprises, tech giants, and visionary foundations seeking narrative leadership.",
-      guideSlug: "/blog/why-ceos-launch-corporate-podcasts",
-      guideTitle: "Read Enterprise Podcasting Blueprint",
-      deliverables: [
-        "Full creative concepting, season narrative arcs, and script debriefs",
-        "Executive media training and vocal pacing coaching for internal hosts",
-        "Broadcast sound design, custom sonic branding, and audio mastering",
-        "Global syndication pipeline to all major podcast directories",
-        "Comprehensive retention heatmaps and listener demographic intelligence"
-      ],
-      idealFor: "Enterprises, venture capital firms, healthcare systems, and tech platforms.",
-      badge: "Enterprise"
-    },
-    {
       id: "event-moderation",
-      title: "Keynote Interviewer & Summit Stage Host",
+      title: "TEDx Speaker Keynotes & Summit Moderation",
       tagline: "High-Energy, Intellectually Rigorous Stage Presence",
-      description: "Bring Harshita's celebrated interview acumen to your global conference, investor summit, or annual general meeting. Known for extracting authentic, headline-generating answers from titans of industry.",
+      description: "Bring TEDx Speaker Harshita Dagha Maisheri to your global conference, investor summit, or flagship gala for keynote talks and insightful, PR-fluff-free panel moderation.",
       guideSlug: "/blog/delhi-ncr-corporate-policy-podcast-host",
-      guideTitle: "Read Summit & Stage Leadership Guide",
+      guideTitle: "Read Summit Leadership Guide",
       deliverables: [
-        "Main-stage keynote fireside chat moderation",
+        "Main-stage keynote speech on branding, storytelling, or AI search",
+        "Fireside chat moderation with prominent VIPs and unicorn leaders",
         "Pre-summit briefing calls with high-profile VIP speakers",
-        "Panel moderation that actively eliminates corporate PR fluff",
         "Post-event audio/video highlights for social syndication"
       ],
-      idealFor: "Tech conferences, economic forums, leadership retreats, and galas.",
-      badge: "Live Stage"
-    },
-    {
-      id: "show-sponsorship",
-      title: "Brand Sponsorship & Authentic Host-Read Ads",
-      tagline: "High-Trust Influence with Affluent Decision Makers",
-      description: "Integrate your product or service into The Harshita Dagha Show. Unlike robotic automated ad-rolls, Harshita only accepts 2 curated sponsors per episode and records passionate, personal endorsements.",
-      guideSlug: "/blog/roi-of-podcast-sponsorships-2026",
-      guideTitle: "Read Sponsorship Conversion & ROI Study",
-      deliverables: [
-        "60-second host-read mid-roll and 30-second pre-roll endorsements",
-        "Permanent audio & video placement (no dynamic ad deletion)",
-        "Direct hyperlink integration in newsletter reaching 65,000+ subscribers",
-        "Social media shout-outs across LinkedIn and Twitter/X"
-      ],
-      idealFor: "B2B SaaS, fintech platforms, luxury productivity tools, and health tech.",
-      badge: "Sponsorship"
+      idealFor: "Global tech summits, economic forums, leadership retreats, and awards galas.",
+      badge: "TEDx Keynote"
     }
   ];
 
@@ -126,7 +161,12 @@ export default function ServicesPage() {
                 "description": s.description,
                 "provider": {
                   "@type": "Person",
-                  "name": "Harshita Dagha",
+                  "name": "Harshita Dagha Maisheri",
+                  "alternateName": "Harshita Dagha",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "Beingblahblah"
+                  },
                   "url": "https://www.harshitadagha.in"
                 },
                 "areaServed": ["Mumbai", "Bengaluru", "Delhi NCR", "Global Remote"],
@@ -144,13 +184,13 @@ export default function ServicesPage() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-bold uppercase tracking-wider mb-4">
             <Briefcase className="w-3.5 h-3.5 text-amber-600" />
-            <span>Media Production & Host For Hire</span>
+            <span>HARSHITA DAGHA MAISHERI · FOUNDER, BEINGBLAHBLAH</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-950 tracking-tight leading-[1.12] mb-4">
-            Executive Podcasting, Stage Hosting & Brand Partnerships
+            Branding, Digital PR, GEO & Podcast Services
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Work with India&apos;s #1 female executive podcast host <strong className="text-slate-900">Harshita Dagha</strong>. From featured executive guest appearances to full-scale enterprise podcast development across Mumbai, Bengaluru, and Delhi NCR, we create category-defining audio and video media.
+            Collaborate directly with <strong className="text-slate-900">Harshita Dagha Maisheri</strong> — TEDx Speaker, branding expert, PR strategist, GEO specialist, and founder of <em>Beingblahblah</em>. With 16+ years of expertise, she gives brands celebs, visibility, and stories that people remember.
           </p>
         </div>
 
@@ -249,7 +289,7 @@ export default function ServicesPage() {
 
                 <div className="flex items-center justify-between sm:justify-end gap-3">
                   <a
-                    href={`https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20am%20interested%20in%20learning%20more%20about%20your%20${encodeURIComponent(service.title)}.`}
+                    href={`https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20am%20interested%20in%20learning%20more%20about%20your%20${encodeURIComponent(service.title)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 text-xs font-semibold transition-all"

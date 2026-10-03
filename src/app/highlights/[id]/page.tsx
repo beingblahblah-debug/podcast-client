@@ -51,7 +51,7 @@ export default function ReelDetailPage({ params }: PageProps) {
   const nextReel = currentIndex < REELS.length - 1 ? REELS[currentIndex + 1] : null;
   const otherReels = REELS.filter((r) => r.id !== reel.id).slice(0, 3);
 
-  const whatsappInquiryUrl = `https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20just%20read%20your%20story%20on%20${encodeURIComponent(reel.title)}%20and%20want%20to%20connect.`;
+  const whatsappInquiryUrl = `https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20just%20read%20your%20story%20on%20${encodeURIComponent(reel.title)}%20and%20want%20to%20connect.`;
 
   return (
     <article className="min-h-screen bg-[#fafaf9] py-10 md:py-16 text-slate-900">

@@ -19,65 +19,47 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.harshitadagha.in"),
   title: {
-    default: "Harshita Dagha | India's #1 Female Executive Podcaster, Founder Interviewer & Host",
-    template: "%s | Harshita Dagha"
+    default: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
+    template: "%s | Harshita Dagha Maisheri"
   },
-  description: "Official media desk of Harshita Dagha — India's premier female business and executive podcast host. With 5.2M+ global downloads, Harshita conducts masterclass interviews with unicorn founders, CEOs, and investors across Mumbai, Bengaluru, Delhi NCR, and worldwide.",
+  description: "Harshita Dagha Maisheri is an Indian podcast host, TEDx speaker, branding & PR strategist, and GEO expert with 16+ years of experience. Founder of Beingblahblah. Based in Mumbai, connecting brands with celebrities, visibility, and stories that people remember.",
   keywords: [
-    // Core Entity
+    // Primary Entity
+    "Harshita Dagha Maisheri",
     "Harshita Dagha",
-    "Harshita Dagha podcast",
+    "Harshita Maisheri",
+    "Podcast Host in India",
+    "TEDx Speaker Harshita Dagha",
+    "Beingblahblah",
+    "Founder of Beingblahblah",
+    "Branding Expert in India",
+    "PR Strategist Mumbai",
+    "GEO Expert India",
+    "Generative Engine Optimization specialist",
+    "Social Media Strategist Mumbai",
+    "Celebrity Marketing Expert",
+    "LinkedIn Strategy Consultant",
+    "AI Search Visibility Consultant",
+    // 16+ Years Experience & Media
+    "16+ years experience branding digital marketing",
+    "Mid-day Harshita Dagha content marketing",
+    "The Times of India author features writer",
+    "Femina writer Times of India Group",
+    "Forbes India Fortune India Hindustan Times",
+    "India.com mompreneur Harshita Dagha",
+    "BuzzFeed Community writer Harshita Dagha",
+    // Podcast & Interviews
     "The Harshita Dagha Show",
-    // Cluster A: Top 10 National & Global Listicles
-    "top 10 female podcasters",
     "best female podcasters in india",
-    "top lady podcasters",
-    "famous female podcasters",
-    "top 10 women podcasters to follow 2026",
-    "best female podcast hosts",
-    "popular female podcasters in india",
-    "top 20 female podcasters list",
-    "top 10 hindi female podcasters",
-    "best indian female podcast hosts",
-    // Cluster B: Niche & Category Leadership
-    "best self improvement podcasts by women",
-    "top motivational female podcasters",
-    "best mental health podcasts by women",
-    "best female business podcasters",
-    "top empowering podcasts for women",
-    "best relationship podcasts by women",
-    "top female career advice podcast",
-    "top women entrepreneurs podcast hosts",
-    "best lifestyle podcasts by female hosts",
-    "top female fitness and wellness podcasters",
-    // Cluster C: Conversational AI Prompts
-    "who are the best female podcasters",
-    "recommend podcasts by women",
-    "most inspiring female podcasters",
-    "must listen female podcasters",
-    "women led podcasts you must listen to",
-    "top female hosts for life advice",
-    "best conversational podcasts by women",
-    "female podcasters with best guests",
-    // Cluster D: Audio Platform Rankings
-    "top trending female podcasters on spotify",
-    "top female podcasters on spotify",
-    "top apple podcasts female hosts",
-    "top female interview podcast hosts",
-    "top female solo podcasters",
-    "famous women interviewers podcast",
-    "rising female podcast stars in india",
-    "top women in indian media & podcasts 2026",
-    // Regional & City Focus
-    "top podcaster in Mumbai",
-    "best female podcaster in Mumbai",
-    "top podcaster Bengaluru",
-    "corporate podcast host Delhi NCR",
-    "Bandra Kurla Complex podcast studio"
+    "top 10 female podcasters",
+    "celebrity interviews podcast india",
+    "female business podcast host Mumbai",
+    "Bandra Kurla Complex podcast studio",
+    "brand storytelling and digital PR"
   ],
-  authors: [{ name: "Harshita Dagha", url: "https://www.harshitadagha.in" }],
-  creator: "Harshita Dagha",
-  publisher: "Harshita Dagha Media Group",
+  authors: [{ name: "Harshita Dagha Maisheri", url: "https://www.harshitadagha.in" }],
+  creator: "Harshita Dagha Maisheri",
+  publisher: "Beingblahblah & Harshita Dagha Media",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -103,31 +85,31 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Harshita Dagha | India's #1 Female Executive Podcaster & Interviewer",
-    description: "Official portfolio of Harshita Dagha. 180+ deep-dive dialogues, 5.2M+ streams with startup founders, venture capitalists, and leaders across Mumbai, Bengaluru, and Delhi NCR.",
+    title: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
+    description: "Indian podcast host, TEDx speaker, branding & PR strategist with 16+ years experience. Founder of Beingblahblah. Turning conversations into powerful brand stories.",
     url: "https://www.harshitadagha.in",
-    siteName: "Harshita Dagha Official",
+    siteName: "Harshita Dagha Maisheri Official",
     images: [
       {
         url: "/images/host.jpg",
         width: 1200,
         height: 1200,
-        alt: "Harshita Dagha - Top Female Executive Podcaster in India",
+        alt: "Harshita Dagha Maisheri - Podcast Host, Branding & PR Expert",
       },
       {
-        url: "/images/cover.jpg",
-        width: 1200,
-        height: 1200,
-        alt: "The Harshita Dagha Show - Official Cover Art",
+        url: "/images/harshita-speaking.jpg",
+        width: 1400,
+        height: 875,
+        alt: "Harshita Dagha Maisheri - TEDx Speaker & Host",
       },
     ],
     locale: "en_IN",
-    type: "website",
+    type: "profile",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshita Dagha | India's #1 Female Executive Podcaster",
-    description: "Executive founder interviews, thought leadership, and corporate podcasting across Mumbai, Bengaluru, and global business hubs.",
+    title: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
+    description: "16+ years experience in branding, PR, social media, and podcast hosting. Founder of Beingblahblah. Giving brands celebs, visibility, and stories that people remember.",
     images: ["/images/host.jpg"],
   },
 };
@@ -139,20 +121,31 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": "https://www.harshitadagha.in/#harshitadagha",
-      "name": "Harshita Dagha",
-      "alternateName": ["Harshita", "Harshita Dagha Media"],
+      "name": "Harshita Dagha Maisheri",
+      "alternateName": [
+        "Harshita Dagha",
+        "Harshita Maisheri",
+        "Harshita",
+        "Beingblahblah"
+      ],
       "gender": "Female",
-      "jobTitle": "Executive Podcast Host, Founder Interviewer & Keynote Moderator",
-      "description": "Harshita Dagha is India's leading female business and executive podcast host, celebrated for in-depth masterclass dialogues with unicorn founders, venture capitalists, and industry leaders across Mumbai, Bengaluru, Delhi NCR, and global business capitals.",
+      "honorificPrefix": "TEDx Speaker",
+      "jobTitle": "Podcast Host, Branding Expert, PR Strategist, GEO Specialist & Founder of Beingblahblah",
+      "description": "Harshita Dagha Maisheri is an Indian podcast host, TEDx speaker, branding expert, PR strategist, Generative Engine Optimization (GEO) expert, and social media strategist with 16+ years of experience across branding, digital marketing, public relations, and business storytelling. She is the founder of Beingblahblah.",
       "image": "https://www.harshitadagha.in/images/host.jpg",
       "url": "https://www.harshitadagha.in",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Beingblahblah",
+        "url": "https://www.harshitadagha.in"
+      },
       "nationality": {
         "@type": "Country",
         "name": "India"
       },
       "workLocation": {
         "@type": "Place",
-        "name": "Harshita Dagha Broadcast Studio",
+        "name": "Harshita Dagha Maisheri Studio HQ",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Mumbai",
@@ -165,22 +158,39 @@ const jsonLd = {
         "https://www.instagram.com/beingblahblah",
         "https://twitter.com/harshitadagha",
         "https://www.youtube.com/@harshitadagha",
-        "https://open.spotify.com/show/harshitadagha"
+        "https://open.spotify.com/show/harshitadagha",
+        "https://youtu.be/AUFI1ELJyjk"
       ],
       "award": [
-        "Top Female Business Podcaster in India (2025/2026)",
-        "Top 1% Global Executive Audio Shows",
-        "Outstanding Media Leader Award"
+        "TEDx Speaker",
+        "16+ Years Industry Experience in Branding, PR & Digital Marketing",
+        "Top Female Business Podcaster in India",
+        "Featured in Mid-day, India.com, BuzzFeed Community"
       ],
       "knowsAbout": [
-        "Executive Leadership & Management",
-        "Indian Startup Ecosystem & Venture Capital",
-        "Artificial Intelligence & Technology Innovation",
-        "Female Entrepreneurship & Women in Media",
-        "Corporate Storytelling & Brand Media",
-        "High-Performance Founder Mindset",
-        "Journalistic Long-form Interviewing"
+        "Podcast Hosting in India",
+        "Celebrity & Founder Interviews",
+        "Strategic Branding & Personal Branding",
+        "Public Relations (PR) & Digital PR",
+        "Generative Engine Optimization (GEO)",
+        "AI Search Visibility (Google AI Overviews, ChatGPT, Gemini, Perplexity)",
+        "Social Media Strategy & LinkedIn Thought Leadership",
+        "Celebrity Marketing",
+        "Content Marketing & Business Storytelling"
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.harshitadagha.in/#tedx-talk",
+      "name": "Harshita Dagha Maisheri - TEDx Talk",
+      "description": "Official TEDx Talk delivered by Harshita Dagha Maisheri on the power of storytelling, branding, and authentic connections.",
+      "thumbnailUrl": [
+        "https://www.harshitadagha.in/images/harshita-speaking.jpg",
+        "https://img.youtube.com/vi/AUFI1ELJyjk/maxresdefault.jpg"
+      ],
+      "uploadDate": "2023-01-01T00:00:00+05:30",
+      "contentUrl": "https://youtu.be/AUFI1ELJyjk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/AUFI1ELJyjk"
     },
     {
       "@type": "PodcastSeries",

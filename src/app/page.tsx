@@ -28,7 +28,7 @@ import { EPISODES, CATEGORIES } from "@/data/episodes";
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20would%20like%20to%20discuss%20a%20podcast%20episode%20/%20guest%20appearance.";
+  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20would%20like%20to%20discuss%20a%20podcast%20episode%20/%20branding%20collaboration.";
 
   const filteredEpisodes = EPISODES.filter((ep) => {
     if (selectedCategory === "All") return true;
