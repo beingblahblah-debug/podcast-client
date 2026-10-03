@@ -55,13 +55,8 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="flex items-center space-x-3 pt-4 border-t border-slate-100">
-                <div className="relative w-11 h-11 rounded-full overflow-hidden border border-slate-200 shadow-sm shrink-0">
-                  <Image
-                    src={item.avatar}
-                    alt={item.author}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 text-amber-400 font-bold font-serif text-sm flex items-center justify-center shrink-0 shadow-sm">
+                  {item.author.split(" ").map((n) => n[0]).join("")}
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">{item.author}</h4>

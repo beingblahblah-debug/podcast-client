@@ -76,7 +76,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. Aris Thorne",
       role: "Director of Cognitive Systems & Partner",
       company: "Apex Neuro Labs",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Former DARPA neuroscience researcher turned advisor to Fortune 50 founders and Olympic coaches.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -123,7 +123,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Maya Lin",
       role: "Chief Design Evangelist & Author",
       company: "Studio Form & Flux",
-      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Author of 'The Sacred Flaw' and former lead design philosopher at legendary hardware collectives.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -169,7 +169,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Julian Vance",
       role: "Founder & General Partner",
       company: "Vanguard Genesis",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Founding member of three unicorn startups and keynote speaker on category design.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -215,7 +215,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. Sanjana Roy",
       role: "Lead Neurobiologist",
       company: "MindBody Research Institute",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Stanford medical alumnus and host of the Mind & Molecule public lectures.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -260,7 +260,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Clara Dupont",
       role: "Co-Founder & Culinary Director",
       company: "Maison Lumière Group",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Recipient of three James Beard honors and curator of bespoke experiential events globally.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -305,7 +305,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Marcus Vance",
       role: "Senior Crisis Negotiator & Strategist",
       company: "Equinox Advisory",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Advises international peace delegations, enterprise C-suites, and diplomatic corps.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -350,7 +350,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Chloe Sterling",
       role: "Music Producer & Visual Artist",
       company: "Sterling Sound Collective",
-      avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Producer with 12 RIAA certified platinum records and curator of interdisciplinary art installations.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -395,7 +395,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. David Hensley",
       role: "Head of Epigenetic Medicine",
       company: "Oxford Longevity Consortium",
-      avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Senior Fellow at the Longevity Institute and lead investigator on cellular reprogramming clinical trials.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -440,7 +440,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Nadia Al-Mansoor",
       role: "Architectural Curator & Critic",
       company: "Atelier Form",
-      avatar: "https://images.unsplash.com/photo-1534751516642-a171edd2521d?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Curator of international biennials and architectural advisor to metropolitan civic spaces.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -485,7 +485,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. Kenji Sato",
       role: "Chief Economist",
       company: "Global Horizon Institute",
-      avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+      avatar: "/images/host.jpg",
       bio: "Frequent keynote speaker at the World Economic Forum and author of 'The Next Wealth Paradigm'.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -528,19 +528,19 @@ export const TESTIMONIALS = [
     quote: "The Harshita Dagha Show is one of the rare platforms where founders open up about near-death company moments, valuation realities, and mental toll without PR fluff.",
     author: "Kunal Shah",
     title: "Founder & Angel Investor",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+    avatar: "/images/host.jpg"
   },
   {
     quote: "Harshita has this uncanny gift of extracting the real unit economics and philosophical roots of how great enterprises are built. A masterclass interviewer.",
     author: "Vani Kola",
     title: "Managing Director & Venture Capitalist",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+    avatar: "/images/host.jpg"
   },
   {
     quote: "Her interviews are mandatory listening for anyone building in India's startup ecosystem. Unhurried, deeply researched, and razor-sharp.",
     author: "Deepinder Goyal",
     title: "Tech Entrepreneur & Executive",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+    avatar: "/images/host.jpg"
   }
 ];
 

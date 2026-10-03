@@ -17,7 +17,9 @@ import {
   ExternalLink,
   Award,
   TrendingUp,
-  Bookmark
+  Bookmark,
+  Mic2,
+  Radio
 } from "lucide-react";
 import { EPISODES, Episode } from "@/data/episodes";
 import { useAudio } from "@/context/AudioContext";
@@ -69,17 +71,13 @@ export default function Top10Page() {
                 </span>
               </div>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-4 border border-slate-100">
-                <Image
-                  src={top10[1].guest.avatar}
-                  alt={top10[1].guest.name}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
-                <div className="absolute bottom-3 left-3 text-white">
+              <div className="relative aspect-video rounded-2xl overflow-hidden mb-4 border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950/70 flex flex-col items-center justify-center p-4 text-center">
+                <div className="w-12 h-12 rounded-2xl bg-amber-400/15 border border-amber-400/30 text-amber-400 flex items-center justify-center mb-2 shadow-inner">
+                  <Mic2 className="w-6 h-6" />
+                </div>
+                <div className="text-white">
                   <p className="text-xs font-bold">{top10[1].guest.name}</p>
-                  <p className="text-[10px] text-slate-300">{top10[1].guest.role}</p>
+                  <p className="text-[10px] text-amber-300/80">{top10[1].guest.role} · {top10[1].guest.company}</p>
                 </div>
               </div>
 
@@ -130,17 +128,13 @@ export default function Top10Page() {
                 </div>
               </div>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-5 border border-amber-200">
-                <Image
-                  src={top10[0].guest.avatar}
-                  alt={top10[0].guest.name}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
-                <div className="absolute bottom-3 left-3 text-white">
-                  <p className="text-sm font-bold">{top10[0].guest.name}</p>
-                  <p className="text-xs text-amber-300">{top10[0].guest.role} · {top10[0].guest.company}</p>
+              <div className="relative aspect-video rounded-2xl overflow-hidden mb-5 border border-amber-500/40 bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 flex flex-col items-center justify-center p-5 text-center shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center mb-2 shadow-lg shadow-amber-400/25">
+                  <Trophy className="w-7 h-7" />
+                </div>
+                <div className="text-white">
+                  <p className="text-sm font-bold text-amber-300">{top10[0].guest.name}</p>
+                  <p className="text-xs text-slate-300">{top10[0].guest.role} · {top10[0].guest.company}</p>
                 </div>
               </div>
 
@@ -187,17 +181,13 @@ export default function Top10Page() {
                 </span>
               </div>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-4 border border-slate-100">
-                <Image
-                  src={top10[2].guest.avatar}
-                  alt={top10[2].guest.name}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
-                <div className="absolute bottom-3 left-3 text-white">
+              <div className="relative aspect-video rounded-2xl overflow-hidden mb-4 border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950/70 flex flex-col items-center justify-center p-4 text-center">
+                <div className="w-12 h-12 rounded-2xl bg-amber-400/15 border border-amber-400/30 text-amber-400 flex items-center justify-center mb-2 shadow-inner">
+                  <Mic2 className="w-6 h-6" />
+                </div>
+                <div className="text-white">
                   <p className="text-xs font-bold">{top10[2].guest.name}</p>
-                  <p className="text-[10px] text-slate-300">{top10[2].guest.role}</p>
+                  <p className="text-[10px] text-amber-300/80">{top10[2].guest.role} · {top10[2].guest.company}</p>
                 </div>
               </div>
 

@@ -12,7 +12,7 @@ export default function Navbar() {
   const whatsappUrl = "https://wa.me/919876543210?text=Hi%20Harshita%20Dagha%20Media,%20I%20would%20like%20to%20connect%20regarding%20an%20executive%20podcast%20booking.";
 
   const navLinks = [
-    { label: "Top Podcasters", href: "/top-female-podcasters" },
+    { label: "Reels & Clips", href: "/highlights" },
     { label: "Services", href: "/services" },
     { label: "Articles & Guides", href: "/blog" },
     { label: "About Harshita", href: "/about" },
@@ -27,17 +27,14 @@ export default function Navbar() {
         {/* Subtle glossy sheen highlight */}
         <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
 
-        {/* Brand Identity */}
-        <Link href="/" className="flex items-center space-x-3 group shrink-0">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-700 flex items-center justify-center text-white shadow-md shadow-slate-950/15 group-hover:scale-105 transition-transform">
-            <span className="font-serif font-black text-xs tracking-wider text-amber-200">HD</span>
-          </div>
+        {/* Brand Identity - Clean Typographic Logotype (No placeholder logo) */}
+        <Link href="/" className="flex items-center group shrink-0 py-0.5">
           <div className="flex flex-col text-left">
-            <span className="font-serif font-bold text-base sm:text-lg text-slate-950 leading-tight tracking-tight group-hover:text-amber-700 transition-colors">
+            <span className="font-serif font-bold text-lg sm:text-xl text-slate-950 leading-none tracking-tight group-hover:text-amber-700 transition-colors">
               Harshita Dagha
             </span>
-            <span className="text-[10px] font-medium tracking-widest uppercase text-slate-500">
-              Executive Media · Mumbai
+            <span className="text-[9px] font-bold tracking-[0.22em] uppercase text-amber-800 mt-1">
+              The Show
             </span>
           </div>
         </Link>

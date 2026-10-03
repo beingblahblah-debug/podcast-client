@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, Calendar, ArrowRight, Eye, Sparkles } from "lucide-react";
+import { Clock, Calendar, ArrowRight, Eye, Sparkles, Mic2 } from "lucide-react";
 import { Episode } from "@/data/episodes";
 
 interface EpisodeCardProps {
@@ -55,13 +55,8 @@ export default function EpisodeCard({ episode, highlightRank = false }: EpisodeC
 
         {/* Guest Preview */}
         <div className="flex items-center space-x-3 p-3 rounded-2xl bg-slate-50/80 border border-slate-100 mb-5">
-          <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-white shadow-sm">
-            <Image
-              src={episode.guest.avatar}
-              alt={episode.guest.name}
-              fill
-              className="object-cover"
-            />
+          <div className="w-10 h-10 rounded-2xl bg-slate-900 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 shadow-sm">
+            <Mic2 className="w-4 h-4" />
           </div>
           <div className="min-w-0 flex-1">
             <h4 className="text-xs font-bold text-slate-900 truncate">

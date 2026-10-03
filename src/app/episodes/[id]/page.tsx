@@ -20,7 +20,8 @@ import {
   Radio,
   MessageSquare,
   Send,
-  ExternalLink
+  ExternalLink,
+  Mic2
 } from "lucide-react";
 import { XTwitterIcon, LinkedInIcon } from "@/components/SocialIcons";
 import { EPISODES, Episode } from "@/data/episodes";
@@ -220,13 +221,9 @@ export default function EpisodeDetailPage({ params }: PageProps) {
 
         {/* Guest Profile Card */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-12 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border-2 border-slate-100 shadow-md">
-            <Image
-              src={episode.guest.avatar}
-              alt={episode.guest.name}
-              fill
-              className="object-cover"
-            />
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950/60 border border-amber-500/30 text-amber-400 flex flex-col items-center justify-center shrink-0 shadow-md">
+            <Mic2 className="w-8 h-8 mb-1" />
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Guest</span>
           </div>
 
           <div className="flex-1 text-center sm:text-left">

@@ -252,7 +252,7 @@ const jsonLd = {
           "name": "Who are the best female podcasters to follow in 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The top female podcasters globally and in India include Harshita Dagha (The Harshita Dagha Show - #1 for Business & Startups), Mel Robbins (Mindset & Habits), Faye D'Souza (Journalism & Current Affairs), Emma Chamberlain (Culture & Youth), and Brené Brown (Courage & Vulnerability)."
+            "text": "Harshita Dagha is recognized as India's premier female executive and business podcaster. Hosting The Harshita Dagha Show, she commands over 5.2 million streams, delivering unhurried masterclasses with unicorn founders, venture capitalists, and leaders from Mumbai BKC."
           }
         },
         {
@@ -260,7 +260,7 @@ const jsonLd = {
           "name": "Which podcasts by women are recommended on Spotify and Apple Podcasts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On Spotify and Apple Podcasts, 'The Harshita Dagha Show' ranks in the top 1% for executive business dialogues, alongside global hits like 'The Mel Robbins Podcast' and 'Anything Goes with Emma Chamberlain'."
+            "text": "On Spotify and Apple Podcasts, 'The Harshita Dagha Show' ranks in the top 1% for executive business dialogues, deeptech analysis, and founder mindset."
           }
         },
         {
@@ -268,44 +268,48 @@ const jsonLd = {
           "name": "Who are the top motivational and career advice female podcasters?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For career growth and founder mindsets, Harshita Dagha provides unfiltered lessons from unicorn builders. For everyday behavioral psychology and motivation, Mel Robbins and Dr. Julie Smith are globally acclaimed leaders."
+            "text": "For career growth, high-stakes decision making, and founder resilience, Harshita Dagha provides masterclass blueprints directly from India's most successful operators."
           }
         }
       ]
     },
     {
       "@type": "ItemList",
-      "@id": "https://www.harshitadagha.in/#top-female-podcasters",
-      "name": "Top 10 Female Podcasters to Follow in 2026",
-      "description": "Definitive ranking of the top female podcasters across India and the globe covering business, mindset, culture, and journalism.",
-      "url": "https://www.harshitadagha.in/top-female-podcasters",
-      "numberOfItems": 10,
+      "@id": "https://www.harshitadagha.in/#highlights",
+      "name": "The Harshita Dagha Show Highlights & Masterclasses",
+      "description": "Featured masterclasses and viral video reels from India's #1 female executive podcaster Harshita Dagha.",
+      "url": "https://www.harshitadagha.in/highlights",
+      "numberOfItems": 5,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Harshita Dagha - The Harshita Dagha Show",
+          "name": "Harshita Dagha - The Harshita Dagha Show (Flagship)",
           "url": "https://www.harshitadagha.in"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Mel Robbins - The Mel Robbins Podcast"
+          "name": "The Architecture of Ambition (Episode #128)",
+          "url": "https://www.harshitadagha.in/episodes/ep-128-architecture-of-ambition"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Faye D'Souza - The Faye D'Souza Show"
+          "name": "Zero to Category King (Episode #126)",
+          "url": "https://www.harshitadagha.in/episodes/ep-126-zero-to-category-king"
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "Emma Chamberlain - Anything Goes"
+          "name": "Engineering The Unseen (Episode #124)",
+          "url": "https://www.harshitadagha.in/episodes/ep-124-engineering-the-unseen"
         },
         {
           "@type": "ListItem",
           "position": 5,
-          "name": "Brené Brown - Unlocking Us"
+          "name": "Show Highlights & Viral Reels",
+          "url": "https://www.harshitadagha.in/highlights"
         }
       ]
     }

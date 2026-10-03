@@ -146,10 +146,10 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/top-female-podcasters" className="hover:text-amber-400 text-amber-300 font-semibold transition-colors flex items-center gap-1.5">
-                  <span>Top 10 Female Podcasters 2026</span>
-                  <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 font-black">
-                    RANKING
+                <Link href="/highlights" className="hover:text-amber-400 text-amber-300 font-semibold transition-colors flex items-center gap-1.5">
+                  <span>Show Highlights & Reels</span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-400 text-slate-950 font-black">
+                    VIRAL
                   </span>
                 </Link>
               </li>
@@ -255,13 +255,27 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} The Harshita Dagha Show. All rights reserved. Mumbai Studio HQ (BKC).</p>
+        {/* Bottom copyright & CodeOrbit Credit */}
+        <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} The Harshita Dagha Show. All rights reserved. Mumbai Studio HQ (BKC).</p>
+            <span className="hidden sm:inline text-slate-700">·</span>
+            <p>
+              Created by{" "}
+              <a
+                href="https://codeorbit.cloud"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-300 font-semibold transition-colors underline underline-offset-2"
+              >
+                codeorbit.cloud
+              </a>
+            </p>
+          </div>
           <div className="flex items-center space-x-6">
-            <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>
-            <Link href="/rss.xml" className="hover:text-slate-400 transition-colors">RSS Feed</Link>
+            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
+            <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">Sitemap</Link>
           </div>
         </div>
 

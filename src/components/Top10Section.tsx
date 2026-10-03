@@ -14,7 +14,8 @@ import {
   Sparkles,
   TrendingUp,
   Clock,
-  Award
+  Award,
+  Mic2
 } from "lucide-react";
 import { EPISODES, Episode } from "@/data/episodes";
 import { useAudio } from "@/context/AudioContext";
@@ -181,15 +182,10 @@ export default function Top10Section({ isFullPage = false }: { isFullPage?: bool
                 {/* Right block: Guest info + Stats + Action */}
                 <div className="flex items-center justify-between md:justify-end space-x-6 w-full md:w-auto shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100">
                   
-                  {/* Guest mini avatar */}
+                  {/* Guest studio voice badge */}
                   <div className="flex items-center space-x-2.5">
-                    <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-slate-200">
-                      <Image
-                        src={episode.guest.avatar}
-                        alt={episode.guest.name}
-                        fill
-                        className="object-cover"
-                      />
+                    <div className="w-8 h-8 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 shadow-xs">
+                      <Mic2 className="w-3.5 h-3.5" />
                     </div>
                     <div className="text-left hidden sm:block">
                       <p className="text-xs font-semibold text-slate-900 leading-tight">
