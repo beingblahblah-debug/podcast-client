@@ -19,8 +19,8 @@ export default function HostSection() {
               {/* Studio photo backdrop */}
               <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
-                  src="/images/studio.jpg"
-                  alt="The Modern Voice Studio"
+                  src="/images/harshita-navy-mic.jpg"
+                  alt="Harshita Dagha Maisheri in Mumbai BKC Podcast Studio"
                   fill
                   className="object-cover"
                 />
