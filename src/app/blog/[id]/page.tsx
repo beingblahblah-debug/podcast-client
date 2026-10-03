@@ -116,6 +116,38 @@ export default function ArticleDetailPage({ params }: PageProps) {
         />
       )}
 
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.harshitadagha.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Articles & Guides",
+                "item": "https://www.harshitadagha.in/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": article.title,
+                "item": `https://www.harshitadagha.in/blog/${article.id}`
+              }
+            ]
+          })
+        }}
+      />
+
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb Navigation */}

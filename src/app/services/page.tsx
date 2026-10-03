@@ -96,6 +96,48 @@ export default function ServicesPage() {
 
   return (
     <div className="py-12 md:py-20">
+      {/* Structured Schema: Services & Breadcrumbs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.harshitadagha.in"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services & Offerings",
+                    "item": "https://www.harshitadagha.in/services"
+                  }
+                ]
+              },
+              ...services.map((s) => ({
+                "@type": "Service",
+                "name": s.title,
+                "description": s.description,
+                "provider": {
+                  "@type": "Person",
+                  "name": "Harshita Dagha",
+                  "url": "https://www.harshitadagha.in"
+                },
+                "areaServed": ["Mumbai", "Bengaluru", "Delhi NCR", "Global Remote"],
+                "serviceType": s.tagline,
+                "url": `https://www.harshitadagha.in/services#${s.id}`
+              }))
+            ]
+          })
+        }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with SEO Keywords & Trust Signals */}

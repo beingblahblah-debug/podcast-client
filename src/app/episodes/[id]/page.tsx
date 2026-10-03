@@ -92,6 +92,63 @@ export default function EpisodeDetailPage({ params }: PageProps) {
 
   return (
     <div className="py-10 md:py-16">
+      {/* Structured Schema: PodcastEpisode, AudioObject & BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "PodcastEpisode",
+                "@id": `https://www.harshitadagha.in/episodes/${episode.id}#episode`,
+                "url": `https://www.harshitadagha.in/episodes/${episode.id}`,
+                "name": episode.title,
+                "description": episode.subtitle || episode.summary,
+                "datePublished": episode.releaseDate,
+                "timeRequired": `PT${episode.durationSec || 3600}S`,
+                "episodeNumber": episode.number,
+                "partOfSeries": {
+                  "@type": "PodcastSeries",
+                  "name": "The Harshita Dagha Show",
+                  "url": "https://www.harshitadagha.in"
+                },
+                "associatedMedia": {
+                  "@type": "AudioObject",
+                  "contentUrl": `https://www.harshitadagha.in${episode.audioUrl}`,
+                  "encodingFormat": "audio/wav",
+                  "duration": `PT${episode.durationSec || 3600}S`,
+                  "name": episode.title
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.harshitadagha.in"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Episodes",
+                    "item": "https://www.harshitadagha.in/episodes"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": episode.title,
+                    "item": `https://www.harshitadagha.in/episodes/${episode.id}`
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
