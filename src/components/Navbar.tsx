@@ -55,15 +55,15 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* 2. Center Desktop Navigation Links - Centered with plenty of breathing room */}
-        <nav className="hidden lg:flex items-center justify-center gap-1.5 xl:gap-3 flex-1 mx-2">
+        {/* 2. Center Desktop Navigation Links - Perfectly balanced without awkward gaps or text wrapping */}
+        <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 mx-auto">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-full text-xs xl:text-[13px] font-medium tracking-normal transition-all flex items-center gap-1 ${
+                className={`px-3.5 py-2 rounded-full text-xs xl:text-[13px] font-semibold tracking-normal transition-all whitespace-nowrap shrink-0 flex items-center justify-center ${
                   isActive
                     ? "text-white bg-slate-950 font-bold shadow-xs"
                     : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/90"
@@ -76,7 +76,7 @@ export default function Navbar() {
         </nav>
 
         {/* 3. Right Action CTAs - Anchored cleanly on the right with dedicated spacing */}
-        <div className="hidden sm:flex items-center space-x-3 shrink-0 ml-6 lg:ml-10">
+        <div className="hidden sm:flex items-center space-x-2.5 shrink-0 ml-4 lg:ml-6">
           {/* Glossy WhatsApp Pill */}
           <a
             href={whatsappUrl}

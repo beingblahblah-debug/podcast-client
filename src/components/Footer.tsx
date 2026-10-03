@@ -149,7 +149,7 @@ export default function Footer() {
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/harshitadagha" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
@@ -158,7 +158,7 @@ export default function Footer() {
                 <LinkedInIcon className="w-4 h-4" />
               </a>
               <a 
-                href="https://youtube.com" 
+                href="https://www.youtube.com/@harshitadagha" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"

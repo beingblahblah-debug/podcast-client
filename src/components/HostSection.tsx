@@ -33,10 +33,10 @@ export default function HostSection() {
               {/* Overlapping host portrait badge */}
               <div className="absolute -bottom-8 -right-4 sm:-right-8 w-44 sm:w-56 aspect-square rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                 <Image
-                  src="/images/harshita-pink-smile.jpg"
+                  src="/images/harshita-avatar.jpg"
                   alt="Harshita Dagha Maisheri - TEDx Speaker & Podcast Host"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
 

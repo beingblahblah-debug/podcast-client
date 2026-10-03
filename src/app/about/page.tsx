@@ -20,6 +20,7 @@ import {
   Phone
 } from "lucide-react";
 import { PODCAST_STATS, PRESS_LOGOS } from "@/data/episodes";
+import { InstagramIcon, LinkedInIcon, YouTubeIcon } from "@/components/SocialIcons";
 
 export default function AboutPage() {
   const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20would%20like%20to%20connect%20regarding%20branding,%20PR,%20or%20podcast%20booking.";
@@ -249,6 +250,40 @@ export default function AboutPage() {
                 <ArrowRight className="w-4 h-4 text-amber-400" />
               </Link>
             </div>
+
+            {/* Official Social Channels & Profiles Bar */}
+            <div className="mt-8 pt-6 border-t border-slate-200/80 flex flex-wrap items-center gap-3">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
+                Official Channels:
+              </span>
+              <a
+                href="https://www.instagram.com/beingblahblah"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 hover:border-pink-500 hover:text-pink-600 text-slate-700 text-xs font-bold shadow-2xs transition-all hover:scale-105"
+              >
+                <InstagramIcon className="w-3.5 h-3.5 text-pink-600" />
+                <span>@beingblahblah</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 hover:border-blue-600 hover:text-blue-600 text-slate-700 text-xs font-bold shadow-2xs transition-all hover:scale-105"
+              >
+                <LinkedInIcon className="w-3.5 h-3.5 text-blue-600" />
+                <span>Harshita Dagha Maisheri</span>
+              </a>
+              <a
+                href="https://www.youtube.com/@harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 hover:border-red-600 hover:text-red-600 text-slate-700 text-xs font-bold shadow-2xs transition-all hover:scale-105"
+              >
+                <YouTubeIcon className="w-3.5 h-3.5 text-red-600" />
+                <span>YouTube Channel</span>
+              </a>
+            </div>
           </div>
 
           {/* Right Column: Studio Portrait */}
@@ -256,11 +291,11 @@ export default function AboutPage() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <Image
-                  src="/images/harshita-speaking.jpg"
+                  src="/images/harshita-speaking-portrait.jpg"
                   alt="Harshita Dagha Maisheri - TEDx Speaker, Podcast Host in India & Branding Expert"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
