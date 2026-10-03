@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { ARTICLES } from '@/data/articles';
 import { EPISODES } from '@/data/episodes';
+import { REELS } from '@/data/reels';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.harshitadagha.in';
@@ -97,5 +98,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...articleRoutes, ...episodeRoutes];
+  // Dynamic Reel Highlight Pages
+  const highlightRoutes: MetadataRoute.Sitemap = REELS.map((reel) => ({
+    url: `${baseUrl}/highlights/${reel.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...articleRoutes, ...episodeRoutes, ...highlightRoutes];
 }
