@@ -64,7 +64,7 @@ export default function Top10Section({ isFullPage = false }: { isFullPage?: bool
               Top 10 Chart-Toppers
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-              The ten most downloaded, shared, and influential conversations in the history of The Elevate Podcast, curated by listener impact and stream metrics.
+              The ten most downloaded, shared, and influential conversations in the history of The Harshita Dagha Show, curated by listener impact and stream metrics.
             </p>
           </div>
 

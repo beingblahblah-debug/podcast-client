@@ -28,7 +28,8 @@ export default function CityHubsSection() {
       icon: Building2,
       accent: "from-amber-500/10 via-amber-500/5 to-transparent",
       badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
-      stats: "90+ Episodes Recorded"
+      stats: "90+ Episodes Recorded",
+      articleSlug: "top-podcast-host-studio-mumbai-bkc"
     },
     {
       city: "Bengaluru",
@@ -39,7 +40,8 @@ export default function CityHubsSection() {
       icon: Cpu,
       accent: "from-blue-500/10 via-blue-500/5 to-transparent",
       badgeColor: "bg-blue-100 text-blue-900 border-blue-300",
-      stats: "50+ VC & Tech Profiles"
+      stats: "50+ VC & Tech Profiles",
+      articleSlug: "best-business-deeptech-podcaster-bengaluru"
     },
     {
       city: "Delhi NCR",
@@ -50,7 +52,8 @@ export default function CityHubsSection() {
       icon: Landmark,
       accent: "from-emerald-500/10 via-emerald-500/5 to-transparent",
       badgeColor: "bg-emerald-100 text-emerald-900 border-emerald-300",
-      stats: "30+ Keynote Stages"
+      stats: "30+ Keynote Stages",
+      articleSlug: "delhi-ncr-corporate-policy-podcast-host"
     },
     {
       city: "Hyderabad",
@@ -61,7 +64,8 @@ export default function CityHubsSection() {
       icon: Server,
       accent: "from-indigo-500/10 via-indigo-500/5 to-transparent",
       badgeColor: "bg-indigo-100 text-indigo-900 border-indigo-300",
-      stats: "25+ Enterprise Leaders"
+      stats: "25+ Enterprise Leaders",
+      articleSlug: "hyderabad-tech-saas-gcc-podcast-host"
     },
     {
       city: "Pune",
@@ -72,7 +76,8 @@ export default function CityHubsSection() {
       icon: TrendingUp,
       accent: "from-teal-500/10 via-teal-500/5 to-transparent",
       badgeColor: "bg-teal-100 text-teal-900 border-teal-300",
-      stats: "20+ Engineering Founders"
+      stats: "20+ Engineering Founders",
+      articleSlug: "pune-deep-engineering-bootstrapped-startup-podcast"
     },
     {
       city: "Ahmedabad",
@@ -83,7 +88,8 @@ export default function CityHubsSection() {
       icon: Coins,
       accent: "from-yellow-500/10 via-yellow-500/5 to-transparent",
       badgeColor: "bg-yellow-100 text-yellow-900 border-yellow-300",
-      stats: "15+ FinTech Dialogues"
+      stats: "15+ FinTech Dialogues",
+      articleSlug: "gift-city-ahmedabad-fintech-leadership-podcast"
     },
     {
       city: "Chennai",
@@ -94,7 +100,8 @@ export default function CityHubsSection() {
       icon: ShieldCheck,
       accent: "from-sky-500/10 via-sky-500/5 to-transparent",
       badgeColor: "bg-sky-100 text-sky-900 border-sky-300",
-      stats: "18+ SaaS Founders"
+      stats: "18+ SaaS Founders",
+      articleSlug: "chennai-b2b-saas-tech-titans-podcast"
     },
     {
       city: "Global Remote",
@@ -105,7 +112,8 @@ export default function CityHubsSection() {
       icon: Globe,
       accent: "from-purple-500/10 via-purple-500/5 to-transparent",
       badgeColor: "bg-purple-100 text-purple-900 border-purple-300",
-      stats: "150+ Countries Reached"
+      stats: "150+ Countries Reached",
+      articleSlug: "top-10-female-podcasters-to-follow-2026"
     },
   ];
 
@@ -192,6 +200,13 @@ export default function CityHubsSection() {
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
                     {hub.stats}
                   </span>
+                  <Link
+                    href={`/blog/${hub.articleSlug}`}
+                    className="inline-flex items-center gap-1 text-amber-800 hover:text-amber-950 font-bold transition-colors"
+                  >
+                    <span>Read Guide</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             );

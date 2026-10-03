@@ -176,7 +176,7 @@ const jsonLd = {
       "@type": "PodcastSeries",
       "@id": "https://www.harshitadagha.in/#podcast",
       "name": "The Harshita Dagha Show",
-      "alternateName": ["The Elevate Show with Harshita Dagha", "Harshita Dagha Podcast"],
+      "alternateName": ["The Harshita Dagha Podcast", "Harshita Dagha Show"],
       "description": "India's premier executive podcast featuring unscripted, intellectual, and high-impact conversations with startup founders, CEOs, innovators, and investors.",
       "url": "https://www.harshitadagha.in",
       "author": { "@id": "https://www.harshitadagha.in/#harshitadagha" },

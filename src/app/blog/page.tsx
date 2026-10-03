@@ -10,7 +10,16 @@ import AiEngineMatrix from "@/components/AiEngineMatrix";
 export default function BlogPage() {
   const [selectedTag, setSelectedTag] = useState("All");
   const [search, setSearch] = useState("");
-  const tags = ["All", "Guest Pitching", "Executive Media", "Interview Craft", "Brand Sponsorship", "Acoustics & Gear"];
+  const tags = [
+    "All", 
+    "City Guides", 
+    "Industry Rankings", 
+    "SEO & AI Intelligence", 
+    "Executive Media", 
+    "Guest Pitching", 
+    "Brand Sponsorship", 
+    "Acoustics & Gear"
+  ];
 
   const filtered = ARTICLES.filter((a) => {
     if (selectedTag !== "All" && a.category !== selectedTag) return false;

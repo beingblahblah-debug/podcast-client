@@ -44,6 +44,41 @@ export default function ArticleDetailPage({ params }: PageProps) {
 
   return (
     <article className="py-12 md:py-20">
+      {/* Structured Schema for Search & AI Engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.harshitadagha.in/blog/${article.id}`
+            },
+            "headline": article.title,
+            "description": article.excerpt,
+            "image": [`https://www.harshitadagha.in${article.image}`],
+            "datePublished": "2026-10-03",
+            "dateModified": "2026-10-03",
+            "author": {
+              "@type": "Person",
+              "name": "Harshita Dagha",
+              "jobTitle": "Host & Executive Producer",
+              "url": "https://www.harshitadagha.in"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Harshita Dagha Media",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.harshitadagha.in/images/host.jpg"
+              }
+            },
+            "keywords": article.seoFocus
+          })
+        }}
+      />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
@@ -95,7 +130,7 @@ export default function ArticleDetailPage({ params }: PageProps) {
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-950">Written by {article.author.name}</h3>
-              <p className="text-xs text-slate-500">{article.author.role} · The Elevate Show</p>
+              <p className="text-xs text-slate-500">{article.author.role} · The Harshita Dagha Show</p>
             </div>
           </div>
 

@@ -280,7 +280,7 @@ export default function BeAGuestPage() {
                     <Mic2 className="w-5 h-5 text-amber-600 shrink-0" />
                     <div>
                       <p className="text-xs font-bold text-slate-900">In-Person Studio A</p>
-                      <p className="text-[11px] text-slate-500">Brooklyn, New York recording suite</p>
+                      <p className="text-[11px] text-slate-500">Mumbai BKC Flagship Studio Suite</p>
                     </div>
                   </label>
 

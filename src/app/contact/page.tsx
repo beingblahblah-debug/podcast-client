@@ -205,7 +205,7 @@ export default function ContactPage() {
                 Detailed breakdowns of audience demographics, CPM rates, audio & video integration formats, and retention heatmaps.
               </p>
               <button
-                onClick={() => alert("Downloading The Elevate Podcast 2026 Media Kit (PDF)...")}
+                onClick={() => alert("Downloading The Harshita Dagha Show 2026 Media Kit (PDF)...")}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-bold shadow-md transition-colors"
               >
                 <Download className="w-3.5 h-3.5 text-amber-400" />

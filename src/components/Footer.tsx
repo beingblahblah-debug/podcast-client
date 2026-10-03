@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20 text-xs font-semibold uppercase tracking-wider mb-4">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>The Elevate Letter</span>
+                <span>The Harshita Dagha Letter</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight mb-3">
                 Unedited show notes & backstage debriefs delivered every Sunday.
