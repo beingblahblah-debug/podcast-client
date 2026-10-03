@@ -27,8 +27,13 @@ export default function Navbar() {
         {/* Subtle glossy sheen highlight */}
         <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
 
-        {/* Brand Identity - Clean Typographic Logotype (No placeholder logo) */}
-        <Link href="/" className="flex items-center group shrink-0 py-0.5">
+        {/* Brand Identity - Clean Typographic Logotype (Links to Home) */}
+        <Link 
+          href="/" 
+          title="Harshita Dagha - Return to Home" 
+          aria-label="Harshita Dagha - Return to Home"
+          className="flex items-center group shrink-0 py-0.5 cursor-pointer"
+        >
           <div className="flex flex-col text-left">
             <span className="font-serif font-bold text-lg sm:text-xl text-slate-950 leading-none tracking-tight group-hover:text-amber-700 transition-colors">
               Harshita Dagha
@@ -41,16 +46,6 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center space-x-1">
-          <Link
-            href="/"
-            className={`px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
-              pathname === "/"
-                ? "text-slate-950 bg-slate-100/90 shadow-2xs font-bold"
-                : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
-            }`}
-          >
-            Home
-          </Link>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -122,17 +117,6 @@ export default function Navbar() {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden mt-2 rounded-3xl border border-white/80 bg-white/95 backdrop-blur-2xl px-5 py-5 space-y-2 shadow-2xl">
-          <Link
-            href="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className={`block px-4 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-              pathname === "/"
-                ? "bg-slate-100 text-slate-950 font-bold"
-                : "text-slate-700 hover:bg-slate-50"
-            }`}
-          >
-            Home
-          </Link>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
