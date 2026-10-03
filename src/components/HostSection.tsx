@@ -96,12 +96,12 @@ export default function HostSection() {
             </div>
 
             {/* Action buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <a
                 href="https://youtu.be/AUFI1ELJyjk?si=1yXM7qTrkqAb0JY6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm transition-all shadow-md hover:scale-105 active:scale-95"
+                className="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm transition-all shadow-md hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
               >
                 <span>Watch TEDx Talk</span>
                 <ArrowRight className="w-4 h-4" />
@@ -109,7 +109,7 @@ export default function HostSection() {
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-semibold text-sm transition-all shadow-sm"
+                className="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-semibold text-sm transition-all shadow-sm w-full sm:w-auto text-center"
               >
                 <span>Read Full Biography</span>
               </Link>

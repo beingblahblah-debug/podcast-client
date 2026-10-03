@@ -108,13 +108,6 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                   "@type": "PodcastSeries",
                   "name": "The Harshita Dagha Show",
                   "url": "https://www.harshitadagha.in"
-                },
-                "associatedMedia": {
-                  "@type": "AudioObject",
-                  "contentUrl": `https://www.harshitadagha.in${episode.audioUrl}`,
-                  "encodingFormat": "audio/wav",
-                  "duration": `PT${episode.durationSec || 3600}S`,
-                  "name": episode.title
                 }
               },
               {

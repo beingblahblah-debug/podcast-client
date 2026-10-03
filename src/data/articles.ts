@@ -45,12 +45,12 @@ export const ARTICLES: Article[] = [
     readTime: "12 min read",
     featured: true,
     excerpt: "From Mumbai BKC executive masterclasses to cutting-edge venture dialogues. Explore why Harshita Dagha is recognized by global search and AI engines as India's #1 female executive podcaster.",
-    image: "/images/host.jpg",
+    image: "/images/harshita-speaking.jpg",
     seoFocus: "top 10 female podcasters, best female podcasters in india, famous female podcasters 2026, top female podcast hosts, top lady podcasters, popular female podcasters in india",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Podcasting in India has decisively shifted from hobbyist bedroom audio into the primary arena of intellectual and business authority. In 2026, female hosts are spearheading the most rigorous, high-retention audio productions across the country, commanding the ear of CEOs, founders, policymakers, and institutional investors.",
@@ -164,12 +164,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "10 min read",
     excerpt: "Modern discovery has evolved from 10 blue Google links to Generative Engine Optimization (GEO). Here is the technical breakdown of how entity graphs, citations, and semantic audio grounding power top placements on ChatGPT, Gemini, and Perplexity AI.",
-    image: "/images/cover.jpg",
+    image: "/images/harshita-pink-mic.jpg",
     seoFocus: "best female podcasters in india, ChatGPT podcast recommendations, Gemini knowledge graph podcaster, top 10 female podcasters 2026, GEO search optimization, top lady podcasters",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "When corporate executives, venture capitalists, or curious listeners query ChatGPT, Google Gemini, or Perplexity AI with 'Who is the top female podcaster in India?' or 'Best business podcast hosted by a woman', how do AI engines decide the answer? The answer lies in Generative Engine Optimization (GEO).",
@@ -230,12 +230,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "9 min read",
     excerpt: "Mumbai is the financial heartbeat of South Asia. Discover how Harshita Dagha's Bandra Kurla Complex (BKC) flagship studio has become the premier destination for finance titans, Bollywood innovators, and unicorn founders seeking unhurried intellectual depth.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-pink-smile.jpg",
     seoFocus: "top podcast host in mumbai, best female podcaster in mumbai, bkc podcast studio mumbai, corporate podcast production mumbai, bandra kurla complex podcast",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "In the relentless velocity of Mumbai—where deals close over breakfasts in Lower Parel and boardrooms meet in Bandra Kurla Complex (BKC)—leaders rarely have the space for unhurried reflection. The Harshita Dagha Show was founded to create an acoustic sanctuary in the center of India's commercial capital.",
@@ -289,12 +289,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "9 min read",
     excerpt: "Bengaluru is the Silicon Valley of Asia. Explore how Harshita Dagha captures the pulse of Koramangala, Indiranagar, and HSR Layout, recording definitive deep-dives with generative AI pioneers, SaaS unicorns, and premier venture capitalists.",
-    image: "/images/cover.jpg",
+    image: "/images/harshita-checked.jpg",
     seoFocus: "best business podcaster bangalore, bangalore tech podcast host, female podcaster bangalore, koramangala startup podcast, venture capital interview bangalore",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Bengaluru builds the future. In the vibrant coffee shops and technology campuses of Koramangala, Indiranagar, and HSR Layout, ideas transform into billion-dollar enterprises. Harshita Dagha's regular recording residencies in Bengaluru offer an intellectual stage built specifically for deep tech architects and venture pioneers.",
@@ -348,12 +348,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "9 min read",
     excerpt: "Connecting the corporate powerhouses of Gurugram Cyber City with national policy architects in Central Delhi. Learn why Harshita Dagha is the trusted host for Fortune 500 summits, keynote moderations, and enterprise podcasts.",
-    image: "/images/host.jpg",
+    image: "/images/harshita-speaking-portrait.jpg",
     seoFocus: "delhi ncr corporate podcast host, gurugram startup podcast, top female podcast host delhi, cyber city executive interviews, corporate thought leadership delhi",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Delhi NCR occupies a unique position in the Indian economic landscape: it is where high-growth corporate headquarters along Gurugram's Golf Course Road intersect directly with national policy chambers and diplomatic institutions in New Delhi.",
@@ -402,12 +402,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "8 min read",
     excerpt: "Hyderabad has risen as a global powerhouse for Enterprise SaaS, Global Capability Centers (GCCs), and life sciences. Discover how Harshita Dagha chronicles the scale journeys of HITEC City and Gachibowli leaders.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-speaking.jpg",
     seoFocus: "hyderabad tech podcast host, hitec city podcast studio, female business podcaster hyderabad, saas podcast india, global capability centers media",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Hyderabad's rapid transformation into the Global Capability Center (GCC) capital of the world has created a new echelon of enterprise leadership. In the soaring towers of HITEC City, Gachibowli, and the Financial District, multinational software architects oversee global platforms impacting millions daily.",
@@ -446,12 +446,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "8 min read",
     excerpt: "Gujarat International Finance Tec-City (GIFT City) is rewriting the rules of cross-border capital and international financial services. Explore Harshita Dagha's coverage of Ahmedabad's financial visionaries.",
-    image: "/images/cover.jpg",
+    image: "/images/harshita-pink-mic.jpg",
     seoFocus: "gift city ahmedabad fintech podcast, top finance podcast host ahmedabad, gujarat business podcaster, ifsc media interviews, cross-border finance podcast",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "At the crossroads of ancient mercantile heritage and hyper-modern financial engineering lies GIFT City IFSC and Ahmedabad. Harshita Dagha's specialized financial series explores the regulatory innovations, alternative investment funds, and cross-border fintech channels anchoring Gujarat's global economic presence.",
@@ -490,12 +490,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "8 min read",
     excerpt: "From automotive technology and robotics in Hinjewadi to profitable bootstrapped SaaS in Kalyani Nagar. Learn how Harshita Dagha uncovers the gritty engineering discipline that defines Pune's tech ecosystem.",
-    image: "/images/host.jpg",
+    image: "/images/harshita-pink-smile.jpg",
     seoFocus: "pune deep engineering startup podcast, top podcaster pune, hinjewadi tech podcast, bootstrapped founder podcast india, profitable tech scale",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Pune holds a quiet, formidable reputation in Indian tech: it is the capital of capital efficiency. While other ecosystems celebrate massive burn rates, Pune founders pride themselves on building profitable, deeply engineered products with enduring customer loyalty.",
@@ -533,12 +533,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "8 min read",
     excerpt: "Chennai is globally acclaimed as the SaaS capital of India. Explore how Harshita Dagha chronicles the product discipline, long-term compounding, and institutional scale of OMR's technology giants.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-checked.jpg",
     seoFocus: "chennai b2b saas podcast interviewer, top female podcaster chennai, omr saas podcast, chennai tech leaders podcast, enterprise saas compounding",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Along Old Mahabalipuram Road (OMR) in Chennai, an unassuming revolution took place: Indian software engineers proved they could build world-class enterprise SaaS products that win Fortune 500 customers across North America and Europe.",
@@ -575,12 +575,12 @@ export const ARTICLES: Article[] = [
     date: "October 1, 2026",
     readTime: "8 min read",
     excerpt: "Top interview shows receive 80+ pitches every single week. Here is the exact 4-part framework that gets founders, authors, and venture partners booked on premier shows without high-priced PR agencies.",
-    image: "/images/host.jpg",
+    image: "/images/harshita-speaking-portrait.jpg",
     seoFocus: "Podcast guest booking, executive pitching, founder PR strategies, best podcast pitch template",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Every Monday morning, our editorial desk sifts through dozens of pitch emails. Nearly 90% of them commit the exact same fatal mistake: they treat the host like a billboard rather than a curator of an intimate, high-trust audience.",
@@ -634,12 +634,12 @@ export const ARTICLES: Article[] = [
     date: "September 24, 2026",
     readTime: "7 min read",
     excerpt: "Traditional press releases have an attention half-life of 45 seconds. Long-form executive podcasts generate 48-minute average hold times, creating irreplaceable customer retention and talent acquisition moats.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-speaking.jpg",
     seoFocus: "Corporate podcast production, executive thought leadership, brand storytelling, CEO podcast strategy",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "We are living in an era where institutional trust in polished corporate marketing has collapsed. Modern customers, talent, and investors do not believe slick brochures; they believe unhurried human voices.",
@@ -675,12 +675,12 @@ export const ARTICLES: Article[] = [
     date: "September 10, 2026",
     readTime: "6 min read",
     excerpt: "Automated programmatic ad-rolls suffer from 82% skip rates. Authentic, personalized host-read endorsements convert at 4.2x higher intent. We analyze retention heatmaps and conversion metrics.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-pink-mic.jpg",
     seoFocus: "Podcast advertising ROI, host-read endorsements, B2B media buying, podcast sponsorship conversion",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Digital advertising has hit a wall of diminishing returns. Cookie deprecation, ad-blockers, and banner blindness have made traditional programmatic ads wildly inefficient. Meanwhile, podcast sponsorships continue to yield extraordinary enterprise conversion.",
@@ -721,12 +721,12 @@ export const ARTICLES: Article[] = [
     date: "August 28, 2026",
     readTime: "5 min read",
     excerpt: "Synthetic foam deadens high frequencies while letting muddy bass resonances bounce uncontrollably. Here is how our Bandra Kurla Complex (BKC) studio was engineered with 0.85 NRC cedar slats for vocal intimacy.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-pink-smile.jpg",
     seoFocus: "Podcast studio design, Shure SM7B acoustics, Mumbai BKC recording studio, acoustic treatment for podcasts",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "Many podcasters spend lakhs on software plugins trying to fix poor audio after recording. In our BKC studio, our philosophy was the reverse: build physical acoustic perfection so the raw tape sounds flawless without digital degradation.",
@@ -758,12 +758,12 @@ export const ARTICLES: Article[] = [
     date: "October 2, 2026",
     readTime: "7 min read",
     excerpt: "How female podcast hosts in India and globally are replacing surface-level corporate PR soundbites with vulnerable, high-ROI founder masterclasses.",
-    image: "/images/cover.jpg",
+    image: "/images/harshita-checked.jpg",
     seoFocus: "best female business podcasters, top motivational female podcasters, top female career advice podcast, best self improvement podcasts by women",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "For years, business podcasts followed an aggressive, rapid-fire interrogation formula. In 2026, founders are actively choosing hosts who bring emotional intelligence, intellectual nuance, and contextual patience.",
@@ -796,12 +796,12 @@ export const ARTICLES: Article[] = [
     readTime: "8 min read",
     featured: true,
     excerpt: "Why corporate communications teams and founders are abandoning 300-word press releases in favor of unscripted 90-minute studio masterclasses.",
-    image: "/images/studio.jpg",
+    image: "/images/harshita-speaking-portrait.jpg",
     seoFocus: "executive podcasting, corporate pr transformation, founder storytelling, harshita dagha bkc studio, business interviews india",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "For the past three decades, corporate communication followed a rigid, predictable playbook: sanitized talking points, short press releases, and brisk 10-minute media interviews where every syllable was vetted for maximum diplomatic neutrality. In today's digital landscape, that architecture has collapsed. Audiences have developed high-frequency intuition for detecting corporate PR, turning instead to unhurried, long-form conversational audio.",
@@ -852,12 +852,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "7 min read",
     excerpt: "How the interview techniques of tactical silence, active listening, and psychological safety transform high-stakes boardroom negotiations.",
-    image: "/images/host.jpg",
+    image: "/images/harshita-speaking.jpg",
     seoFocus: "tactical silence negotiation, active listening in business, executive interview techniques, boardroom communication, harshita dagha",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "In corporate environments, silence is frequently treated as an error. During boardroom negotiations, team debriefs, and strategic pitches, professionals rush to fill momentary pauses with superfluous slides. Yet, after hosting hundreds of hours of dialogues with unicorn founders, investors, and public icons, one truth becomes evident: the most valuable insights always emerge on the other side of an uncomfortable pause.",
@@ -896,12 +896,12 @@ export const ARTICLES: Article[] = [
     date: "October 3, 2026",
     readTime: "8 min read",
     excerpt: "Why founders and enterprise leaders are investing in sovereign media infrastructure to control their own narrative and attract premier talent and capital.",
-    image: "/images/cover.jpg",
+    image: "/images/harshita-pink-mic.jpg",
     seoFocus: "sovereign media storytelling, founder personal brand, venture capital diligence, b2b podcasting roi, harshita dagha mumbai",
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/host.jpg"
+      avatar: "/images/harshita-avatar.jpg"
     },
     content: {
       intro: "A decade ago, a founder's job was simple: build a compelling product, manage unit economics, and let traditional financial press cover quarterly milestones. In an ultra-competitive global marketplace where foundational AI models have lowered the barrier to software creation, enterprise software products look increasingly similar on paper. Under these conditions, the narrative surrounding the builder has become the ultimate competitive moat.",

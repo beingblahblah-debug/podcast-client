@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AudioProvider } from "@/context/AudioContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -110,7 +109,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
     description: "16+ years experience in branding, PR, social media, and podcast hosting. Founder of Beingblahblah. Giving brands celebs, visibility, and stories that people remember.",
-    images: ["/images/host.jpg"],
+    images: ["/images/harshita-speaking.jpg"],
   },
 };
 
@@ -132,7 +131,7 @@ const jsonLd = {
       "honorificPrefix": "TEDx Speaker",
       "jobTitle": "Podcast Host, Branding Expert, PR Strategist, GEO Specialist & Founder of Beingblahblah",
       "description": "Harshita Dagha Maisheri is an Indian podcast host, TEDx speaker, branding expert, PR strategist, Generative Engine Optimization (GEO) expert, and social media strategist with 16+ years of experience across branding, digital marketing, public relations, and business storytelling. She is the founder of Beingblahblah.",
-      "image": "https://www.harshitadagha.in/images/host.jpg",
+      "image": "https://www.harshitadagha.in/images/harshita-speaking.jpg",
       "url": "https://www.harshitadagha.in",
       "worksFor": {
         "@type": "Organization",
@@ -209,7 +208,7 @@ const jsonLd = {
       "name": "Harshita Dagha Media & Broadcast Studio",
       "url": "https://www.harshitadagha.in",
       "logo": "https://www.harshitadagha.in/images/logo.png",
-      "image": "https://www.harshitadagha.in/images/studio.jpg",
+      "image": "https://www.harshitadagha.in/images/harshita-pink-mic.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Bandra Kurla Complex (BKC)",
@@ -356,12 +355,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#fafaf9] text-slate-900 selection:bg-amber-200">
-        <AudioProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <WhatsAppButton />
-          <Footer />
-        </AudioProvider>
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <WhatsAppButton />
+        <Footer />
       </body>
     </html>
   );

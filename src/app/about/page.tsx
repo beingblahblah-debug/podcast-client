@@ -223,12 +223,12 @@ export default function AboutPage() {
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold shadow-lg shadow-emerald-500/25 hover:scale-105 active:scale-95 transition-all"
+                className="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold shadow-lg shadow-emerald-500/25 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto text-center"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
                 <span>WhatsApp: +91 87790 03799</span>
@@ -236,7 +236,7 @@ export default function AboutPage() {
 
               <a
                 href="#tedx-talk"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white text-sm font-bold shadow-md hover:scale-105 active:scale-95 transition-all"
+                className="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white text-sm font-bold shadow-md hover:scale-105 active:scale-95 transition-all w-full sm:w-auto text-center"
               >
                 <Video className="w-4 h-4" />
                 <span>Watch TEDx Talk</span>
@@ -244,7 +244,7 @@ export default function AboutPage() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 text-sm font-semibold transition-colors"
+                className="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 text-sm font-semibold transition-colors w-full sm:w-auto text-center"
               >
                 <span>Explore Services</span>
                 <ArrowRight className="w-4 h-4 text-amber-400" />

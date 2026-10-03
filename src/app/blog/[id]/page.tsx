@@ -85,7 +85,7 @@ export default function ArticleDetailPage({ params }: PageProps) {
               "name": "Harshita Dagha Media",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.harshitadagha.in/images/host.jpg"
+                "url": "https://www.harshitadagha.in/images/logo.png"
               }
             },
             "keywords": article.seoFocus
@@ -227,43 +227,7 @@ export default function ArticleDetailPage({ params }: PageProps) {
           </button>
         </div>
 
-        {/* Audio Brief Player (Voice Mode) */}
-        <div className="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-amber-950/70 text-white p-6 sm:p-7 shadow-xl border border-amber-500/20 mb-10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
-          
-          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div className="flex items-center space-x-4">
-              <div className="w-14 h-14 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 shadow-lg shadow-amber-400/20">
-                <BookOpen className="w-6 h-6" />
-              </div>
 
-              <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-1">
-                  <span>Executive Editorial Brief</span>
-                </div>
-
-                <h3 className="font-serif font-bold text-base sm:text-lg text-white">
-                  Harshita Dagha Studio Intelligence
-                </h3>
-                <p className="text-xs text-slate-400">
-                  Published from Bandra Kurla Complex (BKC) Media Desk, Mumbai · Verified Editorial
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 w-full md:w-auto">
-              <a
-                href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha%20Maisheri,%20I%20am%20interested%20in%20connecting%20regarding%20this%20article."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full md:w-auto px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5"
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>Discuss on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
 
         {/* Cover Image */}
         <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-slate-200 mb-12">
