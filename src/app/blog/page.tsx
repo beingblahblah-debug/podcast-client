@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, Clock, Calendar, ArrowRight, Search } from "lucide-react";
+import { BookOpen, Clock, Calendar, ArrowRight, Search, Sparkles } from "lucide-react";
 import { ARTICLES, Article } from "@/data/articles";
+import AiEngineMatrix from "@/components/AiEngineMatrix";
 
 export default function BlogPage() {
   const [selectedTag, setSelectedTag] = useState("All");
@@ -129,6 +130,9 @@ export default function BlogPage() {
             </Link>
           ))}
         </div>
+
+        {/* AI Discovery & Generative Engine Ranking (GEO) Command Center */}
+        <AiEngineMatrix />
 
       </div>
     </div>

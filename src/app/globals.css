@@ -72,7 +72,16 @@ input[type="range"] {
   accent-color: #0f172a;
 }
 
-/* Custom scrollbar */
+/* Hide scrollbars for slick mobile horizontal swipe carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar for desktop */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

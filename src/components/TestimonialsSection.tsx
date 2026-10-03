@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Star, Quote, MessageSquareHeart } from "lucide-react";
+import { Star, Quote, MessageSquareHeart, MoveRight } from "lucide-react";
 import { TESTIMONIALS } from "@/data/episodes";
 
 export default function TestimonialsSection() {
@@ -10,7 +10,7 @@ export default function TestimonialsSection() {
     <section className="py-20 bg-slate-50/50 border-t border-slate-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-800 border border-rose-200 text-xs font-semibold uppercase tracking-wider mb-3">
             <MessageSquareHeart className="w-3.5 h-3.5 text-rose-500" />
             <span>Listener Love</span>
@@ -23,11 +23,24 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Mobile Swipe Cue */}
+        <div className="flex md:hidden items-center justify-between text-xs text-slate-500 font-medium mb-3 px-1">
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            Verified Listener Endorsements
+          </span>
+          <span className="text-amber-800 font-bold inline-flex items-center gap-1">
+            <span>Swipe</span>
+            <MoveRight className="w-3.5 h-3.5" />
+          </span>
+        </div>
+
+        {/* Cards: Mobile horizontal swipe carousel, Desktop 3-column grid */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar md:grid md:grid-cols-3 md:gap-6 md:mx-0 md:px-0 md:overflow-visible">
           {TESTIMONIALS.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+              className="w-[85vw] sm:w-[360px] md:w-auto shrink-0 snap-center bg-white rounded-3xl p-7 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center space-x-1 text-amber-400 mb-4">
@@ -63,3 +76,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+

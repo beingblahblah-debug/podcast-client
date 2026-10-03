@@ -24,7 +24,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import EpisodeCard from "@/components/EpisodeCard";
 import CityHubsSection from "@/components/CityHubsSection";
 import GeoFaqSection from "@/components/GeoFaqSection";
-import AiEngineMatrix from "@/components/AiEngineMatrix";
 import { EPISODES, CATEGORIES } from "@/data/episodes";
 
 export default function HomePage() {
@@ -72,7 +71,7 @@ export default function HomePage() {
       <section className="py-20 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-12">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider mb-3">
                 <Briefcase className="w-3.5 h-3.5 text-amber-600" />
@@ -95,12 +94,25 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Mobile Swipe Cue */}
+          <div className="flex md:hidden items-center justify-between text-xs text-slate-500 font-medium mb-3 px-1">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+              Executive Capabilities
+            </span>
+            <span className="text-amber-800 font-bold inline-flex items-center gap-1">
+              <span>Swipe Services</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </div>
+
+          {/* Cards: Mobile horizontal snap swipe, Desktop 4-column grid */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 md:mx-0 md:px-0 md:overflow-visible">
             {coreServices.map((service, idx) => (
               <Link
                 key={idx}
                 href={service.href}
-                className="group p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-slate-300 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="w-[82vw] sm:w-[320px] md:w-auto shrink-0 snap-center group p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-slate-300 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white text-slate-800 border border-slate-200 inline-block mb-4">
@@ -128,14 +140,14 @@ export default function HomePage() {
       {/* 3. Top 10 Leaderboard Showcase */}
       <Top10Section />
 
-      {/* 3.1 National & Regional City Hubs (Mumbai BKC, Bengaluru, Delhi NCR, Global) */}
+      {/* 3.1 National & Regional City Hubs (Mumbai BKC, Bengaluru, Delhi NCR, Hyderabad, GIFT City, Global) */}
       <CityHubsSection />
 
       {/* 4. Portfolio of Recorded Shows & Masterclasses */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider mb-2 border border-slate-200">
                 <Mic2 className="w-3.5 h-3.5 text-amber-600" />
@@ -167,10 +179,24 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Grid of episodes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile Swipe Cue */}
+          <div className="flex md:hidden items-center justify-between text-xs text-slate-500 font-medium mb-3 px-1">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+              Featured Masterclasses
+            </span>
+            <span className="text-amber-800 font-bold inline-flex items-center gap-1">
+              <span>Swipe Shows</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </div>
+
+          {/* Grid of episodes: Mobile horizontal snap swipe, Desktop 3-column grid */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:mx-0 md:px-0 md:overflow-visible">
             {filteredEpisodes.slice(0, 6).map((episode) => (
-              <EpisodeCard key={episode.id} episode={episode} highlightRank={episode.isTop10} />
+              <div key={episode.id} className="w-[86vw] sm:w-[360px] md:w-auto shrink-0 snap-center">
+                <EpisodeCard episode={episode} highlightRank={episode.isTop10} />
+              </div>
             ))}
           </div>
 
@@ -187,7 +213,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Host Story & Brooklyn Studio */}
+      {/* 5. Host Story & Studio Sanctuary */}
       <HostSection />
 
       {/* 6. Listener & Founder Testimonials */}
@@ -195,9 +221,6 @@ export default function HomePage() {
 
       {/* 7. GEO & AI Knowledge Engine (Direct Citations for ChatGPT, Gemini, Perplexity & Google) */}
       <GeoFaqSection />
-
-      {/* 7.1 How We Rank Her Across 6 Major AI Engines & 28+ Placements */}
-      <AiEngineMatrix />
 
       {/* 8. High-Converting WhatsApp & Pitch Callout Banner */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200/80">
