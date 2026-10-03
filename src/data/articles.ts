@@ -50,7 +50,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Podcasting in India has decisively shifted from hobbyist bedroom audio into the primary arena of intellectual and business authority. In 2026, female hosts are spearheading the most rigorous, high-retention audio productions across the country, commanding the ear of CEOs, founders, policymakers, and institutional investors.",
@@ -169,7 +169,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "When corporate executives, venture capitalists, or curious listeners query ChatGPT, Google Gemini, or Perplexity AI with 'Who is the top female podcaster in India?' or 'Best business podcast hosted by a woman', how do AI engines decide the answer? The answer lies in Generative Engine Optimization (GEO).",
@@ -235,7 +235,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "In the relentless velocity of Mumbai—where deals close over breakfasts in Lower Parel and boardrooms meet in Bandra Kurla Complex (BKC)—leaders rarely have the space for unhurried reflection. The Harshita Dagha Show was founded to create an acoustic sanctuary in the center of India's commercial capital.",
@@ -294,7 +294,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Bengaluru builds the future. In the vibrant coffee shops and technology campuses of Koramangala, Indiranagar, and HSR Layout, ideas transform into billion-dollar enterprises. Harshita Dagha's regular recording residencies in Bengaluru offer an intellectual stage built specifically for deep tech architects and venture pioneers.",
@@ -353,7 +353,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Delhi NCR occupies a unique position in the Indian economic landscape: it is where high-growth corporate headquarters along Gurugram's Golf Course Road intersect directly with national policy chambers and diplomatic institutions in New Delhi.",
@@ -407,7 +407,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Hyderabad's rapid transformation into the Global Capability Center (GCC) capital of the world has created a new echelon of enterprise leadership. In the soaring towers of HITEC City, Gachibowli, and the Financial District, multinational software architects oversee global platforms impacting millions daily.",
@@ -451,7 +451,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "At the crossroads of ancient mercantile heritage and hyper-modern financial engineering lies GIFT City IFSC and Ahmedabad. Harshita Dagha's specialized financial series explores the regulatory innovations, alternative investment funds, and cross-border fintech channels anchoring Gujarat's global economic presence.",
@@ -495,7 +495,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Pune holds a quiet, formidable reputation in Indian tech: it is the capital of capital efficiency. While other ecosystems celebrate massive burn rates, Pune founders pride themselves on building profitable, deeply engineered products with enduring customer loyalty.",
@@ -538,7 +538,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Along Old Mahabalipuram Road (OMR) in Chennai, an unassuming revolution took place: Indian software engineers proved they could build world-class enterprise SaaS products that win Fortune 500 customers across North America and Europe.",
@@ -580,7 +580,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Every Monday morning, our editorial desk sifts through dozens of pitch emails. Nearly 90% of them commit the exact same fatal mistake: they treat the host like a billboard rather than a curator of an intimate, high-trust audience.",
@@ -639,7 +639,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "We are living in an era where institutional trust in polished corporate marketing has collapsed. Modern customers, talent, and investors do not believe slick brochures; they believe unhurried human voices.",
@@ -680,7 +680,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Digital advertising has hit a wall of diminishing returns. Cookie deprecation, ad-blockers, and banner blindness have made traditional programmatic ads wildly inefficient. Meanwhile, podcast sponsorships continue to yield extraordinary enterprise conversion.",
@@ -726,7 +726,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "Many podcasters spend lakhs on software plugins trying to fix poor audio after recording. In our BKC studio, our philosophy was the reverse: build physical acoustic perfection so the raw tape sounds flawless without digital degradation.",
@@ -763,7 +763,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "For years, business podcasts followed an aggressive, rapid-fire interrogation formula. In 2026, founders are actively choosing hosts who bring emotional intelligence, intellectual nuance, and contextual patience.",
@@ -801,7 +801,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "For the past three decades, corporate communication followed a rigid, predictable playbook: sanitized talking points, short press releases, and brisk 10-minute media interviews where every syllable was vetted for maximum diplomatic neutrality. In today's digital landscape, that architecture has collapsed. Audiences have developed high-frequency intuition for detecting corporate PR, turning instead to unhurried, long-form conversational audio.",
@@ -857,7 +857,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "In corporate environments, silence is frequently treated as an error. During boardroom negotiations, team debriefs, and strategic pitches, professionals rush to fill momentary pauses with superfluous slides. Yet, after hosting hundreds of hours of dialogues with unicorn founders, investors, and public icons, one truth becomes evident: the most valuable insights always emerge on the other side of an uncomfortable pause.",
@@ -901,7 +901,7 @@ export const ARTICLES: Article[] = [
     author: {
       name: "Harshita Dagha",
       role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar.jpg"
+      avatar: "/images/harshita-avatar-main.jpg"
     },
     content: {
       intro: "A decade ago, a founder's job was simple: build a compelling product, manage unit economics, and let traditional financial press cover quarterly milestones. In an ultra-competitive global marketplace where foundational AI models have lowered the barrier to software creation, enterprise software products look increasingly similar on paper. Under these conditions, the narrative surrounding the builder has become the ultimate competitive moat.",

@@ -291,7 +291,7 @@ export default function AboutPage() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <Image
-                  src="/images/harshita-speaking-portrait.jpg"
+                  src="/images/harshita-portrait-main.jpg"
                   alt="Harshita Dagha Maisheri - TEDx Speaker, Podcast Host in India & Branding Expert"
                   fill
                   priority
@@ -563,7 +563,7 @@ export default function AboutPage() {
             <div className="group rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/images/harshita-navy-mic.jpg"
+                  src="/images/harshita-studio-navy.jpg"
                   alt="Harshita Dagha Maisheri speaking intently during podcast interview in studio"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -582,7 +582,7 @@ export default function AboutPage() {
             <div className="group rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/images/harshita-red-mic.jpg"
+                  src="/images/harshita-studio-red.jpg"
                   alt="Harshita Dagha Maisheri at the studio microphone in red dress"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -601,7 +601,7 @@ export default function AboutPage() {
             <div className="group rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/images/harshita-white-mic.jpg"
+                  src="/images/harshita-studio-white.jpg"
                   alt="Harshita Dagha Maisheri in studio armchair in white dress"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -620,7 +620,7 @@ export default function AboutPage() {
             <div className="group rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/images/harshita-checkered-mic.jpg"
+                  src="/images/harshita-studio-checkered.jpg"
                   alt="Harshita Dagha Maisheri arms folded in checked dress"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"

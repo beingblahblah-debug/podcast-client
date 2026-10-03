@@ -19,7 +19,7 @@ export default function HostSection() {
               {/* Studio photo backdrop */}
               <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-slate-200">
                 <Image
-                  src="/images/harshita-navy-mic.jpg"
+                  src="/images/harshita-studio-navy.jpg"
                   alt="Harshita Dagha Maisheri in Mumbai BKC Podcast Studio"
                   fill
                   className="object-cover"
@@ -33,7 +33,7 @@ export default function HostSection() {
               {/* Overlapping host portrait badge */}
               <div className="absolute -bottom-8 -right-4 sm:-right-8 w-44 sm:w-56 aspect-square rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                 <Image
-                  src="/images/harshita-avatar.jpg"
+                  src="/images/harshita-avatar-main.jpg"
                   alt="Harshita Dagha Maisheri - TEDx Speaker & Podcast Host"
                   fill
                   className="object-cover object-top"

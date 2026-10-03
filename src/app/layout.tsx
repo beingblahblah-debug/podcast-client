@@ -90,13 +90,13 @@ export const metadata: Metadata = {
     siteName: "Harshita Dagha Maisheri Official",
     images: [
       {
-        url: "/images/harshita-checkered-mic.jpg",
-        width: 1024,
+        url: "/images/harshita-portrait-main.jpg",
+        width: 545,
         height: 682,
         alt: "Harshita Dagha Maisheri - Podcast Host, Branding & PR Expert",
       },
       {
-        url: "/images/harshita-navy-mic.jpg",
+        url: "/images/harshita-studio-navy.jpg",
         width: 1024,
         height: 682,
         alt: "Harshita Dagha Maisheri - TEDx Speaker & Host",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
     description: "16+ years experience in branding, PR, social media, and podcast hosting. Founder of Beingblahblah. Giving brands celebs, visibility, and stories that people remember.",
-    images: ["/images/harshita-navy-mic.jpg"],
+    images: ["/images/harshita-portrait-main.jpg"],
   },
 };
 
@@ -208,7 +208,7 @@ const jsonLd = {
       "name": "Harshita Dagha Media & Broadcast Studio",
       "url": "https://www.harshitadagha.in",
       "logo": "https://www.harshitadagha.in/images/logo.png",
-      "image": "https://www.harshitadagha.in/images/harshita-navy-mic.jpg",
+      "image": "https://www.harshitadagha.in/images/harshita-portrait-main.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Bandra Kurla Complex (BKC)",

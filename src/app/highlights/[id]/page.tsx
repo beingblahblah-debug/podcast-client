@@ -167,7 +167,7 @@ export default function ReelDetailPage({ params }: PageProps) {
           {/* Byline & Show Desk */}
           <div className="flex items-center gap-3 pt-4 border-t border-slate-100 text-xs text-slate-600">
             <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 shrink-0">
-              <Image src="/images/harshita-avatar.jpg" alt="Harshita Dagha Maisheri" fill className="object-cover" />
+              <Image src="/images/harshita-avatar-main.jpg" alt="Harshita Dagha Maisheri" fill className="object-cover" />
             </div>
             <div>
               <p className="font-bold text-slate-900">

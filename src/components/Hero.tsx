@@ -121,7 +121,7 @@ export default function Hero() {
                 {/* Host Portrait */}
                 <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden mb-6 border border-slate-200 shadow-inner group">
                   <Image
-                    src="/images/harshita-speaking-portrait.jpg"
+                    src="/images/harshita-portrait-main.jpg"
                     alt="Harshita Dagha Maisheri - TEDx Speaker, Podcast Host in India & Branding Expert"
                     fill
                     priority

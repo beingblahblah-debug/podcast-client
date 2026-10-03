@@ -75,7 +75,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. Aris Thorne",
       role: "Director of Cognitive Systems & Partner",
       company: "Apex Neuro Labs",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Former DARPA neuroscience researcher turned advisor to Fortune 50 founders and Olympic coaches.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -121,7 +121,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Maya Lin",
       role: "Chief Design Evangelist & Author",
       company: "Studio Form & Flux",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Author of 'The Sacred Flaw' and former lead design philosopher at legendary hardware collectives.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -166,7 +166,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Julian Vance",
       role: "Founder & General Partner",
       company: "Vanguard Genesis",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Founding member of three unicorn startups and keynote speaker on category design.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -211,7 +211,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. Sanjana Roy",
       role: "Lead Neurobiologist",
       company: "MindBody Research Institute",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Stanford medical alumnus and host of the Mind & Molecule public lectures.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -255,7 +255,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Clara Dupont",
       role: "Co-Founder & Culinary Director",
       company: "Maison Lumière Group",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Recipient of three James Beard honors and curator of bespoke experiential events globally.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -299,7 +299,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Marcus Vance",
       role: "Senior Crisis Negotiator & Strategist",
       company: "Equinox Advisory",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Advises international peace delegations, enterprise C-suites, and diplomatic corps.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -343,7 +343,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Chloe Sterling",
       role: "Music Producer & Visual Artist",
       company: "Sterling Sound Collective",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Producer with 12 RIAA certified platinum records and curator of interdisciplinary art installations.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -387,7 +387,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. David Hensley",
       role: "Head of Epigenetic Medicine",
       company: "Oxford Longevity Consortium",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Senior Fellow at the Longevity Institute and lead investigator on cellular reprogramming clinical trials.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -431,7 +431,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Nadia Al-Mansoor",
       role: "Architectural Curator & Critic",
       company: "Atelier Form",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Curator of international biennials and architectural advisor to metropolitan civic spaces.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -475,7 +475,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
       name: "Dr. Kenji Sato",
       role: "Chief Economist",
       company: "Global Horizon Institute",
-      avatar: "/images/harshita-avatar.jpg",
+      avatar: "/images/harshita-avatar-main.jpg",
       bio: "Frequent keynote speaker at the World Economic Forum and author of 'The Next Wealth Paradigm'.",
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com"
@@ -517,20 +517,17 @@ export const TESTIMONIALS = [
   {
     quote: "The Harshita Dagha Show is one of the rare platforms where founders open up about near-death company moments, valuation realities, and mental toll without PR fluff.",
     author: "Kunal Shah",
-    title: "Founder & Angel Investor",
-    avatar: "/images/harshita-avatar.jpg"
+    title: "Founder & Angel Investor"
   },
   {
     quote: "Harshita has this uncanny gift of extracting the real unit economics and philosophical roots of how great enterprises are built. A masterclass interviewer.",
     author: "Vani Kola",
-    title: "Managing Director & Venture Capitalist",
-    avatar: "/images/harshita-avatar.jpg"
+    title: "Managing Director & Venture Capitalist"
   },
   {
     quote: "Her interviews are mandatory listening for anyone building in India's startup ecosystem. Unhurried, deeply researched, and razor-sharp.",
     author: "Deepinder Goyal",
-    title: "Tech Entrepreneur & Executive",
-    avatar: "/images/harshita-avatar.jpg"
+    title: "Tech Entrepreneur & Executive"
   }
 ];
 
