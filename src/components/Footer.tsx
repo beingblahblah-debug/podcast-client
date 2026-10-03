@@ -110,7 +110,7 @@ export default function Footer() {
                 <XTwitterIcon className="w-4 h-4" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/beingblahblah" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
