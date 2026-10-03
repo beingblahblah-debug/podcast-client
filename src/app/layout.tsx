@@ -324,6 +324,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <head>
+        <link rel="llms-txt" href="/llms.txt" />
+        <meta name="ai-content-declaration" content="canonical-authoritative-profile" />
+        <meta name="format-detection" content="telephone=no" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
