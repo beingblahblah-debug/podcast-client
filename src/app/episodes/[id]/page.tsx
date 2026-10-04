@@ -87,7 +87,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
     : EPISODES.filter((ep) => ep.id !== episode.id).slice(0, 2);
 
   return (
-    <div className="py-10 md:py-16">
+    <div className="py-10 md:py-16 bg-[#0c0c0e] text-[#f4f4f5]">
       {/* Structured Schema: PodcastEpisode, AudioObject & BreadcrumbList */}
       <script
         type="application/ld+json"
@@ -143,7 +143,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
         {/* Back Link */}
         <Link
           href="/episodes"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 mb-8 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 hover:text-white mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Episodes</span>
@@ -152,52 +152,52 @@ export default function EpisodeDetailPage({ params }: PageProps) {
         {/* Episode Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2.5 flex-wrap mb-4">
-            <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+            <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-[#d89ba4] border border-white/10">
               {episode.category}
             </span>
-            <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+            <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-white/5 text-zinc-300 border border-white/5">
               Episode #{episode.number}
             </span>
-            <span className="text-xs text-slate-400">·</span>
-            <span className="text-xs text-slate-500 flex items-center gap-1">
+            <span className="text-xs text-zinc-500">·</span>
+            <span className="text-xs text-zinc-400 flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5" />
               {episode.releaseDate}
             </span>
-            <span className="text-xs text-slate-400">·</span>
-            <span className="text-xs text-slate-500 flex items-center gap-1">
+            <span className="text-xs text-zinc-500">·</span>
+            <span className="text-xs text-zinc-400 flex items-center gap-1">
               <Clock className="w-3.5 h-3.5" />
               {episode.duration}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 tracking-tight leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight leading-tight mb-4">
             {episode.title}
           </h1>
 
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl">
+          <p className="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-3xl">
             {episode.subtitle}
           </p>
         </div>
 
         {/* Executive Masterclass Dialogue Showcase & Official Streaming Links */}
-        <div className="bg-slate-950 text-white rounded-3xl p-6 sm:p-8 shadow-2xl mb-12 relative overflow-hidden border border-slate-800">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-[#141418] text-white rounded-3xl p-6 sm:p-8 shadow-2xl mb-12 relative overflow-hidden border border-white/10">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#d89ba4]/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             
             {/* Left Column: Masterclass Badge & Title */}
             <div className="max-w-xl">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="text-xs text-amber-400 font-mono tracking-widest uppercase bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 rounded-full">
+                <span className="text-xs text-[#d89ba4] font-mono tracking-widest uppercase bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full">
                   Official Masterclass Dialogue
                 </span>
-                <span className="text-slate-600">·</span>
-                <span className="text-xs text-slate-400 font-mono">Bandra Kurla Complex (BKC) Studio Master</span>
+                <span className="text-zinc-600">·</span>
+                <span className="text-xs text-zinc-400 font-mono">Bandra Kurla Complex (BKC) Studio Master</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-1">
                 {episode.title}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400">
+              <p className="text-xs sm:text-sm text-zinc-400">
                 Featuring {episode.guest.name} ({episode.guest.role} at {episode.guest.company}) · Recorded live with host Harshita Dagha
               </p>
             </div>
@@ -209,7 +209,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                   href={episode.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-xl bg-[#1DB954] hover:bg-[#1aa34a] text-slate-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
+                  className="px-4 py-2.5 rounded-xl bg-[#1DB954] hover:bg-[#1aa34a] text-black text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
                 >
                   <span>Listen on Spotify</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -221,7 +221,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                   href={episode.appleUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105 active:scale-95"
+                  className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105 active:scale-95"
                 >
                   <span>Apple Podcasts</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -242,12 +242,12 @@ export default function EpisodeDetailPage({ params }: PageProps) {
 
               <button
                 onClick={handleShare}
-                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1.5 transition-colors relative cursor-pointer"
+                className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs font-medium flex items-center gap-1.5 transition-colors relative cursor-pointer"
               >
                 <Share2 className="w-3.5 h-3.5" />
                 <span>Share</span>
                 {copied && (
-                  <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded shadow whitespace-nowrap">
+                  <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#d89ba4] text-black text-[10px] font-bold px-2 py-0.5 rounded shadow whitespace-nowrap">
                     Link Copied!
                   </span>
                 )}
@@ -257,15 +257,15 @@ export default function EpisodeDetailPage({ params }: PageProps) {
           </div>
 
           {/* Chapters Outline Strip */}
-          <div className="mt-6 pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 overflow-x-auto gap-4">
-            <span className="font-semibold text-slate-300 shrink-0">Key Chapter Outline:</span>
+          <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 overflow-x-auto gap-4">
+            <span className="font-semibold text-zinc-300 shrink-0">Key Chapter Outline:</span>
             <div className="flex items-center gap-2">
               {episode.chapters.slice(0, 4).map((ch, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono whitespace-nowrap"
+                  className="px-2.5 py-1 rounded-lg bg-[#0c0c0e] border border-white/10 text-zinc-300 text-xs font-mono whitespace-nowrap"
                 >
-                  <strong className="text-amber-400 mr-1">{ch.time}</strong> {ch.title}
+                  <strong className="text-[#d89ba4] mr-1">{ch.time}</strong> {ch.title}
                 </span>
               ))}
             </div>
@@ -273,19 +273,19 @@ export default function EpisodeDetailPage({ params }: PageProps) {
         </div>
 
         {/* Guest Profile Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-12 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950/60 border border-amber-500/30 text-amber-400 flex flex-col items-center justify-center shrink-0 shadow-md">
+        <div className="bg-[#141418] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-sm mb-12 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/5 border border-white/10 text-[#d89ba4] flex flex-col items-center justify-center shrink-0 shadow-md">
             <Mic2 className="w-8 h-8 mb-1" />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Guest</span>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400">Guest</span>
           </div>
 
           <div className="flex-1 text-center sm:text-left">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
               <div>
-                <h3 className="text-xl font-serif font-bold text-slate-950">
+                <h3 className="text-xl font-serif font-bold text-white">
                   {episode.guest.name}
                 </h3>
-                <p className="text-xs font-semibold text-amber-700">
+                <p className="text-xs font-semibold text-[#d89ba4]">
                   {episode.guest.role} · {episode.guest.company}
                 </p>
               </div>
@@ -296,7 +296,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                     href={episode.guest.twitter}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+                    className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white transition-colors"
                     aria-label="X (formerly Twitter)"
                   >
                     <XTwitterIcon className="w-3.5 h-3.5" />
@@ -307,7 +307,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                     href={episode.guest.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+                    className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white transition-colors"
                     aria-label="LinkedIn profile"
                   >
                     <LinkedInIcon className="w-3.5 h-3.5" />
@@ -316,7 +316,7 @@ export default function EpisodeDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-zinc-300 leading-relaxed">
               {episode.guest.bio}
             </p>
           </div>
@@ -324,13 +324,13 @@ export default function EpisodeDetailPage({ params }: PageProps) {
 
         {/* Content Tabs (Show Notes vs Transcript) */}
         <div className="mb-12">
-          <div className="flex items-center space-x-2 border-b border-slate-200 mb-8">
+          <div className="flex items-center space-x-2 border-b border-white/10 mb-8">
             <button
               onClick={() => setActiveTab("notes")}
               className={`pb-3 px-4 text-sm font-semibold border-b-2 transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === "notes"
-                  ? "border-slate-950 text-slate-950 font-bold"
-                  : "border-transparent text-slate-500 hover:text-slate-800"
+                  ? "border-[#d89ba4] text-white font-bold"
+                  : "border-transparent text-zinc-400 hover:text-white"
               }`}
             >
               <FileText className="w-4 h-4" />
@@ -340,8 +340,8 @@ export default function EpisodeDetailPage({ params }: PageProps) {
               onClick={() => setActiveTab("transcript")}
               className={`pb-3 px-4 text-sm font-semibold border-b-2 transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === "transcript"
-                  ? "border-slate-950 text-slate-950 font-bold"
-                  : "border-transparent text-slate-500 hover:text-slate-800"
+                  ? "border-[#d89ba4] text-white font-bold"
+                  : "border-transparent text-zinc-400 hover:text-white"
               }`}
             >
               <ListOrdered className="w-4 h-4" />
@@ -354,55 +354,55 @@ export default function EpisodeDetailPage({ params }: PageProps) {
             <div className="space-y-10">
               
               {/* Key Takeaways Box */}
-              <div className="rounded-3xl bg-amber-50/60 p-6 sm:p-8 border border-amber-200/80">
-                <div className="flex items-center gap-2 text-amber-900 font-bold text-base mb-4">
-                  <Sparkles className="w-5 h-5 text-amber-600" />
+              <div className="rounded-3xl bg-white/[0.03] p-6 sm:p-8 border border-white/10">
+                <div className="flex items-center gap-2 text-[#d89ba4] font-bold text-base mb-4">
+                  <Sparkles className="w-5 h-5 text-[#d89ba4]" />
                   <h3>Key Takeaways & Core Lessons</h3>
                 </div>
                 <div className="space-y-3">
                   {episode.takeaways.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <p className="text-slate-800 text-sm leading-relaxed">{point}</p>
+                      <CheckCircle2 className="w-4 h-4 text-[#d89ba4] shrink-0 mt-0.5" />
+                      <p className="text-zinc-200 text-sm leading-relaxed">{point}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Episode Description */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs">
-                <h3 className="font-serif font-bold text-xl text-slate-950 mb-4">
+              <div className="bg-[#141418] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-xs">
+                <h3 className="font-serif font-bold text-xl text-white mb-4">
                   Episode Summary
                 </h3>
-                <div className="prose prose-slate max-w-none text-slate-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                <div className="prose prose-invert max-w-none text-zinc-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
                   {episode.description}
                 </div>
               </div>
 
               {/* Show Chapters Outline */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs">
-                <h3 className="font-serif font-bold text-xl text-slate-950 mb-2">
+              <div className="bg-[#141418] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-xs">
+                <h3 className="font-serif font-bold text-xl text-white mb-2">
                   Conversation Chapters & Topics
                 </h3>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-zinc-400 mb-6">
                   Detailed timestamp index covering key discussion milestones in this masterclass dialogue.
                 </p>
 
-                <div className="divide-y divide-slate-100">
+                <div className="divide-y divide-white/5">
                   {episode.chapters.map((ch, idx) => (
                     <div
                       key={idx}
-                      className="py-3.5 flex items-center justify-between px-3 rounded-xl hover:bg-slate-50 transition-colors"
+                      className="py-3.5 flex items-center justify-between px-3 rounded-xl hover:bg-white/5 transition-colors"
                     >
                       <div className="flex items-center space-x-3">
-                        <span className="font-mono text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200/60">
+                        <span className="font-mono text-xs font-bold text-[#d89ba4] bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
                           {ch.time}
                         </span>
-                        <span className="text-sm font-medium text-slate-800">
+                        <span className="text-sm font-medium text-zinc-200">
                           {ch.title}
                         </span>
                       </div>
-                      <span className="text-xs text-slate-400 font-mono">
+                      <span className="text-xs text-zinc-500 font-mono">
                         Part {idx + 1}
                       </span>
                     </div>
@@ -415,13 +415,13 @@ export default function EpisodeDetailPage({ params }: PageProps) {
 
           {/* Transcript Tab */}
           {activeTab === "transcript" && (
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+            <div className="bg-[#141418] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-xs">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="font-serif font-bold text-xl text-slate-950">
+                  <h3 className="font-serif font-bold text-xl text-white">
                     Audio Transcript Excerpt
                   </h3>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-xs text-zinc-400 mt-0.5">
                     Verified transcript generated from master studio tape.
                   </p>
                 </div>
@@ -431,19 +431,19 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                     setCopied(true);
                     setTimeout(() => setCopied(false), 2000);
                   }}
-                  className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+                  className="px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-zinc-300 hover:bg-white/10"
                 >
                   {copied ? "Copied!" : "Copy Excerpt"}
                 </button>
               </div>
 
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 font-sans text-sm text-slate-700 leading-relaxed whitespace-pre-line">
+              <div className="p-6 rounded-2xl bg-[#0c0c0e] border border-white/10 font-sans text-sm text-zinc-300 leading-relaxed whitespace-pre-line">
                 {episode.transcriptSnippet}
               </div>
 
-              <div className="mt-6 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex items-center justify-between">
+              <div className="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-zinc-300 flex items-center justify-between">
                 <span>Want the complete unedited 12-page PDF transcript?</span>
-                <Link href="/about" className="font-bold underline hover:text-amber-950">
+                <Link href="/profile" className="font-bold text-[#d89ba4] underline hover:text-[#e8b5be]">
                   Join VIP Newsletter →
                 </Link>
               </div>
@@ -452,10 +452,10 @@ export default function EpisodeDetailPage({ params }: PageProps) {
         </div>
 
         {/* Discussion & Listener Notes */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xs mb-16">
+        <div className="bg-[#141418] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-xs mb-16">
           <div className="flex items-center gap-2 mb-6">
-            <MessageSquare className="w-5 h-5 text-amber-600" />
-            <h3 className="font-serif font-bold text-xl text-slate-950">
+            <MessageSquare className="w-5 h-5 text-[#d89ba4]" />
+            <h3 className="font-serif font-bold text-xl text-white">
               Listener Discussion ({comments.length})
             </h3>
           </div>
@@ -468,13 +468,13 @@ export default function EpisodeDetailPage({ params }: PageProps) {
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
                 placeholder="Share your reflection or core takeaway from this conversation..."
-                className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-900 focus:bg-white transition-all"
+                className="w-full p-4 rounded-2xl bg-[#0c0c0e] border border-white/10 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#d89ba4]/50 focus:bg-[#111115] transition-all"
               />
             </div>
             <div className="mt-2.5 flex justify-end">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#d89ba4] hover:bg-[#c98c95] text-black text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <span>Post Reflection</span>
                 <Send className="w-3.5 h-3.5" />
@@ -484,12 +484,12 @@ export default function EpisodeDetailPage({ params }: PageProps) {
 
           <div className="space-y-4">
             {comments.map((c, i) => (
-              <div key={i} className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div key={i} className="p-4 rounded-2xl bg-[#0c0c0e] border border-white/5">
                 <div className="flex items-center justify-between text-xs mb-1.5">
-                  <span className="font-bold text-slate-900">{c.name}</span>
-                  <span className="text-slate-400">{c.time}</span>
+                  <span className="font-bold text-white">{c.name}</span>
+                  <span className="text-zinc-500">{c.time}</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   {c.text}
                 </p>
               </div>
@@ -498,8 +498,8 @@ export default function EpisodeDetailPage({ params }: PageProps) {
         </div>
 
         {/* Related Recommended Episodes */}
-        <div className="pt-8 border-t border-slate-200">
-          <h3 className="text-2xl font-serif font-bold text-slate-950 mb-6">
+        <div className="pt-8 border-t border-white/10">
+          <h3 className="text-2xl font-serif font-bold text-white mb-6">
             Recommended Next Conversations
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -1,19 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf9;
-  --foreground: #0f172a;
-  --primary: #0f172a;
-  --primary-accent: #e06d53;
-  --primary-gold: #d97706;
-  --card-bg: #ffffff;
-  --card-border: #f1f5f9;
+  --background: #0c0c0e;
+  --foreground: #f4f4f5;
+  --primary: #f4f4f5;
+  --rose-accent: #d89ba4;
+  --rose-accent-hover: #e2a8b1;
+  --rose-accent-muted: rgba(216, 155, 164, 0.12);
+  --dark-surface: #131317;
+  --dark-card: #17171c;
+  --dark-card-hover: #1c1c22;
+  --dark-border: rgba(255, 255, 255, 0.08);
+  --dark-border-hover: rgba(216, 155, 164, 0.3);
+  --font-serif: var(--font-newsreader), var(--font-serif-display), Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: var(--font-sans-display), 'Plus Jakarta Sans', var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -23,36 +30,63 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 body {
-  background-color: #fafaf9;
-  color: #0f172a;
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #0c0c0e;
+  color: #f4f4f5;
+  font-family: var(--font-sans);
   overflow-x: hidden;
-  selection-background-color: #fbcfe8;
+  selection-background-color: rgba(216, 155, 164, 0.3);
+  selection-color: #ffffff;
 }
 
-/* Custom subtle ambient gradient backgrounds */
-.bg-mesh-light {
+/* Serif font override to ensure luxury editorial font rendering */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom subtle ambient gradient backgrounds for dark luxury theme */
+.bg-mesh-dark {
   background-image: 
-    radial-gradient(at 0% 0%, rgba(254, 243, 199, 0.45) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(254, 215, 170, 0.35) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(253, 230, 138, 0.25) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(216, 155, 164, 0.07) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 255, 255, 0.03) 0px, transparent 40%),
+    radial-gradient(at 50% 100%, rgba(216, 155, 164, 0.04) 0px, transparent 50%);
 }
 
 .bg-glass {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(19, 19, 23, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .bg-glass-card {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(23, 23, 28, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Tasteful dusty rose accent utility classes (used minimally) */
+.text-rose-accent {
+  color: #d89ba4;
+}
+
+.bg-rose-accent {
+  background-color: #d89ba4;
+}
+
+.bg-rose-accent-muted {
+  background-color: rgba(216, 155, 164, 0.12);
+}
+
+.border-rose-accent-muted {
+  border-color: rgba(216, 155, 164, 0.25);
+}
+
+.hover-border-rose-accent:hover {
+  border-color: rgba(216, 155, 164, 0.45);
 }
 
 /* Equalizer soundwave animation */
@@ -69,7 +103,7 @@ body {
 
 /* Custom slider / range styling for audio scrubber */
 input[type="range"] {
-  accent-color: #0f172a;
+  accent-color: #d89ba4;
 }
 
 /* Hide scrollbars for slick mobile horizontal swipe carousels */
@@ -81,18 +115,19 @@ input[type="range"] {
   scrollbar-width: none;
 }
 
-/* Custom scrollbar for desktop */
+/* Custom scrollbar for desktop - Dark sleek */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #0c0c0e;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #27272e;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #3f3f4a;
 }
+

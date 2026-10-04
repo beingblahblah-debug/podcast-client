@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Newsreader, Playfair_Display, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-serif-display",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-sans-display",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -18,15 +31,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.harshitadagha.in"),
   title: {
-    default: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
-    template: "%s | Harshita Dagha Maisheri"
+    default: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
+    template: "%s | Harshita Dagha"
   },
-  description: "Harshita Dagha Maisheri is an Indian podcast host, TEDx speaker, branding & PR strategist, and GEO expert with 16+ years of experience. Founder of Beingblahblah. Based in Mumbai, connecting brands with celebrities, visibility, and stories that people remember.",
+  description: "Harshita Dagha is an Indian podcast host, TEDx speaker, branding & PR strategist, and GEO expert with 16+ years of experience. Founder of Beingblahblah. Based in Mumbai, connecting brands with celebrities, visibility, and stories that people remember.",
   keywords: [
     // Primary Entity
-    "Harshita Dagha Maisheri",
     "Harshita Dagha",
-    "Harshita Maisheri",
     "Podcast Host in India",
     "TEDx Speaker Harshita Dagha",
     "Beingblahblah",
@@ -56,8 +67,8 @@ export const metadata: Metadata = {
     "Bandra Kurla Complex podcast studio",
     "brand storytelling and digital PR"
   ],
-  authors: [{ name: "Harshita Dagha Maisheri", url: "https://www.harshitadagha.in" }],
-  creator: "Harshita Dagha Maisheri",
+  authors: [{ name: "Harshita Dagha", url: "https://www.harshitadagha.in" }],
+  creator: "Harshita Dagha",
   publisher: "Beingblahblah & Harshita Dagha Media",
   icons: {
     icon: [
@@ -84,22 +95,22 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
+    title: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
     description: "Indian podcast host, TEDx speaker, branding & PR strategist with 16+ years experience. Founder of Beingblahblah. Turning conversations into powerful brand stories.",
     url: "https://www.harshitadagha.in",
-    siteName: "Harshita Dagha Maisheri Official",
+    siteName: "Harshita Dagha Official",
     images: [
       {
         url: "/images/harshita-portrait-main.jpg",
         width: 545,
         height: 682,
-        alt: "Harshita Dagha Maisheri - Podcast Host, Branding & PR Expert",
+        alt: "Harshita Dagha - Podcast Host, Branding & PR Expert",
       },
       {
         url: "/images/harshita-studio-navy.jpg",
         width: 1024,
         height: 682,
-        alt: "Harshita Dagha Maisheri - TEDx Speaker & Host",
+        alt: "Harshita Dagha - TEDx Speaker & Host",
       },
     ],
     locale: "en_IN",
@@ -107,7 +118,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harshita Dagha Maisheri | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
+    title: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
     description: "16+ years experience in branding, PR, social media, and podcast hosting. Founder of Beingblahblah. Giving brands celebs, visibility, and stories that people remember.",
     images: ["/images/harshita-portrait-main.jpg"],
   },
@@ -120,17 +131,16 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": "https://www.harshitadagha.in/#harshitadagha",
-      "name": "Harshita Dagha Maisheri",
+      "name": "Harshita Dagha",
       "alternateName": [
         "Harshita Dagha",
-        "Harshita Maisheri",
         "Harshita",
         "Beingblahblah"
       ],
       "gender": "Female",
       "honorificPrefix": "TEDx Speaker",
       "jobTitle": "Podcast Host, Branding Expert, PR Strategist, GEO Specialist & Founder of Beingblahblah",
-      "description": "Harshita Dagha Maisheri is an Indian podcast host, TEDx speaker, branding expert, PR strategist, Generative Engine Optimization (GEO) expert, and social media strategist with 16+ years of experience across branding, digital marketing, public relations, and business storytelling. She is the founder of Beingblahblah.",
+      "description": "Harshita Dagha is an Indian podcast host, TEDx speaker, branding expert, PR strategist, Generative Engine Optimization (GEO) expert, and social media strategist with 16+ years of experience across branding, digital marketing, public relations, and business storytelling. She is the founder of Beingblahblah.",
       "image": "https://www.harshitadagha.in/images/harshita-speaking.jpg",
       "url": "https://www.harshitadagha.in",
       "worksFor": {
@@ -144,7 +154,7 @@ const jsonLd = {
       },
       "workLocation": {
         "@type": "Place",
-        "name": "Harshita Dagha Maisheri Studio HQ",
+        "name": "Harshita Dagha Studio HQ",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Mumbai",
@@ -181,8 +191,8 @@ const jsonLd = {
     {
       "@type": "VideoObject",
       "@id": "https://www.harshitadagha.in/#tedx-talk",
-      "name": "Harshita Dagha Maisheri - TEDx Talk",
-      "description": "Official TEDx Talk delivered by Harshita Dagha Maisheri on the power of storytelling, branding, and authentic connections.",
+      "name": "Harshita Dagha - TEDx Talk",
+      "description": "Official TEDx Talk delivered by Harshita Dagha on the power of storytelling, branding, and authentic connections.",
       "thumbnailUrl": [
         "https://www.harshitadagha.in/images/harshita-speaking.jpg",
         "https://img.youtube.com/vi/AUFI1ELJyjk/maxresdefault.jpg"
@@ -344,7 +354,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${newsreader.variable} ${playfair.variable} ${plusJakarta.variable} ${geistMono.variable} antialiased dark`}>
       <head>
         <link rel="llms-txt" href="/llms.txt" />
         <meta name="ai-content-declaration" content="canonical-authoritative-profile" />
@@ -354,7 +364,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#fafaf9] text-slate-900 selection:bg-amber-200">
+      <body className="min-h-screen flex flex-col bg-[#0c0c0e] text-[#f4f4f5] selection:bg-[#d89ba4]/30 selection:text-white">
         <Navbar />
         <main className="flex-1">{children}</main>
         <WhatsAppButton />
