@@ -176,9 +176,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/highlights" className="hover:text-[#d89ba4] text-[#d89ba4] font-semibold transition-colors flex items-center gap-1.5">
+                <Link href="/blog" className="hover:text-[#d89ba4] text-[#d89ba4] font-semibold transition-colors flex items-center gap-1.5">
+                  <span>Blog & Video Vlogs</span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-red-600/30 text-red-300 border border-red-500/30 font-bold">
+                    VLOGS
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/highlights" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5">
                   <span>Show Highlights & Reels</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#d89ba4] text-zinc-950 font-bold">
+                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 font-bold">
                     VIRAL
                   </span>
                 </Link>
@@ -215,6 +223,11 @@ export default function Footer() {
               <li>
                 <Link href="/profile" className="text-[#d89ba4] font-semibold hover:underline transition-colors">
                   Harshita Dagha Maisheri Profile
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-zinc-400 hover:text-white transition-colors">
+                  Articles, Guides & Insights
                 </Link>
               </li>
               <li>
@@ -297,7 +310,13 @@ export default function Footer() {
               </a>
             </p>
           </div>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-5 flex-wrap justify-center sm:justify-end gap-y-2">
+            <Link href="/blog" className="text-[#d89ba4] hover:underline font-semibold transition-colors">
+              Blog & Vlogs
+            </Link>
+            <Link href="/admin" className="text-zinc-400 hover:text-white transition-colors">
+              Admin Studio
+            </Link>
             <Link href="/privacy" className="hover:text-zinc-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-zinc-300 transition-colors">Terms of Service</Link>
             <Link href="/sitemap.xml" className="hover:text-zinc-300 transition-colors">Sitemap</Link>
