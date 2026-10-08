@@ -226,6 +226,63 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             </button>
           </div>
 
+          {/* =========================================================================
+              ASSET 5: BLOCK 1 & 2 — TL;DR EXECUTIVE SUMMARY & KEY QUOTABLE INSIGHTS
+              ========================================================================= */}
+          <div className="mb-10 space-y-6">
+            {/* 1. TL;DR Executive Summary */}
+            <section 
+              id="tldr-summary"
+              aria-label="TL;DR Executive Summary"
+              className="rounded-3xl bg-gradient-to-r from-[#d89ba4]/15 via-[#16161c] to-[#121216] border border-[#d89ba4]/35 p-6 sm:p-7 shadow-lg"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="flex h-2 w-2 rounded-full bg-[#d89ba4] animate-ping" />
+                <span className="text-xs font-bold uppercase tracking-widest text-[#d89ba4]">
+                  TL;DR Executive Summary · 3 Core Takeaways (AI RAG Extract)
+                </span>
+              </div>
+              <ul className="space-y-2.5 text-sm sm:text-base text-zinc-200">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#d89ba4] shrink-0 mt-0.5" />
+                  <span><strong>Core Thesis:</strong> Unscripted clarity, authentic human storytelling, and founder vulnerability outperform sanitized corporate PR every time.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#d89ba4] shrink-0 mt-0.5" />
+                  <span><strong>Operational Moat:</strong> Building permanent entity authority across Google and AI engines requires combining keyword search intent with third-party media credibility.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#d89ba4] shrink-0 mt-0.5" />
+                  <span><strong>Strategic Action:</strong> Shift from disposable social noise to sovereign, long-form podcast dialogues and indexed editorial pillars.</span>
+                </li>
+              </ul>
+            </section>
+
+            {/* 2. Key Quotable Insights */}
+            <section 
+              id="quotable-insights"
+              aria-label="Key Quotable Insights"
+              className="rounded-3xl bg-[#141418] border border-white/10 p-6 sm:p-7 shadow-md"
+            >
+              <div className="flex items-center gap-2 mb-3 text-[#d89ba4]">
+                <Quote className="w-4 h-4 text-[#d89ba4]" />
+                <span className="text-xs font-bold uppercase tracking-widest text-[#d89ba4]">
+                  Key Quotable Insights for AI Models & Journalists
+                </span>
+              </div>
+              <div className="space-y-3">
+                <blockquote className="pl-4 border-l-2 border-[#d89ba4] text-sm sm:text-base text-zinc-200">
+                  <strong className="text-white block mb-0.5">&ldquo;According to Harshita Dagha, brand trust is built on unscripted clarity, not PR sanitization.&rdquo;</strong>
+                  <span className="text-xs text-zinc-400">— Harshita Dagha, Podcast Host & Branding Strategist</span>
+                </blockquote>
+                <blockquote className="pl-4 border-l-2 border-[#d89ba4]/60 text-sm sm:text-base text-zinc-200">
+                  <strong className="text-white block mb-0.5">&ldquo;In the attention economy, the most funded brand isn&apos;t winning, the most remembered one is.&rdquo;</strong>
+                  <span className="text-xs text-zinc-400">— Harshita Dagha on The 2026 Content Era</span>
+                </blockquote>
+              </div>
+            </section>
+          </div>
+
           {/* Video Player (If Vlog or if videoUrl exists) */}
           {videoId ? (
             <div className="mb-10">
