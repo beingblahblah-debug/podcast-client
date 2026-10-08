@@ -38,40 +38,52 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
   const resolvedParams = use(params);
   const postId = resolvedParams.id;
 
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [legacyArticle, setLegacyArticle] = useState<Article | null>(null);
-  const [copied, setCopied] = useState(false);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // 1. Synchronously resolve from static data so SSR renders full HTML immediately!
+  const staticLegacy = ARTICLES.find((a) => a.id === postId) || null;
+  const staticPost = !staticLegacy
+    ? DEFAULT_VLOGS.find((v) => v.id === postId) ||
+      DEFAULT_ARTICLES.find((a) => a.id === postId) ||
+      null
+    : null;
 
+  const [legacyArticle, setLegacyArticle] = useState<Article | null>(staticLegacy);
+  const [post, setPost] = useState<BlogPost | null>(staticPost);
+  const [copied, setCopied] = useState(false);
+  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>(() => {
+    return DEFAULT_ARTICLES.filter((p) => p.id !== postId).slice(0, 3);
+  });
+  const [isLoading, setIsLoading] = useState(!staticLegacy && !staticPost);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    // 1. Prioritize full editorial article from ARTICLES (has structured sections, FAQs, quotes, badges)
-    const foundLegacy = ARTICLES.find((a) => a.id === postId);
-    if (foundLegacy) {
-      setLegacyArticle(foundLegacy);
+    // If already found statically, only refresh related posts from custom store if needed
+    if (staticLegacy || staticPost) {
       const all = getAllPosts();
-      setRelatedPosts(all.filter((p) => p.id !== foundLegacy.id).slice(0, 3));
+      setRelatedPosts(all.filter((p) => p.id !== postId).slice(0, 3));
       setIsLoading(false);
       return;
     }
 
-    // 2. Fallback to dynamic/custom posts or video vlogs
+    // Otherwise check custom posts in localStorage
     const all = getAllPosts();
-    const foundPost = all.find((p) => p.id === postId);
-    if (foundPost) {
-      setPost(foundPost);
-      setRelatedPosts(all.filter((p) => p.id !== foundPost.id).slice(0, 3));
-      setIsLoading(false);
-      return;
+    const foundCustom = all.find((p) => p.id === postId);
+    if (foundCustom) {
+      setPost(foundCustom);
+      setRelatedPosts(all.filter((p) => p.id !== foundCustom.id).slice(0, 3));
     }
-
     setIsLoading(false);
-  }, [postId]);
+  }, [postId, staticLegacy, staticPost]);
 
   if (!isLoading && !post && !legacyArticle) {
     notFound();
+  }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#0c0c0e] flex items-center justify-center text-zinc-400">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#d89ba4]" />
+      </div>
+    );
   }
 
   const handleShare = () => {
@@ -337,8 +349,9 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
   // -------------------------------------------------------------------------
   // RENDER LEGACY EDITORIAL ARTICLE (From src/data/articles.ts)
   // -------------------------------------------------------------------------
-  const article = legacyArticle!;
-  return (
+  if (legacyArticle) {
+    const article = legacyArticle;
+    return (
     <article className="py-12 md:py-20 bg-[#0c0c0e] min-h-screen text-[#f4f4f5]">
       {/* Schema.org BlogPosting & FAQPage JSON-LD */}
       <script
@@ -645,5 +658,8 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
 
       </div>
     </article>
-  );
+    );
+  }
+
+  notFound();
 }

@@ -31,10 +31,10 @@ export default function BlogVlogsHubPage() {
   const [activeFilter, setActiveFilter] = useState<"all" | "vlogs" | "articles" | "press">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
-  const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
+  const [allPosts, setAllPosts] = useState<BlogPost[]>(() => [...DEFAULT_VLOGS, ...DEFAULT_ARTICLES]);
 
   useEffect(() => {
-    // Load default + any custom posts from store
+    // Refresh with any custom posts from store
     const list = getAllPosts();
     setAllPosts(list);
   }, []);
