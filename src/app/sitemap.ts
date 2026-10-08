@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { ARTICLES } from '@/data/articles';
+import { DEFAULT_VLOGS } from '@/data/posts';
 import { EPISODES } from '@/data/episodes';
 import { REELS } from '@/data/reels';
 
@@ -87,7 +88,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/blog/${article.id}`,
     lastModified: new Date(article.date),
     changeFrequency: 'monthly',
-    priority: 0.7,
+    priority: 0.8,
+  }));
+
+  // Dynamic Video Vlogs
+  const vlogRoutes: MetadataRoute.Sitemap = DEFAULT_VLOGS.map((vlog) => ({
+    url: `${baseUrl}/blog/${vlog.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
   }));
 
   // Dynamic Episode Pages
@@ -106,5 +115,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...articleRoutes, ...episodeRoutes, ...highlightRoutes];
+  return [...staticRoutes, ...articleRoutes, ...vlogRoutes, ...episodeRoutes, ...highlightRoutes];
 }

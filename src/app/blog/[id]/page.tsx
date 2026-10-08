@@ -44,23 +44,25 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // 1. Look in all dynamic/custom + default posts
-    const all = getAllPosts();
-    const foundPost = all.find((p) => p.id === postId);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
-    if (foundPost) {
-      setPost(foundPost);
-      setRelatedPosts(all.filter((p) => p.id !== foundPost.id).slice(0, 3));
+  useEffect(() => {
+    // 1. Prioritize full editorial article from ARTICLES (has structured sections, FAQs, quotes, badges)
+    const foundLegacy = ARTICLES.find((a) => a.id === postId);
+    if (foundLegacy) {
+      setLegacyArticle(foundLegacy);
+      const all = getAllPosts();
+      setRelatedPosts(all.filter((p) => p.id !== foundLegacy.id).slice(0, 3));
       setIsLoading(false);
       return;
     }
 
-    // 2. Fallback to legacy ARTICLES from src/data/articles.ts
-    const foundLegacy = ARTICLES.find((a) => a.id === postId);
-    if (foundLegacy) {
-      setLegacyArticle(foundLegacy);
-      setRelatedPosts(all.slice(0, 3));
+    // 2. Fallback to dynamic/custom posts or video vlogs
+    const all = getAllPosts();
+    const foundPost = all.find((p) => p.id === postId);
+    if (foundPost) {
+      setPost(foundPost);
+      setRelatedPosts(all.filter((p) => p.id !== foundPost.id).slice(0, 3));
       setIsLoading(false);
       return;
     }
@@ -338,6 +340,48 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
   const article = legacyArticle!;
   return (
     <article className="py-12 md:py-20 bg-[#0c0c0e] min-h-screen text-[#f4f4f5]">
+      {/* Schema.org BlogPosting & FAQPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BlogPosting",
+                "headline": article.title,
+                "description": article.excerpt,
+                "datePublished": article.date,
+                "image": article.image.startsWith("http") ? article.image : `https://www.harshitadagha.in${article.image}`,
+                "author": {
+                  "@type": "Person",
+                  "name": article.author.name,
+                  "jobTitle": article.author.role
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "The Harshita Dagha Show",
+                  "url": "https://www.harshitadagha.in"
+                },
+                "mainEntityOfPage": `https://www.harshitadagha.in/blog/${article.id}`,
+                "keywords": article.seoFocus
+              },
+              ...(article.faqs && article.faqs.length > 0 ? [{
+                "@type": "FAQPage",
+                "mainEntity": article.faqs.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              }] : [])
+            ]
+          })
+        }}
+      />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb Navigation */}
@@ -468,6 +512,18 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
                     ))}
                   </div>
                 )}
+
+                {section.internalLink && (
+                  <div className="pt-2">
+                    <Link
+                      href={section.internalLink.href}
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#d89ba4] hover:underline"
+                    >
+                      <span>{section.internalLink.text}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                )}
               </section>
             ))}
           </div>
@@ -479,6 +535,113 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             </p>
           </div>
         </div>
+
+        {/* FAQs Accordion for GEO and Search Visibility */}
+        {article.faqs && article.faqs.length > 0 && (
+          <div className="mb-14 pt-10 border-t border-white/10">
+            <div className="flex items-center gap-2 mb-6">
+              <HelpCircle className="w-5 h-5 text-[#d89ba4]" />
+              <h3 className="text-2xl font-serif font-bold text-white tracking-tight">
+                Frequently Asked Questions (FAQ)
+              </h3>
+            </div>
+            <div className="space-y-3">
+              {article.faqs.map((faq, fIdx) => {
+                const isOpen = openFaqIndex === fIdx;
+                return (
+                  <div
+                    key={fIdx}
+                    className="rounded-2xl bg-[#141418] border border-white/10 overflow-hidden transition-all"
+                  >
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : fIdx)}
+                      className="w-full p-5 text-left flex items-center justify-between gap-4 text-white hover:text-[#d89ba4] transition-colors cursor-pointer"
+                    >
+                      <span className="font-serif font-semibold text-base sm:text-lg">
+                        {faq.question}
+                      </span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform ${
+                          isOpen ? "rotate-180 text-[#d89ba4]" : ""
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* WhatsApp Direct Contact */}
+        <div className="bg-gradient-to-r from-emerald-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-8 border border-emerald-500/30 shadow-xl mb-14 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+              Direct Production & Advisory Desk
+            </span>
+            <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-1">
+              Connect with Harshita Dagha
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-300 max-w-md">
+              Available for Brand Strategy Advisory, Executive Podcast Guest Booking, and Generative Engine Optimization (GEO).
+            </p>
+          </div>
+
+          <a
+            href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20read%20your%20article%20and%20would%20like%20to%20connect%20with%20your%20desk."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"
+          >
+            <MessageCircle className="w-4 h-4 fill-current" />
+            <span>Connect on WhatsApp</span>
+          </a>
+        </div>
+
+        {/* Related Posts */}
+        {relatedPosts.length > 0 && (
+          <div className="pt-10 border-t border-white/10">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                More Articles & Vlogs
+              </h3>
+              <Link href="/blog" className="text-xs font-bold text-[#d89ba4] hover:underline">
+                View All Hub →
+              </Link>
+            </div>
+
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-0 sm:px-0 sm:overflow-visible">
+              {relatedPosts.map((rel) => (
+                <Link
+                  key={rel.id}
+                  href={`/blog/${rel.id}`}
+                  className="w-[80vw] sm:w-auto shrink-0 snap-center group p-5 rounded-2xl bg-[#141418] border border-white/10 hover:border-[#d89ba4]/40 hover:shadow-lg transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#d89ba4] bg-white/5 px-2 py-0.5 rounded border border-white/10 inline-block mb-2">
+                      {rel.category}
+                    </span>
+                    <h4 className="font-serif font-bold text-base text-white group-hover:text-[#d89ba4] transition-colors line-clamp-2 mb-2">
+                      {rel.title}
+                    </h4>
+                    <p className="text-xs text-zinc-400 line-clamp-2 mb-3">
+                      {rel.excerpt}
+                    </p>
+                  </div>
+                  <span className="text-xs font-bold text-zinc-300 group-hover:text-[#d89ba4] flex items-center gap-1 group-hover:translate-x-1 transition-transform pt-2 border-t border-white/10">
+                    <span>{rel.type === "vlog" ? "Watch Vlog" : "Read Article"}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
       </div>
     </article>

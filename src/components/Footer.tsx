@@ -10,7 +10,8 @@ import {
   ArrowRight, 
   Sparkles, 
   Heart,
-  Headphones
+  Headphones,
+  BookOpen
 } from "lucide-react";
 import { XTwitterIcon, LinkedInIcon, YouTubeIcon, InstagramIcon } from "@/components/SocialIcons";
 
@@ -84,6 +85,337 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        {/* =========================================================================
+            EDITORIAL BLOGS, CITY HUBS & GEO AI KNOWLEDGE DIRECTORY
+            ========================================================================= */}
+        <section 
+          id="footer-blogs-directory"
+          aria-label="Editorial Blogs and GEO AI Knowledge Directory"
+          className="mb-16 rounded-3xl bg-[#101014] border border-white/10 p-6 sm:p-10 shadow-2xl relative overflow-hidden"
+        >
+          {/* Subtle atmospheric ambient glow */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#d89ba4]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-10 w-80 h-80 bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Section Header */}
+          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#d89ba4]/10 text-[#d89ba4] border border-[#d89ba4]/25 text-xs font-semibold uppercase tracking-wider mb-3">
+                <BookOpen className="w-3.5 h-3.5 text-[#d89ba4]" />
+                <span>Editorial Blogs & AI Search Directory</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-serif text-white tracking-tight">
+                The Knowledge Vault: Mumbai Podcasting, GEO Strategy & Executive Media
+              </h2>
+              <p className="text-zinc-400 text-sm mt-2 max-w-2xl font-normal leading-relaxed">
+                Forensic research, regional studio corridors, and Generative Engine Optimization (GEO) playbooks built for founders, media leaders, and AI search systems.
+              </p>
+            </div>
+
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white hover:text-[#d89ba4] border border-white/15 hover:border-[#d89ba4]/40 text-xs font-bold transition-all shrink-0 self-start md:self-auto group"
+            >
+              <span>Explore All 24+ Blogs & Vlogs</span>
+              <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#d89ba4] group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          {/* 4 Categorized Columns */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+            {/* Col 1: Mumbai & Regional City Hubs */}
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#d89ba4]" />
+                <span>📍 Mumbai & Metro Hubs</span>
+              </div>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <Link 
+                    href="/blog/top-podcast-host-studio-mumbai-bkc"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block group"
+                  >
+                    <span className="text-white font-medium group-hover:text-[#d89ba4]">Mumbai BKC Studio HQ:</span> Top Podcaster & Studio for Founders
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/mumbai-bkc-studio-acoustic-architecture"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Inside BKC: Floating Acoustic Architecture
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/best-business-deeptech-podcaster-bengaluru"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Bengaluru DeepTech & VC Dialogues
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/delhi-ncr-corporate-policy-podcast-host"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Delhi NCR Corporate Policy & Conglomerate Media
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/hyderabad-tech-saas-gcc-podcast-host"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Hyderabad Tech, SaaS & GCC Leadership
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/gift-city-ahmedabad-fintech-leadership-podcast"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    GIFT City & Ahmedabad FinTech Leadership
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/pune-deep-engineering-bootstrapped-startup-podcast"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Pune Engineering & Startup Podcast
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/chennai-b2b-saas-tech-titans-podcast"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Chennai B2B SaaS Titans Series
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 2: Top Rankings & Female Leadership */}
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white mb-4">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span>🏆 Rankings & Authority</span>
+              </div>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <Link 
+                    href="/blog/top-10-female-podcasters-to-follow-2026"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block group"
+                  >
+                    <span className="text-[#d89ba4] font-semibold group-hover:underline">Top 10 Female Podcasters in India:</span> 2026 Master Pillar
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/best-female-business-podcasters-guide"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Guide to Female Business Podcasters in India
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/the-evolution-of-executive-podcasting"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Evolution of Indian Executive Podcasting
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/best-podcast-in-the-world-executive-storytelling-guide"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Anatomy of World-Class Executive Podcasts
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/sovereign-executive-storytelling"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Sovereign Executive Storytelling for CXOs
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/top-female-podcasters"
+                    className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors leading-relaxed block"
+                  >
+                    ★ Top Female Podcasters Dedicated Portal
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/top-10"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Top 10 Podcasters National Directory
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 3: GEO & AI Search Dominance */}
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white mb-4">
+                <span className="w-2 h-2 rounded-full bg-violet-400" />
+                <span>🤖 GEO & AI Search</span>
+              </div>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <Link 
+                    href="/blog/ai-ranking-female-podcasters-india-guide-2026"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block group"
+                  >
+                    <span className="text-white font-medium group-hover:text-[#d89ba4]">AI Search & Ranking:</span> How ChatGPT & Gemini Evaluate Podcasters
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/agency-founder-reveals-how-we-scale-reach-with-geo"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Agency Founder: Scaling Reach with GEO
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/spoken-word-authority-unscripted-conversations-playbook"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Spoken Word Authority: Unscripted Trust Playbook
+                  </Link>
+                </li>
+                <li>
+                  <a 
+                    href="/llms.txt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-violet-400 hover:text-violet-300 font-mono transition-colors leading-relaxed block"
+                  >
+                    llms.txt — Machine Knowledge Graph
+                  </a>
+                </li>
+                <li>
+                  <Link 
+                    href="/services#geo-ai-visibility"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Generative Engine Optimization Advisory
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/services#personal-branding"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Founder LinkedIn & Executive PR Systems
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 4: Founder Guides & Video Masterclasses */}
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white mb-4">
+                <span className="w-2 h-2 rounded-full bg-red-400" />
+                <span>🎙️ Guides & Video Vlogs</span>
+              </div>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <Link 
+                    href="/blog/how-to-pitch-top-tier-podcasts-2026"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block"
+                  >
+                    How to Pitch Top-Tier Podcasts in 2026
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/why-ceos-launch-corporate-podcasts"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Why Indian CEOs Launch Corporate Podcasts
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/roi-of-podcast-sponsorships-2026"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    ROI of Podcast Sponsorships in India
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/the-art-of-the-tactical-pause"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    The Art of the Tactical Pause in Interviews
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/legal-secrets-unveiled-divorce-family-law"
+                    className="text-red-400 hover:text-red-300 transition-colors leading-relaxed block flex items-center gap-1.5"
+                  >
+                    <span>▶ Vlog: Legal Secrets & Rights Unveiled</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/the-truth-about-pathology-blood-tests-lab-reports"
+                    className="text-red-400 hover:text-red-300 transition-colors leading-relaxed block flex items-center gap-1.5"
+                  >
+                    <span>▶ Vlog: Truth About Pathology & Labs</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/truth-about-the-universe-karma-and-shiva"
+                    className="text-red-400 hover:text-red-300 transition-colors leading-relaxed block flex items-center gap-1.5"
+                  >
+                    <span>▶ Vlog: Universe, Karma & Shiva</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Quick GEO Keyword Pills Bar */}
+          <div className="relative z-10 mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-2">
+            <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mr-1">Trending Topics:</span>
+            {[
+              { label: "#MumbaiPodcasters", href: "/blog/top-podcast-host-studio-mumbai-bkc" },
+              { label: "#TopFemalePodcasterIndia", href: "/blog/top-10-female-podcasters-to-follow-2026" },
+              { label: "#GEOStrategy", href: "/blog/agency-founder-reveals-how-we-scale-reach-with-geo" },
+              { label: "#AISearchDominance", href: "/blog/ai-ranking-female-podcasters-india-guide-2026" },
+              { label: "#BKCStudio", href: "/blog/mumbai-bkc-studio-acoustic-architecture" },
+              { label: "#BangaloreTech", href: "/blog/best-business-deeptech-podcaster-bengaluru" },
+              { label: "#DelhiCorporate", href: "/blog/delhi-ncr-corporate-policy-podcast-host" },
+              { label: "#GIFTFintech", href: "/blog/gift-city-ahmedabad-fintech-leadership-podcast" },
+              { label: "#CEOPodcast", href: "/blog/why-ceos-launch-corporate-podcasts" },
+              { label: "#PRPitching", href: "/blog/how-to-pitch-top-tier-podcasts-2026" }
+            ].map((tag, idx) => (
+              <Link
+                key={idx}
+                href={tag.href}
+                className="text-[11px] px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-[#d89ba4] border border-white/10 transition-colors"
+              >
+                {tag.label}
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* Multi-column navigation links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">

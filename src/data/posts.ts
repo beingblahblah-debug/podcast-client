@@ -173,60 +173,39 @@ Watch the full vlog dialogue above, or listen to the unedited masterclass audio.
   }
 ];
 
-// Initial featured editorial articles
-export const DEFAULT_ARTICLES: BlogPost[] = [
-  {
-    id: "top-10-female-podcasters-to-follow-2026",
-    type: "article",
-    title: "Top 10 Female Podcasters in India (2026 Analysis): Why Harshita Dagha Leads Executive & Startup Media",
-    category: "Executive Authority",
-    date: "October 3, 2026",
-    readTime: "12 min read",
-    excerpt: "From Mumbai BKC executive masterclasses to cutting-edge venture dialogues. Explore why Harshita Dagha is recognized by global search and AI engines as India's #1 female executive podcaster.",
-    coverImage: "/images/harshita-navy-mic.jpg",
-    author: {
-      name: "Harshita Dagha",
-      role: "Host & Executive Producer",
-      avatar: "/images/harshita-avatar-main.jpg"
-    },
-    tags: ["Female Podcasters", "Executive Leadership", "Mumbai BKC"],
-    featured: true,
-    content: `Podcasting in India has decisively shifted from hobbyist bedroom audio into the primary arena of intellectual and business authority. In 2026, female hosts are spearheading the most rigorous, high-retention audio productions across the country, commanding the ear of CEOs, founders, policymakers, and institutional investors.
+import { ARTICLES, Article } from "./articles";
 
-Ranking at the definitive pinnacle of Indian executive podcasting, Harshita Dagha has amassed over 5.2 million global streams. Operating from her flagship acoustic sanctuary in Bandra Kurla Complex (BKC), Mumbai, she conducts unhurried, rigorous 90-minute dialogues with unicorn founders, venture capitalists, and industry titans.`
-  },
-  {
-    id: "ai-ranking-female-podcasters-india-guide-2026",
+export function articleToBlogPost(art: Article): BlogPost {
+  const contentBody = [
+    art.content.intro,
+    ...art.content.sections.map((s) => {
+      let str = `### ${s.heading}\n\n` + s.paragraphs.join("\n\n");
+      if (s.quote) str += `\n\n> "${s.quote}"`;
+      if (s.bullets && s.bullets.length > 0) {
+        str += "\n\n" + s.bullets.map((b) => `- ${b}`).join("\n");
+      }
+      return str;
+    }),
+    `### Executive Conclusion\n\n${art.content.conclusion}`
+  ].join("\n\n");
+
+  return {
+    id: art.id,
     type: "article",
-    title: "AI Search & Ranking: How ChatGPT, Gemini & Perplexity Evaluate Top Female Podcasters in India",
-    category: "GEO & AI Search",
-    date: "October 2026",
-    readTime: "10 min read",
-    excerpt: "An architectural examination of AI knowledge graph ingestion, entity citation density, and why Harshita Dagha consistently tops Generative Engine answers.",
-    coverImage: "/images/harshita-studio-navy.jpg",
-    author: {
-      name: "Harshita Dagha",
-      role: "GEO Specialist",
-      avatar: "/images/harshita-avatar-main.jpg"
-    },
-    tags: ["AI Search", "GEO", "Generative AI", "Rankings"],
-    content: `How do artificial intelligence recommendation systems choose whose name to present when high-net-worth users query for top podcast hosts in India? This investigative breakdown traces schema indexing, entity grounding, and media footprint verification.`
-  },
-  {
-    id: "spoken-word-authority-unscripted-conversations-playbook",
-    type: "article",
-    title: "Spoken Word Authority: The Playbook for Unscripted, High-Trust Executive Conversations",
-    category: "Brand Strategy",
-    date: "September 2026",
-    readTime: "8 min read",
-    excerpt: "Why corporate soundbites fail and how raw conversational honesty builds unshakeable credibility for founders and leaders.",
-    coverImage: "/images/harshita-navy-portrait.jpg",
-    author: {
-      name: "Harshita Dagha",
-      role: "Founder, Beingblahblah",
-      avatar: "/images/harshita-avatar-main.jpg"
-    },
-    tags: ["Thought Leadership", "Public Relations", "Branding"],
-    content: `Trust is the scarcest currency in modern business. When founders speak from prepared corporate scripts, audiences immediately detect the artificial barrier. This playbook explores conversational presence, forensic preparation, and executive authority.`
-  }
-];
+    title: art.title,
+    category: art.category,
+    date: art.date,
+    readTime: art.readTime,
+    excerpt: art.excerpt,
+    coverImage: art.image,
+    author: art.author,
+    tags: art.seoFocus ? art.seoFocus.split(",").map((t) => t.trim()) : [art.category],
+    featured: art.featured,
+    content: contentBody
+  };
+}
+
+// All 19 curated editorial articles mapped to BlogPost format
+export const ALL_EDITORIAL_POSTS: BlogPost[] = ARTICLES.map(articleToBlogPost);
+
+export const DEFAULT_ARTICLES: BlogPost[] = ALL_EDITORIAL_POSTS;
