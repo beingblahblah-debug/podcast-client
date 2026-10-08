@@ -109,17 +109,32 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": isVlog ? "VideoObject" : "BlogPosting",
-              "headline": post.title,
-              "description": post.excerpt,
-              "image": [post.coverImage || "https://www.harshitadagha.in/images/harshita-navy-mic.jpg"],
-              "datePublished": post.createdAt || "2026-10-04",
-              "author": {
-                "@type": "Person",
-                "name": post.author.name,
-                "jobTitle": post.author.role,
-                "url": "https://www.harshitadagha.in"
-              }
+              "@graph": [
+                {
+                  "@type": isVlog ? "VideoObject" : "BlogPosting",
+                  "headline": post.title,
+                  "description": post.excerpt,
+                  "image": [post.coverImage || "https://www.harshitadagha.in/images/harshita-navy-mic.jpg"],
+                  "datePublished": post.createdAt || "2026-10-04",
+                  "author": {
+                    "@type": "Person",
+                    "name": post.author.name,
+                    "jobTitle": post.author.role,
+                    "url": "https://www.harshitadagha.in"
+                  }
+                },
+                ...(post.faqs && post.faqs.length > 0 ? [{
+                  "@type": "FAQPage",
+                  "mainEntity": post.faqs.map((faq) => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": faq.answer
+                    }
+                  }))
+                }] : [])
+              ]
             })
           }}
         />
@@ -273,6 +288,48 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
                   #{tag}
                 </span>
               ))}
+            </div>
+          )}
+
+          {/* FAQs Accordion for GEO and Search Visibility */}
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mb-14 pt-10 border-t border-white/10">
+              <div className="flex items-center gap-2 mb-6">
+                <HelpCircle className="w-5 h-5 text-[#d89ba4]" />
+                <h3 className="text-2xl font-serif font-bold text-white tracking-tight">
+                  Frequently Asked Questions (FAQ)
+                </h3>
+              </div>
+              <div className="space-y-3">
+                {post.faqs.map((faq, fIdx) => {
+                  const isOpen = openFaqIndex === fIdx;
+                  return (
+                    <div
+                      key={fIdx}
+                      className="rounded-2xl bg-[#141418] border border-white/10 overflow-hidden transition-all"
+                    >
+                      <button
+                        onClick={() => setOpenFaqIndex(isOpen ? null : fIdx)}
+                        className="w-full p-5 text-left flex items-center justify-between gap-4 text-white hover:text-[#d89ba4] transition-colors cursor-pointer"
+                      >
+                        <span className="font-serif font-semibold text-base sm:text-lg">
+                          {faq.question}
+                        </span>
+                        <ChevronDown
+                          className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform ${
+                            isOpen ? "rotate-180 text-[#d89ba4]" : ""
+                          }`}
+                        />
+                      </button>
+                      {isOpen && (
+                        <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
 
