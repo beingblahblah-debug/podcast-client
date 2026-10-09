@@ -14,6 +14,7 @@ import {
   AlertCircle, 
   Copy, 
   Eye, 
+  EyeOff,
   ArrowLeft, 
   Lock, 
   Unlock, 
@@ -49,6 +50,7 @@ export default function AdminDashboardPage() {
   // Simple session authentication gate
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [passcode, setPasscode] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [authError, setAuthError] = useState("");
 
   // Active Tab: "article" (default) | "vlog" | "manage" | "json"
@@ -124,19 +126,15 @@ export default function AdminDashboardPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const valid = ["admin", "admin2026", "harshita", "beingblahblah"];
-    if (valid.includes(passcode.trim().toLowerCase())) {
+    const cleanPass = passcode.trim();
+    const valid = ["harshita@2026", "admin2026", "harshita2026", "beingblahblah"];
+    if (valid.includes(cleanPass) || valid.includes(cleanPass.toLowerCase())) {
       setIsAuthenticated(true);
       sessionStorage.setItem("harshita_admin_auth", "true");
       setAuthError("");
     } else {
-      setAuthError("Invalid passcode. Enter 'admin2026' or click Quick Login below.");
+      setAuthError("Incorrect password. Please enter the valid admin password.");
     }
-  };
-
-  const handleQuickLogin = () => {
-    setIsAuthenticated(true);
-    sessionStorage.setItem("harshita_admin_auth", "true");
   };
 
   const showNotification = (text: string, type: "success" | "error" = "success") => {
@@ -420,16 +418,26 @@ Brand PR is no longer an expense line item—it is your organization's highest R
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1.5">
-                Admin Passcode
+                Admin Password
               </label>
-              <input
-                type="password"
-                placeholder="Enter passcode (e.g. admin2026)"
-                value={passcode}
-                onChange={(e) => setPasscode(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-black border border-white/15 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#d89ba4] transition-all"
-                autoFocus
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter admin password"
+                  value={passcode}
+                  onChange={(e) => setPasscode(e.target.value)}
+                  className="w-full px-4 py-3 pr-11 rounded-xl bg-black border border-white/15 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-[#d89ba4] transition-all"
+                  autoFocus
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                  title={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
             </div>
 
             {authError && (
@@ -441,24 +449,9 @@ Brand PR is no longer an expense line item—it is your organization's highest R
 
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-[#d89ba4] hover:bg-[#e2a8b1] text-black font-bold text-sm transition-all shadow-md cursor-pointer"
+              className="w-full py-3.5 rounded-xl bg-[#d89ba4] hover:bg-[#e2a8b1] text-black font-bold text-sm transition-all shadow-md cursor-pointer"
             >
               Sign In to Studio Admin
-            </button>
-
-            <div className="relative flex py-2 items-center">
-              <div className="flex-grow border-t border-white/10"></div>
-              <span className="flex-shrink mx-3 text-zinc-500 text-[10px] uppercase font-bold">Or One-Click</span>
-              <div className="flex-grow border-t border-white/10"></div>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleQuickLogin}
-              className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 hover:text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <Unlock className="w-3.5 h-3.5 text-[#d89ba4]" />
-              <span>Direct Studio Login</span>
             </button>
           </form>
 
