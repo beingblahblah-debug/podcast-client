@@ -8,6 +8,7 @@ export interface BlogPost {
   duration?: string;
   excerpt: string;
   coverImage?: string;
+  galleryImages?: string[];
   videoUrl?: string;
   videoId?: string;
   content: string;

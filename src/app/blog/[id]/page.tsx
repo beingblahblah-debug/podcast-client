@@ -334,6 +334,37 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             <FormattedPostContent content={post.content} />
           </div>
 
+          {/* Multi-Photo Gallery if multiple photos were uploaded */}
+          {post.galleryImages && post.galleryImages.length > 1 && (
+            <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-[#141418] border border-white/10 shadow-xl">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-[#d89ba4]" />
+                  <h3 className="font-serif font-bold text-lg sm:text-xl text-white">
+                    Photo Highlights & Media ({post.galleryImages.length} Photos)
+                  </h3>
+                </div>
+                <span className="text-xs text-zinc-500 font-mono">High Resolution</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {post.galleryImages.map((imgUrl, gIdx) => (
+                  <div
+                    key={gIdx}
+                    className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black group hover:border-[#d89ba4]/50 transition-all shadow-md"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={imgUrl}
+                      alt={`Gallery media ${gIdx + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="flex items-center gap-2 flex-wrap pb-8 mb-10 border-b border-white/10">

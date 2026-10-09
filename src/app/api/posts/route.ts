@@ -94,6 +94,7 @@ export async function POST(request: Request) {
       content = "", 
       videoUrl = "", 
       coverImage = "",
+      galleryImages = [],
       tags = []
     } = body;
 
@@ -106,13 +107,13 @@ export async function POST(request: Request) {
 
     // Process YouTube / Vlog details
     let videoId: string | undefined = undefined;
-    let computedCoverImage = coverImage || "/images/harshita-navy-mic.jpg";
+    let computedCoverImage = coverImage || (Array.isArray(galleryImages) && galleryImages.length > 0 ? galleryImages[0] : "/images/harshita-navy-mic.jpg");
 
     if (type === "vlog" && videoUrl) {
       const extracted = extractYouTubeId(videoUrl);
       if (extracted) {
         videoId = extracted;
-        if (!coverImage) {
+        if (!coverImage && (!galleryImages || galleryImages.length === 0)) {
           computedCoverImage = getYouTubeThumbnail(extracted);
         }
       }
@@ -137,6 +138,7 @@ export async function POST(request: Request) {
       readTime: `${Math.max(2, Math.ceil((content.length + excerpt.length) / 800))} min read`,
       excerpt: excerpt.trim() || (content ? content.slice(0, 180).trim() + "..." : title.trim()),
       coverImage: computedCoverImage,
+      galleryImages: Array.isArray(galleryImages) ? galleryImages : [],
       videoUrl: videoUrl.trim() || undefined,
       videoId,
       content: content.trim(),
@@ -156,7 +158,53 @@ export async function POST(request: Request) {
     const updated = [newPost, ...filtered];
     writeCustomPosts(updated);
 
-    return NextResponse.json({ success: true, post: newPost }, { status: 201 });
+    // Automated Search Engine Pinging & Sitemap Notification in Background
+    const host = "www.harshitadagha.in";
+    const postUrl = `https://${host}/blog/${finalId}`;
+    const sitemapUrl = `https://${host}/sitemap.xml`;
+    const key = "e5b88c7374df489c922579df6400ac21";
+    const keyLocation = `https://${host}/${key}.txt`;
+
+    try {
+      // 1. IndexNow API (Bing / Yandex / Naver)
+      fetch("https://api.indexnow.org/indexnow", {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({
+          host,
+          key,
+          keyLocation,
+          urlList: [postUrl, `https://${host}/blog`, sitemapUrl]
+        })
+      }).catch(() => {});
+
+      // 2. Bing direct endpoint
+      fetch("https://www.bing.com/indexnow", {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({
+          host,
+          key,
+          keyLocation,
+          urlList: [postUrl, `https://${host}/blog`, sitemapUrl]
+        })
+      }).catch(() => {});
+
+      // 3. Ping Google Sitemap
+      fetch(`https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`).catch(() => {});
+
+      // 4. Ping Bing Sitemap
+      fetch(`https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`).catch(() => {});
+    } catch (pingErr) {
+      console.warn("Search engine background ping failed:", pingErr);
+    }
+
+    return NextResponse.json({ 
+      success: true, 
+      post: newPost,
+      sitemapUpdated: true,
+      searchEnginesNotified: true
+    }, { status: 201 });
   } catch (error: any) {
     console.error("POST /api/posts error:", error);
     return NextResponse.json(

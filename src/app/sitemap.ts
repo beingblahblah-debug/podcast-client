@@ -1,8 +1,37 @@
 import { MetadataRoute } from 'next';
+import fs from 'fs';
+import path from 'path';
 import { ARTICLES } from '@/data/articles';
-import { DEFAULT_VLOGS } from '@/data/posts';
+import { DEFAULT_VLOGS, BlogPost } from '@/data/posts';
 import { EPISODES } from '@/data/episodes';
 import { REELS } from '@/data/reels';
+
+function getCustomPostsForSitemap(): BlogPost[] {
+  const localDataFilePath = path.join(process.cwd(), 'src', 'data', 'custom_posts.json');
+  const tmpDataFilePath = path.join('/tmp', 'custom_posts.json');
+
+  try {
+    if (fs.existsSync(localDataFilePath)) {
+      const data = fs.readFileSync(localDataFilePath, 'utf-8');
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch (e) {
+    // fallback
+  }
+
+  try {
+    if (fs.existsSync(tmpDataFilePath)) {
+      const data = fs.readFileSync(tmpDataFilePath, 'utf-8');
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed)) return parsed;
+    }
+  } catch (e) {
+    // fallback
+  }
+
+  return [];
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.harshitadagha.in';
@@ -48,8 +77,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'daily',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/be-a-guest`,
@@ -83,20 +112,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic Blog Articles
+  // Dynamic Blog Articles (Editorial set)
   const articleRoutes: MetadataRoute.Sitemap = ARTICLES.map((article) => ({
     url: `${baseUrl}/blog/${article.id}`,
     lastModified: new Date(article.date),
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
-  // Dynamic Video Vlogs
+  // Dynamic Video Vlogs (Default set)
   const vlogRoutes: MetadataRoute.Sitemap = DEFAULT_VLOGS.map((vlog) => ({
     url: `${baseUrl}/blog/${vlog.id}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     priority: 0.8,
+  }));
+
+  // Dynamic Custom Admin Posts (Instantly added upon publishing)
+  const customPosts = getCustomPostsForSitemap();
+  const customPostRoutes: MetadataRoute.Sitemap = customPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.id}`,
+    lastModified: post.createdAt ? new Date(post.createdAt) : new Date(),
+    changeFrequency: 'daily',
+    priority: 0.95,
   }));
 
   // Dynamic Episode Pages
@@ -115,5 +153,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...articleRoutes, ...vlogRoutes, ...episodeRoutes, ...highlightRoutes];
+  return [
+    ...staticRoutes, 
+    ...customPostRoutes, 
+    ...articleRoutes, 
+    ...vlogRoutes, 
+    ...episodeRoutes, 
+    ...highlightRoutes
+  ];
 }

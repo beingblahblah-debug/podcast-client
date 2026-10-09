@@ -111,18 +111,19 @@ export async function createNewPost(params: {
   content: string;
   videoUrl?: string;
   coverImage?: string;
+  galleryImages?: string[];
   tags?: string[];
 }): Promise<BlogPost> {
-  const { type, title, category, excerpt, content, videoUrl, coverImage, tags = [] } = params;
+  const { type, title, category, excerpt, content, videoUrl, coverImage, galleryImages = [], tags = [] } = params;
 
   let videoId: string | undefined = undefined;
-  let finalCover = coverImage || "/images/harshita-navy-mic.jpg";
+  let finalCover = coverImage || (galleryImages.length > 0 ? galleryImages[0] : "/images/harshita-navy-mic.jpg");
 
   if (type === "vlog" && videoUrl) {
     const extracted = extractYouTubeId(videoUrl);
     if (extracted) {
       videoId = extracted;
-      if (!coverImage) {
+      if (!coverImage && galleryImages.length === 0) {
         finalCover = getYouTubeThumbnail(extracted);
       }
     }
@@ -145,6 +146,7 @@ export async function createNewPost(params: {
     readTime: `${Math.max(2, Math.ceil((content.length + excerpt.length) / 800))} min read`,
     excerpt: excerpt.trim() || content.slice(0, 180).trim() + "...",
     coverImage: finalCover,
+    galleryImages,
     videoUrl: videoUrl?.trim(),
     videoId,
     content: content.trim(),
