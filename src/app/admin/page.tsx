@@ -133,7 +133,7 @@ export default function AdminDashboardPage() {
       sessionStorage.setItem("harshita_admin_auth", "true");
       setAuthError("");
     } else {
-      setAuthError("Incorrect password. Please enter the valid admin password.");
+      setAuthError("Access Denied: Incorrect password");
     }
   };
 
@@ -416,28 +416,23 @@ Brand PR is no longer an expense line item—it is your organization's highest R
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1.5">
-                Admin Password
-              </label>
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter admin password"
-                  value={passcode}
-                  onChange={(e) => setPasscode(e.target.value)}
-                  className="w-full px-4 py-3 pr-11 rounded-xl bg-black border border-white/15 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-[#d89ba4] transition-all"
-                  autoFocus
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors cursor-pointer"
-                  title={showPassword ? "Hide password" : "Show password"}
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="••••••••••••"
+                value={passcode}
+                onChange={(e) => setPasscode(e.target.value)}
+                className="w-full px-4 py-3.5 pr-11 rounded-xl bg-black border border-white/15 text-white placeholder-zinc-700 text-sm focus:outline-none focus:border-[#d89ba4] transition-all"
+                autoFocus
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                title={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
             </div>
 
             {authError && (
@@ -451,7 +446,7 @@ Brand PR is no longer an expense line item—it is your organization's highest R
               type="submit"
               className="w-full py-3.5 rounded-xl bg-[#d89ba4] hover:bg-[#e2a8b1] text-black font-bold text-sm transition-all shadow-md cursor-pointer"
             >
-              Sign In to Studio Admin
+              Enter Studio
             </button>
           </form>
 
