@@ -27,8 +27,9 @@ import {
 } from "lucide-react";
 import { ARTICLES, Article } from "@/data/articles";
 import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES, extractYouTubeId, getYouTubeThumbnail } from "@/data/posts";
-import { getAllPosts } from "@/lib/postStore";
+import { getAllPosts, fetchPostById } from "@/lib/postStore";
 import { YouTubeIcon } from "@/components/SocialIcons";
+import FormattedPostContent from "@/components/FormattedPostContent";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -64,14 +65,15 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
       return;
     }
 
-    // Otherwise check custom posts in localStorage
-    const all = getAllPosts();
-    const foundCustom = all.find((p) => p.id === postId);
-    if (foundCustom) {
-      setPost(foundCustom);
-      setRelatedPosts(all.filter((p) => p.id !== foundCustom.id).slice(0, 3));
-    }
-    setIsLoading(false);
+    // Otherwise check custom posts in localStorage and server API
+    fetchPostById(postId).then((found) => {
+      if (found) {
+        setPost(found);
+        const all = getAllPosts();
+        setRelatedPosts(all.filter((p) => p.id !== found.id).slice(0, 3));
+      }
+      setIsLoading(false);
+    });
   }, [postId, staticLegacy, staticPost]);
 
   if (!isLoading && !post && !legacyArticle) {
@@ -314,12 +316,13 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             </div>
           ) : (
             post.coverImage && (
-              <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-white/10 mb-10">
+              <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-white/10 mb-10 bg-black">
                 <Image
                   src={post.coverImage}
                   alt={post.title}
                   fill
                   priority
+                  unoptimized={Boolean(post.coverImage && (post.coverImage.startsWith("data:") || !post.coverImage.startsWith("/images")))}
                   className="object-cover"
                 />
               </div>
@@ -328,9 +331,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
 
           {/* Main Body Content */}
           <div className="prose prose-invert prose-lg max-w-none mb-14 text-zinc-300">
-            <div className="space-y-6 text-base sm:text-lg leading-relaxed whitespace-pre-line font-normal">
-              {post.content}
-            </div>
+            <FormattedPostContent content={post.content} />
           </div>
 
           {/* Tags */}

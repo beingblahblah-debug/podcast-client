@@ -24,19 +24,33 @@ import {
 } from "lucide-react";
 import { MEDIA_PUBLICATIONS, OFFICIAL_PROFILE } from "@/data/publications";
 import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES } from "@/data/posts";
-import { getAllPosts } from "@/lib/postStore";
+import { getAllPosts, getAllPostsAsync } from "@/lib/postStore";
 import { YouTubeIcon } from "@/components/SocialIcons";
 
 export default function BlogVlogsHubPage() {
   const [activeFilter, setActiveFilter] = useState<"all" | "vlogs" | "articles" | "press">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
-  const [allPosts, setAllPosts] = useState<BlogPost[]>(() => [...DEFAULT_VLOGS, ...DEFAULT_ARTICLES]);
+  const [allPosts, setAllPosts] = useState<BlogPost[]>(() => getAllPosts());
 
   useEffect(() => {
-    // Refresh with any custom posts from store
-    const list = getAllPosts();
-    setAllPosts(list);
+    // 1. Initial synchronous load from local cache
+    const initialList = getAllPosts();
+    setAllPosts(initialList);
+
+    // 2. Fetch fresh posts from server API and update state
+    getAllPostsAsync().then((fresh) => {
+      if (fresh && fresh.length > 0) {
+        setAllPosts(fresh);
+      }
+    });
+
+    // 3. Listen to cross-component or cross-tab updates
+    const handleUpdate = () => {
+      setAllPosts(getAllPosts());
+    };
+    window.addEventListener("harshita-posts-updated", handleUpdate);
+    return () => window.removeEventListener("harshita-posts-updated", handleUpdate);
   }, []);
 
   // Filter posts based on active tab and search query
@@ -101,6 +115,7 @@ export default function BlogVlogsHubPage() {
                 src={post.coverImage || "/images/harshita-navy-mic.jpg"}
                 alt={post.title}
                 fill
+                unoptimized={Boolean(post.coverImage && (post.coverImage.startsWith("data:") || !post.coverImage.startsWith("/images")))}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover group-hover/thumb:scale-105 transition-transform duration-500"
               />
@@ -188,6 +203,7 @@ export default function BlogVlogsHubPage() {
               src={post.coverImage}
               alt={post.title}
               fill
+              unoptimized={Boolean(post.coverImage && (post.coverImage.startsWith("data:") || !post.coverImage.startsWith("/images")))}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
