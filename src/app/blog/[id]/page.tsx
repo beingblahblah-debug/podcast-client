@@ -350,14 +350,24 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
               )}
             </div>
           ) : post.coverImage ? (
-            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-white/10 mb-10">
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                fill
-                priority
-                className="object-cover"
-              />
+            <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-10 bg-gradient-to-b from-[#141418] via-[#0f0f14] to-[#0a0a0d] flex items-center justify-center min-h-[320px]">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <Image
+                  src={post.coverImage}
+                  alt=""
+                  fill
+                  priority
+                  className="object-cover blur-3xl opacity-35 scale-125"
+                  aria-hidden
+                />
+              </div>
+              <div className="relative z-10 w-full flex items-center justify-center p-2 sm:p-4">
+                <img
+                  src={post.coverImage}
+                  alt={post.title}
+                  className="max-h-[580px] w-auto max-w-full object-contain rounded-2xl shadow-2xl"
+                />
+              </div>
             </div>
           ) : null}
 
@@ -576,14 +586,26 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
         </div>
 
         {/* Hero Cover Image */}
-        <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-white/10 mb-12">
-          <Image 
-            src={article.image} 
-            alt={article.title} 
-            fill 
-            priority
-            className="object-cover" 
-          />
+        <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-12 bg-gradient-to-b from-[#141418] via-[#0f0f14] to-[#0a0a0d] flex items-center justify-center min-h-[320px]">
+          {/* Ambient blurred backdrop aura */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <Image 
+              src={article.image} 
+              alt="" 
+              fill 
+              priority
+              className="object-cover blur-3xl opacity-35 scale-125" 
+              aria-hidden
+            />
+          </div>
+          {/* Main uncropped focal image */}
+          <div className="relative z-10 w-full flex items-center justify-center p-2 sm:p-4">
+            <img 
+              src={article.image} 
+              alt={article.title} 
+              className="max-h-[580px] w-auto max-w-full object-contain rounded-2xl shadow-2xl" 
+            />
+          </div>
         </div>
 
         {/* Content */}
