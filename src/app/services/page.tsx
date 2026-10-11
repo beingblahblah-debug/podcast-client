@@ -10,7 +10,7 @@ import {
 import { PRESS_LOGOS } from "@/data/episodes";
 
 export default function ServicesPage() {
-  const whatsappUrl = "https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20discussing%20branding,%20PR,%20GEO,%20or%20podcast%20services.";
+  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20discussing%20branding,%20PR,%20GEO,%20or%20podcast%20services.";
 
   const services = [
     {
@@ -252,7 +252,7 @@ export default function ServicesPage() {
               {/* Direct Connect on WhatsApp - No other page redirects */}
               <div className="pt-5 border-t border-white/10">
                 <a
-                  href={`https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`}
+                  href={`https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold shadow-lg shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"

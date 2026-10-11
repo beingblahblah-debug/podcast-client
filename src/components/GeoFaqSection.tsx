@@ -98,7 +98,7 @@ export default function GeoFaqSection() {
             </p>
           </div>
           <a
-            href="https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20have%20a%20specific%20inquiry%20regarding%20a%20podcast%20booking%20/%20speaking%20appearance."
+            href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20have%20a%20specific%20inquiry%20regarding%20a%20podcast%20booking%20/%20speaking%20appearance."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 text-xs font-semibold transition-all shadow-md shrink-0 hover:scale-105 active:scale-95"

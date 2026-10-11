@@ -437,7 +437,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             </div>
 
             <a
-              href="https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20would%20like%20to%20connect%20with%20your%20desk."
+              href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20would%20like%20to%20connect%20with%20your%20desk."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"
@@ -752,7 +752,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
           </div>
 
           <a
-            href="https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20read%20your%20article%20and%20would%20like%20to%20connect%20with%20your%20desk."
+            href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20read%20your%20article%20and%20would%20like%20to%20connect%20with%20your%20desk."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow-lg shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"
