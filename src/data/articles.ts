@@ -1,5 +1,6 @@
 export interface Article {
   id: string;
+  aliases?: string[];
   title: string;
   metaTitle?: string;
   metaDescription?: string;
@@ -15,6 +16,7 @@ export interface Article {
     name: string;
     role: string;
     avatar: string;
+    bio?: string;
   };
   content: {
     intro: string;
@@ -38,6 +40,206 @@ export interface Article {
 }
 
 export const ARTICLES: Article[] = [
+  // 0. Strategic Pillar: Digital PR & Personal Branding for Modern Professionals
+  {
+    id: "digital-pr-personal-branding-modern-professionals",
+    aliases: ["digital-pr-personal-branding-how-modern-professionals-build-online-visibility"],
+    title: "Digital PR and Personal Branding: How Modern Professionals Build Online Visibility",
+    metaTitle: "Digital PR & Personal Branding: Modern Visibility Guide | Harshita Dagha",
+    metaDescription: "Discover how founders, executives and modern professionals use digital PR and personal branding to build authority, credibility, and online visibility.",
+    category: "Executive PR & Branding",
+    date: "October 11, 2026",
+    readTime: "8 min read",
+    featured: true,
+    excerpt: "In today’s digital-first business environment, discover how digital PR and personal branding combine to help founders, executives and professionals build authority and discoverability.",
+    image: "/images/blog/digital-pr-modern-professionals.jpg",
+    seoFocus: "digital pr, personal branding, online visibility, executive pr, founder branding, modern marketing, thought leadership, digital pr strategy",
+    author: {
+      name: "Harshita Dagha",
+      role: "Podcast Host | Branding & PR Strategist",
+      avatar: "/images/harshita-avatar-main.jpg",
+      bio: "Harshita Dagha is an Indian podcast host, TEDx speaker, branding and PR strategist, GEO expert and social media strategist with 16+ years of experience. She is the founder of Beingblahblah and hosts conversations with entrepreneurs, celebrities, creators, experts and business leaders. Her work sits at the intersection of podcasting, branding, storytelling, digital PR, personal branding and AI-era search visibility."
+    },
+    content: {
+      intro: "In today’s digital-first business environment, being good at what you do is no longer enough. Founders, executives, entrepreneurs and professionals also need to be visible, credible and easy to discover online. This is where digital PR and personal branding have become important parts of modern marketing. While digital PR focuses on building visibility through online publications, media coverage, interviews, content and third-party platforms, personal branding focuses on how an individual is perceived across digital channels. When used together, they can help professionals build authority, strengthen credibility and create a consistent online presence.",
+      sections: [
+        {
+          heading: "What Is Digital PR?",
+          paragraphs: [
+            "[Digital PR](https://www.harshitadagha.in/services) is the process of building online visibility and credibility through digital media, publications, interviews, articles, expert contributions, podcasts and other relevant platforms.",
+            "Traditional public relations often focused heavily on newspapers, television and magazines. Digital PR expands that approach into the online ecosystem.",
+            "The goal is not simply to generate links or mentions. Effective digital PR should help establish trust, authority and relevance around a brand or individual."
+          ],
+          bullets: [
+            "Online media coverage",
+            "Expert interviews",
+            "Podcast appearances",
+            "Guest articles",
+            "Press releases",
+            "Founder stories",
+            "Thought leadership content",
+            "Influencer and creator collaborations",
+            "Online brand mentions",
+            "Strategic content distribution"
+          ],
+          internalLink: {
+            text: "Explore Strategic Digital PR & Advisory Services",
+            href: "https://www.harshitadagha.in/services"
+          }
+        },
+        {
+          heading: "Why Digital PR Matters for Modern Brands",
+          paragraphs: [
+            "People often research a company or professional before deciding whether to work with them.",
+            "A strong digital presence can make this research process more favourable.",
+            "For example, when a founder regularly appears in relevant publications, participates in industry discussions and shares valuable insights, those third-party signals can strengthen their professional reputation. This is one reason digital PR has become an important part of modern brand-building."
+          ],
+          bullets: [
+            "The person's name & executive background",
+            "Company name & market reputation",
+            "Professional background & industry track record",
+            "Media coverage & press publications",
+            "Podcast interviews & keynotes",
+            "Verified reviews & third-party validation",
+            "Active social profiles & content consistency",
+            "Demonstrated industry expertise"
+          ]
+        },
+        {
+          heading: "Digital PR and Personal Branding Work Better Together",
+          paragraphs: [
+            "Digital PR and personal branding are closely connected, but they serve different purposes.",
+            "Digital PR helps get a person or brand noticed by external audiences. Personal branding helps communicate who that person is, what they stand for and what they are known for.",
+            "For example, a founder might receive media coverage about their company's growth. But if the founder also consistently talks about entrepreneurship, leadership, innovation or their industry expertise, that media exposure becomes part of a larger personal brand. Over time, this can help position the founder as a recognizable voice in their field."
+          ],
+          quote: "Digital PR creates visibility. Personal branding gives that visibility meaning.",
+          internalLink: {
+            text: "Read Our Foundation Guide: Digital PR & Personal Branding for Founders",
+            href: "/blog/digital-pr-personal-branding"
+          }
+        },
+        {
+          heading: "How Personal Branding Supports Digital PR",
+          paragraphs: [
+            "A strong personal brand can make PR campaigns more effective because there is already a clear story around the individual. Before approaching media platforms, it is critical to align core narrative pillars.",
+            "What Does the Person Stand For? A founder should have a clear point of view rather than trying to comment on every possible topic.",
+            "What Expertise Can They Offer? Media opportunities become stronger when a professional can provide useful insights based on real experience.",
+            "What Stories Can Be Told? Personal experiences, business challenges, lessons, failures and achievements can all become potential storytelling angles.",
+            "Is the Online Presence Consistent? The person's website, LinkedIn profile, social media accounts and media profiles should communicate a reasonably consistent professional identity."
+          ],
+          bullets: [
+            "Clear Point of View: Stand for defined topics rather than commenting on everything",
+            "Authentic Expertise: Ground insights in direct, real-world business experience",
+            "Compelling Storytelling: Share challenges, failures, and inflection points",
+            "Omnichannel Consistency: Align website, LinkedIn, and media touchpoints"
+          ]
+        },
+        {
+          heading: "Digital PR Is More Than Press Releases",
+          paragraphs: [
+            "One common misconception is that digital PR simply means publishing press releases online. A modern strategy can be much broader.",
+            "The right approach depends on the brand, audience, industry and business objective."
+          ],
+          bullets: [
+            "Podcast interviews",
+            "Founder profiles",
+            "Industry publications",
+            "Expert commentary",
+            "Guest contributions",
+            "Business interviews",
+            "Thought leadership articles",
+            "Social media amplification",
+            "Celebrity or influencer collaborations"
+          ]
+        },
+        {
+          heading: "How Podcasts Can Support Digital PR",
+          paragraphs: [
+            "Podcasts have become an effective format for building authority because they allow professionals to explain their ideas in greater depth.",
+            "A short article may communicate one idea. A long-form podcast conversation can explore a person's career journey, business philosophy, industry experience, leadership approach, challenges and lessons, and future vision.",
+            "The conversation can then be repurposed into short videos, social posts, articles and other content formats. This creates multiple opportunities to reinforce the same personal brand across different platforms."
+          ],
+          quote: "A short article communicates an idea. A long-form podcast conversation explores business philosophy, challenges, and future vision in unhurried depth.",
+          internalLink: {
+            text: "Listen to Executive Masterclasses on The Harshita Dagha Show",
+            href: "/episodes"
+          }
+        },
+        {
+          heading: "Building a Strong Digital PR Strategy",
+          paragraphs: [
+            "A practical digital PR strategy should start with clear objectives.",
+            "1. Define the Positioning: Determine what the brand or individual should be known for.",
+            "2. Identify the Right Audience: Understand where potential customers, partners, investors, media professionals or industry peers spend their time.",
+            "3. Develop Strong Story Angles: Instead of promoting a company repeatedly, develop stories that provide genuine value to the audience.",
+            "4. Build Third-Party Visibility: Look for relevant publications, podcasts, interviews, industry websites and communities where the individual can contribute meaningfully.",
+            "5. Repurpose Successful Content: A single interview can become multiple pieces of content across LinkedIn, Instagram, YouTube, blogs and newsletters.",
+            "6. Maintain Consistency: Digital PR works better as an ongoing process rather than a one-time campaign."
+          ],
+          bullets: [
+            "1. Define the Positioning & Authority Pillars",
+            "2. Identify the Right Audience & Media Channels",
+            "3. Develop Value-Driven Story Angles",
+            "4. Build Third-Party Visibility & Media Mentions",
+            "5. Repurpose Successful Content Across Formats",
+            "6. Maintain Long-Term Narrative Consistency"
+          ]
+        },
+        {
+          heading: "Common Mistakes to Avoid in Digital PR",
+          paragraphs: [
+            "Not every mention is useful. Digital PR should be approached strategically.",
+            "The objective should be to build relevant visibility and credibility, not simply increase the number of online mentions."
+          ],
+          bullets: [
+            "Chasing irrelevant publications purely for quantity",
+            "Publishing low-quality guest content with thin substance",
+            "Using the same promotional message everywhere",
+            "Focusing only on backlinks rather than audience trust",
+            "Overusing promotional language and buzzwords",
+            "Ignoring personal brand consistency across platforms",
+            "Creating content without a clear audience",
+            "Measuring success only through traffic instead of authority"
+          ]
+        },
+        {
+          heading: "The Future of Digital PR and Personal Branding",
+          paragraphs: [
+            "Search behaviour is changing. People increasingly discover businesses and professionals through search engines, social platforms, podcasts, online publications and AI-powered search experiences.",
+            "This makes a strong digital footprint increasingly important. Professionals who consistently publish useful ideas, participate in meaningful conversations and earn credible third-party mentions can create a stronger foundation for long-term visibility.",
+            "The combination of digital PR and personal branding can therefore become an important part of a modern professional's overall marketing strategy."
+          ],
+          internalLink: {
+            text: "How Digital PR Is Changing Brand Discovery & Search Trust",
+            href: "/blog/digital-pr-changing-how-people-discover-and-trust-a-brand"
+          }
+        }
+      ],
+      conclusion: "Digital visibility is no longer only about advertising or ranking for a few keywords. People want to know who is behind a business, what they know and whether they can be trusted. Digital PR helps create that external visibility, while personal branding helps build a recognizable identity around it. When both are approached strategically, they can help founders, executives and professionals develop stronger authority, reach relevant audiences and create a digital presence that supports long-term growth."
+    },
+    faqs: [
+      {
+        question: "What is digital PR?",
+        answer: "Digital PR is the process of building online visibility and credibility through digital media, publications, interviews, podcasts, expert content and other relevant online platforms."
+      },
+      {
+        question: "Why is digital PR important?",
+        answer: "Digital PR can help businesses and professionals increase online visibility, build credibility and reach relevant audiences through third-party platforms."
+      },
+      {
+        question: "How does personal branding help professionals?",
+        answer: "Personal branding helps professionals communicate their expertise, values, experience and professional identity consistently across digital platforms."
+      },
+      {
+        question: "Can digital PR help personal branding?",
+        answer: "Yes. Media coverage, interviews, podcasts, expert contributions and other PR activities can provide third-party visibility that supports a person's personal brand."
+      },
+      {
+        question: "Is podcasting part of digital PR?",
+        answer: "Podcast appearances can be part of a digital PR strategy, particularly when the conversation reaches a relevant audience and strengthens the guest's professional positioning."
+      }
+    ]
+  },
   // 0. Strategic Pillar: Digital PR & Media Discovery
   {
     id: "digital-pr-changing-how-people-discover-and-trust-a-brand",

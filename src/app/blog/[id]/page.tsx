@@ -65,7 +65,7 @@ function getAllCustomPosts(): BlogPost[] {
 export async function generateStaticParams() {
   const customPosts = getAllCustomPosts();
   const allIds = Array.from(new Set([
-    ...ARTICLES.map((a) => a.id),
+    ...ARTICLES.flatMap((a) => [a.id, ...(a.aliases || [])]),
     ...DEFAULT_VLOGS.map((v) => v.id),
     ...DEFAULT_ARTICLES.map((a) => a.id),
     ...customPosts.map((p) => p.id),
@@ -76,7 +76,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const legacy = ARTICLES.find((a) => a.id === id);
+  const legacy = ARTICLES.find((a) => a.id === id || a.aliases?.includes(id));
   const post = !legacy
     ? DEFAULT_VLOGS.find((v) => v.id === id) ||
       DEFAULT_ARTICLES.find((a) => a.id === id) ||
@@ -118,7 +118,7 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
   const { id: postId } = await params;
 
   // 1. Synchronously resolve from static data
-  const legacyArticle = ARTICLES.find((a) => a.id === postId) || null;
+  const legacyArticle = ARTICLES.find((a) => a.id === postId || a.aliases?.includes(postId)) || null;
   const post = !legacyArticle
     ? DEFAULT_VLOGS.find((v) => v.id === postId) ||
       DEFAULT_ARTICLES.find((a) => a.id === postId) ||
@@ -646,6 +646,30 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
               {article.content.conclusion}
             </p>
           </div>
+
+          {article.author.bio && (
+            <div className="mt-8 p-7 rounded-3xl bg-gradient-to-br from-[#16161c] to-[#121216] border border-white/10 text-white flex flex-col sm:flex-row items-center sm:items-start gap-5">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden border border-white/20 shadow-md shrink-0">
+                <Image
+                  src={article.author.avatar || "/images/harshita-avatar-main.jpg"}
+                  alt={article.author.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-2 text-center sm:text-left">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#d89ba4]">
+                  About the Author
+                </span>
+                <h4 className="text-base font-serif font-bold text-white">
+                  {article.author.name} <span className="text-xs font-sans text-zinc-400 font-normal">| {article.author.role}</span>
+                </h4>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  {article.author.bio}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* FAQs Accordion for GEO and Search Visibility */}
