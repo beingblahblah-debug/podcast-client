@@ -38,6 +38,141 @@ export interface Article {
 }
 
 export const ARTICLES: Article[] = [
+  // 0. Strategic Pillar: Digital PR & Media Discovery
+  {
+    id: "digital-pr-changing-how-people-discover-and-trust-a-brand",
+    title: "Digital PR Is Changing How People Discover and Trust a Brand",
+    metaTitle: "How Digital PR Is Changing Brand Discovery & Trust | Harshita Dagha",
+    metaDescription: "Discover how digital PR and personal branding reshape brand perception, building lasting credibility and search visibility for founders and businesses.",
+    category: "Brand PR Strategy",
+    date: "October 11, 2026",
+    readTime: "7 min read",
+    featured: true,
+    excerpt: "A brand is not defined only by what you say about it—it is shaped by what people discover when they search for it. Learn how modern digital PR builds lasting trust.",
+    image: "/images/blog/digital-pr-brand-trust.jpg",
+    seoFocus: "digital pr, brand discovery, brand trust, personal branding, digital pr strategy, online reputation, thought leadership, executive pr",
+    author: {
+      name: "Harshita Dagha",
+      role: "Podcast Host | Branding & PR Strategist",
+      avatar: "/images/harshita-avatar-main.jpg"
+    },
+    content: {
+      intro: "A brand is not defined only by its website, logo or social media content. It is also shaped by what people discover when they search for it, the conversations they encounter and the information available across trusted online platforms. For businesses and professionals, this creates a challenge. You may have valuable expertise, a strong product or years of experience, but if your online presence does not communicate that value clearly, people may struggle to understand what makes you different. This is where digital PR becomes an important part of a broader brand strategy. By creating meaningful opportunities for a business or professional to appear in relevant digital conversations, digital PR can help communicate expertise beyond a company's own marketing channels. Combined with personal branding, it can help create a more recognisable and consistent professional identity.",
+      sections: [
+        {
+          heading: "How Digital PR Influences Brand Perception",
+          paragraphs: [
+            "People rarely form an opinion about a business from a single interaction. They may visit its website, read an industry article, discover an interview or encounter its leadership team on LinkedIn.",
+            "Each interaction contributes to their understanding of the brand.",
+            "A thoughtful digital PR strategy focuses on making these interactions relevant and consistent. Rather than pursuing publicity simply to increase the number of mentions, businesses can prioritise stories, interviews and publications that help their intended audience understand their expertise.",
+            "For example, a technology company that wants to be recognised for cybersecurity should contribute insights that demonstrate its knowledge of security challenges, emerging risks and practical solutions.",
+            "The objective is not to repeat a company slogan across every platform. It is to provide useful information that allows people to understand the company's capabilities."
+          ],
+          quote: "The objective is not to repeat a company slogan across every platform. It is to provide useful information that allows people to understand the company's capabilities.",
+          internalLink: {
+            text: "Explore Strategic Digital PR & Advisory Services",
+            href: "https://www.harshitadagha.in/services"
+          }
+        },
+        {
+          heading: "Personal Branding Is About Owning a Clear Professional Identity",
+          paragraphs: [
+            "For founders, executives and independent professionals, reputation often extends beyond the organisation they represent.",
+            "Their experience, decisions, ideas and communication style can influence how others perceive their expertise.",
+            "Personal branding helps bring these elements together into a clear professional identity.",
+            "A founder might want to be known for building sustainable businesses. A marketing leader might focus on customer acquisition and brand strategy. A technology executive might share insights about digital transformation.",
+            "The strongest positioning usually comes from genuine experience rather than an identity created purely for social media.",
+            "A practical personal branding strategy begins by identifying the subjects where you have meaningful knowledge, the audience you want to reach and the perspective you can contribute to relevant discussions."
+          ],
+          quote: "The strongest positioning usually comes from genuine experience rather than an identity created purely for social media."
+        },
+        {
+          heading: "Why Consistency Matters More Than Constant Promotion",
+          paragraphs: [
+            "Publishing more content does not automatically make a brand more memorable.",
+            "If a professional shares unrelated ideas across different platforms, the audience may find it difficult to understand their main area of expertise.",
+            "Consistency helps solve this problem.",
+            "Your website, professional profiles, interviews and published articles can address different subjects while reinforcing a coherent identity. This does not require identical wording everywhere. Each channel should serve its own purpose.",
+            "A website can explain your work in detail. LinkedIn can communicate your professional perspective. An interview can reveal your experience. An industry publication can introduce your insights to a new audience.",
+            "When these touchpoints complement one another, they help create a clearer picture of your expertise."
+          ]
+        },
+        {
+          heading: "Turning Expertise Into Stories People Understand",
+          paragraphs: [
+            "Technical knowledge and professional experience are valuable, but they are not always easy for an audience to interpret.",
+            "Digital PR can help translate that expertise into stories that connect with real questions, challenges and industry developments.",
+            "Consider a founder who has spent years solving operational problems for businesses. Instead of publishing a generic announcement about the company's success, the founder could explain a common industry challenge, the lessons learned while addressing it and the changes that improved the outcome.",
+            "That story provides context. It demonstrates practical knowledge and gives readers something useful to take away.",
+            "The same principle applies to personal branding. Sharing meaningful experiences and specific insights makes a professional identity more tangible than simply describing yourself as an expert."
+          ],
+          quote: "Sharing meaningful experiences and specific insights makes a professional identity more tangible than simply describing yourself as an expert."
+        },
+        {
+          heading: "The Role of Digital PR in a Competitive Market",
+          paragraphs: [
+            "In crowded markets, businesses often offer similar services and make similar claims. Differentiation requires more than saying that your company is experienced, innovative or customer-focused.",
+            "Digital PR creates opportunities to demonstrate those qualities through relevant stories, expert contributions and independent editorial coverage.",
+            "For businesses, this may mean sharing original research, explaining industry changes or providing useful commentary on customer challenges.",
+            "For professionals, it could involve contributing to industry publications, joining expert discussions or participating in interviews that align with their experience.",
+            "Not every opportunity will be suitable. Relevance matters more than volume, and editorial coverage should accurately represent the person's or organisation's expertise."
+          ]
+        },
+        {
+          heading: "Measuring Progress Beyond Media Mentions",
+          paragraphs: [
+            "A digital PR campaign should be evaluated against its objectives, not just the number of placements it generates.",
+            "These indicators do not all prove that digital PR caused a particular business result. They should be assessed alongside other marketing activities and the campaign's original goals.",
+            "A useful measurement process helps teams understand which stories and channels are contributing value and where the strategy needs improvement."
+          ],
+          bullets: [
+            "Relevant referral traffic to the website",
+            "Growth in branded searches over time",
+            "Engagement with published interviews and articles",
+            "Quality of media coverage and audience relevance",
+            "Qualified enquiries or partnership opportunities",
+            "Increased visibility for important brand topics"
+          ]
+        },
+        {
+          heading: "Bringing Digital PR and Personal Branding Together",
+          paragraphs: [
+            "Digital PR and personal branding serve different purposes, but they can strengthen one another.",
+            "Digital PR helps communicate expertise through relevant external platforms. Personal branding gives that expertise a recognisable professional identity.",
+            "For a founder, the combination can connect their personal perspective with the company's wider story. For an executive, it can help communicate leadership expertise. For an independent professional, it can make their specialisation easier for relevant audiences to understand.",
+            "The starting point is not to pursue every available opportunity. It is to identify the reputation you want to build and select channels that help communicate it credibly."
+          ],
+          internalLink: {
+            text: "Read Digital PR & Personal Branding Blueprint",
+            href: "/blog/digital-pr-personal-branding"
+          }
+        }
+      ],
+      conclusion: "Strong brands are built through more than repeated claims about their expertise. They develop when people can understand what a business or professional does, find useful information about their work and encounter a consistent message across relevant channels. Digital PR provides opportunities to communicate that expertise beyond owned platforms. Personal branding helps ensure that the expertise is connected to a clear and recognisable identity. The focus should remain on relevance, accuracy and genuine value. Rather than pursuing visibility for its own sake, businesses and professionals can use these approaches to communicate what makes their experience meaningful to the audiences they want to reach."
+    },
+    faqs: [
+      {
+        question: "What is the main purpose of digital PR?",
+        answer: "Digital PR helps businesses and professionals increase relevant online visibility, communicate expertise and develop relationships with audiences through digital publications, interviews, podcasts and other online channels."
+      },
+      {
+        question: "How does personal branding support business growth?",
+        answer: "Personal branding can help founders and professionals communicate their experience, perspective and expertise. Depending on the audience and business model, this may support networking, trust-building and relevant professional opportunities."
+      },
+      {
+        question: "How can a business improve its online brand perception?",
+        answer: "A business can improve its online brand perception by publishing useful information, maintaining accurate website content, communicating consistently and pursuing relevant media and industry opportunities that demonstrate its capabilities."
+      },
+      {
+        question: "Is digital PR useful for small businesses?",
+        answer: "Yes. Small businesses can use digital PR to share specialist knowledge, explain customer problems they solve and reach relevant audiences. The strategy should match the business's resources, market and objectives."
+      },
+      {
+        question: "How should digital PR success be measured?",
+        answer: "Success can be assessed using relevant coverage, referral traffic, branded search trends, audience engagement and qualified enquiries. The most useful metrics depend on the campaign's goals."
+      }
+    ]
+  },
   // 0. Strategic Pillar: Digital PR & Personal Branding
   {
     id: "digital-pr-personal-branding",
