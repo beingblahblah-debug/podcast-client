@@ -197,7 +197,7 @@ export const ARTICLES: Article[] = [
         {
           heading: "What Is Digital PR?",
           paragraphs: [
-            "Digital PR is the process of building online visibility and credibility through digital media, publications, interviews, expert contributions, podcasts and other relevant third-party platforms.",
+            "[Digital PR](https://www.harshitadagha.in/services) is the process of building online visibility and credibility through digital media, publications, interviews, expert contributions, podcasts and other relevant third-party platforms.",
             "Traditional PR often focused heavily on newspapers, television, magazines and offline media. Digital PR has expanded that approach.",
             "The objective isn't simply to get as many mentions as possible. The more important objective is to build a credible digital presence around a particular person, brand or area of expertise."
           ],
@@ -214,7 +214,7 @@ export const ARTICLES: Article[] = [
             "Relevant brand and expert mentions"
           ],
           internalLink: {
-            text: "Explore Strategic Digital PR & Advisory Services",
+            text: "Digital PR",
             href: "https://www.harshitadagha.in/services"
           }
         },
@@ -268,24 +268,33 @@ export const ARTICLES: Article[] = [
             "If you're wondering how to build a personal brand online, start with positioning rather than posting.",
             "1. Define What You Want to Be Known For: Choose two or three areas that genuinely represent your expertise. Avoid trying to become an expert in everything. A focused positioning makes your content and PR activities much easier to plan.",
             "2. Optimise Your LinkedIn Presence: LinkedIn is particularly useful for professional personal branding. Your headline, About section, experience, featured content and regular posts should communicate a consistent professional story. Personal branding on LinkedIn works better when your profile reflects your actual expertise rather than simply listing job responsibilities.",
-            "3. Create Useful Content: Content gives people a reason to understand your expertise. Demonstrate knowledge through case studies, industry opinions, lessons from experience, practical guides, and podcast conversations rather than constantly promoting yourself.",
-            "4. Build Third-Party Credibility: Your own website and social profiles are important, but third-party mentions can add another layer of credibility. Relevant media coverage, podcasts, interviews, guest articles and industry platforms can help establish a broader digital footprint. This is where digital PR strategy becomes particularly useful.",
-            "5. Repurpose Strong Ideas: One good idea doesn't have to exist in only one format. A podcast conversation can become a LinkedIn post, short-form video, an expert article, a quote graphic, a newsletter, a website blog, or a discussion topic."
+            "3. Create Useful Content: Content gives people a reason to understand your expertise. The objective should be to demonstrate knowledge rather than constantly promote yourself. You can share industry opinions, lessons from experience, case studies, business insights, expert commentary, practical guides, podcast conversations, and professional experiences.",
+            "4. Build Third-Party Credibility: Your own website and social profiles are important, but third-party mentions can add another layer of credibility. Relevant media coverage, podcasts, interviews, guest articles and industry platforms can help establish a broader digital footprint. This is where a structured [Digital PR](https://www.harshitadagha.in/services) strategy becomes particularly useful.",
+            "5. Repurpose Strong Ideas: One good idea doesn't have to exist in only one format. A podcast conversation can become a LinkedIn post, short-form video, an expert article, a quote graphic, a newsletter, a website blog, or a discussion topic. This allows one meaningful conversation to support multiple parts of your online presence."
+          ],
+          bullets: [
+            "Industry opinions & practical guides",
+            "Lessons from leadership and real case studies",
+            "Executive commentary & business insights",
+            "High-impact podcast conversations",
+            "Repurposed short-form clips & newsletters"
           ]
         },
         {
           heading: "Why Podcasts Can Be Powerful for Personal Branding",
           paragraphs: [
-            "Short-form content can communicate an idea quickly. A long-form podcast conversation can provide something different: context.",
+            "Short-form content can communicate an idea quickly.",
+            "A long-form podcast conversation can provide something different: context.",
             "A founder can discuss decisions, failures, lessons and experiences that cannot always be communicated in a short social media post.",
             "For professionals building authority, this depth can make a podcast appearance particularly valuable. It also creates content that can continue working after the original episode has been published."
           ],
-          quote: "A founder can discuss decisions, failures, lessons and experiences that cannot always be communicated in a short social media post."
+          quote: "A long-form podcast conversation provides something different: context. It creates content that continues working after the episode has been published."
         },
         {
           heading: "Digital PR for Founders and Professionals",
           paragraphs: [
-            "Founders and professionals often have valuable experience but limited time to communicate it. A structured digital PR and personal branding strategy can help turn that experience into public-facing expertise.",
+            "Founders and professionals often have valuable experience but limited time to communicate it.",
+            "A structured digital PR and personal branding strategy can help turn that experience into public-facing expertise.",
             "For example, a founder could combine: LinkedIn content + podcast interviews + expert articles + media coverage + website content.",
             "Instead of treating each channel separately, these activities can support one central positioning. This creates a stronger and more consistent online presence."
           ]
@@ -308,9 +317,23 @@ export const ARTICLES: Article[] = [
           heading: "Your Website Should Be the Foundation",
           paragraphs: [
             "Social media platforms can help people discover you, but your website remains an important home base.",
-            "It can bring together your professional profile, expertise, services, media features, podcast appearances, articles, speaking engagements, and contact information.",
-            "For someone investing in personal branding, this creates a central place where visitors can understand the complete professional story. Digital PR can bring people to that ecosystem, while the website provides the deeper context."
-          ]
+            "It can bring together your complete ecosystem. For someone investing in personal branding, this creates a central place where visitors can understand the complete professional story.",
+            "Digital PR can bring people to that ecosystem, while the website provides the deeper context."
+          ],
+          bullets: [
+            "Professional profile & verified credentials",
+            "Core expertise & advisory areas",
+            "Strategic PR & brand services",
+            "Media features & press coverage",
+            "Podcast appearances & masterclasses",
+            "Thought leadership articles & insights",
+            "Speaking engagements & conferences",
+            "Direct advisory contact information"
+          ],
+          internalLink: {
+            text: "Digital PR",
+            href: "https://www.harshitadagha.in/services"
+          }
         }
       ],
       conclusion: "Building an online presence isn't simply about getting more followers, publishing more posts or collecting media mentions. The bigger opportunity is to become recognisable for something valuable. Personal branding provides the positioning and story. Digital PR helps those ideas reach audiences beyond your immediate network. When your website, LinkedIn presence, content, podcast appearances, media coverage and other digital activities reinforce the same expertise, your online presence becomes much stronger. The goal isn't to be everywhere. The goal is to be remembered for the right things."
