@@ -76,6 +76,13 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
     });
   }, [postId, staticLegacy, staticPost]);
 
+  useEffect(() => {
+    const pageTitle = legacyArticle?.metaTitle || post?.metaTitle || legacyArticle?.title || post?.title;
+    if (pageTitle && typeof document !== "undefined") {
+      document.title = `${pageTitle} | Harshita Dagha`;
+    }
+  }, [legacyArticle, post]);
+
   if (!isLoading && !post && !legacyArticle) {
     notFound();
   }
@@ -636,7 +643,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
         {/* Content */}
         <div className="prose prose-invert prose-lg max-w-none mb-16">
           <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-sans font-medium mb-8">
-            {article.content.intro}
+            {renderInlineText(article.content.intro)}
           </p>
 
           <div className="space-y-12">
@@ -648,7 +655,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
 
                 {section.paragraphs.map((p, pIdx) => (
                   <p key={pIdx} className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-                    {p}
+                    {renderInlineText(p)}
                   </p>
                 ))}
 
@@ -808,4 +815,24 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
   }
 
   notFound();
+}
+
+function renderInlineText(text: string): React.ReactNode {
+  if (!text) return text;
+  const parts = text.split(/(\[.*?\]\(.*?\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[(.*?)\]\((.*?)\)$/);
+    if (match) {
+      return (
+        <a
+          key={i}
+          href={match[2]}
+          className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return part;
+  });
 }

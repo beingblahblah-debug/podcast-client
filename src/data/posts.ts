@@ -2,6 +2,8 @@ export interface BlogPost {
   id: string;
   type: "vlog" | "article";
   title: string;
+  metaTitle?: string;
+  metaDescription?: string;
   category: string;
   date: string;
   readTime?: string;
@@ -291,6 +293,8 @@ export function articleToBlogPost(art: Article): BlogPost {
     id: art.id,
     type: "article",
     title: art.title,
+    metaTitle: art.metaTitle,
+    metaDescription: art.metaDescription,
     category: art.category,
     date: art.date,
     readTime: art.readTime,
