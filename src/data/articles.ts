@@ -386,12 +386,13 @@ export const ARTICLES: Article[] = [
     readTime: "8 min read",
     featured: true,
     excerpt: "Learn how digital PR and personal branding work together to build credibility, online visibility and authority for founders, professionals and businesses.",
-    image: "/images/harshita-saree-mic.jpg",
+    image: "/images/blog/digital-pr-personal-branding.jpg",
     seoFocus: "digital pr, personal branding, online presence, digital pr strategy, personal branding on linkedin, how to build personal brand online, founder branding",
     author: {
       name: "Harshita Dagha",
       role: "Podcast Host | Branding & PR Strategist",
-      avatar: "/images/harshita-avatar-main.jpg"
+      avatar: "/images/harshita-avatar-main.jpg",
+      bio: "Harshita Dagha is an Indian podcast host, TEDx speaker, branding and PR strategist, GEO expert and social media strategist with 16+ years of experience. She is the founder of Beingblahblah and hosts conversations with entrepreneurs, celebrities, creators, experts and business leaders."
     },
     content: {
       intro: "Building a strong online presence is no longer only about having a website or posting regularly on social media. For founders, executives, professionals and growing businesses, people often discover and evaluate them through multiple digital touchpoints — Google search results, LinkedIn, podcasts, media publications, interviews, social media and third-party websites. This is where digital PR and personal branding can work together. Digital PR can help increase visibility through relevant media coverage, interviews, expert contributions and digital publications. Personal branding, meanwhile, helps communicate what a person is known for, what they understand and what perspective they bring. When both work together, online visibility can become more consistent, credible and meaningful.",
