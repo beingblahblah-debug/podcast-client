@@ -1,14 +1,14 @@
-"use client";
-
-import React, { use, useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import { 
   Calendar, 
   Clock, 
   ArrowLeft, 
-  Share2, 
   CheckCircle2, 
   Sparkles, 
   BookOpen, 
@@ -16,7 +16,6 @@ import {
   User,
   Quote,
   MapPin,
-  ChevronDown,
   Play,
   Video,
   ExternalLink,
@@ -27,81 +26,111 @@ import {
 } from "lucide-react";
 import { ARTICLES, Article } from "@/data/articles";
 import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES, extractYouTubeId, getYouTubeThumbnail } from "@/data/posts";
-import { getAllPosts, fetchPostById } from "@/lib/postStore";
 import { YouTubeIcon } from "@/components/SocialIcons";
 import FormattedPostContent from "@/components/FormattedPostContent";
+import { ShareButton, ArticleFaqAccordion } from "@/components/BlogInteractive";
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-export default function ArticleOrVlogDetailPage({ params }: PageProps) {
-  const resolvedParams = use(params);
-  const postId = resolvedParams.id;
+function getCustomPost(id: string): BlogPost | null {
+  try {
+    const filePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
+    if (fs.existsSync(filePath)) {
+      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      if (Array.isArray(data)) {
+        return data.find((p: BlogPost) => p.id === id) || null;
+      }
+    }
+  } catch (e) {
+    // Ignore read errors
+  }
+  return null;
+}
 
-  // 1. Synchronously resolve from static data so SSR renders full HTML immediately!
-  const staticLegacy = ARTICLES.find((a) => a.id === postId) || null;
-  const staticPost = !staticLegacy
+function getAllCustomPosts(): BlogPost[] {
+  try {
+    const filePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
+    if (fs.existsSync(filePath)) {
+      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      if (Array.isArray(data)) return data;
+    }
+  } catch (e) {
+    // Ignore read errors
+  }
+  return [];
+}
+
+export async function generateStaticParams() {
+  const customPosts = getAllCustomPosts();
+  const allIds = Array.from(new Set([
+    ...ARTICLES.map((a) => a.id),
+    ...DEFAULT_VLOGS.map((v) => v.id),
+    ...DEFAULT_ARTICLES.map((a) => a.id),
+    ...customPosts.map((p) => p.id),
+  ]));
+
+  return allIds.map((id) => ({ id }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const legacy = ARTICLES.find((a) => a.id === id);
+  const post = !legacy
+    ? DEFAULT_VLOGS.find((v) => v.id === id) ||
+      DEFAULT_ARTICLES.find((a) => a.id === id) ||
+      getCustomPost(id)
+    : null;
+
+  if (!legacy && !post) {
+    return {
+      title: "Article Not Found | Harshita Dagha",
+    };
+  }
+
+  const title = legacy?.metaTitle || post?.metaTitle || legacy?.title || post?.title || "Editorial Article";
+  const description = legacy?.metaDescription || post?.metaDescription || legacy?.excerpt || post?.excerpt || "";
+  const imageUrl = legacy?.image || post?.coverImage || "https://www.harshitadagha.in/images/harshita-portrait-main.jpg";
+
+  return {
+    title: `${title} | Harshita Dagha`,
+    description,
+    openGraph: {
+      title: `${title} | Harshita Dagha`,
+      description,
+      url: `https://www.harshitadagha.in/blog/${id}`,
+      type: "article",
+      images: [
+        {
+          url: imageUrl.startsWith("http") ? imageUrl : `https://www.harshitadagha.in${imageUrl}`,
+          alt: title,
+        }
+      ]
+    },
+    alternates: {
+      canonical: `https://www.harshitadagha.in/blog/${id}`,
+    }
+  };
+}
+
+export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
+  const { id: postId } = await params;
+
+  // 1. Synchronously resolve from static data
+  const legacyArticle = ARTICLES.find((a) => a.id === postId) || null;
+  const post = !legacyArticle
     ? DEFAULT_VLOGS.find((v) => v.id === postId) ||
       DEFAULT_ARTICLES.find((a) => a.id === postId) ||
+      getCustomPost(postId) ||
       null
     : null;
 
-  const [legacyArticle, setLegacyArticle] = useState<Article | null>(staticLegacy);
-  const [post, setPost] = useState<BlogPost | null>(staticPost);
-  const [copied, setCopied] = useState(false);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>(() => {
-    return DEFAULT_ARTICLES.filter((p) => p.id !== postId).slice(0, 3);
-  });
-  const [isLoading, setIsLoading] = useState(!staticLegacy && !staticPost);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    // If already found statically, only refresh related posts from custom store if needed
-    if (staticLegacy || staticPost) {
-      const all = getAllPosts();
-      setRelatedPosts(all.filter((p) => p.id !== postId).slice(0, 3));
-      setIsLoading(false);
-      return;
-    }
-
-    // Otherwise check custom posts in localStorage and server API
-    fetchPostById(postId).then((found) => {
-      if (found) {
-        setPost(found);
-        const all = getAllPosts();
-        setRelatedPosts(all.filter((p) => p.id !== found.id).slice(0, 3));
-      }
-      setIsLoading(false);
-    });
-  }, [postId, staticLegacy, staticPost]);
-
-  useEffect(() => {
-    const pageTitle = legacyArticle?.metaTitle || post?.metaTitle || legacyArticle?.title || post?.title;
-    if (pageTitle && typeof document !== "undefined") {
-      document.title = `${pageTitle} | Harshita Dagha`;
-    }
-  }, [legacyArticle, post]);
-
-  if (!isLoading && !post && !legacyArticle) {
+  if (!post && !legacyArticle) {
     notFound();
   }
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-[#0c0c0e] flex items-center justify-center text-zinc-400">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#d89ba4]" />
-      </div>
-    );
-  }
-
-  const handleShare = () => {
-    if (typeof window !== "undefined") {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
+  const relatedPosts = DEFAULT_ARTICLES.filter((p) => p.id !== postId).slice(0, 3);
 
   // -------------------------------------------------------------------------
   // RENDER DYNAMIC VLOG OR ARTICLE
@@ -154,12 +183,13 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
           <div className="flex items-center gap-2 text-xs text-zinc-500 font-medium mb-6 flex-wrap">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-white transition-colors">Vlogs & Blog</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog & Vlogs</Link>
             <span>/</span>
-            <span className="text-zinc-300 font-bold truncate max-w-[240px] sm:max-w-none">{post.category}</span>
+            <span className="text-zinc-300 font-bold truncate max-w-[200px] sm:max-w-none">
+              {post.category}
+            </span>
           </div>
 
-          {/* Back to Blog */}
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-xs font-bold text-zinc-400 hover:text-white mb-6 transition-colors group"
@@ -168,33 +198,28 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             <span>Back to All Vlogs & Articles</span>
           </Link>
 
-          {/* Header Meta & Badges */}
+          {/* Header */}
           <div className="mb-6">
             <div className="flex items-center gap-2.5 flex-wrap mb-4">
-              <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${
-                isVlog 
-                  ? "bg-red-500/20 text-red-300 border border-red-500/30" 
-                  : "bg-white/5 text-[#d89ba4] border border-white/10"
-              }`}>
-                {isVlog ? "🎥 Video Vlog" : "✍️ Editorial Article"}
-              </span>
-
-              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-zinc-300 border border-white/10">
+              <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-[#d89ba4] border border-white/10">
                 {post.category}
               </span>
-
               <span className="text-xs text-zinc-500">·</span>
               <span className="text-xs text-zinc-400 flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" />
                 {post.date}
               </span>
-
-              {post.readTime && (
+              <span className="text-xs text-zinc-500">·</span>
+              <span className="text-xs text-zinc-400 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5" />
+                {post.readTime || post.duration || "5 min read"}
+              </span>
+              {isVlog && (
                 <>
                   <span className="text-xs text-zinc-500">·</span>
-                  <span className="text-xs text-zinc-400 flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" />
-                    {post.readTime}
+                  <span className="text-xs text-red-400 flex items-center gap-1 font-semibold">
+                    <YouTubeIcon className="w-3.5 h-3.5 fill-red-500" />
+                    Video Masterclass
                   </span>
                 </>
               )}
@@ -226,21 +251,12 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 text-xs font-bold transition-colors cursor-pointer"
-            >
-              <Share2 className="w-3.5 h-3.5" />
-              <span>{copied ? "Link Copied!" : "Share"}</span>
-            </button>
+            <ShareButton title={post.title} />
           </div>
 
-          {/* =========================================================================
-              ASSET 5: BLOCK 1 & 2 — TL;DR EXECUTIVE SUMMARY & KEY QUOTABLE INSIGHTS
-              ========================================================================= */}
+          {/* ASSET 5: BLOCK 1 & 2 — TL;DR EXECUTIVE SUMMARY & KEY QUOTABLE INSIGHTS */}
           <div className="mb-10 space-y-6">
-            {/* 1. TL;DR Executive Summary */}
-            <section 
+            <section
               id="tldr-summary"
               aria-label="TL;DR Executive Summary"
               className="rounded-3xl bg-gradient-to-r from-[#d89ba4]/15 via-[#16161c] to-[#121216] border border-[#d89ba4]/35 p-6 sm:p-7 shadow-lg"
@@ -254,21 +270,26 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
               <ul className="space-y-2.5 text-sm sm:text-base text-zinc-200">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#d89ba4] shrink-0 mt-0.5" />
-                  <span><strong>Core Thesis:</strong> Unscripted clarity, authentic human storytelling, and founder vulnerability outperform sanitized corporate PR every time.</span>
+                  <span>
+                    <strong className="text-white">Core Thesis:</strong> Unscripted clarity, authentic human storytelling, and founder vulnerability outperform sanitized corporate PR every time.
+                  </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#d89ba4] shrink-0 mt-0.5" />
-                  <span><strong>Operational Moat:</strong> Building permanent entity authority across Google and AI engines requires combining keyword search intent with third-party media credibility.</span>
+                  <span>
+                    <strong className="text-white">Operational Moat:</strong> Building permanent entity authority across Google and AI engines requires combining keyword search intent with third-party media credibility.
+                  </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#d89ba4] shrink-0 mt-0.5" />
-                  <span><strong>Strategic Action:</strong> Shift from disposable social noise to sovereign, long-form podcast dialogues and indexed editorial pillars.</span>
+                  <span>
+                    <strong className="text-white">Strategic Action:</strong> Shift from disposable social noise to sovereign, long-form podcast dialogues and indexed editorial pillars.
+                  </span>
                 </li>
               </ul>
             </section>
 
-            {/* 2. Key Quotable Insights */}
-            <section 
+            <section
               id="quotable-insights"
               aria-label="Key Quotable Insights"
               className="rounded-3xl bg-[#141418] border border-white/10 p-6 sm:p-7 shadow-md"
@@ -281,19 +302,27 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
               </div>
               <div className="space-y-3">
                 <blockquote className="pl-4 border-l-2 border-[#d89ba4] text-sm sm:text-base text-zinc-200">
-                  <strong className="text-white block mb-0.5">&ldquo;According to Harshita Dagha, brand trust is built on unscripted clarity, not PR sanitization.&rdquo;</strong>
-                  <span className="text-xs text-zinc-400">— Harshita Dagha, Podcast Host & Branding Strategist</span>
+                  <strong className="text-white block mb-0.5">
+                    “According to Harshita Dagha, brand trust is built on unscripted clarity, not PR sanitization.”
+                  </strong>
+                  <span className="text-xs text-zinc-400">
+                    — Harshita Dagha, Podcast Host & Branding Strategist
+                  </span>
                 </blockquote>
                 <blockquote className="pl-4 border-l-2 border-[#d89ba4]/60 text-sm sm:text-base text-zinc-200">
-                  <strong className="text-white block mb-0.5">&ldquo;In the attention economy, the most funded brand isn&apos;t winning, the most remembered one is.&rdquo;</strong>
-                  <span className="text-xs text-zinc-400">— Harshita Dagha on The 2026 Content Era</span>
+                  <strong className="text-white block mb-0.5">
+                    “In the attention economy, the most funded brand isn't winning, the most remembered one is.”
+                  </strong>
+                  <span className="text-xs text-zinc-400">
+                    — Harshita Dagha on The 2026 Content Era
+                  </span>
                 </blockquote>
               </div>
             </section>
           </div>
 
-          {/* Video Player (If Vlog or if videoUrl exists) */}
-          {videoId ? (
+          {/* Video or Hero Image */}
+          {isVlog && videoId ? (
             <div className="mb-10">
               <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
                 <iframe
@@ -304,7 +333,6 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
                   className="w-full h-full border-0"
                 />
               </div>
-
               {post.videoUrl && (
                 <div className="mt-3 flex items-center justify-between text-xs text-zinc-400">
                   <span>Stream full conversation in 4K resolution.</span>
@@ -321,50 +349,35 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
                 </div>
               )}
             </div>
-          ) : (
-            post.coverImage && (
-              <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-white/10 mb-10 bg-black">
-                <Image
-                  src={post.coverImage}
-                  alt={post.title}
-                  fill
-                  priority
-                  unoptimized={Boolean(post.coverImage && (post.coverImage.startsWith("data:") || !post.coverImage.startsWith("/images")))}
-                  className="object-cover"
-                />
-              </div>
-            )
-          )}
+          ) : post.coverImage ? (
+            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-white/10 mb-10">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+          ) : null}
 
-          {/* Main Body Content */}
+          {/* Content Body */}
           <div className="prose prose-invert prose-lg max-w-none mb-14 text-zinc-300">
             <FormattedPostContent content={post.content} />
           </div>
 
-          {/* Multi-Photo Gallery if multiple photos were uploaded */}
-          {post.galleryImages && post.galleryImages.length > 1 && (
-            <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-[#141418] border border-white/10 shadow-xl">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#d89ba4]" />
-                  <h3 className="font-serif font-bold text-lg sm:text-xl text-white">
-                    Photo Highlights & Media ({post.galleryImages.length} Photos)
-                  </h3>
-                </div>
-                <span className="text-xs text-zinc-500 font-mono">High Resolution</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {post.galleryImages.map((imgUrl, gIdx) => (
-                  <div
-                    key={gIdx}
-                    className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black group hover:border-[#d89ba4]/50 transition-all shadow-md"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={imgUrl}
-                      alt={`Gallery media ${gIdx + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
+          {/* Gallery Images if any */}
+          {post.galleryImages && post.galleryImages.length > 0 && (
+            <div className="mb-14">
+              <h3 className="font-serif font-bold text-xl text-white mb-4">Behind The Scenes Gallery</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {post.galleryImages.map((img, i) => (
+                  <div key={i} className="relative aspect-video rounded-2xl overflow-hidden border border-white/10">
+                    <Image
+                      src={img}
+                      alt={`Gallery view ${i + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 ))}
@@ -372,68 +385,16 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex items-center gap-2 flex-wrap pb-8 mb-10 border-b border-white/10">
-              <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Tags:</span>
-              {post.tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-300"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {/* FAQs Accordion for GEO and Search Visibility */}
+          {/* FAQs Accordion */}
           {post.faqs && post.faqs.length > 0 && (
-            <div className="mb-14 pt-10 border-t border-white/10">
-              <div className="flex items-center gap-2 mb-6">
-                <HelpCircle className="w-5 h-5 text-[#d89ba4]" />
-                <h3 className="text-2xl font-serif font-bold text-white tracking-tight">
-                  Frequently Asked Questions (FAQ)
-                </h3>
-              </div>
-              <div className="space-y-3">
-                {post.faqs.map((faq, fIdx) => {
-                  const isOpen = openFaqIndex === fIdx;
-                  return (
-                    <div
-                      key={fIdx}
-                      className="rounded-2xl bg-[#141418] border border-white/10 overflow-hidden transition-all"
-                    >
-                      <button
-                        onClick={() => setOpenFaqIndex(isOpen ? null : fIdx)}
-                        className="w-full p-5 text-left flex items-center justify-between gap-4 text-white hover:text-[#d89ba4] transition-colors cursor-pointer"
-                      >
-                        <span className="font-serif font-semibold text-base sm:text-lg">
-                          {faq.question}
-                        </span>
-                        <ChevronDown
-                          className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform ${
-                            isOpen ? "rotate-180 text-[#d89ba4]" : ""
-                          }`}
-                        />
-                      </button>
-                      {isOpen && (
-                        <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
-                          {faq.answer}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <ArticleFaqAccordion faqs={post.faqs} />
           )}
 
-          {/* WhatsApp Direct Contact */}
+          {/* WhatsApp Direct Contact CTA */}
           <div className="bg-gradient-to-r from-emerald-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-8 border border-emerald-500/30 shadow-xl mb-14 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
-                Direct Production & Advisory Desk
+                Direct Production Desk
               </span>
               <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-1">
                 Connect with Harshita Dagha
@@ -559,29 +520,20 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
           <span className="text-zinc-300 font-bold truncate max-w-[240px] sm:max-w-none">{article.category}</span>
         </div>
 
-        {/* Back Link */}
-        <Link
-          href="/blog"
+        <Link 
+          href="/blog" 
           className="inline-flex items-center gap-2 text-xs font-bold text-zinc-400 hover:text-white mb-6 transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span>Back to All Articles & Guides</span>
         </Link>
 
-        {/* Article Meta */}
+        {/* Article Header */}
         <div className="mb-6">
           <div className="flex items-center gap-2.5 flex-wrap mb-4">
             <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-[#d89ba4] border border-white/10">
               {article.category}
             </span>
-
-            {article.city && (
-              <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/5 text-zinc-300 border border-white/10 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-[#d89ba4]" />
-                <span>{article.city} Regional Hub</span>
-              </span>
-            )}
-
             <span className="text-xs text-zinc-500">·</span>
             <span className="text-xs text-zinc-400 flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5" />
@@ -603,15 +555,15 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
           </p>
         </div>
 
-        {/* Author Bio Row */}
+        {/* Author Bio Bar & Share */}
         <div className="flex items-center justify-between py-6 border-y border-white/10 mb-10">
           <div className="flex items-center space-x-3.5">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/15 shadow-sm shrink-0">
-              <Image
-                src={article.author.avatar}
-                alt={article.author.name}
-                fill
-                className="object-cover"
+              <Image 
+                src={article.author.avatar} 
+                alt={article.author.name} 
+                fill 
+                className="object-cover" 
               />
             </div>
             <div>
@@ -620,23 +572,17 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          <button
-            onClick={handleShare}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 text-xs font-bold transition-colors cursor-pointer"
-          >
-            <Share2 className="w-3.5 h-3.5" />
-            <span>{copied ? "Link Copied!" : "Share Article"}</span>
-          </button>
+          <ShareButton title={article.title} />
         </div>
 
-        {/* Cover Image */}
+        {/* Hero Cover Image */}
         <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg border border-white/10 mb-12">
-          <Image
-            src={article.image}
-            alt={article.title}
-            fill
+          <Image 
+            src={article.image} 
+            alt={article.title} 
+            fill 
             priority
-            className="object-cover"
+            className="object-cover" 
           />
         </div>
 
@@ -647,8 +593,8 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
           </p>
 
           <div className="space-y-12">
-            {article.content.sections.map((section, idx) => (
-              <section key={idx} className="space-y-4">
+            {article.content.sections.map((section, sIdx) => (
+              <section key={sIdx} className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
                   {section.heading}
                 </h2>
@@ -661,7 +607,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
 
                 {section.quote && (
                   <div className="my-6 p-6 rounded-2xl bg-white/5 border-l-4 border-[#d89ba4] italic text-zinc-100 font-serif text-lg">
-                    &ldquo;{section.quote}&rdquo;
+                    “{section.quote}”
                   </div>
                 )}
 
@@ -704,44 +650,7 @@ export default function ArticleOrVlogDetailPage({ params }: PageProps) {
 
         {/* FAQs Accordion for GEO and Search Visibility */}
         {article.faqs && article.faqs.length > 0 && (
-          <div className="mb-14 pt-10 border-t border-white/10">
-            <div className="flex items-center gap-2 mb-6">
-              <HelpCircle className="w-5 h-5 text-[#d89ba4]" />
-              <h3 className="text-2xl font-serif font-bold text-white tracking-tight">
-                Frequently Asked Questions (FAQ)
-              </h3>
-            </div>
-            <div className="space-y-3">
-              {article.faqs.map((faq, fIdx) => {
-                const isOpen = openFaqIndex === fIdx;
-                return (
-                  <div
-                    key={fIdx}
-                    className="rounded-2xl bg-[#141418] border border-white/10 overflow-hidden transition-all"
-                  >
-                    <button
-                      onClick={() => setOpenFaqIndex(isOpen ? null : fIdx)}
-                      className="w-full p-5 text-left flex items-center justify-between gap-4 text-white hover:text-[#d89ba4] transition-colors cursor-pointer"
-                    >
-                      <span className="font-serif font-semibold text-base sm:text-lg">
-                        {faq.question}
-                      </span>
-                      <ChevronDown
-                        className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform ${
-                          isOpen ? "rotate-180 text-[#d89ba4]" : ""
-                        }`}
-                      />
-                    </button>
-                    {isOpen && (
-                      <div className="px-5 pb-5 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <ArticleFaqAccordion faqs={article.faqs} />
         )}
 
         {/* WhatsApp Direct Contact */}
