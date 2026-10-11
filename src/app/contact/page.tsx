@@ -183,12 +183,12 @@ export default function ContactPage() {
                 Connect directly with Harshita Dagha&apos;s executive office for branding, PR, speaking engagements, and podcast inquiries.
               </p>
               <a
-                href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
+                href="https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-md"
               >
-                <span>WhatsApp: +91 87790 03799</span>
+                <span>WhatsApp: +91 88103 81949</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
               </a>
             </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                 Detailed breakdowns of audience demographics, TEDx speaker topics, branding & PR advisory packages, and celebrity podcast formats.
               </p>
               <a
-                href="https://wa.me/918779003799?text=Hi%20Harshita,%20please%20share%20your%20Media%20Kit%20and%20rates."
+                href="https://wa.me/918810381949?text=Hi%20Harshita,%20please%20share%20your%20Media%20Kit%20and%20rates."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#d89ba4] hover:bg-[#c98c95] text-black text-xs font-bold shadow-md transition-colors"
@@ -236,8 +236,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Direct WhatsApp / Phone</h4>
-                  <a href="https://wa.me/918779003799" target="_blank" rel="noreferrer" className="text-xs text-zinc-200 font-semibold hover:underline mt-0.5 block">
-                    +91 87790 03799 (~ beingblahblah)
+                  <a href="https://wa.me/918810381949" target="_blank" rel="noreferrer" className="text-xs text-zinc-200 font-semibold hover:underline mt-0.5 block">
+                    +91 88103 81949 (~ beingblahblah)
                   </a>
                 </div>
               </div>

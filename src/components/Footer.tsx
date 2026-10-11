@@ -613,8 +613,8 @@ export default function Footer() {
             <div className="space-y-1.5 mb-6 text-xs text-zinc-400">
               <p className="flex items-center gap-2">
                 <span className="text-emerald-400 font-semibold">WhatsApp:</span>
-                <a href="https://wa.me/918779003799" target="_blank" rel="noreferrer" className="text-white hover:text-emerald-400 underline font-mono">
-                  +91 87790 03799
+                <a href="https://wa.me/918810381949" target="_blank" rel="noreferrer" className="text-white hover:text-emerald-400 underline font-mono">
+                  +91 88103 81949
                 </a>
                 <span className="text-zinc-500">(~ beingblahblah)</span>
               </p>

@@ -11,7 +11,7 @@ import {
 import { PODCAST_STATS, PRESS_LOGOS } from "@/data/episodes";
 
 export default function Hero() {
-  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20would%20like%20to%20connect%20regarding%20branding,%20PR,%20or%20podcast%20booking.";
+  const whatsappUrl = "https://wa.me/918810381949?text=Hi%20Harshita%20Dagha,%20I%20would%20like%20to%20connect%20regarding%20branding,%20PR,%20or%20podcast%20booking.";
 
   return (
     <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-[#0c0c0e] bg-mesh-dark border-b border-white/10">

@@ -247,7 +247,7 @@ const jsonLd = {
         "Pune",
         "Global Remote"
       ],
-      "telephone": "+91 87790 03799",
+      "telephone": "+91 88103 81949",
       "priceRange": "₹₹₹₹"
     },
     {
