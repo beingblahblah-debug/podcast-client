@@ -118,7 +118,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [absoluteImageUrl],
     },
     alternates: {
-      canonical: `https://www.harshitadagha.in/blog/${id}`,
+      canonical: `https://www.harshitadagha.in/blog/${legacy?.id || id}`,
     }
   };
 }

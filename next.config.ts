@@ -21,8 +21,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/top-female-podcasters",
-        destination: "/highlights",
+        source: "/top-female-podcasters-in-india-october-2026",
+        destination: "/blog/top-female-podcasters-in-india-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-india-october-2026",
+        destination: "/blog/top-female-podcasters-in-india-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/blog/top-female-podcasters-india-october-2026",
+        destination: "/blog/top-female-podcasters-in-india-october-2026",
         permanent: true,
       },
       {

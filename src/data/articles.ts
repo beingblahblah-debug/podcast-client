@@ -59,6 +59,16 @@ export const ARTICLES: Article[] = [
   // 1. National Pillar: Top Female Podcasters in India (October 2026)
   {
     id: "top-female-podcasters-in-india-october-2026",
+    aliases: [
+      "top-female-podcasters-india-october-2026",
+      "top-female-podcasters-in-india-october",
+      "top-female-podcasters-india-october",
+      "top-female-podcasters-in-india",
+      "top-female-podcasters-india",
+      "top-female-podcasters",
+      "top-female-podcasters-2026",
+      "best-female-podcasters-india-2026"
+    ],
     title: "Top Female Podcasters in India (October 2026): What Sets a Leading Host Apart and Why Harshita Dagha Is on the List",
     metaTitle: "Top Female Podcasters in India (Oct 2026) | Harshita Dagha",
     metaDescription: "Top female podcasters in India for October 2026: how to judge a leading host, and why Mumbai's Harshita Dagha, TEDx speaker and Being Blah Blah host, stands out.",
@@ -85,6 +95,12 @@ export const ARTICLES: Article[] = [
       sections: [
         {
           heading: "1. Why women hosts are shaping Indian audio in 2026",
+          image: {
+            src: "/images/blog/harshita-dagha-studio-interview.webp",
+            alt: "Harshita Dagha, top female podcast host in India, recording in her Mumbai studio",
+            title: "Harshita Dagha in Mumbai Studio",
+            caption: "Harshita Dagha, host of The Harshita Dagha Show, in an unhurried Mumbai studio dialogue."
+          },
           paragraphs: [
             "A few years ago, podcasting in India felt like a quiet corner of the internet. Today it is a mainstream habit. Three forces changed it. Affordable mobile data took listening beyond the metros. YouTube turned conversations into watchable talk shows, so a podcast now lives as audio, video and short clips at the same time. And listeners began to prefer a human voice they trust over a polished but anonymous brand.",
             "Women hosts have been strong in this shift because they often ask the questions that audiences were not hearing elsewhere: about money, family, careers, health, law and personal reputation. In a long-form conversation, a listener spends 40 to 90 minutes with a host. That is time to build a kind of trust that a 15-second advertisement cannot buy, and it is why founders, professionals and brands now pay close attention to who is behind the microphone.",
