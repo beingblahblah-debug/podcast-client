@@ -4,8 +4,17 @@ import { ShieldCheck, ArrowLeft, Lock, Eye, FileText, CheckCircle2 } from "lucid
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | The Harshita Dagha Show",
+  title: "Privacy Policy",
   description: "Privacy policy for The Harshita Dagha Show, detailing data collection, listener privacy, cookies, and protection standards.",
+  alternates: {
+    canonical: "https://www.harshitadagha.in/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | The Harshita Dagha Show",
+    description: "Privacy policy for The Harshita Dagha Show, detailing data collection, listener privacy, cookies, and protection standards.",
+    url: "https://www.harshitadagha.in/privacy",
+    type: "website",
+  },
 };
 
 export default function PrivacyPage() {

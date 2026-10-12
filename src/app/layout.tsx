@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     default: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
     template: "%s | Harshita Dagha"
   },
-  description: "Harshita Dagha is an Indian podcast host, TEDx speaker, branding & PR strategist, and GEO expert with 16+ years of experience. Founder of Beingblahblah. Based in Mumbai, connecting brands with celebrities, visibility, and stories that people remember.",
+  description: "Harshita Dagha: Indian podcast host, TEDx speaker, branding and PR strategist, and GEO expert with 16+ years experience. Founder of Beingblahblah, Mumbai.",
   keywords: [
     // Primary Entity
     "Harshita Dagha",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
-    description: "Indian podcast host, TEDx speaker, branding & PR strategist with 16+ years experience. Founder of Beingblahblah. Turning conversations into powerful brand stories.",
+    description: "Indian podcast host, TEDx speaker, branding & PR strategist with 16+ years experience. Founder of Beingblahblah. Turning conversations into brand stories.",
     url: "https://www.harshitadagha.in",
     siteName: "Harshita Dagha Official",
     images: [
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
-    description: "16+ years experience in branding, PR, social media, and podcast hosting. Founder of Beingblahblah. Giving brands celebs, visibility, and stories that people remember.",
+    description: "16+ years experience in branding, PR, social media, and podcast hosting. Founder of Beingblahblah. Giving brands celebs, visibility, and memorable stories.",
     images: ["/images/harshita-portrait-main.jpg"],
   },
 };

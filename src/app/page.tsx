@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { 
   Briefcase, 
@@ -12,6 +11,20 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CityHubsSection from "@/components/CityHubsSection";
 import TopVideosSection from "@/components/TopVideosSection";
 import GeoFaqSection from "@/components/GeoFaqSection";
+
+export const metadata: Metadata = {
+  title: "Harshita Dagha | Podcast Host, Branding & PR Strategist, GEO Expert",
+  description: "Harshita Dagha: Indian podcast host, TEDx speaker, branding and PR strategist, and GEO expert with 16+ years experience. Founder of Beingblahblah, Mumbai.",
+  alternates: {
+    canonical: "https://www.harshitadagha.in",
+  },
+  openGraph: {
+    title: "Harshita Dagha | Podcast Host, Branding & PR Strategist, GEO Expert",
+    description: "Harshita Dagha: Indian podcast host, TEDx speaker, branding and PR strategist, and GEO expert with 16+ years experience. Founder of Beingblahblah, Mumbai.",
+    url: "https://www.harshitadagha.in",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   const coreServices = [

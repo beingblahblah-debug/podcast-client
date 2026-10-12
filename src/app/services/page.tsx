@@ -1,13 +1,38 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+import type { Metadata } from "next";
 import { 
   CheckCircle2, 
-  Sparkles, 
   Briefcase
 } from "lucide-react";
 import { PRESS_LOGOS } from "@/data/episodes";
+
+export const metadata: Metadata = {
+  title: "Branding, PR, GEO & Podcast Services",
+  description: "Explore brand strategy, personal branding, GEO search visibility, digital PR, and podcast interviews by Harshita Dagha and Beingblahblah in Mumbai.",
+  alternates: {
+    canonical: "https://www.harshitadagha.in/services",
+  },
+  openGraph: {
+    title: "Branding, PR, GEO & Podcast Services | Harshita Dagha",
+    description: "Explore brand strategy, personal branding, GEO search visibility, digital PR, and podcast interviews by Harshita Dagha and Beingblahblah in Mumbai.",
+    url: "https://www.harshitadagha.in/services",
+    type: "website",
+    images: [
+      {
+        url: "/images/harshita-portrait-main.jpg",
+        width: 545,
+        height: 682,
+        alt: "Harshita Dagha - Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Branding, PR, GEO & Podcast Services | Harshita Dagha",
+    description: "Explore brand strategy, personal branding, GEO search visibility, digital PR, and podcast interviews by Harshita Dagha and Beingblahblah in Mumbai.",
+    images: ["/images/harshita-portrait-main.jpg"],
+  },
+};
 
 export default function ServicesPage() {
   const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20discussing%20branding,%20PR,%20GEO,%20or%20podcast%20services.";
@@ -176,9 +201,9 @@ export default function ServicesPage() {
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Fast-Track Production Booking</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-1">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-1">
               Need a swift response on dates or sponsorship?
-            </h3>
+            </h2>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
               Connect directly with Harshita Dagha&apos;s executive producer via WhatsApp for quick availability checks, rate cards, and studio booking.
             </p>

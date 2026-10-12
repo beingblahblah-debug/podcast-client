@@ -90,11 +90,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = legacy?.metaTitle || post?.metaTitle || legacy?.title || post?.title || "Editorial Article";
-  const description = legacy?.metaDescription || post?.metaDescription || legacy?.excerpt || post?.excerpt || "";
+  const rawDesc = legacy?.metaDescription || post?.metaDescription || legacy?.excerpt || post?.excerpt || "";
+  const description = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + "..." : rawDesc;
   const imageUrl = legacy?.image || post?.coverImage || "https://www.harshitadagha.in/images/harshita-portrait-main.jpg";
 
   return {
-    title: `${title} | Harshita Dagha`,
+    title,
     description,
     openGraph: {
       title: `${title} | Harshita Dagha`,

@@ -4,8 +4,17 @@ import { Scale, ArrowLeft, CheckCircle2, ShieldAlert } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | The Harshita Dagha Show",
+  title: "Terms of Service",
   description: "Terms and conditions governing the use of The Harshita Dagha Show website, content streaming, intellectual property, and studio bookings.",
+  alternates: {
+    canonical: "https://www.harshitadagha.in/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | The Harshita Dagha Show",
+    description: "Terms and conditions governing the use of The Harshita Dagha Show website, content streaming, intellectual property, and studio bookings.",
+    url: "https://www.harshitadagha.in/terms",
+    type: "website",
+  },
 };
 
 export default function TermsPage() {
