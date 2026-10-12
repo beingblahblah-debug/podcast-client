@@ -93,21 +93,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const rawDesc = legacy?.metaDescription || post?.metaDescription || legacy?.excerpt || post?.excerpt || "";
   const description = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + "..." : rawDesc;
   const imageUrl = legacy?.image || post?.coverImage || "https://www.harshitadagha.in/images/harshita-portrait-main.jpg";
+  const absoluteImageUrl = imageUrl.startsWith("http") ? imageUrl : `https://www.harshitadagha.in${imageUrl}`;
 
   return {
     title,
     description,
+    keywords: legacy?.seoFocus || post?.tags?.join(", ") || "",
     openGraph: {
-      title: `${title} | Harshita Dagha`,
-      description,
+      title: legacy?.ogTitle || `${title} | Harshita Dagha`,
+      description: legacy?.ogDescription || description,
       url: `https://www.harshitadagha.in/blog/${id}`,
       type: "article",
       images: [
         {
-          url: imageUrl.startsWith("http") ? imageUrl : `https://www.harshitadagha.in${imageUrl}`,
-          alt: title,
+          url: absoluteImageUrl,
+          alt: legacy?.imageAlt || title,
         }
       ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: legacy?.ogTitle || title,
+      description: legacy?.ogDescription || description,
+      images: [absoluteImageUrl],
     },
     alternates: {
       canonical: `https://www.harshitadagha.in/blog/${id}`,
@@ -478,7 +486,7 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
     const article = legacyArticle;
     return (
     <article className="py-12 md:py-20 bg-[#0c0c0e] min-h-screen text-[#f4f4f5]">
-      {/* Schema.org BlogPosting & FAQPage JSON-LD */}
+      {/* Schema.org BlogPosting, BreadcrumbList, Person & FAQPage JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -494,7 +502,8 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                 "author": {
                   "@type": "Person",
                   "name": article.author.name,
-                  "jobTitle": article.author.role
+                  "jobTitle": article.author.role,
+                  "url": "https://www.harshitadagha.in"
                 },
                 "publisher": {
                   "@type": "Organization",
@@ -503,6 +512,42 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                 },
                 "mainEntityOfPage": `https://www.harshitadagha.in/blog/${article.id}`,
                 "keywords": article.seoFocus
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.harshitadagha.in"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Articles & Guides",
+                    "item": "https://www.harshitadagha.in/blog"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": article.title,
+                    "item": `https://www.harshitadagha.in/blog/${article.id}`
+                  }
+                ]
+              },
+              {
+                "@type": "Person",
+                "@id": "https://www.harshitadagha.in/#person",
+                "name": "Harshita Dagha",
+                "jobTitle": "Podcast Host, TEDx Speaker, Branding & PR Strategist",
+                "url": "https://www.harshitadagha.in",
+                "image": "https://www.harshitadagha.in/images/harshita-portrait-main.jpg",
+                "sameAs": [
+                  "https://www.harshitadagha.in/profile",
+                  "https://youtube.com/@harshitadagha?si=vqaTaxvZHC02_uYG",
+                  "https://www.instagram.com/beingblahblah"
+                ]
               },
               ...(article.faqs && article.faqs.length > 0 ? [{
                 "@type": "FAQPage",
@@ -587,27 +632,35 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
         </div>
 
         {/* Hero Cover Image */}
-        <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-12 bg-gradient-to-b from-[#141418] via-[#0f0f14] to-[#0a0a0d] flex items-center justify-center min-h-[320px]">
-          {/* Ambient blurred backdrop aura */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image 
-              src={article.image} 
-              alt="" 
-              fill 
-              priority
-              className="object-cover blur-3xl opacity-35 scale-125" 
-              aria-hidden
-            />
+        <figure className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-12 bg-gradient-to-b from-[#141418] via-[#0f0f14] to-[#0a0a0d]">
+          <div className="relative w-full flex items-center justify-center min-h-[320px]">
+            {/* Ambient blurred backdrop aura */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <Image 
+                src={article.image} 
+                alt="" 
+                fill 
+                priority
+                className="object-cover blur-3xl opacity-35 scale-125" 
+                aria-hidden
+              />
+            </div>
+            {/* Main uncropped focal image */}
+            <div className="relative z-10 w-full flex items-center justify-center p-2 sm:p-4">
+              <img 
+                src={article.image} 
+                alt={article.imageAlt || article.title} 
+                title={article.imageTitle || article.title}
+                className="max-h-[580px] w-auto max-w-full object-contain rounded-2xl shadow-2xl" 
+              />
+            </div>
           </div>
-          {/* Main uncropped focal image */}
-          <div className="relative z-10 w-full flex items-center justify-center p-2 sm:p-4">
-            <img 
-              src={article.image} 
-              alt={article.title} 
-              className="max-h-[580px] w-auto max-w-full object-contain rounded-2xl shadow-2xl" 
-            />
-          </div>
-        </div>
+          {article.imageCaption && (
+            <figcaption className="p-3.5 text-center text-xs text-zinc-400 font-sans border-t border-white/5 bg-[#141418]">
+              {article.imageCaption}
+            </figcaption>
+          )}
+        </figure>
 
         {/* Content */}
         <div className="prose prose-invert prose-lg max-w-none mb-16">
@@ -628,6 +681,52 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                   </p>
                 ))}
 
+                {section.image && (
+                  <figure className="my-8 rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-xl">
+                    <div className="relative w-full bg-black flex justify-center">
+                      <img
+                        src={section.image.src}
+                        alt={section.image.alt}
+                        title={section.image.title}
+                        className="w-full max-h-[550px] object-contain rounded-2xl"
+                        loading="lazy"
+                      />
+                    </div>
+                    {section.image.caption && (
+                      <figcaption className="p-3 text-center text-xs text-zinc-400 font-sans border-t border-white/5 bg-[#141418]">
+                        {section.image.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
+
+                {section.table && (
+                  <div className="my-6 overflow-x-auto rounded-2xl border border-white/10 bg-[#141418] shadow-lg">
+                    <table className="w-full text-left text-sm text-zinc-300">
+                      <thead className="bg-white/5 text-xs uppercase tracking-wider text-[#d89ba4] border-b border-white/10">
+                        <tr>
+                          {section.table.headers.map((h, hIdx) => (
+                            <th key={hIdx} className="px-5 py-3.5 font-bold whitespace-nowrap">
+                              {h}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-white/5">
+                        {section.table.rows.map((row, rIdx) => (
+                          <tr key={rIdx} className="hover:bg-white/[0.02] transition-colors">
+                            {row.map((cell, cIdx) => (
+                              <td key={cIdx} className="px-5 py-3.5 leading-relaxed">
+                                {renderInlineText(cell)}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
                 {section.quote && (
                   <div className="my-6 p-6 rounded-2xl bg-white/5 border-l-4 border-[#d89ba4] italic text-zinc-100 font-serif text-lg">
                     “{section.quote}”
@@ -642,11 +741,17 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                     {section.bullets.map((b, bIdx) => (
                       <div key={bIdx} className="flex items-start gap-2.5 text-sm text-zinc-300">
                         <CheckCircle2 className="w-4 h-4 text-[#d89ba4] shrink-0 mt-1" />
-                        <span>{b}</span>
+                        <span>{renderInlineText(b)}</span>
                       </div>
                     ))}
                   </div>
                 )}
+
+                {section.postParagraphs && section.postParagraphs.map((p, pIdx) => (
+                  <p key={`post-${pIdx}`} className="text-base sm:text-lg text-zinc-300 leading-relaxed">
+                    {renderInlineText(p)}
+                  </p>
+                ))}
 
                 {section.internalLink && (
                   <div className="pt-2">
@@ -773,22 +878,48 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
   notFound();
 }
 
-function renderInlineText(text: string): React.ReactNode {
-  if (!text) return text;
-  const parts = text.split(/(\[.*?\]\(.*?\))/g);
+function parseBold(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, i) => {
-    const match = part.match(/^\[(.*?)\]\((.*?)\)$/);
-    if (match) {
+    if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <a
-          key={i}
-          href={match[2]}
-          className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
-        >
-          {match[1]}
-        </a>
+        <strong key={`b-${i}`} className="font-bold text-white">
+          {part.slice(2, -2)}
+        </strong>
       );
     }
     return part;
   });
+}
+
+function renderInlineText(text: string): React.ReactNode {
+  if (!text) return text;
+  const linkRegex = /\[(.*?)\]\((.*?)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(...parseBold(text.slice(lastIndex, match.index)));
+    }
+    const label = match[1];
+    const href = match[2];
+    parts.push(
+      <a
+        key={`link-${match.index}`}
+        href={href}
+        className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+      >
+        {label}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(...parseBold(text.slice(lastIndex)));
+  }
+
+  return parts;
 }

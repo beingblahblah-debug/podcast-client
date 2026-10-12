@@ -280,9 +280,19 @@ export function articleToBlogPost(art: Article): BlogPost {
     art.content.intro,
     ...art.content.sections.map((s) => {
       let str = `### ${s.heading}\n\n` + s.paragraphs.join("\n\n");
+      if (s.image) {
+        str += `\n\n![${s.image.alt}](${s.image.src})`;
+      }
+      if (s.table) {
+        str += `\n\n| ${s.table.headers.join(" | ")} |\n| ${s.table.headers.map(() => "---").join(" | ")} |\n` +
+          s.table.rows.map((row) => `| ${row.join(" | ")} |`).join("\n");
+      }
       if (s.quote) str += `\n\n> "${s.quote}"`;
       if (s.bullets && s.bullets.length > 0) {
         str += "\n\n" + s.bullets.map((b) => `- ${b}`).join("\n");
+      }
+      if (s.postParagraphs && s.postParagraphs.length > 0) {
+        str += "\n\n" + s.postParagraphs.join("\n\n");
       }
       return str;
     }),
