@@ -392,8 +392,8 @@ export default function BlogVlogsHubPage() {
             {activeFilter === "all" && (
               <div className="mb-6 flex items-center justify-between">
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-white flex items-center gap-2">
-                  <Tv className="w-5 h-5 text-[#d89ba4]" />
-                  <span>Featured Vlogs & Written Articles</span>
+                  <BookOpen className="w-5 h-5 text-[#d89ba4]" />
+                  <span>Latest Blog Posts, Articles &amp; Masterclasses</span>
                 </h2>
               </div>
             )}

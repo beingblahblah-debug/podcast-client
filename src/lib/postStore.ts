@@ -60,8 +60,8 @@ export function getAllPosts(customFromProps?: BlogPost[]): BlogPost[] {
   if (typeof window !== "undefined" && custom.length === 0) {
     custom = getLocalCustomPosts();
   }
-  // Custom posts appear at top, then default vlogs, then default articles
-  return [...custom, ...DEFAULT_VLOGS, ...DEFAULT_ARTICLES];
+  // Custom posts and latest editorial articles appear at the very top of /blog
+  return [...custom, ...DEFAULT_ARTICLES, ...DEFAULT_VLOGS];
 }
 
 /**
@@ -69,7 +69,7 @@ export function getAllPosts(customFromProps?: BlogPost[]): BlogPost[] {
  */
 export async function getAllPostsAsync(): Promise<BlogPost[]> {
   const custom = await fetchServerCustomPosts();
-  return [...custom, ...DEFAULT_VLOGS, ...DEFAULT_ARTICLES];
+  return [...custom, ...DEFAULT_ARTICLES, ...DEFAULT_VLOGS];
 }
 
 /**
