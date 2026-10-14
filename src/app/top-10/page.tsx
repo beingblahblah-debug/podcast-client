@@ -31,13 +31,23 @@ export default function Top10Page() {
           <span>
             Read our fresh national rankings &amp; 7-point quality scorecard:
           </span>
-          <Link
-            href="/blog/top-female-podcasters-in-india-october-2026"
-            className="inline-flex items-center gap-1 font-bold text-white hover:text-[#d89ba4] underline underline-offset-4 transition-colors"
-          >
-            <span>Top Female Podcasters in India (October 2026)</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          <div className="flex items-center gap-2 flex-wrap justify-center">
+            <Link
+              href="/blog/top-podcasters-in-india-october-2026"
+              className="inline-flex items-center gap-1 font-bold text-[#d89ba4] hover:text-white underline underline-offset-4 transition-colors"
+            >
+              <span>Top Podcasters in India (Oct 2026)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <span className="text-zinc-600">·</span>
+            <Link
+              href="/blog/top-female-podcasters-in-india-october-2026"
+              className="inline-flex items-center gap-1 font-medium text-zinc-300 hover:text-white underline underline-offset-4 transition-colors"
+            >
+              <span>Top Female Podcasters</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
       </div>
 

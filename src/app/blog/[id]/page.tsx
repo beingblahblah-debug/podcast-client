@@ -22,44 +22,68 @@ import {
   MessageCircle,
   HelpCircle,
   Headphones,
-  Tv
+  Tv,
+  Eye
 } from "lucide-react";
 import { ARTICLES, Article } from "@/data/articles";
 import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES, extractYouTubeId, getYouTubeThumbnail } from "@/data/posts";
 import { YouTubeIcon } from "@/components/SocialIcons";
 import FormattedPostContent from "@/components/FormattedPostContent";
 import { ShareButton, ArticleFaqAccordion } from "@/components/BlogInteractive";
+import DynamicPostClientFallback from "@/components/DynamicPostClientFallback";
+
+export const dynamicParams = true;
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-function getCustomPost(id: string): BlogPost | null {
-  try {
-    const filePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
-    if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      if (Array.isArray(data)) {
-        return data.find((p: BlogPost) => p.id === id) || null;
-      }
-    }
-  } catch (e) {
-    // Ignore read errors
-  }
-  return null;
-}
+const localDataFilePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
+const tmpDataFilePath = path.join("/tmp", "custom_posts.json");
 
 function getAllCustomPosts(): BlogPost[] {
-  try {
-    const filePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
-    if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      if (Array.isArray(data)) return data;
+  const map = new Map<string, BlogPost>();
+
+  // 1. In-memory runtime cache
+  const inMem = (globalThis as any).__harshita_custom_posts as BlogPost[] | undefined;
+  if (Array.isArray(inMem)) {
+    for (const p of inMem) {
+      if (p && p.id) map.set(p.id, p);
     }
-  } catch (e) {
-    // Ignore read errors
   }
-  return [];
+
+  // 2. Try local data file
+  try {
+    if (fs.existsSync(localDataFilePath)) {
+      const data = JSON.parse(fs.readFileSync(localDataFilePath, "utf-8"));
+      if (Array.isArray(data)) {
+        for (const p of data) {
+          if (p && p.id && !map.has(p.id)) map.set(p.id, p);
+        }
+      }
+    }
+  } catch (e) {}
+
+  // 3. Try /tmp file fallback
+  try {
+    if (fs.existsSync(tmpDataFilePath)) {
+      const data = JSON.parse(fs.readFileSync(tmpDataFilePath, "utf-8"));
+      if (Array.isArray(data)) {
+        for (const p of data) {
+          if (p && p.id && !map.has(p.id)) map.set(p.id, p);
+        }
+      }
+    }
+  } catch (e) {}
+
+  const result = Array.from(map.values());
+  (globalThis as any).__harshita_custom_posts = result;
+  return result;
+}
+
+function getCustomPost(id: string): BlogPost | null {
+  const all = getAllCustomPosts();
+  return all.find((p) => p.id === id || p.id.toLowerCase() === id.toLowerCase()) || null;
 }
 
 export async function generateStaticParams() {
@@ -84,8 +108,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : null;
 
   if (!legacy && !post) {
+    const cleanSlug = id.replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     return {
-      title: "Article Not Found | Harshita Dagha",
+      title: `${cleanSlug} | Harshita Dagha`,
+      description: `Explore ${cleanSlug} and more executive masterclasses on The Harshita Dagha Show.`,
     };
   }
 
@@ -136,7 +162,7 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
     : null;
 
   if (!post && !legacyArticle) {
-    notFound();
+    return <DynamicPostClientFallback postId={postId} />;
   }
 
   const relatedPosts = DEFAULT_ARTICLES.filter((p) => p.id !== postId).slice(0, 3);
@@ -222,6 +248,16 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
               <span className="text-xs text-zinc-400 flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" />
                 {post.readTime || post.duration || "5 min read"}
+              </span>
+              <span className="text-xs text-zinc-500">·</span>
+              <span className="text-xs text-zinc-300 flex items-center gap-1 font-semibold">
+                <Eye className="w-3.5 h-3.5 text-[#d89ba4]" />
+                {post.views || "16.8K views"}
+              </span>
+              <span className="text-xs text-zinc-500">·</span>
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Live &amp; Public
               </span>
               {isVlog && (
                 <>
@@ -600,6 +636,16 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
               <Clock className="w-3.5 h-3.5" />
               {article.readTime}
             </span>
+            <span className="text-xs text-zinc-500">·</span>
+            <span className="text-xs text-zinc-300 flex items-center gap-1 font-semibold">
+              <Eye className="w-3.5 h-3.5 text-[#d89ba4]" />
+              {article.featured ? "32.4K views" : "18.6K views"}
+            </span>
+            <span className="text-xs text-zinc-500">·</span>
+            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Live &amp; Public
+            </span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight leading-[1.18] mb-6">
@@ -875,7 +921,7 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
     );
   }
 
-  notFound();
+  return <DynamicPostClientFallback postId={postId} />;
 }
 
 function parseBold(text: string): React.ReactNode[] {

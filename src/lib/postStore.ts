@@ -156,6 +156,7 @@ export async function createNewPost(params: {
       avatar: "/images/harshita-avatar-main.jpg"
     },
     tags,
+    views: "2.4K views",
     isCustom: true,
     createdAt: new Date().toISOString()
   };

@@ -7,39 +7,59 @@ const localDataFilePath = path.join(process.cwd(), "src", "data", "custom_posts.
 const tmpDataFilePath = path.join("/tmp", "custom_posts.json");
 
 function readCustomPosts(): BlogPost[] {
-  // 1. Try local data file first
+  const map = new Map<string, BlogPost>();
+
+  // 1. In-memory runtime cache
+  const inMem = (globalThis as any).__harshita_custom_posts as BlogPost[] | undefined;
+  if (Array.isArray(inMem)) {
+    for (const p of inMem) {
+      if (p && p.id) map.set(p.id, p);
+    }
+  }
+
+  // 2. Try local data file
   try {
     if (fs.existsSync(localDataFilePath)) {
       const data = fs.readFileSync(localDataFilePath, "utf-8");
       const parsed = JSON.parse(data);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+      if (Array.isArray(parsed)) {
+        for (const p of parsed) {
+          if (p && p.id && !map.has(p.id)) map.set(p.id, p);
+        }
       }
     }
   } catch (error) {
     console.warn("Could not read from localDataFilePath:", error);
   }
 
-  // 2. Try /tmp file fallback
+  // 3. Try /tmp file fallback
   try {
     if (fs.existsSync(tmpDataFilePath)) {
       const data = fs.readFileSync(tmpDataFilePath, "utf-8");
       const parsed = JSON.parse(data);
       if (Array.isArray(parsed)) {
-        return parsed;
+        for (const p of parsed) {
+          if (p && p.id && !map.has(p.id)) map.set(p.id, p);
+        }
       }
     }
   } catch (error) {
     console.warn("Could not read from tmpDataFilePath:", error);
   }
 
-  return [];
+  const result = Array.from(map.values());
+  // Keep in-memory cache synchronized
+  (globalThis as any).__harshita_custom_posts = result;
+  return result;
 }
 
 function writeCustomPosts(posts: BlogPost[]): boolean {
+  // 1. Update in-memory runtime cache
+  (globalThis as any).__harshita_custom_posts = posts;
+
   let written = false;
 
-  // Try writing to src/data/custom_posts.json
+  // 2. Try writing to src/data/custom_posts.json
   try {
     const dir = path.dirname(localDataFilePath);
     if (!fs.existsSync(dir)) {
@@ -51,7 +71,7 @@ function writeCustomPosts(posts: BlogPost[]): boolean {
     console.warn("Could not write to localDataFilePath (read-only filesystem likely):", error);
   }
 
-  // Also write to /tmp as serverless backup
+  // 3. Also write to /tmp as serverless backup
   try {
     fs.writeFileSync(tmpDataFilePath, JSON.stringify(posts, null, 2), "utf-8");
     written = true;
@@ -148,6 +168,7 @@ export async function POST(request: Request) {
         avatar: "/images/harshita-avatar-main.jpg"
       },
       tags: Array.isArray(tags) ? tags : typeof tags === "string" ? (tags as string).split(",").map((t: string) => t.trim()).filter(Boolean) : [],
+      views: body.views || "2.4K views",
       isCustom: true,
       createdAt: new Date().toISOString()
     };

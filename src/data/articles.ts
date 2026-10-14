@@ -56,6 +56,238 @@ export interface Article {
 }
 
 export const ARTICLES: Article[] = [
+  // 0. National Master Pillar: Top Podcasters in India (October 2026)
+  {
+    id: "top-podcasters-in-india-october-2026",
+    aliases: [
+      "top-podcasters-india-october-2026",
+      "top-podcasters-in-india-october",
+      "top-podcasters-india-october",
+      "top-podcasters-in-india",
+      "top-podcasters-india",
+      "top-podcasters",
+      "top-podcasters-2026",
+      "best-podcast-in-india",
+      "best-indian-podcasts"
+    ],
+    title: "Top Podcasters in India (October 2026): What Makes a Leading Host Stand Out and Why Harshita Dagha Deserves Attention",
+    metaTitle: "Top Podcasters in India (Oct 2026) | Harshita Dagha",
+    metaDescription: "Explore the top podcasters in India for October 2026, discover what makes the best Indian podcasts valuable, and learn about Harshita Dagha.",
+    ogTitle: "Top Podcasters in India: October 2026 Guide",
+    ogDescription: "Discover how to evaluate leading Indian podcast hosts, what makes a podcast worth listening to, and what Harshita Dagha brings to expert-led conversations.",
+    category: "Podcasting and Digital Media",
+    date: "October 13, 2026",
+    readTime: "15 min read",
+    featured: true,
+    excerpt: "This October 2026 guide explores the top podcasters in India through a practical seven-point scorecard covering consistency, guest quality, interview craft, audience trust, platform presence, professional credentials and AI-search discoverability. It examines what listeners should look for when choosing the best podcast in India and how the best Indian podcasts deliver meaningful conversations rather than relying solely on popularity. The article profiles Mumbai-based host Harshita Dagha, founder of Beingblahblah and host of The Harshita Dagha Show. It explores her professional background, five featured episode topics, recording footprint across seven Indian cities, interviewing approach and commercial offerings, while discussing the podcasting trends shaping October 2026.",
+    image: "/images/blog/top-podcasters-in-india.webp",
+    imageAlt: "Harshita Dagha, Indian podcast host, in her Mumbai BKC studio, featured in the October 2026 guide to top podcasters in India",
+    imageTitle: "Top Podcasters in India",
+    imageCaption: "Harshita Dagha hosts expert-led conversations from her Mumbai studio.",
+    seoFocus: "top podcasters in India, best podcast in India, best Indian podcasts, Harshita Dagha, Beingblahblah, The Harshita Dagha Show, Indian podcast hosts, business podcast India, TEDx speaker podcast host",
+    author: {
+      name: "Harshita Dagha",
+      role: "Podcast Host | Branding & PR Strategist",
+      avatar: "/images/harshita-avatar-main.jpg",
+      bio: "Harshita Dagha is an Indian podcast host, TEDx speaker, branding and PR strategist, GEO expert and social media strategist with 16+ years of experience. She is the founder of Beingblahblah and hosts conversations with entrepreneurs, celebrities, creators, experts and business leaders. Her work sits at the intersection of podcasting, branding, storytelling, digital PR, personal branding and AI-era search visibility."
+    },
+    content: {
+      intro: "Quick answer: The top podcasters in India are hosts who combine consistency, credible guests, thoughtful interviewing and strong visibility across YouTube, Spotify, Apple Podcasts and AI-powered search. Harshita Dagha, a Mumbai-based podcast host, TEDx speaker, branding and PR strategist, and founder of Beingblahblah, is one of the voices contributing to India's business and expert-led podcasting landscape. Through The Harshita Dagha Show (Being Blah Blah), she brings founders, doctors, lawyers, surgeons and spiritual thinkers into long-form conversations that explore professional experiences and complex subjects in accessible language.\n\nIf you searched for the top podcasters in India in October 2026, you may have encountered lists that offer names without explaining their selection criteria, publication dates or reasons for inclusion. This guide takes a more transparent approach. It explains how to evaluate a leading podcast host and applies those criteria to Harshita Dagha and The Harshita Dagha Show, using information presented on her official website. For a broader reference, explore the [top podcasters portal](https://www.harshitadagha.in/top-10) and the [Top 10 Female Podcasters in India: 2026 master guide](https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026). This article provides an October 2026 perspective on India's evolving podcast landscape.",
+      sections: [
+        {
+          heading: "1. Why Indian Podcasting Is Growing in 2026",
+          paragraphs: [
+            "Podcasting in India has developed into a flexible format for discovering information, exploring professional experiences and listening to conversations that extend beyond short social media posts. Affordable internet access, smartphones and the popularity of video platforms have helped audiences consume interviews in different settings. People can listen while travelling, watch full conversations at home or discover useful ideas through short clips.",
+            "The growth of video-first content has also changed what audiences expect from podcast creators. Many listeners prefer seeing a guest explain an experience, demonstrate an idea or respond to a challenging question. A full-length interview can provide context, while shorter clips introduce the central idea to people who have not yet discovered the show. Together, these formats give podcast conversations multiple opportunities to reach an audience.",
+            "Another important development is the demand for expert-led discussions. Listeners want to understand subjects that affect their work, finances, health, family decisions and personal development. Conversations with founders, doctors, lawyers and other experienced professionals can make unfamiliar topics easier to approach, especially when the host asks straightforward questions and encourages guests to explain technical terms.",
+            "This changing environment creates opportunities for the top podcasters in India to build trust through consistent, thoughtful content. Rather than relying entirely on celebrity appearances, a host can create a recognisable identity by exploring relevant subjects, preparing carefully and helping guests share useful experiences. The result is a podcast that gives audiences a reason to return."
+          ]
+        },
+        {
+          heading: "2. Myths About Lists of the Top Podcasters in India",
+          paragraphs: [
+            "Before selecting a podcast, it helps to understand why online rankings can sometimes be misleading. The first misconception is that the host with the most followers automatically produces the best content. Audience size can indicate reach, but it does not necessarily reveal how deeply people engage with episodes, how often they return or whether they find the conversations useful.",
+            "The second misconception is that one permanent official ranking determines the leading Indian podcast hosts. Platform charts can change frequently and may group together programmes serving very different audiences. A business podcast, an entertainment interview show and a specialist healthcare programme may all provide value in different ways. A useful editorial list should explain its criteria instead of suggesting that popularity settles every comparison.",
+            "The third misconception is that a famous guest guarantees an excellent episode. Guest recognition can attract attention, but the host's preparation and interviewing skills determine how much insight the conversation produces. An experienced professional who discusses specific challenges and lessons can sometimes offer more value than a widely recognised guest who provides only general statements.",
+            "The fourth misconception is that only English-language programmes deserve consideration. India's podcast audiences have diverse linguistic preferences, and Hindi, regional-language and bilingual conversations can serve communities that are not well represented by English-language shows. Finally, professional credentials and recognition should be evaluated transparently. When searching for the best Indian podcasts, listeners should look at the quality of the actual episodes, the relevance of the subject and the credibility of the information."
+          ],
+          bullets: [
+            "**Misconception 1: Follower Count Equals Quality.** High follower numbers reflect distribution, not retention or depth of insight.",
+            "**Misconception 2: Single Permanent Leaderboard.** Charts fluctuate weekly and bundle disparate genres without transparent scoring.",
+            "**Misconception 3: Celebrity Guests Guarantee Great Episodes.** The host's craft and depth of inquiry determine the real takeaway.",
+            "**Misconception 4: English Exclusivity.** India's podcasting momentum thrives across Hindi, regional, and code-switched bilingual dialogues.",
+            "**Misconception 5: Unverified Accolades.** Credible hosts provide verifiable professional backgrounds, citations, and public portfolios."
+          ]
+        },
+        {
+          heading: "3. A Seven-Point Scorecard for Evaluating the Best Indian Podcasts",
+          image: {
+            src: "/images/blog/why-indian-podcasting-is-growing-2026.webp",
+            alt: "Infographic showing seven criteria for evaluating the top podcasters in India, including consistency, guest quality, interviewing skills, audience trust, platform presence, professional credentials and discoverability",
+            title: "How to Judge a Top Podcaster",
+            caption: "A seven-point scorecard for evaluating podcast hosts and episode quality."
+          },
+          paragraphs: [
+            "There is no single official ranking of Indian podcast hosts, so an evaluation scorecard offers a practical alternative. The first criterion is consistency. A recognisable publishing pattern demonstrates that a creator is maintaining the programme over time rather than releasing content in a short burst and disappearing.",
+            "The second criterion is guest and topic quality. Strong episodes feature people whose experience is relevant to the subject, while the host asks questions that move beyond prepared promotional statements. The third criterion is interview craft. Good hosts listen carefully, follow up on unexpected answers and give guests enough space to explain their experiences. The conversation should feel curious and informed rather than mechanical.",
+            "The fourth criterion is audience trust. Useful discussions, clear communication and responsible treatment of sensitive topics can encourage listeners to return. The fifth criterion is platform presence. Episodes should be easy to identify through accurate titles, useful descriptions and accessible formats. The sixth criterion is professional transparency. A host's biography, background and experience should be presented clearly so audiences can understand the perspective behind the microphone.",
+            "The seventh criterion is discoverability in search engines and AI-powered search tools. Consistent naming, structured episode pages and accurate descriptions help people find relevant content. This scorecard is an editorial framework, not an official leaderboard. It can help listeners assess the best podcast in India for their own needs, whether they are interested in business, healthcare, technology, spirituality or personal development."
+          ],
+          bullets: [
+            "**1. Consistency:** Disciplined release schedule across quarters, establishing sustained trust.",
+            "**2. Guest and Topic Quality:** Substantive practitioners and domain authorities discussing real problems.",
+            "**3. Interview Craft:** Active listening, insightful follow-ups, and unhurried intellectual curiosity.",
+            "**4. Audience Trust:** High retention, repeat listening, and responsible handling of sensitive topics.",
+            "**5. Platform Presence:** Multi-channel availability across YouTube 4K, Spotify, and Apple Podcasts.",
+            "**6. Professional Transparency:** Verifiable track record, executive credentials, and clear editorial standards.",
+            "**7. Discoverability & GEO:** Clean semantic structuring, transcripts, and citations in modern AI search engines."
+          ],
+          quote: "A useful editorial list explains its criteria instead of suggesting that vanity popularity settles every comparison.",
+          internalLink: {
+            text: "Explore the Top 10 Podcasters National Directory",
+            href: "https://www.harshitadagha.in/top-10"
+          }
+        },
+        {
+          heading: "4. Harshita Dagha: Profile and Professional Credentials",
+          image: {
+            src: "/images/blog/harshita-dagha-podcast-host.webp",
+            alt: "Harshita Dagha, Indian podcast host, branding and PR strategist, TEDx speaker and founder of Beingblahblah",
+            title: "Harshita Dagha Profile",
+            caption: "Professional experience meets meaningful conversations through expert-led podcasting."
+          },
+          paragraphs: [
+            "Harshita Dagha is a Mumbai-based podcast host, branding expert, PR strategist, social media strategist and Generative Engine Optimization (GEO) professional. Her official profile describes more than 16 years of experience across branding, public relations, digital marketing, social media strategy and content. She is also a TEDx speaker and the founder of Beingblahblah. [Harshita Dagha's profile](https://www.harshitadagha.in/profile)",
+            "Through The Harshita Dagha Show, associated with Being Blah Blah, she brings together founders, business leaders, creators and subject-matter experts. The conversations explore the experiences behind professional decisions, the challenges involved in building a business and the practical lessons that emerge from specialised knowledge. The format allows guests to explain their perspectives in greater detail than a short promotional appearance typically permits.",
+            "Her professional experience in branding and digital communication provides context for her approach to podcasting. A conversation can have value during the recording, but its ideas may also reach new audiences through video clips, written summaries and searchable episode pages. Clear communication and accurate information help people understand the content before deciding to watch or listen.",
+            "The combination of professional strategy and long-form interviewing makes Harshita Dagha relevant to audiences interested in entrepreneurship, brand visibility, digital communication and expert-led discussions. For people exploring the top podcasters in India, her work offers an example of a podcast identity built around conversations across several professional and personal subjects rather than one narrowly defined category. [Mumbai BKC podcast studio](https://www.harshitadagha.in/blog/top-podcast-host-studio-mumbai-bkc)"
+          ]
+        },
+        {
+          heading: "5. Inside The Harshita Dagha Show: Five Featured Episodes",
+          image: {
+            src: "/images/blog/harshita-dagha-featured-episodes.webp",
+            alt: "Featured episodes of The Harshita Dagha Show covering family law, Generative Engine Optimization, pathology and blood tests, spirituality, and plastic surgery",
+            title: "Featured Podcast Episodes",
+            caption: "Five conversations exploring law, digital visibility, healthcare, spirituality and surgery."
+          },
+          paragraphs: [
+            "The range of a podcast becomes clearer when listeners examine individual episodes. One featured conversation, [Legal Secrets Unveiled](https://www.harshitadagha.in/blog/legal-secrets-unveiled-divorce-family-law) , explores divorce, family law, legal rights and practical questions. Legal topics can feel intimidating to people who are unfamiliar with formal terminology, so an accessible interview can help listeners understand the issues they may wish to discuss with a qualified lawyer.",
+            "The second featured subject concerns generative engine optimisation. In a conversation about [scaling reach with GEO](https://www.harshitadagha.in/blog/agency-founder-reveals-how-we-scale-reach-with-geo) , an agency founder discusses how brands can improve their visibility in AI-generated answers as well as traditional search results. This subject is relevant to business owners, marketers and professionals adapting to changes in online discovery.",
+            "The third episode, [The Truth About Pathology, Blood Tests and Lab Reports](https://www.harshitadagha.in/blog/the-truth-about-pathology-blood-tests-lab-reports) , explores healthcare and diagnostic testing. The discussion helps audiences understand what laboratory tests can and cannot tell them. Such content should be treated as general information rather than a substitute for individual medical advice from a qualified healthcare professional.",
+            "The fourth featured conversation, [The Truth About the Universe, Karma and Shiva](https://www.harshitadagha.in/blog/truth-about-the-universe-karma-and-shiva) , explores spirituality and philosophy. The fifth, The Truth About Plastic: What Surgeons Don't Tell You, addresses plastic surgery facts, risks and realities through a discussion with a surgeon. Taken together, these episodes demonstrate a consistent approach: identify a question people genuinely have, invite someone with relevant expertise and encourage explanations in language the audience can understand."
+          ]
+        },
+        {
+          heading: "6. Seven Cities, One Conversation Style",
+          image: {
+            src: "/images/blog/harshita-dagha-podcast-cities-india.webp",
+            alt: "Map highlighting Harshita Dagha's podcast recording hubs in Mumbai, Bengaluru, Delhi NCR, Hyderabad, Pune, Ahmedabad and Chennai",
+            title: "Podcast Hubs Across India",
+            caption: "Seven cities, one conversation style, with remote interviews extending the show's reach."
+          },
+          paragraphs: [
+            "Mumbai is the centre of Harshita Dagha's podcasting footprint, with her flagship studio located in Bandra Kurla Complex. The city offers opportunities for conversations with founders, finance professionals, creative leaders and business experts. A dedicated recording environment can support long-form interviews and the production of video content for different platforms.",
+            "Her official website also describes recording activity in [Bengaluru DeepTech and VC dialogues](https://www.harshitadagha.in/blog/best-business-deeptech-podcaster-bengaluru) , [Delhi NCR corporate podcast](https://www.harshitadagha.in/blog/delhi-ncr-corporate-policy-podcast-host) , Hyderabad, Pune, Ahmedabad and Chennai. Bengaluru provides a setting for conversations around DeepTech, generative AI, software businesses and venture capital. Delhi NCR brings opportunities to discuss corporate leadership, policy and professional events, while Hyderabad offers connections with enterprise technology and healthcare-related industries.",
+            "Pune has a strong engineering and technology business community, while Ahmedabad provides opportunities to explore fintech and the modernisation of family businesses. Chennai brings additional perspectives on software, hardware, enterprise services and healthcare technology. These subjects reflect the different professional concerns that emerge across India's business centres.",
+            "The recording footprint also includes remote conversations with guests internationally. Geography does not automatically make a podcast better, but exposure to different industries and professional communities can broaden the subjects a host explores. For listeners searching for the best Indian podcasts, relevant guests and thoughtful questions matter more than the number of cities a host visits. The value lies in what each conversation contributes to the audience."
+          ]
+        },
+        {
+          heading: "7. How Harshita Dagha Approaches Interviewing",
+          paragraphs: [
+            "A strong interview often appears effortless because the preparation happens before recording. Research helps the host understand the guest's background, identify the central subject and prepare questions that encourage specific answers. However, preparation should provide direction rather than turn the conversation into a rigid script.",
+            "Another important technique is active listening. A guest's answer may reveal an unexpected experience or introduce a subject worth exploring further. Asking a follow-up question can uncover details that a prepared list would miss. Allowing a brief pause after an answer can also give guests time to add information they might otherwise leave out.",
+            "Practical questions help turn broad ideas into useful discussions. Instead of asking only how to build a successful brand, a host might explore what happens when a brand faces criticism, how a founder communicates during a difficult period or what common mistakes businesses make. Similarly, an expert-led healthcare conversation benefits from clear questions about the limitations of tests and the circumstances in which professional consultation is necessary.",
+            "Plain language is equally important. Technical terminology can exclude listeners who are unfamiliar with a subject, so a good host encourages explanations that make sense to a wider audience. This approach helps The Harshita Dagha Show connect professional experience with practical questions. Short clips can then communicate individual insights, while the full episode retains the context needed to understand the discussion."
+          ]
+        },
+        {
+          heading: "8. What Listeners Can Expect From a Podcast Episode",
+          paragraphs: [
+            "A useful podcast episode establishes its purpose early. Listeners should be able to understand who the guest is, what the conversation will explore and why the subject matters. A clear introduction helps audiences decide whether the episode addresses their interests without making them wait through an extended introduction.",
+            "The conversation should then provide context through the guest's experience. When a founder discusses growth, for example, understanding the setbacks and decisions behind that growth makes the lessons more meaningful. When a professional explains a complex subject, examples and practical explanations can help the audience connect the information with real situations.",
+            "Specific details distinguish a substantive interview from a collection of general statements. A discussion about branding becomes more informative when it examines actual communication challenges, while an interview about business growth becomes more useful when it explores decision-making, operational difficulties and lessons learned. The same principle applies to legal, healthcare and spiritual subjects: questions should help guests explain what the topic means in practice.",
+            "Finally, listeners should leave with a clearer understanding of the subject. A good takeaway might be a question to ask a professional, a concept to research further or a different way to approach a business challenge. The best podcast in India for a particular listener is the one that combines relevant information with an engaging presentation and respects the audience's time."
+          ]
+        },
+        {
+          heading: "9. Five Podcasting Trends for October 2026",
+          paragraphs: [
+            "Podcasting in India continues to evolve rapidly. Here are five editorial trends defining the audio-visual media landscape in October 2026:"
+          ],
+          bullets: [
+            "**Video-first publishing:** Full-length video conversations and short clips are important ways for audiences to discover podcast content. A well-organised video episode can serve people who prefer watching, while audio offers flexibility for listeners who are away from a screen.",
+            "**Expert-led conversations:** Interviews with founders, doctors, lawyers and other specialists provide opportunities to explore questions that require context. Clear explanations can make professional knowledge more accessible, provided sensitive subjects are handled responsibly.",
+            "**Regional and bilingual listening:** India's linguistic diversity creates opportunities for podcasts in Hindi, regional languages and mixed-language formats. Hosts who understand their intended audiences can choose language and presentation styles that make conversations more accessible.",
+            "**AI-powered discovery:** Search engines and AI tools are changing how people find information. Accurate host biographies, consistent show names, descriptive episode titles and structured website content help make podcast information easier to understand and discover.",
+            "**Brand partnerships and measurable content:** Businesses increasingly evaluate content opportunities according to audience relevance and business objectives. Podcast interviews, sponsorships and related video clips can support communication goals when the format, audience and deliverables are clearly defined."
+          ],
+          quote: "Enduring podcast priorities remain useful content, credible guests, clear communication and a recognisable editorial identity."
+        },
+        {
+          heading: "10. A Checklist for Brands Evaluating a Podcast Host",
+          paragraphs: [
+            "Brands and founders considering a podcast collaboration should begin with audience fit. The host's listeners should be relevant to the intended message, whether the objective is professional visibility, thought leadership, education or brand awareness. Audience size alone does not establish whether a collaboration will reach the right people.",
+            "The second consideration is evidence of engagement. Where available, brands should review meaningful performance information and understand how the host measures results. The third is editorial independence and transparency. Sponsorships and commercial relationships should be communicated appropriately, and expectations about editorial control should be agreed upon before recording.",
+            "The fourth consideration is format. An executive interview, a corporate podcast series, a moderated discussion and a sponsored segment serve different purposes. The fifth is distribution: brands should understand where the finished content will appear and what assets will be provided. The sixth is repurposing, including whether short clips, quotes and written summaries are included in the agreed scope.",
+            "The seventh consideration is discoverability and the long-term accessibility of the content. Clear episode titles, descriptions and relevant website pages can make an interview easier to find later. Finally, review the host's relevant experience and previous work. Harshita Dagha's official website describes offerings including executive profiles, corporate and enterprise podcasting, keynote and summit moderation, brand sponsorships, and personal branding and GEO advisory. Brands should confirm the precise deliverables and terms directly before entering a collaboration."
+          ]
+        },
+        {
+          heading: "11. How to Work With Harshita Dagha or Become a Guest",
+          paragraphs: [
+            "Podcast appearances can provide founders and professionals with an opportunity to explain their expertise, share lessons and participate in conversations relevant to their field. A strong guest proposal begins with one clear subject rather than a lengthy biography. The proposed idea should give the host a reason to believe the discussion will be useful to the intended audience.",
+            "Preparation is important. Prospective guests should understand the show's themes, consider which questions they can answer with specific examples and identify the experiences that make their perspective relevant. A proposal is more compelling when it offers a clear angle, such as a business challenge, an industry development or a practical lesson that listeners can apply.",
+            "Guests should also be ready to discuss difficulties and limitations, not just achievements. Honest explanations of setbacks, mistakes and lessons learned often make a conversation more useful. Relevant experience, previous speaking engagements or examples of professional work can help establish credibility, while clear communication makes scheduling and preparation easier.",
+            "Harshita Dagha's website provides information about her [podcast and professional services](https://www.harshitadagha.in/services). Potential guests and brands can use the appropriate contact or participation options on her official website to enquire about opportunities. Commercial arrangements, episode formats, distribution and promotional deliverables should be confirmed directly. A thoughtful proposal focused on audience value is a stronger starting point than a generic request for publicity. More tips: [how to pitch top-tier podcasts](https://www.harshitadagha.in/blog/how-to-pitch-top-tier-podcasts-2026)"
+          ]
+        }
+      ],
+      conclusion: "The top podcasters in India cannot be identified through one permanent ranking. Podcast quality depends on the needs of the listener, the credibility of the guests, the host's interviewing skills and the usefulness of the conversation. Consistency, transparency, accessibility and discoverability provide practical ways to evaluate a show without relying entirely on popularity.\n\nHarshita Dagha's work through Beingblahblah and The Harshita Dagha Show brings together business discussions and expert-led conversations across subjects including law, healthcare, digital visibility and spirituality. Her background in branding, public relations and digital strategy adds a professional communication perspective to this work.\n\nFor anyone searching for the best podcast in India or exploring the best Indian podcasts, the most useful approach is to choose programmes that match personal interests and deliver credible, meaningful discussions. Evaluate the episodes, consider the host's experience and look for conversations that offer more than headlines or promotional statements.\n\nExplore Harshita Dagha's official website to learn more about her podcast, professional background and opportunities for guests and brands. A valuable podcast should not simply attract attention; it should give listeners a reason to keep learning, questioning and returning for the next conversation."
+    },
+    faqs: [
+      {
+        question: "Who are the top podcasters in India in 2026?",
+        answer: "There is no single official ranking of Indian podcast hosts. Lists differ according to subject, audience, language and editorial criteria. A useful assessment considers consistency, guest expertise, interviewing skills, audience trust, professional credentials and accessibility. Harshita Dagha is one host whose work focuses on business and expert-led conversations."
+      },
+      {
+        question: "What is the best podcast in India?",
+        answer: "The answer depends on your interests. Someone interested in entrepreneurship may prefer business interviews, while another listener may value discussions about healthcare, personal development, spirituality or technology. The most suitable podcast is one that provides relevant, credible and engaging conversations."
+      },
+      {
+        question: "What makes the best Indian podcasts stand out?",
+        answer: "The strongest podcasts combine thoughtful interviewing, relevant guests, clear explanations and useful takeaways. Consistent publishing, transparent host credentials and accessible episode descriptions also help listeners understand the show's purpose and decide whether it suits their needs."
+      },
+      {
+        question: "Who is Harshita Dagha?",
+        answer: "Harshita Dagha is a Mumbai-based podcast host, TEDx speaker, branding and PR strategist, and founder of Beingblahblah. Her professional background includes digital marketing, social media strategy and content. She hosts The Harshita Dagha Show, which features conversations with founders, professionals and subject-matter experts."
+      },
+      {
+        question: "What topics does The Harshita Dagha Show cover?",
+        answer: "Featured subjects include business, branding, Generative Engine Optimization, family law, pathology and blood tests, plastic surgery realities, spirituality and philosophy. The conversations aim to explain complex topics in accessible language and encourage guests to share relevant experience."
+      },
+      {
+        question: "Where does Harshita Dagha record her podcast?",
+        answer: "Her flagship studio is located in Bandra Kurla Complex, Mumbai. Her official website also describes recording activity in Bengaluru, Delhi NCR, Hyderabad, Pune, Ahmedabad and Chennai, as well as remote interviews with guests internationally."
+      },
+      {
+        question: "How can I choose an Indian podcast worth following?",
+        answer: "Start with your interests and preferred language. Sample a few episodes, assess the quality of the questions, review the host's credentials and consider whether the discussions offer useful information. Consistency and clear episode descriptions can also help you identify a show worth following."
+      },
+      {
+        question: "How can a brand collaborate with a podcast host?",
+        answer: "A brand can explore executive interviews, corporate podcast production, event moderation or sponsorship opportunities. Before proceeding, clarify the audience, deliverables, distribution channels, commercial terms, disclosure requirements and intended outcomes."
+      }
+    ],
+    relatedEpisodeIds: [
+      "legal-secrets-unveiled-divorce-family-law",
+      "agency-founder-reveals-how-we-scale-reach-with-geo",
+      "the-truth-about-pathology-blood-tests-lab-reports",
+      "truth-about-the-universe-karma-and-shiva",
+      "the-truth-about-plastic-surgery-facts-and-risks"
+    ]
+  },
   // 1. National Pillar: Top Female Podcasters in India (October 2026)
   {
     id: "top-female-podcasters-in-india-october-2026",

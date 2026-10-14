@@ -9,28 +9,34 @@ import { REELS } from '@/data/reels';
 function getCustomPostsForSitemap(): BlogPost[] {
   const localDataFilePath = path.join(process.cwd(), 'src', 'data', 'custom_posts.json');
   const tmpDataFilePath = path.join('/tmp', 'custom_posts.json');
+  const map = new Map<string, BlogPost>();
+
+  const inMem = (globalThis as any).__harshita_custom_posts as BlogPost[] | undefined;
+  if (Array.isArray(inMem)) {
+    for (const p of inMem) if (p && p.id) map.set(p.id, p);
+  }
 
   try {
     if (fs.existsSync(localDataFilePath)) {
       const data = fs.readFileSync(localDataFilePath, 'utf-8');
       const parsed = JSON.parse(data);
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      if (Array.isArray(parsed)) {
+        for (const p of parsed) if (p && p.id && !map.has(p.id)) map.set(p.id, p);
+      }
     }
-  } catch (e) {
-    // fallback
-  }
+  } catch (e) {}
 
   try {
     if (fs.existsSync(tmpDataFilePath)) {
       const data = fs.readFileSync(tmpDataFilePath, 'utf-8');
       const parsed = JSON.parse(data);
-      if (Array.isArray(parsed)) return parsed;
+      if (Array.isArray(parsed)) {
+        for (const p of parsed) if (p && p.id && !map.has(p.id)) map.set(p.id, p);
+      }
     }
-  } catch (e) {
-    // fallback
-  }
+  } catch (e) {}
 
-  return [];
+  return Array.from(map.values());
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

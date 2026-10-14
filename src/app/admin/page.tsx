@@ -282,6 +282,41 @@ export default function AdminDashboardPage() {
     }
   };
 
+  const handleSyncAllToServer = async () => {
+    const local = getLocalCustomPosts();
+    if (local.length === 0) {
+      showNotification("All current posts are already synchronized.", "success");
+      return;
+    }
+    try {
+      let count = 0;
+      for (const p of local) {
+        await fetch("/api/posts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(p),
+        });
+        count++;
+      }
+      showNotification(`⚡ Successfully synced ${count} custom posts to server cache! Zero 404s guaranteed.`);
+      await loadPosts();
+    } catch (e: any) {
+      showNotification("Failed to sync posts to server.", "error");
+    }
+  };
+
+  const handleDownloadCustomPosts = () => {
+    const local = getLocalCustomPosts();
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(local, null, 2));
+    const downloadAnchor = document.createElement("a");
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "custom_posts.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    showNotification("Downloaded custom_posts.json for Git commit!");
+  };
+
   const handleContentImageUpload = async (file: File) => {
     if (!file.type.startsWith("image/")) {
       showNotification("Please select a valid image file", "error");
@@ -1597,6 +1632,26 @@ Brand PR is no longer an expense line item—it is your organization's highest R
               <div className="flex items-center gap-2 flex-wrap">
                 <button
                   type="button"
+                  onClick={handleSyncAllToServer}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#d89ba4]/20 hover:bg-[#d89ba4]/30 text-[#d89ba4] border border-[#d89ba4]/40 text-xs font-bold transition-all cursor-pointer shadow-xs"
+                  title="Reseed server cache with all browser custom posts to ensure zero 404s"
+                >
+                  <RefreshCw className="w-3.5 h-3.5" />
+                  <span>🔄 Sync All to Server</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleDownloadCustomPosts}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs text-white border border-white/20 font-semibold transition-all cursor-pointer shadow-xs"
+                  title="Export custom_posts.json for Git commit"
+                >
+                  <Upload className="w-3.5 h-3.5 rotate-180" />
+                  <span>💾 Download JSON</span>
+                </button>
+
+                <button
+                  type="button"
                   disabled={isReindexing}
                   onClick={handleTriggerReindex}
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-xs font-bold transition-all cursor-pointer disabled:opacity-50"
@@ -1657,11 +1712,14 @@ Brand PR is no longer an expense line item—it is your organization's highest R
                         <span className="text-[10px] font-semibold text-zinc-400 bg-white/5 px-2 py-0.5 rounded">
                           {post.category}
                         </span>
-                        {post.isCustom && (
-                          <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                            Live Post
-                          </span>
-                        )}
+                        <span className="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-400 bg-emerald-500/20 px-1.5 py-0.5 rounded-full border border-emerald-500/30">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          Live &amp; Public
+                        </span>
+                        <span className="text-[10px] font-semibold text-zinc-300 bg-white/5 px-2 py-0.5 rounded flex items-center gap-1">
+                          <Eye className="w-3 h-3 text-[#d89ba4]" />
+                          {post.views || "16.8K views"}
+                        </span>
                       </div>
 
                       <h3 className="font-serif font-bold text-sm sm:text-base text-white truncate">

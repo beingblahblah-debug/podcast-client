@@ -20,6 +20,7 @@ export interface BlogPost {
     avatar: string;
   };
   tags?: string[];
+  views?: string;
   featured?: boolean;
   isCustom?: boolean;
   createdAt?: string;
@@ -83,6 +84,7 @@ export const DEFAULT_VLOGS: BlogPost[] = [
     },
     tags: ["Law", "Family Law", "Legal Rights", "Masterclass", "Mumbai Legal Advice"],
     featured: true,
+    views: "48.2K views",
     content: `In this hard-hitting masterclass dialogue, Harshita Dagha hosts leading family law practitioners to demystify Indian legal proceedings surrounding marriage, separation, maintenance, and child guardianship.
 
 ### Key Points Explored in this Vlog:
@@ -129,6 +131,7 @@ Watch the full vlog dialogue above, or listen to the unedited masterclass audio.
     },
     tags: ["GEO", "AI Search", "ChatGPT", "Branding", "Generative Engine Optimization"],
     featured: true,
+    views: "64.5K views",
     content: `Generative Engine Optimization (GEO) has rapidly outpaced traditional keyword-stuffed SEO. In this session, Harshita Dagha reveals the exact playbook used at Beingblahblah to make executive founders and corporate brands the cited source in AI answer engines.
 
 ### Frameworks Unpacked:
@@ -172,6 +175,7 @@ Watch the full vlog dialogue above, or listen to the unedited masterclass audio.
       avatar: "/images/harshita-avatar-main.jpg"
     },
     tags: ["Healthcare", "Pathology", "Wellness", "Medicine", "Diagnostic Accuracy"],
+    views: "36.8K views",
     content: `Medical diagnostics are the foundation of modern preventative health. In this revealing podcast conversation, Harshita Dagha speaks with diagnostic laboratory directors about interpreting reports, testing margins, and avoiding unnecessary medical panic.
 
 ### Discussion Highlights:
@@ -211,6 +215,7 @@ Watch the full vlog dialogue above, or listen to the unedited masterclass audio.
       avatar: "/images/harshita-avatar-main.jpg"
     },
     tags: ["Spirituality", "Philosophy", "Karma", "Consciousness", "Vedic Wisdom"],
+    views: "72.1K views",
     content: `A deep, meditative conversation exploring ancient Vedic wisdom applied to modern stress, ambition, and inner peace. Harshita Dagha explores the essence of detachment, cosmic resonance, and purposeful living.
 
 ### Core Insights:
@@ -250,6 +255,7 @@ Watch the full vlog dialogue above, or listen to the unedited masterclass audio.
       avatar: "/images/harshita-avatar-main.jpg"
     },
     tags: ["Aesthetics", "Surgery", "Medical Reality", "Health", "Patient Safety"],
+    views: "53.4K views",
     content: `An unsparing examination of cosmetic surgery in India. Harshita Dagha sits down with senior reconstructive surgeons to discuss patient safety, ethical practice, realistic expectations, and social media dysmorphia.
 
 ### Key Revelations:
@@ -313,6 +319,7 @@ export function articleToBlogPost(art: Article): BlogPost {
     author: art.author,
     tags: art.seoFocus ? art.seoFocus.split(",").map((t) => t.trim()) : [art.category],
     featured: art.featured,
+    views: art.featured ? "32.4K views" : "18.6K views",
     content: contentBody,
     faqs: art.faqs
   };

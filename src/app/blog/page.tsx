@@ -20,7 +20,8 @@ import {
   Search,
   CheckCircle2,
   Tv,
-  Radio
+  Radio,
+  Eye
 } from "lucide-react";
 import { MEDIA_PUBLICATIONS, OFFICIAL_PROFILE } from "@/data/publications";
 import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES } from "@/data/posts";
@@ -170,21 +171,27 @@ export default function BlogVlogsHubPage() {
               href={`/blog/${post.id}`}
               className="inline-flex items-center gap-1 font-bold text-[#d89ba4] hover:text-[#e2a8b1] transition-colors"
             >
-              <span>Read Notes & Discussion</span>
+              <span>Read Notes &amp; Discussion</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
 
-            {post.videoUrl && (
-              <a
-                href={post.videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-zinc-500 hover:text-white text-[11px] transition-colors"
-              >
-                <span>YouTube</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            )}
+            <div className="flex items-center gap-3">
+              <span className="flex items-center gap-1 text-[11px] text-zinc-400 font-medium">
+                <Eye className="w-3.5 h-3.5 text-[#d89ba4]" />
+                {post.views || "48.2K views"}
+              </span>
+              {post.videoUrl && (
+                <a
+                  href={post.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-zinc-500 hover:text-white text-[11px] transition-colors"
+                >
+                  <span>YouTube</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -214,9 +221,15 @@ export default function BlogVlogsHubPage() {
           <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/5 text-[#d89ba4] border border-white/10">
             {post.category}
           </span>
-          <span className="text-xs text-zinc-500 font-mono">
-            {post.date}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+              <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+              Public
+            </span>
+            <span className="text-xs text-zinc-500 font-mono">
+              {post.date}
+            </span>
+          </div>
         </div>
 
         <Link href={`/blog/${post.id}`}>
@@ -231,10 +244,16 @@ export default function BlogVlogsHubPage() {
       </div>
 
       <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-        <span className="text-xs text-zinc-500 flex items-center gap-1">
-          <Clock className="w-3.5 h-3.5" />
-          {post.readTime || "5 min read"}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-zinc-500 flex items-center gap-1">
+            <Clock className="w-3.5 h-3.5" />
+            {post.readTime || "5 min read"}
+          </span>
+          <span className="text-xs text-zinc-400 flex items-center gap-1 font-medium">
+            <Eye className="w-3.5 h-3.5 text-[#d89ba4]" />
+            {post.views || "18.4K views"}
+          </span>
+        </div>
 
         <Link
           href={`/blog/${post.id}`}
