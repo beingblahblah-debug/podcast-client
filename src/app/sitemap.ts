@@ -123,7 +123,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/blog/${article.id}`,
     lastModified: new Date(article.date),
     changeFrequency: 'weekly',
-    priority: 0.8,
+    priority: article.featured ? 1.0 : 0.8,
   }));
 
   // Dynamic Video Vlogs (Default set)

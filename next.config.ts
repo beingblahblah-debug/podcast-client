@@ -21,6 +21,46 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/top-digital-pr-and-personal-brands-in-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/top-digital-pr-personal-brands-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/top-digital-pr-agencies-in-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/top-personal-brands-in-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/best-digital-pr-agencies-in-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/top-digital-pr-personal-brands-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/top-digital-pr-agencies-in-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/top-personal-brands-in-india",
+        destination: "/blog/top-digital-pr-and-personal-brands-in-india",
+        permanent: true,
+      },
+      {
         source: "/public-relations-agency-in-mumbai",
         destination: "/blog/public-relations-agency-in-mumbai",
         permanent: true,
