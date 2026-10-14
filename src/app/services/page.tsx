@@ -192,6 +192,15 @@ export default function ServicesPage() {
           <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
             Collaborate directly with <strong className="text-white font-medium">Harshita Dagha</strong> — TEDx Speaker, branding expert, PR strategist, GEO specialist, and founder of <em className="text-[#d89ba4]">Beingblahblah</em>. With 16+ years of expertise, she gives brands celebs, visibility, and stories that people remember.
           </p>
+          <div className="mt-6 inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs sm:text-sm text-pink-200">
+            <span className="font-semibold text-white">Featured PR Guide:</span>
+            <a 
+              href="/blog/public-relations-agency-in-mumbai"
+              className="text-[#d89ba4] hover:text-white underline font-medium transition-colors"
+            >
+              Public Relations Agency in Mumbai: How Strategic PR Builds Visibility &amp; Trust &rarr;
+            </a>
+          </div>
         </div>
 
         {/* WhatsApp Fast-Track Callout Card */}

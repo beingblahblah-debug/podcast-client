@@ -21,6 +21,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/public-relations-agency-in-mumbai",
+        destination: "/blog/public-relations-agency-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/public-relations-agency-mumbai",
+        destination: "/blog/public-relations-agency-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/blog/public-relations-agency-mumbai",
+        destination: "/blog/public-relations-agency-in-mumbai",
+        permanent: true,
+      },
+      {
         source: "/top-podcasters-in-india-october-2026",
         destination: "/blog/top-podcasters-in-india-october-2026",
         permanent: true,
