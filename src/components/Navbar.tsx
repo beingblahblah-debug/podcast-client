@@ -16,6 +16,7 @@ export default function Navbar() {
     { label: "Episodes", href: "/episodes" },
     { label: "Reels & Clips", href: "/highlights" },
     { label: "Services", href: "/services" },
+    { label: "Vlogs & Articles", href: "/blog" },
     { label: "Harshita Profile", href: "/profile" },
     { label: "Contact", href: "/contact" },
   ];

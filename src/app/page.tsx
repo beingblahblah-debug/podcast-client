@@ -10,6 +10,7 @@ import HostSection from "@/components/HostSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CityHubsSection from "@/components/CityHubsSection";
 import TopVideosSection from "@/components/TopVideosSection";
+import LatestArticlesSection from "@/components/LatestArticlesSection";
 import GeoFaqSection from "@/components/GeoFaqSection";
 
 export const metadata: Metadata = {
@@ -122,6 +123,9 @@ export default function HomePage() {
 
       {/* Top Videos (5 Playable YouTube Masterclasses: 3 Top, 2 Bottom) */}
       <TopVideosSection />
+
+      {/* Featured Editorial Articles & Benchmark Guides */}
+      <LatestArticlesSection />
 
       {/* 4. Host Story & Studio Sanctuary */}
       <HostSection />

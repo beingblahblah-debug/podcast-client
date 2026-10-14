@@ -210,10 +210,34 @@ export default function Footer() {
               <ul className="space-y-2 text-xs">
                 <li>
                   <Link 
+                    href="/blog/top-digital-pr-and-personal-brands-in-india"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block group"
+                  >
+                    <span className="text-[#d89ba4] font-semibold group-hover:underline">★ Top Digital PR &amp; Personal Brands in India:</span> 2026 Master Benchmark
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/public-relations-agency-in-mumbai"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Public Relations Agency in Mumbai Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/blog/top-podcasters-in-india-october-2026"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Top Podcasters in India (October 2026)
+                  </Link>
+                </li>
+                <li>
+                  <Link 
                     href="/blog/top-10-female-podcasters-to-follow-2026"
                     className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block group"
                   >
-                    <span className="text-[#d89ba4] font-semibold group-hover:underline">Top 10 Female Podcasters in India:</span> 2026 Master Pillar
+                    <span className="text-white font-medium group-hover:text-[#d89ba4]">Top 10 Female Podcasters in India:</span> 2026 Master Pillar
                   </Link>
                 </li>
                 <li>
