@@ -153,40 +153,6 @@ export default function KeywordLandingPageView({ page, isHubPage = false }: Prop
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
       />
 
-      {/* Top Benchmark & Monthly Refresh Banner */}
-      <div className="bg-gradient-to-r from-[#d89ba4]/20 via-[#181822] to-[#121218] border-b border-[#d89ba4]/30 px-4 py-3 sm:py-3.5 text-center">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-200">
-          <span className="inline-flex items-center gap-1.5 font-bold uppercase tracking-wider text-[#d89ba4] bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10 text-[11px]">
-            <Sparkles className="w-3.5 h-3.5" />
-            Updated {page.updatedDate}
-          </span>
-          <span className="text-zinc-300">
-            India&apos;s National Podcast Editorial Benchmark ·
-          </span>
-          <div className="flex items-center gap-2 flex-wrap justify-center font-medium">
-            <Link
-              href="/top-female-podcasters"
-              className="text-[#d89ba4] hover:text-white underline underline-offset-4 transition-colors"
-            >
-              National Hub
-            </Link>
-            <span className="text-zinc-600">·</span>
-            <Link
-              href="/top-10"
-              className="text-zinc-400 hover:text-white underline underline-offset-4 transition-colors"
-            >
-              Top 10 Directory
-            </Link>
-            <span className="text-zinc-600">·</span>
-            <Link
-              href="/services"
-              className="text-zinc-400 hover:text-white underline underline-offset-4 transition-colors"
-            >
-              Podcast Studio BKC
-            </Link>
-          </div>
-        </div>
-      </div>
 
       {/* Main Container */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
