@@ -123,6 +123,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: "/(top-female-podcasters|top-female-podcasters-india|indian-women-podcasters-list|young-female-podcasters-india|indian-women-podcast-hosts|best-podcasts-by-indian-women|best-female-podcasts-india|popular-women-podcasts-india|top-podcasters-in-india|best-podcast-in-india|best-indian-podcasts)",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

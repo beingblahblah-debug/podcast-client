@@ -143,6 +143,10 @@ export default function KeywordLandingPageView({ page, isHubPage = false }: Prop
 
   return (
     <article className="min-h-screen bg-[#0c0c0e] text-[#f4f4f5] selection:bg-[#d89ba4]/30 selection:text-white">
+      {/* Search Engine Freeze Directive: Completely prevent indexing and ranking */}
+      <meta name="robots" content="noindex, nofollow, noarchive" />
+      <meta name="googlebot" content="noindex, nofollow, noarchive" />
+
       {/* Schema.org Structured Data */}
       <script
         type="application/ld+json"

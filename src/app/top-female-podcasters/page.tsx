@@ -26,6 +26,16 @@ export const metadata: Metadata = {
       },
     ],
   },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
   twitter: {
     card: "summary_large_image",
     title: pageData.title,

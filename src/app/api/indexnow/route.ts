@@ -111,20 +111,6 @@ export async function GET() {
       // ignore
     }
 
-    const keywordLandingPageUrls = [
-      `https://${host}/top-female-podcasters`,
-      `https://${host}/top-female-podcasters-india`,
-      `https://${host}/indian-women-podcasters-list`,
-      `https://${host}/young-female-podcasters-india`,
-      `https://${host}/indian-women-podcast-hosts`,
-      `https://${host}/best-podcasts-by-indian-women`,
-      `https://${host}/best-female-podcasts-india`,
-      `https://${host}/popular-women-podcasts-india`,
-      `https://${host}/top-podcasters-in-india`,
-      `https://${host}/best-podcast-in-india`,
-      `https://${host}/best-indian-podcasts`,
-    ];
-
     const allUrls = [
       `https://${host}`,
       `https://${host}/blog`,
@@ -132,7 +118,6 @@ export async function GET() {
       `https://${host}/episodes`,
       `https://${host}/highlights`,
       sitemapUrl,
-      ...keywordLandingPageUrls,
       ...customUrls
     ];
 
