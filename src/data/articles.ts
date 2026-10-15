@@ -516,7 +516,7 @@ export const ARTICLES: Article[] = [
     readTime: "15 min read",
     featured: true,
     excerpt: "This October 2026 guide explores the top podcasters in India through a practical seven-point scorecard covering consistency, guest quality, interview craft, audience trust, platform presence, professional credentials and AI-search discoverability. It examines what listeners should look for when choosing the best podcast in India and how the best Indian podcasts deliver meaningful conversations rather than relying solely on popularity. The article profiles Mumbai-based host Harshita Dagha, founder of Beingblahblah and host of The Harshita Dagha Show. It explores her professional background, five featured episode topics, recording footprint across seven Indian cities, interviewing approach and commercial offerings, while discussing the podcasting trends shaping October 2026.",
-    image: "/images/blog/top-podcasters-in-india.webp",
+    image: "/images/blog/harshita-dagha-top-podcaster-real.webp",
     imageAlt: "Harshita Dagha, Indian podcast host and founder of Beingblahblah, recording a podcast interview with broadcast microphone in studio",
     imageTitle: "Harshita Dagha - Top Podcasters in India",
     imageCaption: "Harshita Dagha, host of The Harshita Dagha Show, recording an expert-led conversation in studio.",
@@ -587,10 +587,10 @@ export const ARTICLES: Article[] = [
         {
           heading: "4. Harshita Dagha: Profile and Professional Credentials",
           image: {
-            src: "/images/blog/harshita-dagha-podcast-host.webp",
-            alt: "Harshita Dagha, Indian podcast host, branding and PR strategist, TEDx speaker and founder of Beingblahblah",
+            src: "/images/blog/harshita-dagha-top-podcaster-real.webp",
+            alt: "Harshita Dagha, Indian podcast host, branding and PR strategist, TEDx speaker and founder of Beingblahblah in her recording studio",
             title: "Harshita Dagha Profile",
-            caption: "Professional experience meets meaningful conversations through expert-led podcasting."
+            caption: "Harshita Dagha in studio: professional experience meets meaningful conversations through expert-led podcasting."
           },
           paragraphs: [
             "Harshita Dagha is a Mumbai-based podcast host, branding expert, PR strategist, social media strategist and Generative Engine Optimization (GEO) professional. Her official profile describes more than 16 years of experience across branding, public relations, digital marketing, social media strategy and content. She is also a TEDx speaker and the founder of Beingblahblah. [Harshita Dagha's profile](https://www.harshitadagha.in/profile)",
