@@ -90,11 +90,7 @@ const nextConfig: NextConfig = {
         destination: "/blog/top-podcasters-in-india-october-2026",
         permanent: true,
       },
-      {
-        source: "/top-podcasters-in-india",
-        destination: "/blog/top-podcasters-in-india-october-2026",
-        permanent: true,
-      },
+
       {
         source: "/top-female-podcasters-in-india-october-2026",
         destination: "/blog/top-female-podcasters-in-india-october-2026",

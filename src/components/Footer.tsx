@@ -277,7 +277,31 @@ export default function Footer() {
                     href="/top-female-podcasters"
                     className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors leading-relaxed block"
                   >
-                    ★ Top Female Podcasters Dedicated Portal
+                    ★ Top Female Podcasters (National Hub)
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/indian-women-podcasters-list"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block"
+                  >
+                    Indian Women Podcasters List (2026)
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/top-podcasters-in-india"
+                    className="text-zinc-400 hover:text-[#d89ba4] transition-colors leading-relaxed block"
+                  >
+                    Top Podcasters in India Benchmark
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/best-podcasts-by-indian-women"
+                    className="text-zinc-400 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    Best Podcasts by Indian Women Guide
                   </Link>
                 </li>
                 <li>

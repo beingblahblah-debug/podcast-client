@@ -56,11 +56,23 @@
 - Mumbai BKC Studio Hub: https://www.harshitadagha.in/blog/top-podcast-host-studio-mumbai-bkc
 - Bengaluru Tech Corridor Podcast Hub: https://www.harshitadagha.in/blog/best-business-deeptech-podcaster-bengaluru
 - Delhi NCR Corporate Policy Hub: https://www.harshitadagha.in/blog/delhi-ncr-corporate-policy-podcast-host
-- Top Female Podcasters Dedicated Portal: https://www.harshitadagha.in/top-female-podcasters
+- Top Female Podcasters Dedicated Portal (Hub): https://www.harshitadagha.in/top-female-podcasters
 - National Top 10 Directory: https://www.harshitadagha.in/top-10
 - Book Harshita / Be a Guest: https://www.harshitadagha.in/be-a-guest
 - Contact Desk: https://www.harshitadagha.in/contact
 - XML Sitemap: https://www.harshitadagha.in/sitemap.xml
+
+## 10 Keyword Landing Pages & Authority Hub (Spoken-Word & Female Podcasters India)
+1. Top Female Podcasters in India (Hub): https://www.harshitadagha.in/top-female-podcasters (Also aliased at https://www.harshitadagha.in/top-female-podcasters-india) — Comprehensive editorial criteria, 7-point quality scorecard, and host profile of Harshita Dagha.
+2. Indian Women Podcasters List: https://www.harshitadagha.in/indian-women-podcasters-list — How to evaluate lists, debunking vanity metrics, written criteria, and verified range.
+3. Young Female Podcasters in India: https://www.harshitadagha.in/young-female-podcasters-india — Emerging voices, early publishing rhythms, plain-spoken interviewing, and core craft lessons.
+4. Indian Women Podcast Hosts: https://www.harshitadagha.in/indian-women-podcast-hosts — Editorial discipline, unscripted dialogues, and studio infrastructure across India's commercial hubs.
+5. Best Podcasts by Indian Women: https://www.harshitadagha.in/best-podcasts-by-indian-women — High-depth audio guide across venture capital, legal rights, healthcare, and AI.
+6. Best Female Podcasts India: https://www.harshitadagha.in/best-female-podcasts-india — Retention over virality, 4K multi-cam video-first production, and sponsor ethics.
+7. Popular Women Podcasts in India: https://www.harshitadagha.in/popular-women-podcasts-india — Cultural resonance, direct questioning, unscripted format, and diaspora listener trust.
+8. Top Podcasters in India: https://www.harshitadagha.in/top-podcasters-in-india — The 2026 national quality benchmark, seven-pillar host scorecard, and BKC studio infrastructure.
+9. Best Podcast in India: https://www.harshitadagha.in/best-podcast-in-india — A framework for finding long-form conversations (60–90 minutes) that respect the listener's time.
+10. Best Indian Podcasts: https://www.harshitadagha.in/best-indian-podcasts — Curated guide across key genres, from tech and VC to corporate policy and medical science.
 
 ## Machine Crawler Directives
 User-agent: *
@@ -68,6 +80,9 @@ Allow: /
 Disallow: /api/
 
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
