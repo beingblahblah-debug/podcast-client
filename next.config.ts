@@ -107,6 +107,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/blog/best-female-podcasts-india",
+        destination: "/blog/best-podcasts-by-indian-women",
+        permanent: true,
+      },
+      {
+        source: "/blog/best-podcasts-by-women-india",
+        destination: "/blog/best-podcasts-by-indian-women",
+        permanent: true,
+      },
+      {
         source: "/privacy-policy",
         destination: "/privacy",
         permanent: true,
