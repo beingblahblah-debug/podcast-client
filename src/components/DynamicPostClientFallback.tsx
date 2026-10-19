@@ -35,6 +35,14 @@ export default function DynamicPostClientFallback({ postId }: Props) {
     let active = true;
 
     async function resolvePost() {
+      // 0. Static data check (always up to date)
+      const staticFound = DEFAULT_ARTICLES.find((p) => p.id === postId || p.id.toLowerCase() === postId.toLowerCase());
+      if (staticFound && active) {
+        setPost(staticFound);
+        setIsLoading(false);
+        return;
+      }
+
       // 1. Instant check in browser localStorage
       const localPosts = getLocalCustomPosts();
       const localFound = localPosts.find((p) => p.id === postId || p.id.toLowerCase() === postId.toLowerCase());

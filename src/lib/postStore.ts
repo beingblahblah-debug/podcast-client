@@ -2,7 +2,7 @@
 
 import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES, extractYouTubeId, getYouTubeThumbnail } from "@/data/posts";
 
-const STORAGE_KEY = "harshita_custom_posts_v1";
+const STORAGE_KEY = "harshita_custom_posts_v2";
 
 export function getLocalCustomPosts(): BlogPost[] {
   if (typeof window === "undefined") return [];
