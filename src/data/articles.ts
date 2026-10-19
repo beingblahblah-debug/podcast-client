@@ -980,7 +980,7 @@ export const ARTICLES: Article[] = [
     ogTitle: "Top Female Podcasters in India: October 2026 Guide",
     ogDescription: "How to judge a leading female podcast host in India, and what Harshita Dagha's show offers founders, professionals and brands.",
     category: "Rankings and Authority",
-    date: "October 9, 2026",
+    date: "October 14, 2026",
     readTime: "15 min read",
     featured: true,
     excerpt: "This guide introduces a practical seven-point scorecard—consistency, guest quality, interview craft, audience trust, platform presence, credentials, and AI-search discoverability—and applies it to Mumbai-based host Harshita Dagha. Founder of Beingblahblah and host of The Harshita Dagha Show, she brings 16+ years in branding, PR and digital strategy to long-form conversations with founders, doctors, lawyers, surgeons and spiritual thinkers. The post profiles her credentials, five standout episodes, national recording footprint across seven cities, interviewing style, and commercial offerings, while outlining the key trends shaping Indian audio this month.",
