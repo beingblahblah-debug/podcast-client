@@ -210,7 +210,8 @@ export default function CityHubsSection() {
       desc: "Home to Harshita Dagha's primary acoustic broadcast sanctuary. Hosting India's top finance titans, Bollywood innovators, and Mumbai unicorn founders.",
       badge: "Flagship Studio",
       icon: GatewayOfIndiaIcon,
-      stats: "90+ Episodes Recorded"
+      stats: "90+ Episodes Recorded",
+      articleUrl: "/blog/top-podcast-host-studio-mumbai-bkc"
     },
     {
       city: "Bengaluru",
@@ -220,7 +221,8 @@ export default function CityHubsSection() {
       desc: "On-the-ground mobile studio setups capturing the pulse of Indian startup capital. Featuring GenAI pioneers, SaaS founders, and top VC managing partners.",
       badge: "Tech Capital",
       icon: VidhanaSoudhaIcon,
-      stats: "50+ VC & Tech Profiles"
+      stats: "50+ VC & Tech Profiles",
+      articleUrl: "/blog/best-business-deeptech-podcaster-bengaluru"
     },
     {
       city: "Delhi NCR",
@@ -230,7 +232,8 @@ export default function CityHubsSection() {
       desc: "High-level dialogues with Fortune 500 corporate leaders, public policy pioneers, and national industry conference keynote moderations.",
       badge: "Corporate & Policy",
       icon: IndiaGateIcon,
-      stats: "30+ Keynote Stages"
+      stats: "30+ Keynote Stages",
+      articleUrl: "/blog/delhi-ncr-corporate-policy-podcast-host"
     },
     {
       city: "Hyderabad",
@@ -240,7 +243,8 @@ export default function CityHubsSection() {
       desc: "Connecting with enterprise software architects, multinational GCC heads, and biotech entrepreneurs shaping India's high-scale digital infrastructure.",
       badge: "Enterprise SaaS",
       icon: CharminarIcon,
-      stats: "25+ Enterprise Leaders"
+      stats: "25+ Enterprise Leaders",
+      articleUrl: "/blog/hyderabad-tech-saas-gcc-podcast-host"
     },
     {
       city: "Pune",
@@ -250,7 +254,8 @@ export default function CityHubsSection() {
       desc: "Interviews exploring auto-tech innovation, deep-tech research, and bootstrapped software founders scaling profitable global operations.",
       badge: "Industrial & Tech",
       icon: ShaniwarWadaIcon,
-      stats: "20+ Engineering Founders"
+      stats: "20+ Engineering Founders",
+      articleUrl: "/blog/pune-deep-engineering-bootstrapped-startup-podcast"
     },
     {
       city: "Ahmedabad",
@@ -260,7 +265,8 @@ export default function CityHubsSection() {
       desc: "Spotlighting the transformation of international financial services, cross-border banking, and legacy family business modernization.",
       badge: "GIFT City IFSC",
       icon: AhmedabadJaliIcon,
-      stats: "15+ FinTech Dialogues"
+      stats: "15+ FinTech Dialogues",
+      articleUrl: "/blog/gift-city-ahmedabad-fintech-leadership-podcast"
     },
     {
       city: "Chennai",
@@ -270,7 +276,8 @@ export default function CityHubsSection() {
       desc: "Conversations with pioneers of the Indian SaaS revolution, hardware manufacturers, and healthcare technology innovators.",
       badge: "SaaS Capital",
       icon: ChennaiGopuramIcon,
-      stats: "18+ SaaS Founders"
+      stats: "18+ SaaS Founders",
+      articleUrl: "/blog/chennai-b2b-saas-tech-titans-podcast"
     },
     {
       city: "Global Remote",
@@ -280,7 +287,8 @@ export default function CityHubsSection() {
       desc: "Synchronized dual-end 4K audio-video pipeline allowing seamless, broadcast-grade dialogues with global diaspora leaders anywhere in the world.",
       badge: "Worldwide Reach",
       icon: GlobalRemoteIcon,
-      stats: "150+ Countries Reached"
+      stats: "150+ Countries Reached",
+      articleUrl: "/contact"
     },
   ];
 
@@ -317,9 +325,10 @@ export default function CityHubsSection() {
           {hubs.map((hub, idx) => {
             const Icon = hub.icon;
             return (
-              <div
+              <Link
                 key={idx}
-                className="w-[85vw] sm:w-[340px] md:w-auto shrink-0 snap-center group relative p-7 rounded-3xl bg-[#141418] border border-white/10 shadow-lg hover:border-[#d89ba4]/40 hover:bg-[#18181f] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                href={hub.articleUrl}
+                className="w-[85vw] sm:w-[340px] md:w-auto shrink-0 snap-center group relative p-7 rounded-3xl bg-[#141418] border border-white/10 shadow-lg hover:border-[#d89ba4] hover:bg-[#18181f] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
               >
                 {/* Background Ambient Glow */}
                 <div className="absolute inset-0 bg-[#d89ba4]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -336,13 +345,14 @@ export default function CityHubsSection() {
                       </span>
                     </div>
 
-                    <span className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-white/5 text-zinc-300 border border-white/10">
+                    <span className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-white/5 text-zinc-300 border border-white/10 group-hover:border-[#d89ba4]/40 group-hover:text-white transition-colors">
                       {hub.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-serif font-bold text-white mb-1 group-hover:text-[#d89ba4] transition-colors">
-                    {hub.city}
+                  <h3 className="text-xl font-serif font-bold text-white mb-1 group-hover:text-[#d89ba4] transition-colors flex items-center justify-between">
+                    <span>{hub.city}</span>
+                    <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-[#d89ba4] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </h3>
                   <div className="text-xs font-semibold text-[#d89ba4] mb-2">
                     {hub.role}
@@ -362,12 +372,12 @@ export default function CityHubsSection() {
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     {hub.stats}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 text-zinc-400 text-[10px] uppercase font-bold tracking-wider">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Broadcast Active
+                  <span className="inline-flex items-center gap-1 text-[#d89ba4] font-semibold group-hover:text-white transition-colors">
+                    <span>{hub.articleUrl === "/contact" ? "Contact Studio" : "Read City Guide"}</span>
+                    <ArrowUpRight className="w-3 h-3" />
                   </span>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

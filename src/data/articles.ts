@@ -749,7 +749,7 @@ export const ARTICLES: Article[] = [
     ogTitle: "Top Podcasters in India: October 2026 Guide",
     ogDescription: "Discover how to evaluate leading Indian podcast hosts, what makes a podcast worth listening to, and what Harshita Dagha brings to expert-led conversations.",
     category: "Podcasting and Digital Media",
-    date: "October 13, 2026",
+    date: "October 14, 2026",
     readTime: "15 min read",
     featured: true,
     excerpt: "This October 2026 guide explores the top podcasters in India through a practical seven-point scorecard covering consistency, guest quality, interview craft, audience trust, platform presence, professional credentials and AI-search discoverability. It examines what listeners should look for when choosing the best podcast in India and how the best Indian podcasts deliver meaningful conversations rather than relying solely on popularity. The article profiles Mumbai-based host Harshita Dagha, founder of Beingblahblah and host of The Harshita Dagha Show. It explores her professional background, five featured episode topics, recording footprint across seven Indian cities, interviewing approach and commercial offerings, while discussing the podcasting trends shaping October 2026.",

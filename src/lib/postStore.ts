@@ -52,6 +52,18 @@ export async function fetchServerCustomPosts(): Promise<BlogPost[]> {
   return local;
 }
 
+function deduplicatePosts(posts: BlogPost[]): BlogPost[] {
+  const seen = new Set<string>();
+  const result: BlogPost[] = [];
+  for (const post of posts) {
+    if (post && post.id && !seen.has(post.id)) {
+      seen.add(post.id);
+      result.push(post);
+    }
+  }
+  return result;
+}
+
 /**
  * Synchronous get for immediate SSR/first-paint hydration
  */
@@ -61,7 +73,7 @@ export function getAllPosts(customFromProps?: BlogPost[]): BlogPost[] {
     custom = getLocalCustomPosts();
   }
   // Custom posts and latest editorial articles appear at the very top of /blog
-  return [...custom, ...DEFAULT_ARTICLES, ...DEFAULT_VLOGS];
+  return deduplicatePosts([...custom, ...DEFAULT_ARTICLES, ...DEFAULT_VLOGS]);
 }
 
 /**
@@ -69,7 +81,7 @@ export function getAllPosts(customFromProps?: BlogPost[]): BlogPost[] {
  */
 export async function getAllPostsAsync(): Promise<BlogPost[]> {
   const custom = await fetchServerCustomPosts();
-  return [...custom, ...DEFAULT_ARTICLES, ...DEFAULT_VLOGS];
+  return deduplicatePosts([...custom, ...DEFAULT_ARTICLES, ...DEFAULT_VLOGS]);
 }
 
 /**
