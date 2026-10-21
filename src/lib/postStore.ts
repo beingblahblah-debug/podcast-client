@@ -1,6 +1,7 @@
 "use client";
 
-import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES, extractYouTubeId, getYouTubeThumbnail } from "@/data/posts";
+import { BlogPost, DEFAULT_VLOGS, DEFAULT_ARTICLES, extractYouTubeId, getYouTubeThumbnail, articleToBlogPost } from "@/data/posts";
+import { ARTICLES } from "@/data/articles";
 
 const STORAGE_KEY = "harshita_custom_posts_v2";
 
@@ -88,13 +89,26 @@ export async function getAllPostsAsync(): Promise<BlogPost[]> {
  * Fetch a single post by ID (checks memory/local, then server API, then default sets)
  */
 export async function fetchPostById(id: string): Promise<BlogPost | null> {
-  // Check static / default sets first
-  const staticFound = DEFAULT_VLOGS.find((v) => v.id === id) || DEFAULT_ARTICLES.find((a) => a.id === id);
+  const cleanId = id.trim().toLowerCase();
+
+  // Check ARTICLES and their aliases
+  const legacyFound = ARTICLES.find(
+    (a) =>
+      a.id === id ||
+      a.id.toLowerCase() === cleanId ||
+      a.aliases?.some((al) => al.toLowerCase() === cleanId)
+  );
+  if (legacyFound) return articleToBlogPost(legacyFound);
+
+  // Check static / default sets
+  const staticFound =
+    DEFAULT_VLOGS.find((v) => v.id === id || v.id.toLowerCase() === cleanId) ||
+    DEFAULT_ARTICLES.find((a) => a.id === id || a.id.toLowerCase() === cleanId);
   if (staticFound) return staticFound;
 
   // Check local cache
   const local = getLocalCustomPosts();
-  const localFound = local.find((p) => p.id === id);
+  const localFound = local.find((p) => p.id === id || p.id.toLowerCase() === cleanId);
   if (localFound) return localFound;
 
   // Fetch from server API

@@ -17,7 +17,8 @@ import {
   MessageCircle,
   Loader2
 } from "lucide-react";
-import { BlogPost, DEFAULT_ARTICLES, extractYouTubeId } from "@/data/posts";
+import { BlogPost, DEFAULT_ARTICLES, DEFAULT_VLOGS, extractYouTubeId, articleToBlogPost } from "@/data/posts";
+import { ARTICLES } from "@/data/articles";
 import { getLocalCustomPosts, saveLocalCustomPosts } from "@/lib/postStore";
 import { YouTubeIcon } from "@/components/SocialIcons";
 import FormattedPostContent from "@/components/FormattedPostContent";
@@ -35,10 +36,35 @@ export default function DynamicPostClientFallback({ postId }: Props) {
     let active = true;
 
     async function resolvePost() {
-      // 0. Static data check (always up to date)
-      const staticFound = DEFAULT_ARTICLES.find((p) => p.id === postId || p.id.toLowerCase() === postId.toLowerCase());
+      // 0a. Check ARTICLES and all aliases
+      const legacyFound = ARTICLES.find(
+        (a) =>
+          a.id === postId ||
+          a.id.toLowerCase() === postId.toLowerCase() ||
+          a.aliases?.some((al) => al.toLowerCase() === postId.toLowerCase())
+      );
+      if (legacyFound && active) {
+        setPost(articleToBlogPost(legacyFound));
+        setIsLoading(false);
+        return;
+      }
+
+      // 0b. Static data check (always up to date)
+      const staticFound = DEFAULT_ARTICLES.find(
+        (p) => p.id === postId || p.id.toLowerCase() === postId.toLowerCase()
+      );
       if (staticFound && active) {
         setPost(staticFound);
+        setIsLoading(false);
+        return;
+      }
+
+      // 0c. Check DEFAULT_VLOGS
+      const vlogFound = DEFAULT_VLOGS.find(
+        (v) => v.id === postId || v.id.toLowerCase() === postId.toLowerCase()
+      );
+      if (vlogFound && active) {
+        setPost(vlogFound);
         setIsLoading(false);
         return;
       }

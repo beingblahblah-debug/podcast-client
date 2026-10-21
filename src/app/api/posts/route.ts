@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { BlogPost, extractYouTubeId, getYouTubeThumbnail } from "@/data/posts";
+import { BlogPost, extractYouTubeId, getYouTubeThumbnail, DEFAULT_VLOGS, DEFAULT_ARTICLES, articleToBlogPost } from "@/data/posts";
+import { ARTICLES } from "@/data/articles";
 
 const localDataFilePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
 const tmpDataFilePath = path.join("/tmp", "custom_posts.json");
@@ -89,10 +90,36 @@ export async function GET(request: Request) {
     const posts = readCustomPosts();
 
     if (id) {
-      const post = posts.find((p) => p.id === id);
+      const cleanId = id.trim().toLowerCase();
+      // 1. Check custom posts
+      const post = posts.find((p) => p.id === id || p.id.toLowerCase() === cleanId);
       if (post) {
         return NextResponse.json({ success: true, post });
       }
+
+      // 2. Check ARTICLES & aliases
+      const legacy = ARTICLES.find(
+        (a) =>
+          a.id === id ||
+          a.id.toLowerCase() === cleanId ||
+          a.aliases?.some((al) => al.toLowerCase() === cleanId)
+      );
+      if (legacy) {
+        return NextResponse.json({ success: true, post: articleToBlogPost(legacy) });
+      }
+
+      // 3. Check DEFAULT_VLOGS
+      const vlog = DEFAULT_VLOGS.find((v) => v.id === id || v.id.toLowerCase() === cleanId);
+      if (vlog) {
+        return NextResponse.json({ success: true, post: vlog });
+      }
+
+      // 4. Check DEFAULT_ARTICLES
+      const staticArt = DEFAULT_ARTICLES.find((a) => a.id === id || a.id.toLowerCase() === cleanId);
+      if (staticArt) {
+        return NextResponse.json({ success: true, post: staticArt });
+      }
+
       return NextResponse.json({ success: false, message: "Post not found" }, { status: 404 });
     }
 
