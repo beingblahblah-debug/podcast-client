@@ -117,6 +117,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/indian-women-podcasters-list`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
   ];
 
   // Dynamic Blog Articles (Editorial set)
@@ -160,12 +166,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [
+  const allRoutes: MetadataRoute.Sitemap = [
     ...staticRoutes, 
-    ...customPostRoutes, 
     ...articleRoutes, 
+    ...customPostRoutes, 
     ...vlogRoutes, 
     ...episodeRoutes, 
     ...highlightRoutes
   ];
+
+  // Deduplicate by URL ensuring unique canonical entries in sitemap.xml
+  const uniqueMap = new Map<string, MetadataRoute.Sitemap[number]>();
+  for (const route of allRoutes) {
+    if (!uniqueMap.has(route.url)) {
+      uniqueMap.set(route.url, route);
+    }
+  }
+
+  return Array.from(uniqueMap.values());
 }

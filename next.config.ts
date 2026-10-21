@@ -132,6 +132,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/best-podcast-in-india",
+        destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        permanent: true,
+      },
+      {
+        source: "/best-indian-podcasts",
+        destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        permanent: true,
+      },
+      {
+        source: "/top-podcasters-in-india",
+        destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        permanent: true,
+      },
+      {
+        source: "/top-podcasters-india",
+        destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        permanent: true,
+      },
+      {
+        source: "/best-female-podcasts-india",
+        destination: "/blog/best-female-podcasts-india-city-guide-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/popular-women-podcasts-india",
+        destination: "/blog/best-female-podcasts-india-city-guide-october-2026",
+        permanent: true,
+      },
+      {
         source: "/blog/best-podcast-in-india",
         destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
         permanent: true,
