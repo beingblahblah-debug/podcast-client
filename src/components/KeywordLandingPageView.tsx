@@ -412,9 +412,28 @@ export default function KeywordLandingPageView({ page, isHubPage = false }: Prop
               ? "All 10 Dedicated Keyword Spokes in This Guide"
               : "Related Spoke Topics in This Editorial Cluster"}
           </h3>
-          <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
-            Every page in this cluster features independent criteria, verified credentials, and deep-dive audio analysis to ensure no search cannibalization and complete topical authority.
-          </p>
+          {/* New 2026 Master Guides Banner */}
+          <div className="mb-6 p-5 rounded-2xl bg-[#d89ba4]/10 border border-[#d89ba4]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div className="text-xs uppercase tracking-wider font-bold text-[#d89ba4] mb-1">
+                New 2026 Master Editorial Benchmarks
+              </div>
+              <div className="text-xs sm:text-sm text-zinc-300 flex flex-wrap gap-x-5 gap-y-1.5 mt-1">
+                <Link
+                  href="/blog/best-female-podcasts-india-city-guide-october-2026"
+                  className="text-white font-semibold underline underline-offset-4 hover:text-[#d89ba4] transition-colors"
+                >
+                  See the city-by-city guide for October 2026 →
+                </Link>
+                <Link
+                  href="/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide"
+                  className="text-white font-semibold underline underline-offset-4 hover:text-[#d89ba4] transition-colors"
+                >
+                  Best podcast in India: the 2026 guide by language, format and platform →
+                </Link>
+              </div>
+            </div>
+          </div>
 
           {isHubPage ? (
             /* Render all 10 spokes on the Hub page */

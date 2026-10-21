@@ -203,6 +203,36 @@ export default function Top10Section({ isFullPage = false }: { isFullPage?: bool
           })}
         </div>
 
+        {/* Editorial Guides Cross-Link Card */}
+        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 via-[#141418] to-[#d89ba4]/10 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <h4 className="text-white font-serif font-bold text-base sm:text-lg mb-1">
+              National Guides &amp; Directory Benchmarks
+            </h4>
+            <div className="text-xs sm:text-sm text-zinc-300 flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-1.5 mt-1">
+              <Link
+                href="/blog/best-female-podcasts-india-city-guide-october-2026"
+                className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+              >
+                See the city-by-city guide for October 2026 →
+              </Link>
+              <Link
+                href="/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide"
+                className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+              >
+                Best podcast in India: the 2026 guide by language, format and platform →
+              </Link>
+            </div>
+          </div>
+          <Link
+            href="/top-female-podcasters"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white/10 hover:bg-[#d89ba4] hover:text-black text-white text-xs font-bold transition-all shrink-0"
+          >
+            <span>Top Female Podcasters</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
         {/* View All Top 10 button if not full page */}
         {!isFullPage && (
           <div className="mt-8 text-center">

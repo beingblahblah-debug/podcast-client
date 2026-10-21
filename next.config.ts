@@ -108,7 +108,57 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/blog/best-female-podcasts-india",
+        destination: "/blog/best-female-podcasts-india-city-guide-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/best-female-podcasts-india-city-guide-october-2026",
+        destination: "/blog/best-female-podcasts-india-city-guide-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/best-female-podcasts-india-city-guide",
+        destination: "/blog/best-female-podcasts-india-city-guide-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/blog/best-female-podcasts-india-city-guide",
+        destination: "/blog/best-female-podcasts-india-city-guide-october-2026",
+        permanent: true,
+      },
+      {
+        source: "/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        permanent: true,
+      },
+      {
+        source: "/blog/best-podcast-in-india-guide",
+        destination: "/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide",
+        permanent: true,
+      },
+      {
+        source: "/blog/best-podcasts-by-indian-women-best-female-podcasts-india",
         destination: "/blog/best-podcasts-by-indian-women",
+        permanent: true,
+      },
+      {
+        source: "/blog/indian-women-podcasters-list-young-female-podcast-hosts",
+        destination: "/indian-women-podcasters-list",
+        permanent: true,
+      },
+      {
+        source: "/blog/how-to-get-booked-on-podcasts-mumbai-india",
+        destination: "/blog/how-to-pitch-top-tier-podcasts-2026",
+        permanent: true,
+      },
+      {
+        source: "/blog/podcasts-looking-for-guests-mumbai-india-october-2026",
+        destination: "/blog/how-to-pitch-top-tier-podcasts-2026",
+        permanent: true,
+      },
+      {
+        source: "/blog/podcast-guest-opportunities-how-to-become-a-podcast-guest-mumbai",
+        destination: "/be-a-guest",
         permanent: true,
       },
       {

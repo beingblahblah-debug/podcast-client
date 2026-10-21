@@ -140,14 +140,25 @@ export default function LatestArticlesSection() {
         </div>
 
         {/* Bottom Banner with Quick CTA */}
-        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 via-[#141418] to-pink-950/20 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-purple-950/20 via-[#141418] to-pink-950/20 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div>
-            <h4 className="text-white font-serif font-bold text-base sm:text-lg">
+            <h4 className="text-white font-serif font-bold text-base sm:text-lg mb-1">
               Explore More Sovereign Media &amp; PR Blueprints
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-400">
-              Browse 26+ investigative articles, city hubs, and video masterclasses on the Harshita Dagha Media Hub.
-            </p>
+            <div className="text-xs sm:text-sm text-zinc-300 flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-1.5 mt-1">
+              <Link
+                href="/blog/best-podcast-in-india-top-podcasters-best-indian-podcasts-guide"
+                className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+              >
+                Best podcast in India: the 2026 guide by language, format and platform →
+              </Link>
+              <Link
+                href="/blog/best-female-podcasts-india-city-guide-october-2026"
+                className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+              >
+                See the city-by-city guide for October 2026 →
+              </Link>
+            </div>
           </div>
           <Link
             href="/blog"
