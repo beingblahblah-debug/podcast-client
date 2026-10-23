@@ -21,6 +21,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/top-10-pr-agencies-in-india",
+        destination: "/blog/top-10-pr-agencies-in-india",
+        permanent: true,
+      },
+      {
+        source: "/best-pr-agency-in-mumbai",
+        destination: "/blog/best-pr-agency-in-mumbai",
+        permanent: true,
+      },
+      {
         source: "/top-digital-pr-and-personal-brands-in-india",
         destination: "/blog/top-digital-pr-and-personal-brands-in-india",
         permanent: true,
