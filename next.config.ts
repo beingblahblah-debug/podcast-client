@@ -16,6 +16,31 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-in-india",
+        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-india",
+        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        permanent: true,
+      },
+      {
+        source: "/best-female-podcasters-india",
+        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        permanent: true,
+      },
+      {
+        source: "/indian-women-podcast-hosts",
+        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        permanent: true,
+      },
+      {
         source: "/articles",
         destination: "/blog",
         permanent: true,

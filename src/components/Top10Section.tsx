@@ -211,6 +211,12 @@ export default function Top10Section({ isFullPage = false }: { isFullPage?: bool
             </h4>
             <div className="text-xs sm:text-sm text-zinc-300 flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-1.5 mt-1">
               <Link
+                href="/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts"
+                className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+              >
+                Read the complete guide to the top female podcasters in India →
+              </Link>
+              <Link
                 href="/blog/best-female-podcasts-india-city-guide-october-2026"
                 className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
               >

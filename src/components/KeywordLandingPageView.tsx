@@ -420,6 +420,12 @@ export default function KeywordLandingPageView({ page, isHubPage = false }: Prop
               </div>
               <div className="text-xs sm:text-sm text-zinc-300 flex flex-wrap gap-x-5 gap-y-1.5 mt-1">
                 <Link
+                  href="/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts"
+                  className="text-white font-semibold underline underline-offset-4 hover:text-[#d89ba4] transition-colors"
+                >
+                  Read the complete guide to the top female podcasters in India →
+                </Link>
+                <Link
                   href="/blog/best-female-podcasts-india-city-guide-october-2026"
                   className="text-white font-semibold underline underline-offset-4 hover:text-[#d89ba4] transition-colors"
                 >
