@@ -16,6 +16,56 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/celebrity-booking-agency-india",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-booking-agency-mumbai",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/book-celebrity-for-event",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-booking-for-events-india",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/book-bollywood-celebrity-for-event",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-appearance-booking-india",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-booking-for-corporate-events",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-booking-agent-india",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/hire-celebrity-for-event",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-booking-contact-india",
+        destination: "/blog/celebrity-booking-agency-india",
+        permanent: true,
+      },
+      {
         source: "/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
         destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
         permanent: true,

@@ -211,6 +211,15 @@ export default function ServicesPage() {
                 Public Relations Agency in Mumbai &rarr;
               </a>
             </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-amber-200">
+              <span className="font-semibold text-white">Celebrity Booking Guide:</span>
+              <a 
+                href="/blog/celebrity-booking-agency-india"
+                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
+              >
+                Celebrity Booking Agency India &rarr;
+              </a>
+            </div>
           </div>
         </div>
 

@@ -534,20 +534,68 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                 "headline": article.title,
                 "description": article.excerpt,
                 "datePublished": article.date,
+                "dateModified": article.date,
+                "inLanguage": "en-IN",
                 "image": article.image.startsWith("http") ? article.image : `https://www.harshitadagha.in${article.image}`,
                 "author": {
                   "@type": "Person",
                   "name": article.author.name,
                   "jobTitle": article.author.role,
-                  "url": "https://www.harshitadagha.in"
+                  "url": "https://www.harshitadagha.in",
+                  "sameAs": [
+                    "https://www.harshitadagha.in/profile",
+                    "https://youtube.com/@harshitadagha?si=vqaTaxvZHC02_uYG",
+                    "https://www.instagram.com/beingblahblah"
+                  ]
                 },
                 "publisher": {
                   "@type": "Organization",
-                  "name": "The Harshita Dagha Show",
-                  "url": "https://www.harshitadagha.in"
+                  "name": "Beingblahblah",
+                  "url": "https://www.harshitadagha.in",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.harshitadagha.in/logo.png"
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91 87790 03799",
+                    "email": "beingblahblah@gmail.com",
+                    "contactType": "Celebrity Booking & PR Desk",
+                    "areaServed": "IN"
+                  },
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bandra Kurla Complex (BKC), Mumbai",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                  }
                 },
                 "mainEntityOfPage": `https://www.harshitadagha.in/blog/${article.id}`,
-                "keywords": article.seoFocus
+                "keywords": article.seoFocus,
+                "about": [
+                  {
+                    "@type": "Thing",
+                    "name": "Celebrity Booking Agency India"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "Celebrity Marketing & Corporate Event Appearances"
+                  },
+                  {
+                    "@type": "Place",
+                    "name": "Mumbai, Maharashtra, India"
+                  }
+                ],
+                "mentions": [
+                  {
+                    "@type": "Organization",
+                    "name": "Beingblahblah"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Harshita Dagha"
+                  }
+                ]
               },
               {
                 "@type": "BreadcrumbList",
@@ -579,6 +627,11 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                 "jobTitle": "Podcast Host, TEDx Speaker, Branding & PR Strategist",
                 "url": "https://www.harshitadagha.in",
                 "image": "https://www.harshitadagha.in/images/harshita-portrait-main.jpg",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Beingblahblah",
+                  "url": "https://www.harshitadagha.in"
+                },
                 "sameAs": [
                   "https://www.harshitadagha.in/profile",
                   "https://youtube.com/@harshitadagha?si=vqaTaxvZHC02_uYG",
