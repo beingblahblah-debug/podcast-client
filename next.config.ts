@@ -16,6 +16,36 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/podcast-guest-playbook",
+        destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
+        permanent: true,
+      },
+      {
+        source: "/how-to-get-booked-on-podcasts",
+        destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
+        permanent: true,
+      },
+      {
+        source: "/podcasts-looking-for-guests",
+        destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
+        permanent: true,
+      },
+      {
+        source: "/how-to-become-a-podcast-guest",
+        destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
+        permanent: true,
+      },
+      {
+        source: "/podcast-guest-opportunities",
+        destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
+        permanent: true,
+      },
+      {
+        source: "/podcasts-accepting-guests",
+        destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
+        permanent: true,
+      },
+      {
         source: "/celebrity-booking-agency-india",
         destination: "/blog/celebrity-booking-agency-india",
         permanent: true,

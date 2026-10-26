@@ -648,6 +648,50 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                     "text": faq.answer
                   }
                 }))
+              }] : []),
+              ...(article.id === "podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests" ? [{
+                "@type": "HowTo",
+                "name": "How to Get Booked on Podcasts in 6 Stages",
+                "description": "The operational 6-stage framework to get booked as a guest on high-impact podcasts.",
+                "totalTime": "P30D",
+                "step": [
+                  {
+                    "@type": "HowToStep",
+                    "position": 1,
+                    "name": "Profile Architecture",
+                    "text": "Build a dedicated guest profile web page, 60/150-word bios, high-resolution headshot, and 60-90 second video sample."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 2,
+                    "name": "Shortlist Curation",
+                    "text": "Curate a shortlist of 10 to 15 active podcasts whose listener base matches your specific subject matter problem."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 3,
+                    "name": "Hyper-Targeted Pitch",
+                    "text": "Draft and send a 120-150 word pitch referencing a specific recent episode and proposing one clear audience problem."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 4,
+                    "name": "Disciplined Follow-Up",
+                    "text": "Send a single, polite two-line follow-up reminder after 7 to 10 business days."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 5,
+                    "name": "Calm Recording Prep",
+                    "text": "Prepare stories, soundbites, and rehearse with the forty common host questions using a dedicated mic and headphones."
+                  },
+                  {
+                    "@type": "HowToStep",
+                    "position": 6,
+                    "name": "Syndication & PR",
+                    "text": "Co-promote the episode across LinkedIn, video clips on Instagram, and newsletter features to maximize distribution."
+                  }
+                ]
               }] : [])
             ]
           })

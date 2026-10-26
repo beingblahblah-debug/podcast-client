@@ -87,6 +87,23 @@ export default function BeAGuestPage() {
           </div>
         </div>
 
+        
+        {/* Playbook Resource Callout */}
+        <div className="bg-gradient-to-r from-indigo-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-6 border border-indigo-500/30 shadow-lg mb-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="space-y-1">
+            <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">Executive Resource</span>
+            <h4 className="font-serif font-bold text-lg text-white">Preparing your pitch or media kit?</h4>
+            <p className="text-xs text-zinc-300">Read our 15-point readiness audit, pitch templates for 6 channels, and 40 questions hosts ask.</p>
+          </div>
+          <Link
+            href="/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests"
+            className="shrink-0 px-5 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+          >
+            <span>Read Podcast Guest Playbook</span>
+            <span>→</span>
+          </Link>
+        </div>
+
         {/* Fast-Track WhatsApp Pitch Option */}
         <div className="bg-gradient-to-r from-emerald-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-6 sm:p-8 border border-emerald-500/30 shadow-xl mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
