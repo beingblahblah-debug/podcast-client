@@ -220,6 +220,16 @@ export default function ServicesPage() {
                 Celebrity Booking Agency India &rarr;
               </a>
             </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
+              <span className="font-semibold text-white">Celebrity Podcast Booking:</span>
+              <a 
+                href="/blog/podcast-booking-for-celebrities"
+                className="text-[#f472b6] hover:text-white underline font-medium transition-colors"
+              >
+                Podcast Booking for Celebrities Guide &rarr;
+              </a>
+            </div>
+
           </div>
         </div>
 

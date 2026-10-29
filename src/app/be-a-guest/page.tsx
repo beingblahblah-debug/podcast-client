@@ -104,6 +104,23 @@ export default function BeAGuestPage() {
           </Link>
         </div>
 
+        
+        {/* Celebrity Podcast Booking Callout */}
+        <div className="bg-gradient-to-r from-amber-950/30 via-[#141418] to-[#141418] text-white rounded-3xl p-6 border border-amber-500/20 shadow-lg mb-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="space-y-1">
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">Celebrity &amp; VIP Booking</span>
+            <h4 className="font-serif font-bold text-lg text-white">Looking for Celebrity Podcast Booking in India?</h4>
+            <p className="text-xs text-zinc-300">Discover how our agency connects public figures, founders, and artists with premium podcast shows.</p>
+          </div>
+          <Link
+            href="/blog/podcast-booking-for-celebrities"
+            className="shrink-0 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+          >
+            <span>Read Celebrity Guide</span>
+            <span>→</span>
+          </Link>
+        </div>
+
         {/* Fast-Track WhatsApp Pitch Option */}
         <div className="bg-gradient-to-r from-emerald-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-6 sm:p-8 border border-emerald-500/30 shadow-xl mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>

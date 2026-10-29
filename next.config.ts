@@ -16,6 +16,26 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/podcast-booking-for-celebrities",
+        destination: "/blog/podcast-booking-for-celebrities",
+        permanent: true,
+      },
+      {
+        source: "/podcast-booking-for-celebrities/",
+        destination: "/blog/podcast-booking-for-celebrities",
+        permanent: true,
+      },
+      {
+        source: "/book-celebrity-for-podcast",
+        destination: "/blog/podcast-booking-for-celebrities",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-guest-for-podcast-in-india",
+        destination: "/blog/podcast-booking-for-celebrities",
+        permanent: true,
+      },
+      {
         source: "/podcast-guest-playbook",
         destination: "/blog/podcast-guest-playbook-how-to-get-booked-on-podcasts-podcasts-looking-for-guests",
         permanent: true,

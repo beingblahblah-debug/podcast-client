@@ -807,9 +807,13 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
 
         {/* Content */}
         <div className="prose prose-invert prose-lg max-w-none mb-16">
-          <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-sans font-medium mb-8">
-            {renderInlineText(article.content.intro)}
-          </p>
+          <div className="space-y-4 mb-8">
+            {article.content.intro.split("\n\n").map((para, i) => (
+              <p key={i} className="text-base sm:text-lg text-zinc-300 leading-relaxed font-sans font-medium">
+                {renderInlineText(para)}
+              </p>
+            ))}
+          </div>
 
           <div className="space-y-12">
             {article.content.sections.map((section, sIdx) => (
@@ -912,10 +916,14 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
           </div>
 
           <div className="mt-12 p-7 rounded-3xl bg-[#141418] border border-white/10 text-white">
-            <h3 className="text-lg font-serif font-bold text-white mb-2">Executive Conclusion</h3>
-            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-              {article.content.conclusion}
-            </p>
+            <h3 className="text-lg font-serif font-bold text-white mb-3">Executive Conclusion</h3>
+            <div className="space-y-3">
+              {article.content.conclusion.split("\n\n").map((cPara, cIdx) => (
+                <p key={cIdx} className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+                  {renderInlineText(cPara)}
+                </p>
+              ))}
+            </div>
           </div>
 
           {article.author.bio && (
