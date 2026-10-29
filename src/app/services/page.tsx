@@ -229,6 +229,16 @@ export default function ServicesPage() {
                 Podcast Booking for Celebrities Guide &rarr;
               </a>
             </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs sm:text-sm text-pink-200">
+              <span className="font-semibold text-white">Private Events &amp; Weddings:</span>
+              <a 
+                href="/blog/book-celebrity-for-private-event"
+                className="text-[#f472b6] hover:text-white underline font-medium transition-colors"
+              >
+                Book Celebrity for Private Event Guide &rarr;
+              </a>
+            </div>
+
 
           </div>
         </div>

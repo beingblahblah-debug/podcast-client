@@ -16,6 +16,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/book-celebrity-for-private-event",
+        destination: "/blog/book-celebrity-for-private-event",
+        permanent: true,
+      },
+      {
+        source: "/book-celebrity-for-private-event/",
+        destination: "/blog/book-celebrity-for-private-event",
+        permanent: true,
+      },
+      {
         source: "/podcast-booking-for-celebrities",
         destination: "/blog/podcast-booking-for-celebrities",
         permanent: true,
