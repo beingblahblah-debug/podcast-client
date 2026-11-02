@@ -238,6 +238,16 @@ export default function ServicesPage() {
                 Book Celebrity for Private Event Guide &rarr;
               </a>
             </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm text-emerald-200">
+              <span className="font-semibold text-white">Event Appearances:</span>
+              <a 
+                href="/blog/book-celebrity-for-event"
+                className="text-[#34d399] hover:text-white underline font-medium transition-colors"
+              >
+                Book Celebrity for Event Guide &rarr;
+              </a>
+            </div>
+
 
 
           </div>

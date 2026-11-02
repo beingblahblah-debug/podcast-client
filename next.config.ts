@@ -87,17 +87,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/book-celebrity-for-event",
-        destination: "/blog/celebrity-booking-agency-india",
+        destination: "/blog/book-celebrity-for-event",
+        permanent: true,
+      },
+      {
+        source: "/book-celebrity-for-event/",
+        destination: "/blog/book-celebrity-for-event",
         permanent: true,
       },
       {
         source: "/celebrity-booking-for-events-india",
-        destination: "/blog/celebrity-booking-agency-india",
+        destination: "/blog/book-celebrity-for-event",
         permanent: true,
       },
       {
         source: "/book-bollywood-celebrity-for-event",
-        destination: "/blog/celebrity-booking-agency-india",
+        destination: "/blog/book-celebrity-for-event",
         permanent: true,
       },
       {
@@ -117,7 +122,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/hire-celebrity-for-event",
-        destination: "/blog/celebrity-booking-agency-india",
+        destination: "/blog/book-celebrity-for-event",
         permanent: true,
       },
       {
