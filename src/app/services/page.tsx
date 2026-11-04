@@ -247,6 +247,52 @@ export default function ServicesPage() {
                 Book Celebrity for Event Guide &rarr;
               </a>
             </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs sm:text-sm text-blue-200">
+              <span className="font-semibold text-white">Chief Guest Booking:</span>
+              <a 
+                href="/blog/celebrity-chief-guest-booking-for-events"
+                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
+              >
+                Celebrity Chief Guest Booking &rarr;
+              </a>
+            </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs sm:text-sm text-pink-200">
+              <span className="font-semibold text-white">Wedding Booking:</span>
+              <a 
+                href="/blog/celebrity-for-wedding-event-booking"
+                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
+              >
+                Celebrity for Wedding Event &rarr;
+              </a>
+            </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs sm:text-sm text-indigo-200">
+              <span className="font-semibold text-white">College Fests:</span>
+              <a 
+                href="/blog/celebrity-for-college-fest-booking"
+                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
+              >
+                Celebrity for College Fest &rarr;
+              </a>
+            </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-amber-200">
+              <span className="font-semibold text-white">Store Launches:</span>
+              <a 
+                href="/blog/celebrity-for-store-launch-in-india"
+                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
+              >
+                Celebrity for Store Launch &rarr;
+              </a>
+            </div>
+            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm text-emerald-200">
+              <span className="font-semibold text-white">Inaugurations:</span>
+              <a 
+                href="/blog/celebrity-for-inauguration-event-booking"
+                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
+              >
+                Celebrity for Inauguration Event &rarr;
+              </a>
+            </div>
+
 
 
 

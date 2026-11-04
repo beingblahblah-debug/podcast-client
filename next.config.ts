@@ -16,6 +16,56 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/celebrity-chief-guest-booking-for-events",
+        destination: "/blog/celebrity-chief-guest-booking-for-events",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-chief-guest-booking-for-events/",
+        destination: "/blog/celebrity-chief-guest-booking-for-events",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-wedding-event-booking",
+        destination: "/blog/celebrity-for-wedding-event-booking",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-wedding-event-booking/",
+        destination: "/blog/celebrity-for-wedding-event-booking",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-college-fest-booking",
+        destination: "/blog/celebrity-for-college-fest-booking",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-college-fest-booking/",
+        destination: "/blog/celebrity-for-college-fest-booking",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-store-launch-in-india",
+        destination: "/blog/celebrity-for-store-launch-in-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-store-launch-in-india/",
+        destination: "/blog/celebrity-for-store-launch-in-india",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-inauguration-event-booking",
+        destination: "/blog/celebrity-for-inauguration-event-booking",
+        permanent: true,
+      },
+      {
+        source: "/celebrity-for-inauguration-event-booking/",
+        destination: "/blog/celebrity-for-inauguration-event-booking",
+        permanent: true,
+      },
+      {
         source: "/book-celebrity-for-private-event",
         destination: "/blog/book-celebrity-for-private-event",
         permanent: true,
