@@ -180,17 +180,17 @@ export default function BlogVlogsHubPage() {
                 <Eye className="w-3.5 h-3.5 text-[#d89ba4]" />
                 {post.views || "48.2K views"}
               </span>
-              {post.videoUrl && (
-                <a
-                  href={post.videoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-zinc-500 hover:text-white text-[11px] transition-colors"
-                >
-                  <span>YouTube</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              )}
+              <a
+                href="https://www.youtube.com/@harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-zinc-400 hover:text-red-400 text-[11px] transition-colors"
+                title="Watch on Harshita Dagha YouTube Channel"
+              >
+                <YouTubeIcon className="w-3.5 h-3.5 fill-current" />
+                <span>YouTube</span>
+                <ExternalLink className="w-2.5 h-2.5" />
+              </a>
             </div>
           </div>
         </div>
@@ -292,6 +292,17 @@ export default function BlogVlogsHubPage() {
 
             {/* Quick Actions */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+              <a
+                href="https://www.youtube.com/@harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md shadow-red-600/30 transition-all shrink-0 hover:scale-105 active:scale-95 text-center cursor-pointer"
+              >
+                <YouTubeIcon className="w-4 h-4 fill-white" />
+                <span>YouTube Channel</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+
               <Link
                 href="/admin"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#d89ba4] hover:bg-[#e2a8b1] text-black text-xs font-bold transition-all shadow-md shrink-0 hover:scale-105 active:scale-95 text-center"

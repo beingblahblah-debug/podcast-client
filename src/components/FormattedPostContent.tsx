@@ -137,7 +137,43 @@ function parseInlineFormatting(text: string): React.ReactNode {
 }
 
 function parseBoldAndLinks(text: string): React.ReactNode {
-  // Simple bold parser: **bold**
+  const linkRegex = /\[(.*?)\]\((.*?)\)/g;
+  const elements: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      elements.push(parseBoldOnly(text.slice(lastIndex, match.index)));
+    }
+    const label = match[1];
+    let href = match[2];
+    if (href.includes("youtube.com") || href.includes("youtu.be")) {
+      href = "https://www.youtube.com/@harshitadagha";
+    }
+    const isExternal = href.startsWith("http");
+    elements.push(
+      <a
+        key={`link-${match.index}`}
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
+      >
+        {label}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    elements.push(parseBoldOnly(text.slice(lastIndex)));
+  }
+
+  return elements;
+}
+
+function parseBoldOnly(text: string): React.ReactNode {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {

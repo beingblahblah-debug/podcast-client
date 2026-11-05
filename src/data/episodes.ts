@@ -41,11 +41,13 @@ export interface Episode {
   spotifyUrl: string;
   appleUrl: string;
   youtubeUrl: string;
+  youtubeId?: string;
 }
 
 export const EPISODES: Episode[] = [
   {
     id: "ep-128-architecture-of-ambition",
+    youtubeId: "UIEBj-3enk0",
     number: 128,
     season: 4,
     title: "The Architecture of Ambition: Rebuilding Your Mind for High-Stakes Decisiveness",
@@ -91,10 +93,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Harshita: When you look at high-performing executives who break under pressure versus those who flourish, what is the single physiological divergence you spot first?\n\nDr. Thorne: It is almost never intellect or stamina. It is their relationship with ambiguity. Amateurs demand certainty before moving; seasoned operators learn to metabolize ambiguity like oxygen.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-127-beyond-algorithms",
+    youtubeId: "K_6wJPU-sQw",
     number: 127,
     season: 4,
     title: "Beyond the Algorithms: Reclaiming Creative Sovereignty in the Age of Synthetic Intelligence",
@@ -136,10 +139,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Maya: True style is not what you add; it is the deliberate omissions you refuse to let an algorithm autocomplete for you.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-126-zero-to-category-king",
+    youtubeId: "p7UxBljaKys",
     number: 126,
     season: 4,
     title: "Zero to Category King: Unconventional Playbooks for Radical Product Differentiation",
@@ -181,10 +185,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Julian: If you cannot state your company's core disagreement with current industry consensus in one sentence, you haven't found your value proposition yet.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-125-the-neurochemistry-of-calm",
+    youtubeId: "03YJwVMV0D8",
     number: 125,
     season: 4,
     title: "The Neurochemistry of Calm: Unlocking Sustained Focus Under Relentless Digital Noise",
@@ -226,10 +231,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Dr. Roy: Calm is not the absence of chaos around you; it is the physiological capacity to keep your prefrontal cortex online while the world spins.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-124-the-art-of-unreasonable-hospitality",
+    youtubeId: "2puQ59SOAwQ",
     number: 124,
     season: 4,
     title: "The Art of Unreasonable Hospitality: Turning Human Connection into an Unfair Advantage",
@@ -270,10 +276,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Clara: People will forget 90% of your product specifications, but they will never forget how dignified and seen you made them feel.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-123-mastering-the-unspoken",
+    youtubeId: "UIEBj-3enk0",
     number: 123,
     season: 3,
     title: "Mastering the Unspoken: Body Language, Executive Presence & Nonverbal Negotiation",
@@ -314,10 +321,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Marcus: The most dangerous person in the room is the one who is comfortable with 10 seconds of complete silence after a provocative statement.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-122-the-creative-inflection-point",
+    youtubeId: "K_6wJPU-sQw",
     number: 122,
     season: 3,
     title: "The Creative Inflection Point: Navigating Burnout, Re-invention, and Second Acts",
@@ -358,10 +366,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Chloe: If you keep feeding the monster of other people's expectations, you will wake up one day with applause ringing in your ears and nothing left in your chest.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-121-future-of-longevity",
+    youtubeId: "p7UxBljaKys",
     number: 121,
     season: 3,
     title: "The Longevity Horizon: Cellular Autophagy, Biomarkers & Adding 30 Healthy Years",
@@ -402,10 +411,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Dr. Hensley: We don't want to just add years to life; we want to add life to those years so you can hike a mountain with your grandchildren at 85.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-120-the-quiet-power-of-taste",
+    youtubeId: "03YJwVMV0D8",
     number: 120,
     season: 3,
     title: "The Quiet Power of Taste: How World-Class Curators Shape Global Culture",
@@ -446,10 +456,11 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Nadia: Bad taste is loud because it is insecure. Good taste speaks softly because the truth does not need to shout.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   },
   {
     id: "ep-119-the-autonomous-economy",
+    youtubeId: "2puQ59SOAwQ",
     number: 119,
     season: 3,
     title: "The Autonomous Economy: Thriving When Software Does Everything Except Care",
@@ -490,7 +501,7 @@ We also explore his morning cognitive reset routine, how sleep stages impact tac
     transcriptSnippet: "Dr. Sato: In a world where intelligence is a free utility like electricity, the scarcest resource will simply be whether someone believes you have a soul.",
     spotifyUrl: "https://spotify.com",
     appleUrl: "https://apple.com",
-    youtubeUrl: "https://youtube.com"
+    youtubeUrl: "https://www.youtube.com/@harshitadagha"
   }
 ];
 

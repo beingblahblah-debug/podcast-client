@@ -292,11 +292,33 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-white">{post.author.name}</h3>
-                <p className="text-xs text-zinc-400">{post.author.role}</p>
+                <a 
+                  href="https://www.youtube.com/@harshitadagha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-zinc-400 hover:text-red-400 transition-colors inline-flex items-center gap-1"
+                >
+                  <span>{post.author.role}</span>
+                  <ExternalLink className="w-2.5 h-2.5 text-zinc-500" />
+                </a>
               </div>
             </div>
 
-            <ShareButton title={post.title} />
+            <div className="flex items-center gap-2.5">
+              <a
+                href="https://www.youtube.com/@harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600/15 hover:bg-red-600/25 border border-red-500/30 text-red-400 hover:text-red-300 text-xs font-bold transition-all group cursor-pointer"
+                title="Visit Harshita Dagha's Official YouTube Channel"
+              >
+                <YouTubeIcon className="w-3.5 h-3.5 fill-red-500 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline">YouTube Channel</span>
+                <span className="sm:hidden">YouTube</span>
+                <ExternalLink className="w-3 h-3 text-red-400/80" />
+              </a>
+              <ShareButton title={post.title} />
+            </div>
           </div>
 
           {/* ASSET 5: BLOCK 1 & 2 — TL;DR EXECUTIVE SUMMARY & KEY QUOTABLE INSIGHTS */}
@@ -382,13 +404,13 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                 <div className="mt-3 flex items-center justify-between text-xs text-zinc-400">
                   <span>Stream full conversation in 4K resolution.</span>
                   <a
-                    href={post.videoUrl}
+                    href="https://www.youtube.com/@harshitadagha"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold"
                   >
                     <YouTubeIcon className="w-3.5 h-3.5 fill-current" />
-                    <span>Watch Direct on YouTube</span>
+                    <span>Watch on YouTube (@harshitadagha)</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -444,6 +466,37 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
           {post.faqs && post.faqs.length > 0 && (
             <ArticleFaqAccordion faqs={post.faqs} />
           )}
+
+          {/* YouTube Channel Promo Banner */}
+          <div className="bg-gradient-to-r from-red-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-6 sm:p-8 border border-red-500/30 shadow-xl mb-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-500/30 flex items-center justify-center shrink-0">
+                <YouTubeIcon className="w-6 h-6 fill-red-500" />
+              </div>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-red-400 block mb-1">
+                  Official YouTube Channel
+                </span>
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-white mb-0.5">
+                  The Harshita Dagha Show on YouTube
+                </h3>
+                <p className="text-xs text-zinc-400 max-w-lg">
+                  Watch unscripted dialogues, founder interviews, and celebrity marketing masterclasses at @harshitadagha.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://www.youtube.com/@harshitadagha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-lg shadow-red-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"
+            >
+              <YouTubeIcon className="w-4 h-4 fill-white" />
+              <span>Visit YouTube Channel</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
 
           {/* WhatsApp Direct Contact CTA */}
           <div className="bg-gradient-to-r from-emerald-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-8 border border-emerald-500/30 shadow-xl mb-14 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -767,11 +820,33 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
             </div>
             <div>
               <h3 className="text-sm font-bold text-white">Written by {article.author.name}</h3>
-              <p className="text-xs text-zinc-400">{article.author.role} · The Harshita Dagha Show</p>
+              <a 
+                href="https://www.youtube.com/@harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-zinc-400 hover:text-red-400 transition-colors inline-flex items-center gap-1"
+              >
+                <span>{article.author.role} · The Harshita Dagha Show</span>
+                <ExternalLink className="w-2.5 h-2.5 text-zinc-500" />
+              </a>
             </div>
           </div>
 
-          <ShareButton title={article.title} />
+          <div className="flex items-center gap-2.5">
+            <a
+              href="https://www.youtube.com/@harshitadagha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-red-600/15 hover:bg-red-600/25 border border-red-500/30 text-red-400 hover:text-red-300 text-xs font-bold transition-all group cursor-pointer"
+              title="Visit Harshita Dagha's Official YouTube Channel"
+            >
+              <YouTubeIcon className="w-3.5 h-3.5 fill-red-500 group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline">YouTube Channel</span>
+              <span className="sm:hidden">YouTube</span>
+              <ExternalLink className="w-3 h-3 text-red-400/80" />
+            </a>
+            <ShareButton title={article.title} />
+          </div>
         </div>
 
         {/* Hero Cover Image */}
@@ -956,6 +1031,37 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
           <ArticleFaqAccordion faqs={article.faqs} />
         )}
 
+        {/* YouTube Channel Promo Banner */}
+        <div className="bg-gradient-to-r from-red-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-6 sm:p-8 border border-red-500/30 shadow-xl mb-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-500/30 flex items-center justify-center shrink-0">
+              <YouTubeIcon className="w-6 h-6 fill-red-500" />
+            </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-red-400 block mb-1">
+                Official YouTube Channel
+              </span>
+              <h3 className="font-serif font-bold text-lg sm:text-xl text-white mb-0.5">
+                The Harshita Dagha Show on YouTube
+              </h3>
+              <p className="text-xs text-zinc-400 max-w-lg">
+                Watch unscripted dialogues, founder interviews, and celebrity marketing masterclasses at @harshitadagha.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://www.youtube.com/@harshitadagha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-lg shadow-red-500/30 hover:scale-105 active:scale-95 transition-all shrink-0 cursor-pointer"
+          >
+            <YouTubeIcon className="w-4 h-4 fill-white" />
+            <span>Visit YouTube Channel</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        </div>
+
         {/* WhatsApp Direct Contact */}
         <div className="bg-gradient-to-r from-emerald-950/40 via-[#141418] to-[#141418] text-white rounded-3xl p-8 border border-emerald-500/30 shadow-xl mb-14 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
@@ -1055,11 +1161,17 @@ function renderInlineText(text: string): React.ReactNode {
       parts.push(...parseBold(text.slice(lastIndex, match.index)));
     }
     const label = match[1];
-    const href = match[2];
+    let href = match[2];
+    if (href.includes("youtube.com") || href.includes("youtu.be")) {
+      href = "https://www.youtube.com/@harshitadagha";
+    }
+    const isExternal = href.startsWith("http");
     parts.push(
       <a
         key={`link-${match.index}`}
         href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className="text-[#d89ba4] font-semibold underline underline-offset-4 hover:text-white transition-colors"
       >
         {label}

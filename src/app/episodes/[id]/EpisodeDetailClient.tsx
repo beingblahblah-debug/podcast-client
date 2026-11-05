@@ -25,7 +25,7 @@ import {
   Quote,
   ChevronDown
 } from "lucide-react";
-import { XTwitterIcon, LinkedInIcon } from "@/components/SocialIcons";
+import { XTwitterIcon, LinkedInIcon, YouTubeIcon } from "@/components/SocialIcons";
 import { EPISODES, Episode } from "@/data/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
 
@@ -216,6 +216,35 @@ export default function EpisodeDetailClient({ id }: { id: string }) {
           </section>
         </div>
 
+        {/* Full Video Podcast Player */}
+        <div className="mb-10">
+          <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${episode.youtubeId || "UIEBj-3enk0"}?autoplay=0&rel=0&modestbranding=1&playsinline=1`}
+              title={episode.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full border-0"
+            />
+          </div>
+          <div className="mt-3 flex items-center justify-between text-xs text-zinc-400">
+            <span className="flex items-center gap-1.5 text-zinc-300 font-mono">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              Stream full conversation in 4K resolution
+            </span>
+            <a
+              href="https://www.youtube.com/@harshitadagha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold"
+            >
+              <YouTubeIcon className="w-3.5 h-3.5 fill-current" />
+              <span>Watch on YouTube (@harshitadagha)</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
+        </div>
+
         {/* Executive Masterclass Dialogue Showcase & Official Streaming Links */}
         <div className="bg-[#141418] text-white rounded-3xl p-6 sm:p-8 shadow-2xl mb-10 relative overflow-hidden border border-white/10">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#d89ba4]/5 rounded-full blur-3xl pointer-events-none" />
@@ -265,17 +294,16 @@ export default function EpisodeDetailClient({ id }: { id: string }) {
                 </a>
               )}
 
-              {episode.youtubeUrl && (
-                <a
-                  href={episode.youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-xl bg-[#FF0000] hover:bg-[#e00000] text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
-                >
-                  <span>Watch on YouTube</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
+              <a
+                href="https://www.youtube.com/@harshitadagha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-xl bg-[#FF0000] hover:bg-[#e00000] text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm hover:scale-105 active:scale-95"
+              >
+                <YouTubeIcon className="w-3.5 h-3.5 fill-white" />
+                <span>Watch on YouTube (@harshitadagha)</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
 
               <button
                 onClick={handleShare}
