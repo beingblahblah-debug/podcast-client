@@ -128,8 +128,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic Blog Articles (Editorial set)
   const articleRoutes: MetadataRoute.Sitemap = ARTICLES.map((article) => ({
     url: `${baseUrl}/blog/${article.id}`,
-    lastModified: new Date(article.date),
-    changeFrequency: 'weekly',
+    lastModified: article.featured ? new Date() : new Date(article.date),
+    changeFrequency: 'daily',
     priority: article.featured ? 1.0 : 0.8,
   }));
 

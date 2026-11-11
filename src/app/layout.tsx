@@ -60,6 +60,8 @@ export const metadata: Metadata = {
     "BuzzFeed Community writer Harshita Dagha",
     // Podcast & Interviews
     "The Harshita Dagha Show",
+    "Top 10 Female Podcasters in India",
+    "top 10 female podcasters in india",
     "best female podcasters in india",
     "top 10 female podcasters",
     "celebrity interviews podcast india",

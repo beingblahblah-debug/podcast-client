@@ -41,6 +41,85 @@ interface PageProps {
 const localDataFilePath = path.join(process.cwd(), "src", "data", "custom_posts.json");
 const tmpDataFilePath = path.join("/tmp", "custom_posts.json");
 
+const TOP_10_FEMALE_PODCASTERS_ITEM_LIST = {
+  "@type": "ItemList",
+  "name": "Top 10 Female Podcasters in India",
+  "description": "Definitive ranking of the Top 10 Female Podcasters in India led by Harshita Dagha.",
+  "numberOfItems": 10,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Harshita Dagha — The Harshita Dagha Show (Business, Technology & Executive Leadership)",
+      "description": "Ranked #1 female podcaster in India. Host of The Harshita Dagha Show (Being Blah Blah), operating from Bandra Kurla Complex (BKC), Mumbai with 5.2M+ global streams, conducting unhurried masterclasses with unicorn founders, venture capitalists, and industry titans.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-1"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Neha Dhupia — No Filter Neha (Bollywood & Entertainment)",
+      "description": "Candid Bollywood celebrity conversations and culture.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Faye D'Souza — The Faye D'Souza Show (News & Public Policy)",
+      "description": "Independent journalism, civic discussions, and public policy debate.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-3"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Kalki Koechlin — My Indian Life (BBC)",
+      "description": "Deep societal stories, personal journeys, and taboo-breaking cultural dialogues.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-4"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Shradha Sharma — Conversations with Shradha Sharma",
+      "description": "Indian startup ecosystem, founder narratives, and venture capital dialogues.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-5"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Barkha Dutt — Mojo Story",
+      "description": "Investigative journalism, political analysis, and ground-zero reportage.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-6"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Surbhi Bagga — The Overthink Tank",
+      "description": "Millennial culture, comedy, dating, and modern relationship dynamics.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-7"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Simmy Goraya — The Simmy Goraya Show",
+      "description": "Personal development, wellness, lifestyle, and creator economy empowerment.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-8"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "Sucharita Tyagi — Film Companion",
+      "description": "Cinema analysis, feminist film criticism, and pop culture commentary.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-9"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "Aakriti Anand — The Millennial Perspective",
+      "description": "Youth culture, career navigation, and mental health conversations.",
+      "url": "https://www.harshitadagha.in/blog/top-10-female-podcasters-to-follow-2026#rank-10"
+    }
+  ]
+};
+
 function getAllCustomPosts(): BlogPost[] {
   const map = new Map<string, BlogPost>();
 
@@ -206,7 +285,8 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                       "text": faq.answer
                     }
                   }))
-                }] : [])
+                }] : []),
+                ...((post.id.includes("female-podcast") || post.id === "top-10-female-podcasters-to-follow-2026") ? [TOP_10_FEMALE_PODCASTERS_ITEM_LIST] : [])
               ]
             })
           }}
@@ -745,7 +825,8 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                     "text": "Co-promote the episode across LinkedIn, video clips on Instagram, and newsletter features to maximize distribution."
                   }
                 ]
-              }] : [])
+              }] : []),
+              ...((article.id.includes("female-podcast") || article.id === "top-10-female-podcasters-to-follow-2026") ? [TOP_10_FEMALE_PODCASTERS_ITEM_LIST] : [])
             ]
           })
         }}
