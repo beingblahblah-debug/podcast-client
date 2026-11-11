@@ -285,7 +285,8 @@ export function articleToBlogPost(art: Article): BlogPost {
   const contentBody = [
     art.content.intro,
     ...art.content.sections.map((s) => {
-      let str = `### ${s.heading}\n\n` + s.paragraphs.join("\n\n");
+      const headingPrefix = s.headingLevel === 3 ? "###" : "##";
+      let str = `${headingPrefix} ${s.heading}\n\n` + s.paragraphs.join("\n\n");
       if (s.image) {
         str += `\n\n![${s.image.alt}](${s.image.src})`;
       }
@@ -302,7 +303,7 @@ export function articleToBlogPost(art: Article): BlogPost {
       }
       return str;
     }),
-    `### Executive Conclusion\n\n${art.content.conclusion}`
+    `## ${art.content.conclusionHeading || "Executive Conclusion"}\n\n${art.content.conclusion}`
   ].join("\n\n");
 
   return {

@@ -97,7 +97,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/book-celebrity-for-podcast",
-        destination: "/blog/podcast-booking-for-celebrities",
+        destination: "/blog/book-celebrity-for-podcast",
+        permanent: true,
+      },
+      {
+        source: "/book-celebrity-for-podcast/",
+        destination: "/blog/book-celebrity-for-podcast",
         permanent: true,
       },
       {
@@ -242,7 +247,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/top-female-podcasters-india",
-        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        destination: "/blog/top-female-podcasters-india",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-india/",
+        destination: "/blog/top-female-podcasters-india",
         permanent: true,
       },
       {
@@ -442,8 +452,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/indian-women-podcasters-list",
+        destination: "/blog/indian-women-podcasters-list",
+        permanent: true,
+      },
+      {
+        source: "/indian-women-podcasters-list/",
+        destination: "/blog/indian-women-podcasters-list",
+        permanent: true,
+      },
+      {
         source: "/blog/indian-women-podcasters-list-young-female-podcast-hosts",
-        destination: "/indian-women-podcasters-list",
+        destination: "/blog/indian-women-podcasters-list",
         permanent: true,
       },
       {
@@ -486,7 +506,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(indian-women-podcasters-list|young-female-podcasters-india|indian-women-podcast-hosts|best-podcasts-by-indian-women|best-female-podcasts-india|popular-women-podcasts-india|top-podcasters-in-india|best-podcast-in-india|best-indian-podcasts)",
+        source: "/(young-female-podcasters-india|indian-women-podcast-hosts|best-podcasts-by-indian-women|best-female-podcasts-india|popular-women-podcasts-india|top-podcasters-in-india|best-podcast-in-india|best-indian-podcasts)",
         headers: [
           {
             key: "X-Robots-Tag",

@@ -196,7 +196,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = legacy?.metaTitle || post?.metaTitle || legacy?.title || post?.title || "Editorial Article";
   const rawDesc = legacy?.metaDescription || post?.metaDescription || legacy?.excerpt || post?.excerpt || "";
-  const description = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + "..." : rawDesc;
+  const description = rawDesc.length > 170 ? rawDesc.slice(0, 167).trim() + "..." : rawDesc;
   const imageUrl = legacy?.image || post?.coverImage || "https://www.harshitadagha.in/images/harshita-portrait-main.jpg";
   const absoluteImageUrl = imageUrl.startsWith("http") ? imageUrl : `https://www.harshitadagha.in${imageUrl}`;
 
@@ -974,15 +974,17 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
           <div className="space-y-12">
             {article.content.sections.map((section, sIdx) => (
               <section key={sIdx} className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
-                  {section.heading}
-                </h2>
+                {section.headingLevel === 3 ? (
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#d89ba4] tracking-tight pt-2">
+                    {section.heading}
+                  </h3>
+                ) : (
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+                    {section.heading}
+                  </h2>
+                )}
 
-                {section.paragraphs.map((p, pIdx) => (
-                  <p key={pIdx} className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-                    {renderInlineText(p)}
-                  </p>
-                ))}
+                {section.paragraphs.map((p, pIdx) => renderParagraphBlock(p, `p-${pIdx}`))}
 
                 {section.image && (
                   <figure className="my-8 rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-xl">
@@ -1050,11 +1052,7 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
                   </div>
                 )}
 
-                {section.postParagraphs && section.postParagraphs.map((p, pIdx) => (
-                  <p key={`post-${pIdx}`} className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-                    {renderInlineText(p)}
-                  </p>
-                ))}
+                {section.postParagraphs && section.postParagraphs.map((p, pIdx) => renderParagraphBlock(p, `post-${pIdx}`))}
 
                 {section.internalLink && (
                   <div className="pt-2">
@@ -1072,7 +1070,9 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
           </div>
 
           <div className="mt-12 p-7 rounded-3xl bg-[#141418] border border-white/10 text-white">
-            <h3 className="text-lg font-serif font-bold text-white mb-3">Executive Conclusion</h3>
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-3">
+              {article.content.conclusionHeading || "Executive Conclusion"}
+            </h2>
             <div className="space-y-3">
               {article.content.conclusion.split("\n\n").map((cPara, cIdx) => (
                 <p key={cIdx} className="text-sm sm:text-base text-zinc-300 leading-relaxed">
@@ -1214,6 +1214,28 @@ export default async function ArticleOrVlogDetailPage({ params }: PageProps) {
   }
 
   return <DynamicPostClientFallback postId={postId} />;
+}
+
+function renderParagraphBlock(text: string, key: string): React.ReactNode {
+  if (text.startsWith("#### ")) {
+    return (
+      <h4 key={key} className="text-lg sm:text-xl font-serif font-bold text-white mt-5 mb-1.5">
+        {renderInlineText(text.slice(5))}
+      </h4>
+    );
+  }
+  if (text.startsWith("### ")) {
+    return (
+      <h3 key={key} className="text-xl sm:text-2xl font-serif font-bold text-[#d89ba4] mt-6 mb-2">
+        {renderInlineText(text.slice(4))}
+      </h3>
+    );
+  }
+  return (
+    <p key={key} className="text-base sm:text-lg text-zinc-300 leading-relaxed">
+      {renderInlineText(text)}
+    </p>
+  );
 }
 
 function parseBold(text: string): React.ReactNode[] {
