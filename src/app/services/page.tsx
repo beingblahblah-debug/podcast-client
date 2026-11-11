@@ -2,19 +2,21 @@ import React from "react";
 import type { Metadata } from "next";
 import { 
   CheckCircle2, 
-  Briefcase
+  Briefcase,
+  Sparkles,
+  ArrowRight
 } from "lucide-react";
 import { PRESS_LOGOS } from "@/data/episodes";
 
 export const metadata: Metadata = {
-  title: "Branding, PR, GEO & Podcast Services",
-  description: "Explore brand strategy, personal branding, GEO search visibility, digital PR, and podcast interviews by Harshita Dagha and Beingblahblah in Mumbai.",
+  title: "Branding, PR, GEO & Media Solutions | Beingblahblah Services",
+  description: "Collaborate with Beingblahblah for strategic branding, PR, digital marketing, corporate podcasting, celebrity marketing, and GEO AI search visibility in Mumbai.",
   alternates: {
     canonical: "https://www.harshitadagha.in/services",
   },
   openGraph: {
-    title: "Branding, PR, GEO & Podcast Services | Harshita Dagha",
-    description: "Explore brand strategy, personal branding, GEO search visibility, digital PR, and podcast interviews by Harshita Dagha and Beingblahblah in Mumbai.",
+    title: "Branding, PR, GEO & Media Solutions | Beingblahblah Services",
+    description: "Collaborate with Beingblahblah for strategic branding, PR, digital marketing, corporate podcasting, celebrity marketing, and GEO AI search visibility in Mumbai.",
     url: "https://www.harshitadagha.in/services",
     type: "website",
     images: [
@@ -22,32 +24,32 @@ export const metadata: Metadata = {
         url: "/images/harshita-portrait-main.jpg",
         width: 545,
         height: 682,
-        alt: "Harshita Dagha - Services",
+        alt: "Beingblahblah - Strategic Branding & PR Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Branding, PR, GEO & Podcast Services | Harshita Dagha",
-    description: "Explore brand strategy, personal branding, GEO search visibility, digital PR, and podcast interviews by Harshita Dagha and Beingblahblah in Mumbai.",
+    title: "Branding, PR, GEO & Media Solutions | Beingblahblah Services",
+    description: "Collaborate with Beingblahblah for strategic branding, PR, digital marketing, corporate podcasting, celebrity marketing, and GEO AI search visibility in Mumbai.",
     images: ["/images/harshita-portrait-main.jpg"],
   },
 };
 
 export default function ServicesPage() {
-  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20discussing%20branding,%20PR,%20GEO,%20or%20podcast%20services.";
+  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Beingblahblah,%20we%20are%20interested%20in%20discussing%20branding,%20PR,%20GEO,%20or%20podcast%20services.";
 
   const services = [
     {
       id: "brand-strategy",
-      title: "Brand Strategy & Business Storytelling (Beingblahblah)",
+      title: "Brand Strategy & Business Storytelling",
       tagline: "Memorable Narratives That Drive Market Dominance",
-      description: "Led by Harshita Dagha, founder of Beingblahblah. With 16+ years of branding and digital marketing expertise, she gives brands celebs, visibility, and stories that people remember.",
+      description: "Beingblahblah helps brands build visibility, credibility and memorable brand stories. Led by founder Harshita Dagha Maisheri and supported by the Beingblahblah strategy team, we translate intricate value propositions into sharp, high-recall market positioning.",
       deliverables: [
         "Comprehensive brand positioning, core narrative, and messaging matrix",
         "Multi-channel digital marketing and content strategy roadmap",
         "Visual & verbal identity alignment for modern digital channels",
-        "Direct consultation with Harshita Dagha and Beingblahblah team",
+        "Direct strategic consultation with founder Harshita Dagha Maisheri & team",
         "Campaign conceptualization tailored for high-recall brand visibility"
       ],
       idealFor: "Founders, consumer brands, high-growth startups, and established enterprises.",
@@ -57,7 +59,7 @@ export default function ServicesPage() {
       id: "personal-branding",
       title: "Personal Branding & LinkedIn Strategy",
       tagline: "Establish Unshakeable Industry Authority",
-      description: "Transforming founders, CXOs, entrepreneurs, and public personalities into category-defining digital authorities across LinkedIn, podcasting, and national media.",
+      description: "Beingblahblah transforms founders, CXOs, entrepreneurs, and public personalities into category-defining digital authorities across LinkedIn, national media, and executive stages. Led by founder Harshita Dagha Maisheri.",
       deliverables: [
         "Executive persona definition & strategic positioning blueprint",
         "High-conversion LinkedIn thought leadership & content calendar",
@@ -66,13 +68,13 @@ export default function ServicesPage() {
         "Cross-platform amplification across newsletters and podcasts"
       ],
       idealFor: "Venture-backed founders, enterprise leaders, investors, and domain experts.",
-      badge: "High Growth"
+      badge: "Executive Authority"
     },
     {
       id: "geo-ai-visibility",
-      title: "Generative Engine Optimization (GEO) & AI Search Visibility",
+      title: "Generative Engine Optimization (GEO)",
       tagline: "Future-Proof Your Brand for AI-Powered Discovery",
-      description: "Specialized GEO frameworks ensuring your brand, founder profile, and products are prominently cited and accurately surfaced across Google AI Overviews, ChatGPT, Gemini, and Perplexity.",
+      description: "Beingblahblah deploys specialized GEO frameworks ensuring your company, founder profile, and products are prominently cited and accurately recommended across Google AI Overviews, ChatGPT, Gemini, and Perplexity.",
       deliverables: [
         "Entity audit across knowledge graphs, Wikidata, and verified directories",
         "AI citation engineering for ChatGPT, Gemini, Perplexity & Google AI Overviews",
@@ -84,13 +86,27 @@ export default function ServicesPage() {
       badge: "AI-Era Frontier"
     },
     {
-      id: "digital-pr-celebrity",
-      title: "Digital PR & Celebrity Marketing",
-      tagline: "High-Trust Exposure & Cultural Relevance",
-      description: "Leverage Harshita's 16+ years of PR relationships, celebrity connections, and media associations (including work associated with Times of India, Femina, Forbes India, Mid-day, and India.com).",
+      id: "seo-ai-visibility",
+      title: "SEO & AI Search Visibility",
+      tagline: "Sustainable Organic Rankings Across Human & Machine Engines",
+      description: "Beingblahblah combines technical search engine optimization with high-intent semantic content architectures, securing durable organic search dominance for corporate brands and executive offerings.",
       deliverables: [
-        "Strategic celebrity collaborations, guest tie-ups, and influencer alignments",
+        "Comprehensive keyword entity mapping & semantic topic clusters",
+        "Technical SEO, Core Web Vitals optimization & structured data injection",
+        "Long-form authoritative pillar guide production",
+        "IndexNow instant search crawler syndication and crawl-budget auditing"
+      ],
+      idealFor: "Companies seeking long-term inbound search visibility without endless ad spend.",
+      badge: "Organic Search"
+    },
+    {
+      id: "digital-pr-celebrity",
+      title: "Public Relations & Digital PR",
+      tagline: "High-Trust Media Coverage & Sovereign Reputation",
+      description: "Beingblahblah manages strategic PR outreach and earned media placements across premier Indian publications (including editorial work associated with Times of India, Femina, Forbes India, Mid-day, and India.com).",
+      deliverables: [
         "Digital PR distribution to top-tier publications and news portals",
+        "Strategic celebrity collaborations, guest tie-ups, and influencer alignments",
         "Crisis communication and positive brand narrative reinforcement",
         "Press release drafting, media pitching, and interview syndication",
         "High-credibility third-party validation assets"
@@ -99,10 +115,38 @@ export default function ServicesPage() {
       badge: "Media & PR"
     },
     {
+      id: "celebrity-marketing",
+      title: "Celebrity Marketing & Influencer Collaborations",
+      tagline: "Cultural Relevance & Maximum Audience Recall",
+      description: "Beingblahblah orchestrates authentic celebrity brand endorsements, store inaugurations, corporate chief guest appearances, and high-impact influencer campaigns with strict contract and rider management.",
+      deliverables: [
+        "Celebrity talent vetting, suitability assessment, and fee negotiation",
+        "Commercial contract formulation with precise promotional deliverables",
+        "On-ground event appearance coordination and security alignment",
+        "Multi-asset social amplification and media press coverage"
+      ],
+      idealFor: "Retail brands, luxury lifestyle companies, college festivals, and wedding celebrations.",
+      badge: "High Impact"
+    },
+    {
+      id: "social-media",
+      title: "Social Media Management & Video Production",
+      tagline: "High-Engagement Community Building & Viral Content",
+      description: "Beingblahblah drives multi-channel social growth—proven by our own 100K+ Instagram community (@beingblahblah)—through cinematic vertical reels, strategic carousels, and high-converting storytelling.",
+      deliverables: [
+        "End-to-end social media strategy, visual identity, and monthly content calendar",
+        "Cinematic vertical video editing (Reels, YouTube Shorts, LinkedIn Video)",
+        "Compelling narrative copywriting, psychological hooks, and hashtag architectures",
+        "Active community engagement and inbound commercial lead routing"
+      ],
+      idealFor: "Emerging brands and founders seeking authentic social proof and viral reach.",
+      badge: "Community Growth"
+    },
+    {
       id: "featured-interview",
-      title: "Featured Founder & Executive Podcast Interview",
+      title: "Podcast Production & Brand Interviews",
       tagline: "Deep-Dive 60-90 Minute Masterclass Broadcast",
-      description: "A broadcast-grade long-form conversation exploring your inflection points, proprietary frameworks, and company vision on The Harshita Dagha Show, distributed across Apple, Spotify, and 4K YouTube.",
+      description: "Beingblahblah produces broadcast-grade long-form conversations exploring your inflection points, proprietary frameworks, and company vision on The Harshita Dagha Show, distributed across Apple, Spotify, and 4K YouTube.",
       deliverables: [
         "60-90 minute deep-dive interview in Mumbai Studio HQ (BKC) or 4K remote studio",
         "Permanent distribution to 65,000+ verified active listeners",
@@ -111,13 +155,41 @@ export default function ServicesPage() {
         "High-resolution studio portrait photography package"
       ],
       idealFor: "Unicorn founders, venture capitalists, book authors, and category disruptors.",
-      badge: "Most Requested"
+      badge: "Broadcast Studio"
+    },
+    {
+      id: "corporate-podcasting",
+      title: "Corporate Podcasting & Enterprise Media",
+      tagline: "Turnkey Branded Show Development for Enterprises",
+      description: "Beingblahblah designs, produces, and distributes bespoke corporate podcasts for technology companies, financial institutions, and industry associations looking to dominate B2B voice media.",
+      deliverables: [
+        "Concept development, show naming, acoustic audio branding & cover design",
+        "Executive media training and interview technique preparation",
+        "Turnkey recording logistics, multi-track audio engineering & 4K editing",
+        "Enterprise syndication to Spotify, Apple Podcasts, YouTube, and corporate intranets"
+      ],
+      idealFor: "B2B enterprises, industry councils, and venture capital firms.",
+      badge: "Enterprise Media"
+    },
+    {
+      id: "content-marketing",
+      title: "Content Strategy & Digital Marketing",
+      tagline: "Commercial Storytelling That Converts Attention Into Trust",
+      description: "Beingblahblah bridges editorial creativity with performance marketing, designing full-funnel content ecosystems that attract, educate, and convert high-value decision-makers.",
+      deliverables: [
+        "Full-funnel customer journey mapping and content gap analysis",
+        "Authoritative whitepapers, industry reports, and editorial newsletters",
+        "Repurposing engine: turning 1 pillar video into 20+ multi-channel assets",
+        "Conversion-focused copy for landing pages and executive outreach"
+      ],
+      idealFor: "Brands looking to establish sustainable, compound organic customer acquisition.",
+      badge: "Full-Funnel Growth"
     },
     {
       id: "event-moderation",
-      title: "TEDx Speaker Keynotes & Summit Moderation",
+      title: "Keynote Speaking & Summit Moderation",
       tagline: "High-Energy, Intellectually Rigorous Stage Presence",
-      description: "Bring TEDx Speaker Harshita Dagha to your global conference, investor summit, or flagship gala for keynote talks and insightful, PR-fluff-free panel moderation.",
+      description: "Bring TEDx Speaker Harshita Dagha Maisheri to your global conference, investor summit, or flagship gala for keynote talks and insightful, PR-fluff-free panel moderation. Coordinated by Beingblahblah.",
       deliverables: [
         "Main-stage keynote speech on branding, storytelling, or AI search",
         "Fireside chat moderation with prominent VIPs and unicorn leaders",
@@ -131,7 +203,7 @@ export default function ServicesPage() {
 
   return (
     <div className="py-12 md:py-20 bg-[#0c0c0e] text-[#f4f4f5]">
-      {/* Structured Schema: Services & Breadcrumbs */}
+      {/* Structured Schema: Organization Provider Services & Breadcrumbs */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -160,14 +232,13 @@ export default function ServicesPage() {
                 "name": s.title,
                 "description": s.description,
                 "provider": {
-                  "@type": "Person",
-                  "name": "Harshita Dagha",
-                  "alternateName": "Harshita Dagha",
-                  "worksFor": {
-                    "@type": "Organization",
-                    "name": "Beingblahblah"
-                  },
-                  "url": "https://www.harshitadagha.in"
+                  "@type": "Organization",
+                  "name": "Beingblahblah",
+                  "url": "https://www.harshitadagha.in",
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Harshita Dagha Maisheri"
+                  }
                 },
                 "areaServed": ["Mumbai", "Bengaluru", "Delhi NCR", "Global Remote"],
                 "serviceType": s.tagline,
@@ -180,122 +251,57 @@ export default function ServicesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header with SEO Keywords & Trust Signals */}
+        {/* Header with Beingblahblah Repositioning */}
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 text-[#d89ba4] border border-white/10 text-xs font-bold uppercase tracking-wider mb-4">
             <Briefcase className="w-3.5 h-3.5 text-[#d89ba4]" />
-            <span>HARSHITA DAGHA · FOUNDER, BEINGBLAHBLAH</span>
+            <span>BEINGBLAHBLAH · BUSINESS SERVICES</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.12] mb-4">
-            Branding, Digital PR, GEO & Podcast Services
+            Strategic Branding, Digital PR, GEO &amp; Media Solutions
           </h1>
-          <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
-            Collaborate directly with <strong className="text-white font-medium">Harshita Dagha</strong> — TEDx Speaker, branding expert, PR strategist, GEO specialist, and founder of <em className="text-[#d89ba4]">Beingblahblah</em>. With 16+ years of expertise, she gives brands celebs, visibility, and stories that people remember.
+          <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+            Collaborate with <strong className="text-white font-semibold">Beingblahblah</strong> for strategic branding, PR, digital marketing and media solutions. Beingblahblah helps brands build visibility, credibility and memorable brand stories. Led by founder <strong className="text-[#d89ba4]">Harshita Dagha Maisheri</strong> (TEDx Speaker, 16+ years experience) and supported by the Beingblahblah team.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
-              <span className="font-semibold text-white">New Benchmark Guide:</span>
-              <a 
-                href="/blog/top-digital-pr-and-personal-brands-in-india"
-                className="text-[#d89ba4] hover:text-white underline font-medium transition-colors"
-              >
-                Top Digital PR &amp; Personal Brands in India (2026) &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs sm:text-sm text-pink-200">
-              <span className="font-semibold text-white">Featured PR Guide:</span>
-              <a 
-                href="/blog/public-relations-agency-in-mumbai"
-                className="text-[#d89ba4] hover:text-white underline font-medium transition-colors"
-              >
-                Public Relations Agency in Mumbai &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-amber-200">
-              <span className="font-semibold text-white">Celebrity Booking Guide:</span>
-              <a 
-                href="/blog/celebrity-booking-agency-india"
-                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
-              >
-                Celebrity Booking Agency India &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
-              <span className="font-semibold text-white">Celebrity Podcast Booking:</span>
-              <a 
-                href="/blog/podcast-booking-for-celebrities"
-                className="text-[#f472b6] hover:text-white underline font-medium transition-colors"
-              >
-                Podcast Booking for Celebrities Guide &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs sm:text-sm text-pink-200">
-              <span className="font-semibold text-white">Private Events &amp; Weddings:</span>
-              <a 
-                href="/blog/book-celebrity-for-private-event"
-                className="text-[#f472b6] hover:text-white underline font-medium transition-colors"
-              >
-                Book Celebrity for Private Event Guide &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm text-emerald-200">
-              <span className="font-semibold text-white">Event Appearances:</span>
-              <a 
-                href="/blog/book-celebrity-for-event"
-                className="text-[#34d399] hover:text-white underline font-medium transition-colors"
-              >
-                Book Celebrity for Event Guide &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs sm:text-sm text-blue-200">
-              <span className="font-semibold text-white">Chief Guest Booking:</span>
-              <a 
-                href="/blog/celebrity-chief-guest-booking-for-events"
-                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
-              >
-                Celebrity Chief Guest Booking &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs sm:text-sm text-pink-200">
-              <span className="font-semibold text-white">Wedding Booking:</span>
-              <a 
-                href="/blog/celebrity-for-wedding-event-booking"
-                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
-              >
-                Celebrity for Wedding Event &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs sm:text-sm text-indigo-200">
-              <span className="font-semibold text-white">College Fests:</span>
-              <a 
-                href="/blog/celebrity-for-college-fest-booking"
-                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
-              >
-                Celebrity for College Fest &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-amber-200">
-              <span className="font-semibold text-white">Store Launches:</span>
-              <a 
-                href="/blog/celebrity-for-store-launch-in-india"
-                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
-              >
-                Celebrity for Store Launch &rarr;
-              </a>
-            </div>
-            <div className="inline-flex items-center gap-2 p-3 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm text-emerald-200">
-              <span className="font-semibold text-white">Inaugurations:</span>
-              <a 
-                href="/blog/celebrity-for-inauguration-event-booking"
-                className="text-[#fbbf24] hover:text-white underline font-medium transition-colors"
-              >
-                Celebrity for Inauguration Event &rarr;
-              </a>
-            </div>
 
-
-
-
+          {/* Quick Category Resource Navigation */}
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            <a 
+              href="/blog/top-digital-pr-and-personal-brands-in-india"
+              className="inline-flex items-center gap-1.5 p-2.5 px-3.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs text-purple-200 hover:text-white transition-colors"
+            >
+              <span>Digital PR &amp; Brands Guide &rarr;</span>
+            </a>
+            <a 
+              href="/blog/public-relations-agency-in-mumbai"
+              className="inline-flex items-center gap-1.5 p-2.5 px-3.5 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 hover:text-white transition-colors"
+            >
+              <span>PR Agency in Mumbai &rarr;</span>
+            </a>
+            <a 
+              href="/blog/celebrity-booking-agency-india"
+              className="inline-flex items-center gap-1.5 p-2.5 px-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 hover:text-white transition-colors"
+            >
+              <span>Celebrity Booking Guide &rarr;</span>
+            </a>
+            <a 
+              href="/blog/podcast-booking-for-celebrities"
+              className="inline-flex items-center gap-1.5 p-2.5 px-3.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs text-purple-200 hover:text-white transition-colors"
+            >
+              <span>Podcast Booking for Celebrities &rarr;</span>
+            </a>
+            <a 
+              href="/blog/book-celebrity-for-private-event"
+              className="inline-flex items-center gap-1.5 p-2.5 px-3.5 rounded-xl bg-pink-500/10 border border-pink-500/20 text-xs text-pink-200 hover:text-white transition-colors"
+            >
+              <span>Private Event Celebrity Booking &rarr;</span>
+            </a>
+            <a 
+              href="/blog/book-celebrity-for-event"
+              className="inline-flex items-center gap-1.5 p-2.5 px-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-200 hover:text-white transition-colors"
+            >
+              <span>Event Appearance Guide &rarr;</span>
+            </a>
           </div>
         </div>
 
@@ -304,13 +310,13 @@ export default function ServicesPage() {
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Fast-Track Production Booking</span>
+              <span>Direct Production Office</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-1">
-              Need a swift response on dates or sponsorship?
+              Discuss Your Campaign Requirements
             </h2>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              Connect directly with Harshita Dagha&apos;s executive producer via WhatsApp for quick availability checks, rate cards, and studio booking.
+              Connect directly with the Beingblahblah production desk via WhatsApp for rapid availability checks, bespoke scopes, and studio scheduling.
             </p>
           </div>
 
@@ -324,7 +330,7 @@ export default function ServicesPage() {
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
-              <span>Instant WhatsApp Inquiry</span>
+              <span>Instant WhatsApp Desk</span>
             </a>
           </div>
         </div>
@@ -334,6 +340,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.id}
+              id={service.id}
               className="bg-[#141418] rounded-3xl p-8 border border-white/10 hover:border-[#d89ba4]/40 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
@@ -342,7 +349,7 @@ export default function ServicesPage() {
                     {service.badge}
                   </span>
                   <span className="text-xs text-zinc-400 font-medium font-mono">
-                    Mumbai HQ, Bengaluru & Global Remote
+                    Mumbai HQ · Pan-India &amp; Global
                   </span>
                 </div>
 
@@ -354,7 +361,7 @@ export default function ServicesPage() {
                   {service.tagline}
                 </p>
 
-                <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+                <p className="text-sm text-zinc-300 leading-relaxed mb-6 font-normal">
                   {service.description}
                 </p>
 
@@ -379,10 +386,10 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* Direct Connect on WhatsApp - No other page redirects */}
+              {/* Direct Connect on WhatsApp */}
               <div className="pt-5 border-t border-white/10">
                 <a
-                  href={`https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`}
+                  href={`https://wa.me/918779003799?text=Hi%20Beingblahblah,%20we%20are%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-bold shadow-lg shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
@@ -400,10 +407,10 @@ export default function ServicesPage() {
         {/* Media & Press Credibility Banner */}
         <div className="bg-[#141418] rounded-3xl p-8 sm:p-12 border border-white/10 mb-20 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-[#d89ba4] mb-3 block">
-            Recognized by World-Class Media & Cultural Institutions
+            Recognized by World-Class Media &amp; Cultural Institutions
           </span>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-8">
-            Our conversations are cited across global journalism
+            Our strategic work &amp; media properties are cited across global journalism
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-80">
             {PRESS_LOGOS.map((press) => (

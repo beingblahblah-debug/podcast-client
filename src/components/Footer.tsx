@@ -7,7 +7,7 @@ import {
   Mail, 
   CheckCircle2, 
   ArrowRight, 
-  Sparkles 
+  Sparkles
 } from "lucide-react";
 import { XTwitterIcon, LinkedInIcon, YouTubeIcon, InstagramIcon } from "@/components/SocialIcons";
 
@@ -35,13 +35,13 @@ export default function Footer() {
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#d89ba4]/10 text-[#d89ba4] border border-[#d89ba4]/25 text-xs font-semibold uppercase tracking-wider mb-4">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>The Harshita Dagha Letter</span>
+                <span>The Beingblahblah Dispatch</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-serif text-white tracking-tight mb-3">
-                Unedited show notes & backstage debriefs delivered every Sunday.
+                Strategic brand insights, PR frameworks &amp; backstage media debriefs.
               </h2>
               <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-                Join over 65,000 founders, venture capitalists, and thinkers who receive Harshita&apos;s personal startup breakdowns, unreleased audio snippets, and founder mental frameworks.
+                Join founders, venture capitalists, and brand leaders who receive our weekly executive breakdowns, unreleased podcast snippets, and narrative strategies.
               </p>
             </div>
 
@@ -50,7 +50,7 @@ export default function Footer() {
                 <div className="flex items-center gap-3 p-4 rounded-2xl bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">
                   <CheckCircle2 className="w-5 h-5 shrink-0" />
                   <span className="text-sm font-medium">
-                    You&apos;re on the list! Check your inbox for the welcome guide.
+                    You&apos;re on the list! Check your inbox for our latest briefing.
                   </span>
                 </div>
               ) : (
@@ -60,7 +60,7 @@ export default function Footer() {
                     <input
                       type="email"
                       required
-                      placeholder="Enter your personal email"
+                      placeholder="Enter your executive email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0c0c0e] border border-white/15 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#d89ba4] transition-all"
@@ -82,32 +82,37 @@ export default function Footer() {
           </div>
         </div>
 
-
         {/* Multi-column navigation links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+          
           {/* Brand Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-4 group">
               <div className="relative w-10 h-10 rounded-xl bg-black border border-white/15 overflow-hidden flex items-center justify-center shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt="Harshita Dagha Logo"
+                  alt="Beingblahblah Logo"
                   width={40}
                   height={40}
                   className="object-contain p-1"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-bold text-lg sm:text-xl text-white tracking-wide group-hover:text-[#d89ba4] transition-colors">
-                  HARSHITA DAGHA
+                <span className="font-sans font-black text-xl text-white tracking-wider group-hover:text-[#d89ba4] transition-colors uppercase">
+                  BEINGBLAHBLAH
                 </span>
                 <span className="text-[10px] font-semibold uppercase tracking-widest text-[#d89ba4]">
-                  TEDx Speaker · Founder, Beingblahblah
+                  Branding | PR | Digital Marketing | Media | Podcasting | GEO
                 </span>
               </div>
             </Link>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-4 max-w-sm font-normal">
-              Indian Podcast Host, Branding Expert, PR Strategist, GEO Expert, and Social Media Strategist with 16+ years of experience. Giving brands celebs, visibility, and stories that people remember.
+            
+            <p className="text-zinc-400 text-sm leading-relaxed mb-3 max-w-sm font-normal">
+              Beingblahblah is a brand communication and digital visibility platform helping businesses, founders and professionals build recognition, authority and audience trust through strategic storytelling, digital PR and media.
+            </p>
+
+            <p className="text-xs text-zinc-400 mb-5">
+              Founded by <strong className="text-white">Harshita Dagha Maisheri</strong> (16+ years experience in branding, PR &amp; digital marketing).
             </p>
             
             {/* Direct Contact Badges in Footer */}
@@ -127,24 +132,26 @@ export default function Footer() {
               </p>
             </div>
 
+            {/* Social Icons with Instagram Highlight */}
             <div className="flex items-center space-x-3">
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-400 hover:text-white flex items-center justify-center transition-colors"
-                aria-label="X (formerly Twitter)"
-              >
-                <XTwitterIcon className="w-4 h-4" />
-              </a>
               <a 
                 href="https://www.instagram.com/beingblahblah" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-400 hover:text-white flex items-center justify-center transition-colors"
-                aria-label="Instagram"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-600/30 via-pink-600/30 to-rose-600/30 border border-pink-500/40 text-pink-300 hover:text-white transition-all text-xs font-bold"
+                aria-label="Beingblahblah Instagram 100K+ Community"
               >
                 <InstagramIcon className="w-4 h-4" />
+                <span>@beingblahblah (100K+)</span>
+              </a>
+              <a 
+                href="https://www.youtube.com/@beingblahblah" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-400 hover:text-white flex items-center justify-center transition-colors"
+                aria-label="YouTube"
+              >
+                <YouTubeIcon className="w-4 h-4" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/harshitadagha" 
@@ -156,47 +163,46 @@ export default function Footer() {
                 <LinkedInIcon className="w-4 h-4" />
               </a>
               <a 
-                href="https://www.youtube.com/@harshitadagha" 
+                href="https://twitter.com" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-400 hover:text-white flex items-center justify-center transition-colors"
-                aria-label="YouTube"
+                aria-label="X (formerly Twitter)"
               >
-                <YouTubeIcon className="w-4 h-4" />
+                <XTwitterIcon className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Show & Media Links */}
+          {/* Company & Offerings */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-200 mb-4">
-              Show & Media
+              Our Services
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/blog" className="hover:text-[#d89ba4] text-[#d89ba4] font-semibold transition-colors flex items-center gap-1.5">
-                  <span>Blog & Video Vlogs</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-red-600/30 text-red-300 border border-red-500/30 font-bold">
-                    VLOGS
-                  </span>
+                <Link href="/services#brand-strategy" className="text-zinc-400 hover:text-white transition-colors">
+                  Brand Strategy &amp; Storytelling
                 </Link>
               </li>
               <li>
-                <Link href="/highlights" className="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>Show Highlights & Reels</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 font-bold">
-                    VIRAL
-                  </span>
+                <Link href="/services#digital-pr-celebrity" className="text-zinc-400 hover:text-white transition-colors">
+                  Public Relations &amp; Digital PR
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-zinc-400 hover:text-white transition-colors">
-                  Branding & PR Services
+                <Link href="/services#celebrity-marketing" className="text-zinc-400 hover:text-white transition-colors">
+                  Celebrity Marketing &amp; Booking
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#social-media" className="text-zinc-400 hover:text-white transition-colors">
+                  Social Media &amp; Vertical Video
                 </Link>
               </li>
               <li>
                 <Link href="/services#personal-branding" className="text-zinc-400 hover:text-white transition-colors">
-                  Personal Branding & LinkedIn
+                  Personal Branding &amp; LinkedIn
                 </Link>
               </li>
               <li>
@@ -205,59 +211,64 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services#featured-interview" className="text-zinc-400 hover:text-white transition-colors">
-                  Executive Podcast Interviews
+                <Link href="/services#corporate-podcasting" className="text-zinc-400 hover:text-white transition-colors">
+                  Corporate Podcasting
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation Links */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-200 mb-4">
-              Host & Studio
+              Beingblahblah
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/profile" className="text-[#d89ba4] font-semibold hover:underline transition-colors">
-                  Harshita Dagha Maisheri Profile
+                <Link href="/about" className="text-[#d89ba4] font-semibold hover:underline transition-colors">
+                  About Beingblahblah
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-zinc-400 hover:text-white transition-colors">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/work" className="text-zinc-400 hover:text-white transition-colors">
+                  Our Work &amp; Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/episodes" className="text-zinc-400 hover:text-white transition-colors">
+                  Media &amp; Podcast
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="text-zinc-400 hover:text-white transition-colors">
-                  Articles, Guides & Insights
+                  Blog &amp; Insights
                 </Link>
               </li>
               <li>
-                <Link href="/profile#publications" className="text-zinc-400 hover:text-white transition-colors">
-                  Media & Publications (8 Articles)
-                </Link>
-              </li>
-              <li>
-                <Link href="/profile#video-feature" className="text-zinc-400 hover:text-white transition-colors">
-                  Keynote Speech & Video Feature
-                </Link>
-              </li>
-              <li>
-                <Link href="/be-a-guest" className="text-zinc-400 hover:text-white transition-colors">
-                  Be a Guest on the Show
+                <Link href="/profile" className="text-zinc-400 hover:text-white transition-colors">
+                  Founder: Harshita Dagha Maisheri
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">
-                  Contact & Inquiries
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Streaming Platforms */}
+          {/* Media Wing & Streaming */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-200 mb-3">
-              Stream Everywhere
+              Media &amp; Podcast Wing
             </h3>
             <p className="text-[11px] text-zinc-400 mb-3 leading-relaxed italic bg-white/5 p-2.5 rounded-xl border border-white/10">
-              &ldquo;The Harshita Dagha Show, hosted by Harshita Dagha — Official Site: https://www.harshitadagha.in&rdquo;
+              &ldquo;The Harshita Dagha Show / Being Blah Blah — Produced by Beingblahblah, Mumbai.&rdquo;
             </p>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -290,7 +301,7 @@ export default function Footer() {
                   className="text-zinc-400 hover:text-rose-400 transition-colors flex items-center gap-2"
                 >
                   <span className="w-2 h-2 rounded-full bg-rose-500" />
-                  YouTube (Being Blah Blah)
+                  YouTube (@beingblahblah)
                 </a>
               </li>
               <li>
@@ -301,48 +312,35 @@ export default function Footer() {
                   className="text-zinc-400 hover:text-rose-400 transition-colors flex items-center gap-2"
                 >
                   <span className="w-2 h-2 rounded-full bg-rose-500" />
-                  YouTube (Harshita Dagha)
+                  YouTube (@harshitadagha)
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://music.amazon.in" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-zinc-400 hover:text-cyan-400 transition-colors flex items-center gap-2"
+                <Link 
+                  href="/be-a-guest"
+                  className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2"
                 >
-                  <span className="w-2 h-2 rounded-full bg-cyan-500" />
-                  Amazon Music
-                </a>
+                  <span className="w-2 h-2 rounded-full bg-[#d89ba4]" />
+                  Be a Guest on the Show
+                </Link>
               </li>
             </ul>
           </div>
+
         </div>
 
-        {/* Bottom copyright & CodeOrbit Credit */}
+        {/* Bottom copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <p>© {new Date().getFullYear()} The Harshita Dagha Show. All rights reserved. Mumbai Studio HQ (BKC).</p>
+            <p>© {new Date().getFullYear()} BEINGBLAHBLAH. All rights reserved. Bandra Kurla Complex (BKC), Mumbai, India.</p>
             <span className="hidden sm:inline text-zinc-700">·</span>
-            <p>
-              Created by{" "}
-              <a
-                href="https://codeorbit.cloud"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#d89ba4] hover:text-[#e2a8b1] font-semibold transition-colors underline underline-offset-2"
-              >
-                codeorbit.cloud
-              </a>
-            </p>
+            <p>Founded by Harshita Dagha Maisheri</p>
           </div>
           <div className="flex items-center space-x-5 flex-wrap justify-center sm:justify-end gap-y-2">
-            <Link href="/blog" className="text-[#d89ba4] hover:underline font-semibold transition-colors">
-              Blog & Vlogs
-            </Link>
-            <Link href="/admin" className="text-zinc-400 hover:text-white transition-colors">
-              Admin Studio
-            </Link>
+            <Link href="/about" className="hover:text-zinc-300 transition-colors">About Us</Link>
+            <Link href="/services" className="hover:text-zinc-300 transition-colors">Services</Link>
+            <Link href="/work" className="hover:text-zinc-300 transition-colors">Our Work</Link>
+            <Link href="/blog" className="text-[#d89ba4] hover:underline font-semibold transition-colors">Blog &amp; Vlogs</Link>
             <Link href="/privacy" className="hover:text-zinc-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-zinc-300 transition-colors">Terms of Service</Link>
             <Link href="/sitemap.xml" className="hover:text-zinc-300 transition-colors">Sitemap</Link>

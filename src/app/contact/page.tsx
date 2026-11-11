@@ -13,6 +13,7 @@ import {
   ChevronDown, 
   HelpCircle,
   Building,
+  MessageCircle,
   FileSpreadsheet
 } from "lucide-react";
 
@@ -20,7 +21,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    inquiryType: "sponsorship",
+    inquiryType: "brand-strategy",
     message: ""
   });
   const [submitted, setSubmitted] = useState(false);
@@ -33,20 +34,20 @@ export default function ContactPage() {
 
   const faqs = [
     {
-      q: "What is your typical recording schedule & lead time?",
-      a: "We record 4 to 6 weeks in advance of distribution. Episodes are released every Tuesday and Thursday at 6:00 AM Eastern Time."
+      q: "What services does Beingblahblah provide?",
+      a: "Beingblahblah is an integrated brand communication, PR, and digital visibility platform. We provide brand strategy, digital PR and media relations, celebrity marketing, podcast and video production, social media management, personal branding, and Generative Engine Optimization (GEO)."
     },
     {
-      q: "How do show sponsorships work on The Harshita Dagha Show?",
-      a: "We only accept 2 vetted sponsors per episode to preserve listener respect. All sponsor reads are personal, authentic endorsements written and delivered directly by Harshita Dagha."
+      q: "How can I invite founder Harshita Dagha Maisheri for speaking or moderation?",
+      a: "Harshita Dagha Maisheri is a TEDx speaker and seasoned panel moderator. You can submit your summit, conference, or corporate retreat brief through this contact page or directly via WhatsApp."
     },
     {
       q: "Where is the flagship studio located?",
       a: "Our private broadcast studio is located in Bandra Kurla Complex (BKC), Mumbai. We provide full studio logistics for visiting founders and CXOs traveling from Bengaluru, Delhi NCR, or abroad."
     },
     {
-      q: "Can I syndicate or clip video content for my social channels?",
-      a: "Yes! Every guest receives a curated package of five 4K vertical clips, high-resolution portrait photography, and quote tiles for personal distribution."
+      q: "How do podcast brand integrations and guest appearances work?",
+      a: "Guest proposals for The Harshita Dagha Show are vetted for unique narrative depth and intellectual rigor. We accept a maximum of 2 vetted sponsors per episode to ensure high audience engagement."
     }
   ];
 
@@ -58,13 +59,13 @@ export default function ContactPage() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-[#d89ba4] border border-white/10 text-xs font-semibold uppercase tracking-wider mb-3">
             <Mail className="w-3.5 h-3.5 text-[#d89ba4]" />
-            <span>Direct Inquiries</span>
+            <span>Contact Beingblahblah</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white tracking-tight mb-4">
-            Connect With The Show
+            Let&apos;s Build Something Meaningful Together
           </h1>
-          <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
-            For brand sponsorships, press interviews with Harshita Dagha, or studio inquiries, reach out directly to our production office.
+          <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+            Have a brand, PR, media or digital visibility requirement? Connect with the Beingblahblah team to discuss your objectives and explore the right strategy for your business.
           </p>
         </div>
 
@@ -78,9 +79,9 @@ export default function ContactPage() {
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-serif font-bold text-2xl text-white mb-2">Message Sent</h3>
+                <h3 className="font-serif font-bold text-2xl text-white mb-2">Inquiry Received</h3>
                 <p className="text-zinc-300 text-sm max-w-sm mx-auto mb-6">
-                  Thank you, <strong>{formData.name}</strong>. Our executive producer will respond to <strong>{formData.email}</strong> within 24 hours.
+                  Thank you, <strong>{formData.name}</strong>. The Beingblahblah client services team will review your requirements and respond to <strong>{formData.email}</strong> within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -92,18 +93,18 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <h3 className="font-serif font-bold text-xl text-white mb-4">
-                  Send a Message
+                  Send a Message to Beingblahblah
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">
-                      Your Name *
+                      Your Name / Company *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Jane Doe"
+                      placeholder="Your Name or Enterprise"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#0c0c0e] border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#d89ba4]/50 focus:bg-[#111115] transition-all"
@@ -116,7 +117,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       required
-                      placeholder="jane@company.com"
+                      placeholder="you@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#0c0c0e] border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#d89ba4]/50 focus:bg-[#111115] transition-all"
@@ -126,28 +127,32 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">
-                    Inquiry Type
+                    Primary Service Requirement
                   </label>
                   <select
                     value={formData.inquiryType}
                     onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#0c0c0e] border border-white/10 text-zinc-200 text-sm focus:outline-none focus:border-[#d89ba4]/50 cursor-pointer"
                   >
-                    <option value="sponsorship" className="bg-[#141418] text-white">Show Sponsorship & Partnership</option>
-                    <option value="press" className="bg-[#141418] text-white">Press & Speaking Engagement for Harshita</option>
-                    <option value="studio" className="bg-[#141418] text-white">Mumbai BKC Studio Booking / Production</option>
-                    <option value="other" className="bg-[#141418] text-white">General Inquiries</option>
+                    <option value="brand-strategy" className="bg-[#141418] text-white">Brand Strategy & Business Storytelling</option>
+                    <option value="digital-pr" className="bg-[#141418] text-white">Public Relations & Digital PR</option>
+                    <option value="celebrity" className="bg-[#141418] text-white">Celebrity Marketing & Booking</option>
+                    <option value="podcast-production" className="bg-[#141418] text-white">Podcast Production & Brand Interviews</option>
+                    <option value="geo" className="bg-[#141418] text-white">Generative Engine Optimization (GEO & AI Search)</option>
+                    <option value="personal-branding" className="bg-[#141418] text-white">Personal Branding & LinkedIn Strategy</option>
+                    <option value="speaker" className="bg-[#141418] text-white">Speaking / Moderation for Founder Harshita Dagha</option>
+                    <option value="other" className="bg-[#141418] text-white">Other Partnership / Media Inquiry</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">
-                    Your Message *
+                    Project Details & Timeline *
                   </label>
                   <textarea
                     rows={5}
                     required
-                    placeholder="Tell us about your brand, budget, timeline, or requested engagement..."
+                    placeholder="Tell us about your brand, objectives, budget, timeline, or requested engagement..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full p-4 rounded-xl bg-[#0c0c0e] border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#d89ba4]/50 focus:bg-[#111115] transition-all"
@@ -159,13 +164,13 @@ export default function ContactPage() {
                   className="w-full py-3.5 rounded-full bg-[#d89ba4] hover:bg-[#c98c95] text-black font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Send Message to Production Desk</span>
+                  <span>Contact Beingblahblah</span>
                 </button>
               </form>
             )}
           </div>
 
-          {/* Right Information & Media Kit */}
+          {/* Right Information & Official Business Details */}
           <div className="lg:col-span-5 space-y-6">
             
             {/* Direct WhatsApp Chat Box */}
@@ -180,10 +185,10 @@ export default function ContactPage() {
                 Chat Directly on WhatsApp
               </h3>
               <p className="text-xs text-zinc-300 mb-4 leading-relaxed">
-                Connect directly with Harshita Dagha&apos;s executive office for branding, PR, speaking engagements, and podcast inquiries.
+                Connect directly with the Beingblahblah production desk for branding, digital PR, celebrity marketing, and podcast inquiries.
               </p>
               <a
-                href="https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20visited%20your%20website%20and%20would%20like%20to%20connect%20with%20your%20production%20office."
+                href="https://wa.me/918779003799?text=Hi%20Beingblahblah,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20branding%20/%20PR%20requirement."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-md"
@@ -197,16 +202,16 @@ export default function ContactPage() {
             <div className="rounded-3xl bg-[#141418] border border-white/10 text-white p-8 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#d89ba4]/5 rounded-full blur-2xl pointer-events-none" />
               <span className="text-xs font-black uppercase tracking-wider bg-white/5 border border-white/10 text-[#d89ba4] px-3 py-1 rounded-full mb-4 inline-block">
-                Brand Partnerships & PR
+                Company &amp; Media Deck
               </span>
               <h3 className="font-serif font-bold text-2xl mb-3 text-white">
-                Official Media & Speaker Kit
+                Official Agency Overview &amp; Rates
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6 font-medium">
-                Detailed breakdowns of audience demographics, TEDx speaker topics, branding & PR advisory packages, and celebrity podcast formats.
+                Detailed capabilities deck covering branding deliverables, PR scopes, celebrity booking frameworks, and broadcast podcast sponsorship packages.
               </p>
               <a
-                href="https://wa.me/918779003799?text=Hi%20Harshita,%20please%20share%20your%20Media%20Kit%20and%20rates."
+                href="https://wa.me/918779003799?text=Hi%20Beingblahblah,%20please%20share%20your%20Agency%20Media%20Kit%20and%20service%20rates."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#d89ba4] hover:bg-[#c98c95] text-black text-xs font-bold shadow-md transition-colors"
@@ -223,7 +228,7 @@ export default function ContactPage() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Email Us</h4>
+                  <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Official Email</h4>
                   <a href="mailto:beingblahblah@gmail.com" className="text-xs text-[#d89ba4] font-semibold hover:underline mt-0.5 block">
                     beingblahblah@gmail.com
                   </a>
@@ -265,7 +270,7 @@ export default function ContactPage() {
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
               Frequently Asked Questions
             </h2>
-            <p className="text-zinc-400 text-xs mt-1">Everything you need to know about the show.</p>
+            <p className="text-zinc-400 text-xs mt-1">Everything you need to know about working with Beingblahblah.</p>
           </div>
 
           <div className="space-y-3">

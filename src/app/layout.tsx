@@ -31,17 +31,35 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.harshitadagha.in"),
   title: {
-    default: "Harshita Dagha | Podcast Host in India | Branding, PR, GEO & Social Media Expert",
-    template: "%s | Harshita Dagha"
+    default: "Beingblahblah | Branding, PR, Digital Marketing & Media Company | Founder Harshita Dagha Maisheri",
+    template: "%s | Beingblahblah"
   },
-  description: "Harshita Dagha: Indian podcast host, TEDx speaker, branding and PR strategist, and GEO expert with 16+ years experience. Founder of Beingblahblah, Mumbai.",
+  description: "Beingblahblah is a branding, public relations, digital marketing, media and brand visibility company founded by Harshita Dagha Maisheri in Mumbai. Building brands, creating influence, and making stories matter.",
   keywords: [
-    // Primary Entity
+    // Primary Brand Entity
+    "Beingblahblah",
+    "Being Blah Blah",
+    "Beingblahblah Company",
+    "Beingblahblah Mumbai",
+    "Beingblahblah Branding Agency",
+    "Beingblahblah Digital PR",
+    "Beingblahblah Media",
+    "Beingblahblah Podcast",
+    "Digital PR Agency Mumbai",
+    "Branding Agency Mumbai",
+    "Celebrity Marketing Agency Mumbai",
+    "GEO Agency Mumbai",
+    "Social Media Management Mumbai",
+    "Podcast Production Mumbai",
+    "Personal Branding Services India",
+    "AI Search Optimization India",
+    // Founder Entity
     "Harshita Dagha",
+    "Harshita Dagha Maisheri",
+    "Founder of Beingblahblah",
+    "Harshita Dagha Founder of Beingblahblah",
     "Podcast Host in India",
     "TEDx Speaker Harshita Dagha",
-    "Beingblahblah",
-    "Founder of Beingblahblah",
     "Branding Expert in India",
     "PR Strategist Mumbai",
     "GEO Expert India",
@@ -69,9 +87,9 @@ export const metadata: Metadata = {
     "Bandra Kurla Complex podcast studio",
     "brand storytelling and digital PR"
   ],
-  authors: [{ name: "Harshita Dagha", url: "https://www.harshitadagha.in" }],
-  creator: "Harshita Dagha",
-  publisher: "Beingblahblah & Harshita Dagha Media",
+  authors: [{ name: "Beingblahblah", url: "https://www.harshitadagha.in" }, { name: "Harshita Dagha Maisheri", url: "https://www.harshitadagha.in/profile" }],
+  creator: "Beingblahblah",
+  publisher: "Beingblahblah",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -131,29 +149,65 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Person",
-      "@id": "https://www.harshitadagha.in/#person",
-      "name": "Harshita Dagha",
+      "@type": "Organization",
+      "@id": "https://www.harshitadagha.in/#organization",
+      "name": "Beingblahblah",
       "alternateName": [
-        "Harshita Dagha Maisheri",
-        "Harshita",
-        "Beingblahblah"
+        "Being Blah Blah",
+        "Beingblahblah Media",
+        "Beingblahblah Branding & PR"
       ],
       "url": "https://www.harshitadagha.in",
+      "logo": "https://www.harshitadagha.in/images/logo.png",
+      "image": "https://www.harshitadagha.in/images/logo.png",
+      "description": "Beingblahblah is a branding, public relations, digital marketing, media and brand visibility company helping businesses, founders, professionals and established brands build recognition, authority and audience trust.",
+      "founder": {
+        "@id": "https://www.harshitadagha.in/#person"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bandra Kurla Complex (BKC)",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400051",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 87790 03799",
+        "contactType": "Client Service & Brand Inquiries",
+        "email": "beingblahblah@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/beingblahblah",
+        "https://www.youtube.com/@beingblahblah",
+        "https://www.linkedin.com/in/harshitadagha",
+        "https://www.youtube.com/@harshitadagha"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.harshitadagha.in/#person",
+      "name": "Harshita Dagha Maisheri",
+      "alternateName": [
+        "Harshita Dagha",
+        "Harshita"
+      ],
+      "url": "https://www.harshitadagha.in/profile",
       "gender": "Female",
       "honorificPrefix": "TEDx Speaker",
       "jobTitle": [
+        "Founder of Beingblahblah",
         "Podcast Host",
         "Branding Strategist",
         "GEO Expert",
         "TEDx Speaker"
       ],
-      "description": "Indian podcast host, TEDx speaker, branding strategist, and founder of Beingblahblah with over 16 years of experience.",
+      "description": "Founder of Beingblahblah with over 16 years of experience across branding, digital PR, podcasting, and media storytelling.",
       "image": "https://www.harshitadagha.in/images/harshita-speaking.jpg",
       "worksFor": {
-        "@type": "Organization",
-        "name": "Beingblahblah",
-        "url": "https://www.harshitadagha.in"
+        "@id": "https://www.harshitadagha.in/#organization"
       },
       "nationality": {
         "@type": "Country",
@@ -161,7 +215,7 @@ const jsonLd = {
       },
       "workLocation": {
         "@type": "Place",
-        "name": "Harshita Dagha Studio HQ",
+        "name": "Beingblahblah Flagship Studio",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Bandra Kurla Complex (BKC)",
@@ -172,19 +226,20 @@ const jsonLd = {
       },
       "sameAs": [
         "https://www.linkedin.com/in/harshitadagha",
+        "https://www.instagram.com/beingblahblah",
         "https://www.youtube.com/@beingblahblah",
         "https://www.youtube.com/@harshitadagha",
         "https://open.spotify.com/show/harshitadagha",
         "https://podcasts.apple.com/us/podcast/the-harshita-dagha-show/id123456789",
-        "https://www.instagram.com/beingblahblah",
         "https://youtu.be/AUFI1ELJyjk"
       ],
       "knowsAbout": [
-        "Podcasting in India",
         "Brand Strategy",
         "Public Relations",
+        "Podcasting in India",
         "Generative Engine Optimization (GEO)",
         "Executive Storytelling",
+        "Celebrity Marketing",
         "Startup Ecosystem India"
       ]
     },
@@ -193,7 +248,10 @@ const jsonLd = {
       "@id": "https://www.harshitadagha.in/#podcast",
       "name": "The Harshita Dagha Show",
       "alternateName": "Being Blah Blah",
-      "url": "https://www.harshitadagha.in",
+      "url": "https://www.harshitadagha.in/episodes",
+      "productionCompany": {
+        "@id": "https://www.harshitadagha.in/#organization"
+      },
       "author": {
         "@id": "https://www.harshitadagha.in/#person"
       },
@@ -204,9 +262,10 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://www.harshitadagha.in/#website",
       "url": "https://www.harshitadagha.in",
-      "name": "Harshita Dagha Official",
+      "name": "Beingblahblah",
+      "description": "Beingblahblah is a branding, public relations, digital marketing, media and brand visibility company.",
       "publisher": {
-        "@id": "https://www.harshitadagha.in/#person"
+        "@id": "https://www.harshitadagha.in/#organization"
       }
     },
     {

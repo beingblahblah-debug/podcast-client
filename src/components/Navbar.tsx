@@ -10,15 +10,16 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Harshita%20Dagha,%20I%20would%20like%20to%20connect%20regarding%20branding,%20PR,%20or%20podcast%20booking.";
+  const whatsappUrl = "https://wa.me/918779003799?text=Hi%20Beingblahblah,%20we%20would%20like%20to%20discuss%20branding,%20PR,%20or%20media%20services.";
 
   const navLinks = [
-    { label: "Episodes", href: "/episodes" },
-    { label: "Reels & Clips", href: "/highlights" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Vlogs & Articles", href: "/blog" },
-    { label: "Profile", href: "/profile" },
-    { label: "Contact", href: "/contact" },
+    { label: "Our Work", href: "/work" },
+    { label: "Media & Podcast", href: "/episodes" },
+    { label: "Insights / Blog", href: "/blog" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -30,17 +31,17 @@ export default function Navbar() {
           {/* Subtle glossy sheen highlight */}
           <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
 
-          {/* 1. Left Brand Identity */}
+          {/* 1. Left Brand Identity: BEINGBLAHBLAH */}
           <Link 
             href="/" 
-            title="Harshita Dagha - Return to Home" 
-            aria-label="Harshita Dagha - Return to Home"
+            title="Beingblahblah - Branding, PR & Media" 
+            aria-label="Beingblahblah - Home"
             className="flex items-center group shrink-0 cursor-pointer gap-2.5 sm:gap-3"
           >
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-black border border-white/15 shadow-sm flex items-center justify-center shrink-0">
               <Image
                 src="/images/logo.png"
-                alt="Harshita Dagha Official Monogram Logo"
+                alt="Beingblahblah Official Monogram Logo"
                 width={40}
                 height={40}
                 className="object-contain p-1"
@@ -48,16 +49,16 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-serif font-bold text-base sm:text-lg lg:text-xl text-white leading-none tracking-tight group-hover:text-[#d89ba4] transition-colors whitespace-nowrap">
-                Harshita Dagha
+              <span className="font-sans font-black text-sm sm:text-base lg:text-lg text-white leading-none tracking-wider group-hover:text-[#d89ba4] transition-colors whitespace-nowrap uppercase">
+                BEINGBLAHBLAH
               </span>
-              <span className="text-[9px] font-bold tracking-[0.24em] uppercase text-zinc-400 mt-1">
-                The Show
+              <span className="text-[9px] font-semibold tracking-[0.2em] uppercase text-zinc-400 mt-1">
+                Branding · PR · Media
               </span>
             </div>
           </Link>
 
-          {/* 2. Center Desktop Navigation Links (Centrally spaced with responsive gaps) */}
+          {/* 2. Center Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-1.5 2xl:gap-2 mx-auto px-1 xl:px-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -92,12 +93,12 @@ export default function Navbar() {
               <span className="hidden xl:inline">WhatsApp</span>
             </a>
 
-            {/* Book Podcast Pill */}
+            {/* Let's Build Your Brand Pill */}
             <Link
-              href="/be-a-guest"
+              href="/contact"
               className="hidden sm:inline-flex h-9 items-center justify-center gap-1.5 px-3.5 sm:px-4 xl:px-4.5 rounded-full bg-[#d89ba4] hover:bg-[#e2a8b1] text-zinc-950 text-xs font-bold border border-[#d89ba4] transition-all shadow-md hover:scale-105 active:scale-95 shrink-0 whitespace-nowrap"
             >
-              <span>Book Podcast</span>
+              <span>Let&apos;s Build Your Brand</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
 
@@ -177,11 +178,11 @@ export default function Navbar() {
                   <span>Connect on WhatsApp</span>
                 </a>
                 <Link
-                  href="/be-a-guest"
+                  href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full py-3.5 rounded-full bg-[#d89ba4] hover:bg-[#e2a8b1] text-zinc-950 font-bold text-center text-sm shadow-md flex items-center justify-center gap-1.5 transition-transform active:scale-95"
                 >
-                  <span>Book / Pitch Podcast</span>
+                  <span>Let&apos;s Build Your Brand</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
