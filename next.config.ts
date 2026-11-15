@@ -242,7 +242,52 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/top-female-podcasters-in-india",
-        destination: "/blog/top-female-podcasters-india-best-female-podcasters-indian-women-podcast-hosts",
+        destination: "/blog/top-female-podcasters-in-india",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-in-india/",
+        destination: "/blog/top-female-podcasters-in-india",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-in-mumbai",
+        destination: "/blog/top-female-podcasters-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-in-mumbai/",
+        destination: "/blog/top-female-podcasters-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/top-5-female-podcasters-in-mumbai",
+        destination: "/blog/top-5-female-podcasters-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/top-5-female-podcasters-in-mumbai/",
+        destination: "/blog/top-5-female-podcasters-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/top-3-female-podcasters-in-mumbai",
+        destination: "/blog/top-3-female-podcasters-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/top-3-female-podcasters-in-mumbai/",
+        destination: "/blog/top-3-female-podcasters-in-mumbai",
+        permanent: true,
+      },
+      {
+        source: "/top-5-female-podcasters-in-india",
+        destination: "/blog/top-5-female-podcasters-in-india",
+        permanent: true,
+      },
+      {
+        source: "/top-5-female-podcasters-in-india/",
+        destination: "/blog/top-5-female-podcasters-in-india",
         permanent: true,
       },
       {
