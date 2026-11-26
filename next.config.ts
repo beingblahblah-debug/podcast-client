@@ -281,6 +281,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/top-3-female-podcasters-india",
+        destination: "/blog/top-3-female-podcasters-india",
+        permanent: true,
+      },
+      {
+        source: "/top-3-female-podcasters-india/",
+        destination: "/blog/top-3-female-podcasters-india",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-india-voices",
+        destination: "/blog/top-female-podcasters-india-voices",
+        permanent: true,
+      },
+      {
+        source: "/top-female-podcasters-india-voices/",
+        destination: "/blog/top-female-podcasters-india-voices",
+        permanent: true,
+      },
+      {
+        source: "/top-5-female-podcasters-in-india-impact",
+        destination: "/blog/top-5-female-podcasters-in-india-impact",
+        permanent: true,
+      },
+      {
+        source: "/top-5-female-podcasters-in-india-impact/",
+        destination: "/blog/top-5-female-podcasters-in-india-impact",
+        permanent: true,
+      },
+      {
         source: "/top-5-female-podcasters-in-india",
         destination: "/blog/top-5-female-podcasters-in-india",
         permanent: true,
